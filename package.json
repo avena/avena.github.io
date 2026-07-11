@@ -1,0 +1,17 @@
+{
+  "name": "bs5-simple-starter",
+  "version": "1.0.0",
+  "description": "Starter template for Bootstrap Websites",
+  "main": "index.js",
+  "scripts": {
+    "sass:build": "sass --no-source-map scss:css",
+    "sass:watch": "sass --no-source-map --watch scss:css"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^7.2.0",
+    "bootstrap": "^5.3.8",
+    "sass": "^1.97.1"
+  }
+}
