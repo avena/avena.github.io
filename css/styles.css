@@ -147,6 +147,26 @@ section {
   padding: 80px 0;
 }
 
+.bg-sand {
+  background-color: #F7F5F0;
+}
+
+.bg-mint {
+  background-color: #F0F4F1;
+}
+
+.bg-clay {
+  background-color: #F2F2F0;
+}
+
+.bg-olive {
+  background-color: #E8EDE0;
+}
+
+.bg-warm {
+  background-color: #EDE6D6;
+}
+
 section h2 {
   font-family: "Lora", serif;
   font-weight: 600;
