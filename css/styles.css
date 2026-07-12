@@ -1,5 +1,5 @@
 .header {
-  background: #151515 url("../images/intro-bg.jpg") no-repeat center;
+  background: #151515 url("../images/agrotech.png") no-repeat center;
   background-size: cover;
   background-attachment: fixed;
 }
@@ -220,5 +220,3 @@ section h2 {
     padding-bottom: 20px;
   }
 }
-
-/*# sourceMappingURL=styles.css.map */
