@@ -24,6 +24,12 @@ Estrutura derivada de `felipegazolla.dev` com conteúdo real do LinkedIn.
 - `/personal_data/` — conteúdo textual separado por seção (`.md`)
 - `/_convert_ltsp.py` — script de conversão PmWiki→HTML (mantido na raiz para re-geração)
 
+## Commits
+
+- **NUNCA** commitar sem perguntar primeiro. Sempre perguntar "posso commitar?" e aguardar resposta.
+- Se houver muitas alterações (muitos arquivos, muitas inserções/linhas), avisar e sugerir que é um bom momento para commitar, mas sempre perguntar.
+- Commits só depois de autorização explícita.
+
 ## Convenções
 
 - Bootstrap 5.3 + Font Awesome 7 (ícones `fas`/`fab`) + SASS
