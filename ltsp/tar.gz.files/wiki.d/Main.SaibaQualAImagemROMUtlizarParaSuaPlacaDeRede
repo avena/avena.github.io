@@ -1,0 +1,14 @@
+version=pmwiki-2.1.27 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (X11; U; Linux i686; pt-BR;MEGAUPLOAD 1.0; rv:1.8.1.4) Gecko/20070508 Iceweasel/2.0.0.4 (Debian-2.0.0.4-0etch1)
+author=
+csum=
+ctime=1184953013
+host=189.5.42.237
+name=Main.SaibaQualAImagemROMUtlizarParaSuaPlacaDeRede
+rev=1
+targets=
+text=Pessoal, o objetivo desta página é facilitar a vida de quem tem uma placa de rede em mãos mas não encontra seu ROM no site rom-o-matic. Resolvi criar por que já aconteceu comigo algumas vezes.%0a%0a'''3Com 3C905CX-TXNM'''\\%0afuncionou com o ROM da placa "3c90x:3c905-tpo100"
+time=1184953013
+author:1184953013=
+diff:1184953013:1184953013:=1,4d0%0a%3c Pessoal, o objetivo desta página é facilitar a vida de quem tem uma placa de rede em mãos mas não encontra seu ROM no site rom-o-matic. Resolvi criar por que já aconteceu comigo algumas vezes.%0a%3c %0a%3c '''3Com 3C905CX-TXNM'''\\%0a%3c funcionou com o ROM da placa "3c90x:3c905-tpo100"%0a\ No newline at end of file%0a
+host:1184953013=189.5.42.237

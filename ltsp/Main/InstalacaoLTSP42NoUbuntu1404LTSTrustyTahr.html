@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Com LTSP já instalado, falta somente configurar...mas antes vamos editar/verificar se alguns arquivos estão como devem. — LTSP</title>
+<link rel="stylesheet" href="/css/bootstrap.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+body{background:#f5f5f5;font-family:'Poppins',sans-serif;}
+.ltsp-header{background:#1a237e;color:#fff;padding:20px 0;}
+.ltsp-header h1{margin:0;font-size:1.5rem;}
+.ltsp-sidebar{background:#fff;border-right:1px solid #e0e0e0;padding:20px;min-height:calc(100vh - 120px);font-size:0.9rem;}
+.ltsp-sidebar ul{list-style:none;padding:0;margin:0;}
+.ltsp-sidebar li{margin-bottom:6px;}
+.ltsp-sidebar a{color:#333;text-decoration:none;}
+.ltsp-sidebar a:hover{color:#1a237e;text-decoration:underline;}
+.ltsp-sidebar .sidehead{font-weight:700;margin-top:16px;margin-bottom:8px;font-size:0.85rem;text-transform:uppercase;color:#1a237e;}
+.ltsp-content{background:#fff;padding:30px;min-height:calc(100vh - 120px);}
+.ltsp-content h2{color:#1a237e;margin-top:24px;margin-bottom:12px;font-size:1.4rem;}
+.ltsp-content h3{color:#333;margin-top:20px;margin-bottom:10px;font-size:1.2rem;}
+.ltsp-content p{margin-bottom:12px;line-height:1.6;}
+.ltsp-content pre{background:#f5f5f5;border:1px solid #e0e0e0;padding:12px;overflow-x:auto;font-size:0.85rem;border-radius:4px;}
+.ltsp-content code{background:#f5f5f5;padding:2px 6px;font-size:0.85rem;border-radius:3px;}
+.ltsp-content ul{margin-bottom:12px;padding-left:20px;}
+.ltsp-content li{margin-bottom:4px;}
+.ltsp-breadcrumb{font-size:0.85rem;color:#666;margin-bottom:16px;}
+.ltsp-breadcrumb a{color:#1a237e;}
+.ltsp-content hr{margin:24px 0;border:0;border-top:1px solid #e0e0e0;}
+</style>
+</head>
+<body>
+<div class="ltsp-header">
+<div class="container">
+<div class="row align-items-center">
+<div class="col"><a href="/ltsp/" style="color:#fff;text-decoration:none"><h1>LTSP · Documentação em português</h1></a></div>
+<div class="col-auto"><a href="/" class="text-white-50 text-decoration-none">← Voltar ao currículo</a></div>
+</div></div></div>
+<div class="container"><div class="row">
+<div class="col-md-3"><div class="ltsp-sidebar"><ul><li><a href="/ltsp/">Página Inicial</a></li></ul></ul><div class="sidehead"><strong>Debian</strong></div><ul><li><a href="http://www.ltsp.org" target="_blank" rel="noopener">LTSP</a></li></ul><ul><li><a href="http://debian.org" target="_blank" rel="noopener">Debian</a></li></ul><ul><li><a href="https://www.ubuntu.com" target="_blank" rel="noopener">Ubuntu</a></li></ul></div></div>
+<div class="col-md-9"><div class="ltsp-content">
+<div class="ltsp-breadcrumb"><a href="/ltsp/">LTSP</a> &raquo; Main</div>
+<p>Remove o Gerenciador de rede gráfico do Gnome '^<a href="https://askubuntu.com/questions/249944/how-can-i-completely-remove-networkmanager" target="_blank" rel="noopener"><strong>1</strong></a>^'.\\</p>
+<p><strong>sudo apt-get remove --purge network-manager network-manager-gnome network-manager-pptp network-manager-pptp-gnome</strong></p>
+<p>Para o funcionamento do LTSP 4.2, é preciso alguns programas. '^<a href="https://help.ubuntu.com/community/SettingUpNFSHowTo#Installation_and_Configuration" target="_blank" rel="noopener">rpcbind nfs-kernel-server</a>^'\\</p>
+<p><strong>sudo apt-get install isc-dhcp-server tftpd-hpa rpcbind nfs-kernel-server</strong></p>
+<p>Pra usar o ltsp-utils instalar bibliotecas do perl\\</p>
+<p><strong>sudo apt-get install libwww-perl libhtml-parser-perl libhtml-tagset-perl libhtml-tree-perl liburi-perl</strong></p>
+<p>Vamos instalar o ltsp-utils, com ele instalamos e configuramos o LTSP 4.2.\\</p>
+<p>http://ltsp.mirrors.tds.net/pub/ltsp/utils/ ou https://www.idsorocaba.tk/ltsp/utils\\</p>
+<p><strong>wget https://www.idsorocaba.tk/ltsp/utils/ltsp-utils-0.25-0.tgz</strong>\\</p>
+<p><strong>tar xvf ltsp-utils-0.25-0.tgz</strong>\\</p>
+<p><strong>cd ltsp-utils</strong>\\</p>
+<p><strong>sudo sh install.sh</strong></p>
+<pre>Installing ltspadmin
+Installing ltspcfg
+Installing ltspinfo
+
+Installation of ltsp-utils complete</pre>
+<p>No Ubuntu/Debian o pacote <strong>ltsp-utils</strong> não é mais oficial, por isso pegar o fonte para instalar.</p>
+<hr>
+<p>Obter a .iso\\</p>
+<p>http://ltsp.mirrors.tds.net/pub/ltsp/isos/ - ou https://www.idsorocaba.tk/ltsp/isos/</p>
+<p>Baixar e montar .iso do LTSP4.2\\</p>
+<p><strong>wget https://www.idsorocaba.tk/ltsp/isos/ltsp-4.2u2-0.iso</strong>\\</p>
+<p><strong>sudo mount -o loop ltsp-4.2u2-0.iso /mnt</strong></p>
+<p>Abra o #ltspadmin\\</p>
+<p><strong>sudo ltspadmin</strong></p>
+<p>https://s33.postimg.cc/jxgkbfktr/ltspadmin-min.png</p>
+<p>Na tela do ltspadmin vamos primeiro em <strong>Configure the installer options</strong></p>
+<p>Em <strong>Where to retrieve packages from?</strong> vamos trocar e colocar:\\</p>
+<p><strong>[=file:///mnt/=]</strong></p>
+<p>na opção abaixo '''In which directory would you like to place the LTSP client tree?\\</p>
+<p>[/opt/ltsp]'''\\</p>
+<p>Indicado manter o padrão e pra outras pode deixar em branco e dar enter.</p>
+<p>https://s33.postimg.cc/j7xrytchr/ltspadmin_config_2-min.png</p>
+<p>Para instalar vamos em <strong>Install/Update LTSP Packages</strong>\\</p>
+<p>https://s33.postimg.cc/z7gfidnz3/03-ltspadmin_selec_install-min.png</p>
+<p>Tecle <strong>A</strong> para selecionar todos arquivos para instalação</p>
+<p>https://s33.postimg.cc/4q0kqu8bz/04-ltspadmin_selec_install_a_q-min.png</p>
+<p>e <strong>Q</strong> para começar o Download</p>
+<p>https://s33.postimg.cc/rfzpjueov/05-ltspadmin_install_enter-min.png</p>
+<p>Instalou e tecle <strong>Enter</strong> para continuar</p>
+<h2>Com LTSP já instalado, falta somente configurar...mas antes vamos editar/verificar se alguns arquivos estão como devem.</h2>
+<h3>Configurado Interface de Rede</h3>
+<p>O servidor deve ter duas placas de rede, vamos usar aqui no exemplo a eth1 com ip 192.168.20.1 para o LTSP\\</p>
+<p>Para isso vamos abrir o:\\</p>
+<p><strong>sudo nano /etc/network/interfaces</strong>\\</p>
+<p>E colocar a seguinte configuração na eth1 deste jeito.</p>
+<pre>auto eth1
+iface eth1 inet static
+        address   192.168.20.1
+        netmask   255.255.255.0
+        network   192.168.20.0
+        broadcast 192.168.20.255</pre>
+<p>depois executar...\\</p>
+<p><strong>sudo service networking restart</strong>\\</p>
+<p><strong>sudo ifconfig eth1 192.168.20.1</strong></p>
+<h3>Configurado o Runlevel</h3>
+<p>Criar o arquivo <strong>inittab</strong>, isso não vai afetar o Ubuntu que usa outro sistema, mas somente ter este arquivo pra continuar a instalação do LTSP4.2, sem mensagem de erros.\\</p>
+<p><strong>sudo su</strong>\\</p>
+<p>Ficar como root, e ai executar\\</p>
+<p><strong>echo "id:5:initdefault:" > /etc/inittab</strong></p>
+<p>Com isso se cria o arquivo inittab com valor id:5</p>
+<h3>Ver Configuração atual do LTSP</h3>
+<p>Para ver como esta a configuração atual do LTSP\\</p>
+<p><strong>sudo ltspcfg</strong>\\</p>
+<p>tecle <strong>S</strong> e veja se tem tudo instalado\\</p>
+<p>https://s33.postimg.cc/6j82sygcf/06-ltspcfg-show-min.png</p>
+<p>Maiores informações:\\</p>
+<p>2.5. Exibindo a configuração atual\\</p>
+<p>http://ltsp.mirrors.tds.net/pub/ltsp/docs/ltsp-4.1-ptbr.html#AEN641</p>
+<h2>Configurando os serviços necessários ao LTSP</h2>
+<p>Em <strong>sudo ltspcfg</strong> Tecle <strong>C</strong> (configure)\\</p>
+<p>https://s33.postimg.cc/7ms750gfz/07-ltspcfg-config-min.png</p>
+<p>Maiores informações:\\</p>
+<p>2.3. Configurando os serviços necessários ao LTSP\\</p>
+<p>http://ltsp.mirrors.tds.net/pub/ltsp/docs/ltsp-4.1-ptbr.html#AEN443</p>
+<h3><strong>1 - Runlevel</strong></h3>
+<p>Entrar e confirmar que esta em runlevel igual a 5</p>
+<h3><strong>2 - Interface selection</strong></h3>
+<p>Entrar e escrever a interface/placa de rede que LTSP vai usar.\\</p>
+<p>Vamos aqui usar a <strong>eth1</strong> que antes já configuramos</p>
+<h3><strong>3 - DHCP configuration</strong></h3>
+<p>Entre e criei o arquivo dhcpd.conf\\</p>
+<p>Do you want to build a dhcpd.conf file (y/n) ? <strong>Y</strong></p>
+<p>em outro Terminal/Aba faça\\</p>
+<p><strong>sudo cp /etc/dhcpd.conf /etc/dhcp/dhcpd.conf</strong></p>
+<p>E agora edite o dhcpd.conf\\</p>
+<p><strong>sudo nano /etc/dhcp/dhcpd.conf</strong></p>
+<p>Na primeiras comentar a linha onde esta:</p>
+<pre>ddns-update-style             ad-hoc;</pre>
+<p>ficando</p>
+<pre>#ddns-update-style             ad-hoc;</pre>
+<p>e procure por:</p>
+<pre>option domain-name            &quot;your_domain.org&quot;;   # You really should fix this</pre>
+<p>e coloque o domínio da sua rede.\\</p>
+<p>Sugestão usar "ltsp"</p>
+<pre>option domain-name            &quot;ltsp&quot;;   # You really should fix this</pre>
+<p>procure a linha - subnet 192.168.0.0 netmask 255.255.255.0</p>
+<pre> subnet 192.168.0.0 netmask 255.255.255.0 {
+ range 192.168.0.100 192.168.0.199;
+ if substring (option vendor-class-identifier, 0, 9) = &quot;PXEClient&quot; {
+ filename &quot;/lts/2.6.16.1-ltsp-1/pxelinux.0&quot;;
+ }
+ else{
+ filename &quot;/lts/vmlinuz-2.6.16.1-ltsp-1&quot;;
+ }
+ }</pre>
+<p>Verifica se esta com o ip de sua rede configurada na eth1.</p>
+<p>Em um Terminal/Aba execute: <strong>ls /tftpboot/lts</strong> e veja o retorno.</p>
+<pre># ls /tftpboot/lts
+ 2.6.17.3-ltsp-1 vmlinuz-2.6.17.3-ltsp-1</pre>
+<p>No dhcpd.conf criado esta escrito a versão - 2.6.16.1-ltsp-1 - só que ltsp tem instalado a: 2.6.<strong>17.3</strong>-ltsp-1.\\</p>
+<p>Mude para <strong>2.6.17.3-ltsp-1</strong>.</p>
+<p># tail -f /var/log/syslog</p>
+<pre>Jan 17 20:55:10 Balaio1 in.tftpd[4606]: RRQ from 192.168.20.102 filename /tftpboot/lts/vmlinuz-2.6.17.3-ltsp-1                                                  
+Jan 17 20:55:10 Balaio1 in.tftpd[4606]: sending NAK (1, File not found) to 192.168.20.102 </pre>
+<h3>Remover no dhcpd.conf o /tftpboot/ se tiver</h3>
+<p>[@filename "/tftpboot/lts/2.....@]\\</p>
+<p>deixando como:\\</p>
+<p>[@filename "/lts/2......";@]</p>
+<p>Agora faça as mudanças no <strong>option domain-name</strong>, <strong>subnet</strong> e no <strong>filename</strong> -, o dhcp.conf deve ficar assim.</p>
+<pre># dhcpd.conf
+
+# ddns-update-style ad-hoc;
+
+ option subnet-mask 255.255.255.0;
+ option broadcast-address 192.168.20.255;
+ option routers 192.168.20.1;
+ option domain-name-servers 192.168.20.1;
+ option domain-name &quot;ltsp&quot;; # You really should fix this
+ option option-128 code 128 = string;
+ option option-129 code 129 = text;
+
+
+ get-lease-hostnames true;
+
+ next-server 192.168.20.1;
+ option root-path &quot;192.168.20.1:/opt/ltsp/i386&quot;;
+
+ subnet 192.168.20.0 netmask 255.255.255.0 {
+ range 192.168.20.100 192.168.20.110;
+ if substring (option vendor-class-identifier, 0, 9) = &quot;PXEClient&quot; {
+ filename &quot;/lts/2.6.17.3-ltsp-1/pxelinux.0&quot;;
+ }
+ else{
+ filename &quot;/lts/vmlinuz-2.6.17.3-ltsp-1&quot;;
+ }
+ }
+#
+# If you need to pass parameters on the kernel command line, you can
+# do it with option-129. In order for Etherboot to look at option-129,
+# you MUST have option-128 set to a specific value. The value is a
+# special Etherboot signature of &#x27;e4:45:74:68:00:00&#x27;.
+#
+# Add these two lines to the host entry that needs kernel parameters
+#
+# option option-128 e4:45:74:68:00:00; # NOT a mac address
+# option option-129 &quot;NIC=ne IO=0x300&quot;;
+#</pre>
+<p>Feito tudo...execute.\\</p>
+<p><strong>sudo service isc-dhcp-server restart</strong></p>
+<pre>stop: Unknown instance:
+isc-dhcp-server start/running, process 10645</pre>
+<p>dhcp3 ligou corretamente.</p>
+<p>Voltar ao Terminal/Aba que tem o Menu de Configure</p>
+<h3><strong>4 - TFTP configuration</strong></h3>
+<p>coloque **Y** (yes ) para ligar/enabled o TFTP</p>
+<p>Em outro Terminal/Aba antes edite:\\</p>
+<p><strong>sudo nano /etc/default/tftpd-hpa</strong> '^<a href="https://help.ubuntu.com/community/TFTP" target="_blank" rel="noopener"><strong>1</strong></a>^'\\</p>
+<p>E deixe o arquivo <strong>tftpd-hpa</strong> deste jeito...</p>
+<pre># /etc/default/tftpd-hpa
+
+TFTP_USERNAME=&quot;tftp&quot;
+TFTP_DIRECTORY=&quot;/tftpboot&quot;
+TFTP_ADDRESS=&quot;192.168.20.1:69&quot;
+TFTP_OPTIONS=&quot;--secure --listen -r blksize -vvvvvv&quot;</pre>
+<p>Salva e restart no serviço:\\</p>
+<p><strong>sudo service tftpd-hpa restart</strong></p>
+<pre>tftpd-hpa stop/waiting
+tftpd-hpa start/running, process 10900</pre>
+<p>Para confimar se esta rodando...\\</p>
+<p><strong>sudo service tftpd-hpa status</strong>\\</p>
+<p>ou\\</p>
+<p><strong>netstat -a | grep tftp</strong></p>
+<p>E pode continuar a instalação.</p>
+<h3><strong>5 - Portmapper configuration</strong></h3>
+<p>coloque <strong>Y</strong> (yes) para ligar/enabled.</p>
+<pre>portmap is the daemon that converts RPC Program numbers to DARPA protocol
+port numbers.  This is needed for NFS and NIS to function properly.  The
+clients will query the portmapper daemon to figure out which ports to connect
+to for the various services.
+
+
+
+The portmap package is not installed!
+
+Please install it, and then come back here and enable it.
+Press &lt;enter&gt; to continue..</pre>
+<h3><strong>6 - NFS configuration</strong></h3>
+<p>coloque <strong>Y</strong> (yes) para ligar/enabled.</p>
+<pre>Step 1: Enabling the nfs daemon
+
+Configuring nfsd to start at boot time
+
+It seems this is a Debian based system;
+portmap is already configured to start, nothing to do.
+Press &lt;enter&gt; to continue..</pre>
+<h3><strong>7 - XDMCP configuration</strong></h3>
+<p>sudo apt-get install gdm</p>
+<p>Quando se entra, se tem a mensagem:</p>
+<pre>Xdmcp is the protocol used by a display manager to present
+a login dialog box on the workstation.
+
+
+The Xdmcp service is not installed!
+
+Please install it, and then come back here and enable it.
+Press &lt;enter&gt; to continue..</pre>
+<p>Crie o arquivo:</p>
+<p># nano /etc/gdm/custom.conf</p>
+<p>Com o seguinte conteúdo.</p>
+<pre># /etc/gdm/custom.conf
+
+[daemon]
+User=gdm
+Group=gdm
+ 
+[security]
+DisallowTCP=true
+ 
+[xdmcp]
+Enable=true
+DisplaysPerHost=2
+HonorIndirect=false
+MaxPending=4
+MaxSessions=16
+MaxWait=30
+MaxWaitIndirect=30
+PingIntervalSeconds=60
+Port=177
+ 
+[greeter]
+ 
+[chooser]
+Multicast=false
+ 
+[debug]
+Enable=false</pre>
+<p><strong>LightDM</strong></p>
+<ul>
+<li>https://wiki.ubuntu.com/xdmcp</li>
+<li>https://wiki.archlinux.org/index.php/XDMCP#LightDM</li>
+<li>https://askubuntu.com/questions/66431/how-do-i-configure-lightdm-to-work-with-xdmcp</li>
+</ul>
+<h3><strong>8 - Create /etc/hosts entries</strong>\\</h3>
+<p>Entrar, confiar com <strong>Y</strong> (yes) para criar entrada no /etc/hosts:</p>
+<pre>It is important that several services running on the server
+are able to map an IP address back to a hostname.  This is
+typically referred to as &quot;reverse mapping&quot;.
+
+There are 2 common ways to achieve this:
+
+  1) Entries in /etc/hosts for each workstation.
+
+  2) Reverse mapping entries in DNS.
+
+If you have (or will) setup your DNS server to do the proper
+reverse mapping for each workstation, you can skip this
+configuration step.  Otherwise, it is recommended that you add
+entries to the /etc/hosts file for each workstation.
+
+Do you want to add entries to /etc/hosts (y/n) ? Y
+
+Finished adding /etc/hosts entries.
+
+Press &lt;enter&gt; to continue..</pre>
+<h3><strong>9 - Create /etc/hosts.allow entries</strong>\\</h3>
+<p>Entrar, confiar com <strong>Y</strong> (yes) para criar entrada no /etc/hosts.allow:</p>
+<pre>Some services, such as dhcpd, tftpd and portmap use a security feature
+called &#x27;tcpwrappers&#x27;.  This feature restricts connections from any
+host addresses specified in /etc/hosts.deny, and allows connections
+from host addresses specified in /etc/hosts.allow.
+
+ltspcfg can add the necessary entries to /etc/hosts.allow for you.
+
+Do you want to add entries to /etc/hosts.allow (y/n) ? Y
+
+Finished adding /etc/hosts.allow entries.</pre>
+<p>Em outros Terminal, vamos editar o arquivo\\</p>
+<p><strong>sudo nano /etc/hosts.allow</strong></p>
+<pre>bootpd:     0.0.0.0
+in.tftpd:   192.168.20.0
+portmap:    192.168.20.0</pre>
+<p>mude para ip que tu tem configurado no seu servidor. No caso aqui: <strong>192.168.20.1</strong></p>
+<pre>bootpd:     0.0.0.0
+in.tftpd:   192.168.20.1
+portmap:    192.168.20.1</pre>
+<p>Salve e pronto.</p>
+<h3><strong>10 - Create /etc/exports entries</strong>\\</h3>
+<p>Entrar, confiar com <strong>Y</strong> (yes) para criar entrada no /etc/exports:</p>
+<pre>To tell the NFS system which directories to make available, entries
+must exist in /etc/exports, for each directory.  With each entry, is
+information about which machines are allowed to access the directory,
+and what permissions they will have.
+
+ltspcfg can add the necessary entries to /etc/exports for you.
+
+Do you want to add entries to /etc/exports? (y/n) ? Y
+
+Finished adding /etc/exports entries.
+
+Press &lt;enter&gt; to continue..</pre>
+<p>Em outros Terminal, vamos editar o arquivo:\\</p>
+<p><strong>sudo nano /etc/exports</strong> - mudando para o ip do servidor. <strong>192.168.20.1</strong> Deve ficar assim:</p>
+<pre>## LTSP-begin ##
+#
+# The lines between &#x27;LTSP-begin&#x27; and &#x27;LTSP-end&#x27; were added
+# on: Qua Abr 18 23:57:57 2007, by the ltspcfg configuration tool.
+# For more information, visit the LTSP homepage
+# at http://www.LTSP.org
+#
+
+/opt/ltsp                 192.168.20.1/255.255.255.0(ro,no_subtree_check,no_root_squash,sync,no_subtree_check)
+#/var/opt/ltsp/swapfiles   192.168.20.1/255.255.255.0(rw,no_root_squash,async,no_subtree_check)
+
+## LTSP-end ##</pre>
+<h3><strong>11 - Create lts.conf file</strong>\\</h3>
+<p>Entrar, confirmar com <strong>Y</strong> (yes) para criar arquivo lts.conf:</p>
+<pre>Do you want to create a default lts.conf file (y/n) ? Y
+
+Finished adding /opt/ltsp/i386/etc/lts.conf entries.
+
+Press &lt;enter&gt; to continue..</pre>
+<p>Abaixo vamos editar algumas configurações que <strong>ltspcfg</strong> criou.</p>
+<p><strong>sudo nano /opt/ltsp/i386/etc/lts.conf</strong></p>
+<pre>[Default]
+        SERVER             = 192.168.20.1
+        XSERVER            = auto
+        X_MOUSE_PROTOCOL   = &quot;PS/2&quot;
+        X_MOUSE_DEVICE     = &quot;/dev/psaux&quot;
+        X_MOUSE_RESOLUTION = 400
+        X_MOUSE_BUTTONS    = 3
+        USE_XFS            = N
+        SCREEN_01          = startx</pre>
+<p>Pronto....reinicie a maquina e faça os teste nos terminais.</p>
+</div></div></div></div>
+<script src="/js/bootstrap.bundle.min.js"></script>
+</body></html>

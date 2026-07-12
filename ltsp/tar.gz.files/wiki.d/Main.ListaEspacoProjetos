@@ -1,0 +1,14 @@
+version=pmwiki-2.1.27 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.6) Gecko/2009020409 Iceweasel/3.0.6 (Debian-3.0.6-1)
+author=colaborador
+csum=
+ctime=1236639639
+host=189.5.43.34
+name=Main.ListaEspacoProjetos
+rev=1
+targets=Main.MetaJim,Main.GNesis,Main.SabeTudo,Main.ProjetoPRola,Main.TelecentroSBia-LuaNova,Main.LiberdadeAssistida-ProjetoGirassol
+text=%0a[[MetaJim]]%0a%0a[[Gênesis]]%0a%0a[[SabeTudo]]%0a%0a[[Projeto Pérola]]%0a%0a[[Telecentro Sábia - Lua Nova]]%0a%0a[[Liberdade Assistida - Projeto Girassol]]%0a
+time=1236639639
+author:1236639639=colaborador
+diff:1236639639:1236639639:minor=1,12d0%0a%3c %0a%3c [[MetaJim]]%0a%3c %0a%3c [[Gênesis]]%0a%3c %0a%3c [[SabeTudo]]%0a%3c %0a%3c [[Projeto Pérola]]%0a%3c %0a%3c [[Telecentro Sábia - Lua Nova]]%0a%3c %0a%3c [[Liberdade Assistida - Projeto Girassol]]%0a
+host:1236639639=189.5.43.34

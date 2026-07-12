@@ -1,0 +1,33 @@
+version=pmwiki-2.2.113 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:65.0) Gecko/20100101 Firefox/65.0
+author=
+charset=ISO-8859-1
+csum=
+ctime=1297803074
+host=186.207.75.102
+name=Main.SourcesListSqueeze
+rev=7
+targets=
+text=Editar o sources.list com Gedit\\%0a[@gedit /etc/apt/sources.list@]%0a%0a[@%0a#segurança%0adeb http://security.debian.org/ squeeze/updates main%0adeb-src http://security.debian.org/ squeeze/updates main%0a%0a#debian%0a# deb http://http.us.debian.org/debian/ squeeze main contrib non-free%0a# deb ftp://mirrors.kernel.org/debian/ squeeze main contrib non-free%0a# deb http://download.unesp.br/linux/debian/ squeeze main contrib non-free%0adeb http://ftp.br.debian.org/debian/ squeeze main contrib non-free%0adeb-src http://ftp.br.debian.org/debian/ squeeze main contrib non-free%0a%0a#som video%0a# deb ftp://ftp.debian-multimedia.org squeeze main non-free%0adeb http://www.debian-multimedia.org squeeze main non-free%0a%0a#backports%0a# gpg --keyserver subkeys.pgp.net --recv-keys EA8E8B2116BA136C%0a# gpg --export --armor EA8E8B2116BA136C | apt-key add -%0a# deb ftp://sft.if.usp.br/debian-backports/ squeeze-backports main%0a# deb http://sft.if.usp.br/debian-backports/ squeeze-backports main%0a# deb http://backports.debian.org/debian-backports squeeze-backports main%0a# deb http://ftp.br.debian.org/debian-backports/ squeeze-backports main%0adeb ftp://ftp.br.debian.org/debian-backports/ squeeze-backports main%0a%0a#este volatile veio ja com instalacao%0a# Line commented out by installer because it failed to verify:%0adeb http://volatile.debian.org squeeze-updates main%0a# Line commented out by installer because it failed to verify:%0adeb-src http://volatile.debian.org squeeze-updates main%0a%0a@]%0a%0adepois execute:\\%0a'''apt-get update'''%0a%0ae também instale as chaves do endereços\\%0a'''apt-get install debian-multimedia-keyring debian-keyring'''%0a
+time=1554183018
+author:1554183018=
+diff:1554183018:1306958689:=0a1,2%0a> Foi útil, te ajudou ou gostou?? %3cg:plusone size="small">%3c/g:plusone>%0a> %0a
+host:1554183018=186.207.75.102
+author:1306958689=
+diff:1306958689:1304022829:=1,2d0%0a%3c Foi útil, te ajudou ou gostou?? %3cg:plusone size="small">%3c/g:plusone>%0a%3c %0a
+host:1306958689=189.5.39.209
+author:1304022829=
+diff:1304022829:1297803449:=31c31%0a%3c deb http://volatile.debian.org squeeze-updates main%0a---%0a> deb ://volatile.debian.org squeeze-updates main%0a33,34c33,34%0a%3c deb-src http://volatile.debian.org squeeze-updates main%0a%3c %0a---%0a> deb-src ://volatile.debian.org squeeze-updates main%0a> %0a
+host:1304022829=189.5.39.209
+author:1297803449=
+diff:1297803449:1297803435:=41c41%0a%3c '''apt-get install debian-multimedia-keyring debian-keyring'''%0a---%0a> '''apt-get install debian-multimedia-keyring debian-keyring''%0a
+host:1297803449=189.5.38.169
+author:1297803435=
+diff:1297803435:1297803330:=41c41%0a%3c '''apt-get install debian-multimedia-keyring debian-keyring''%0a---%0a> '''apt-get install debian-multimedia-keyring debian-backports-keyring'''%0a
+host:1297803435=189.5.38.169
+author:1297803330=
+diff:1297803330:1297803074:=16a17,18%0a> # gpg --keyserver subkeys.pgp.net --recv-keys 07DC563D1F41B907%0a> # gpg --export --armor 07DC563D1F41B907 | apt-key add -%0a
+host:1297803330=189.5.38.169
+author:1297803074=
+diff:1297803074:1297803074:=1,43d0%0a%3c Editar o sources.list com Gedit\\%0a%3c [@gedit /etc/apt/sources.list@]%0a%3c %0a%3c [@%0a%3c #segurança%0a%3c deb http://security.debian.org/ squeeze/updates main%0a%3c deb-src http://security.debian.org/ squeeze/updates main%0a%3c %0a%3c #debian%0a%3c # deb http://http.us.debian.org/debian/ squeeze main contrib non-free%0a%3c # deb ftp://mirrors.kernel.org/debian/ squeeze main contrib non-free%0a%3c # deb http://download.unesp.br/linux/debian/ squeeze main contrib non-free%0a%3c deb http://ftp.br.debian.org/debian/ squeeze main contrib non-free%0a%3c deb-src http://ftp.br.debian.org/debian/ squeeze main contrib non-free%0a%3c %0a%3c #som video%0a%3c # gpg --keyserver subkeys.pgp.net --recv-keys 07DC563D1F41B907%0a%3c # gpg --export --armor 07DC563D1F41B907 | apt-key add -%0a%3c # deb ftp://ftp.debian-multimedia.org squeeze main non-free%0a%3c deb http://www.debian-multimedia.org squeeze main non-free%0a%3c %0a%3c #backports%0a%3c # gpg --keyserver subkeys.pgp.net --recv-keys EA8E8B2116BA136C%0a%3c # gpg --export --armor EA8E8B2116BA136C | apt-key add -%0a%3c # deb ftp://sft.if.usp.br/debian-backports/ squeeze-backports main%0a%3c # deb http://sft.if.usp.br/debian-backports/ squeeze-backports main%0a%3c # deb http://backports.debian.org/debian-backports squeeze-backports main%0a%3c # deb http://ftp.br.debian.org/debian-backports/ squeeze-backports main%0a%3c deb ftp://ftp.br.debian.org/debian-backports/ squeeze-backports main%0a%3c %0a%3c #este volatile veio ja com instalacao%0a%3c # Line commented out by installer because it failed to verify:%0a%3c deb ://volatile.debian.org squeeze-updates main%0a%3c # Line commented out by installer because it failed to verify:%0a%3c deb-src ://volatile.debian.org squeeze-updates main%0a%3c %0a%3c @]%0a%3c %0a%3c depois execute:\\%0a%3c '''apt-get update'''%0a%3c %0a%3c e também instale as chaves do endereços\\%0a%3c '''apt-get install debian-multimedia-keyring debian-backports-keyring'''%0a
+host:1297803074=189.5.38.169

@@ -1,0 +1,14 @@
+version=pmwiki-2.1.27 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (X11; U; Linux i686; pt-BR;MEGAUPLOAD 1.0; rv:1.8.1.6) Gecko/20070723 Iceweasel/2.0.0.6 (Debian-2.0.0.6-0etch1)
+author=Avena
+csum=
+ctime=1187390518
+host=189.5.47.137
+name=Main.ListaImpressoras
+rev=1
+targets=
+text=Lista Impressoras HPs%0a%0aFunciona Perfeitamente em Linux.%0a%0aDeskJet 600\\%0ahttp://www.linuxprinting.org/show_printer.cgi?recnum=HP-DeskJet_600\\%0aDeskJet 670C\\%0ahttp://www.linuxprinting.org/show_printer.cgi?recnum=HP-DeskJet_670C\\%0aDeskJet 680C\\%0ahttp://www.linuxprinting.org/show_printer.cgi?recnum=HP-DeskJet_680C\\%0aDeskJet 692C\\%0ahttp://www.linuxprinting.org/show_printer.cgi?recnum=HP-DeskJet_692C\\%0aDeskJet 695C\\%0ahttp://www.linuxprinting.org/show_printer.cgi?recnum=HP-DeskJet_695C\\%0aDeskJet 820C\\%0ahttp://www.linuxprinting.org/show_printer.cgi?recnum=HP-DeskJet_820C\\%0aDeskJet 870C\\%0ahttp://www.linuxprinting.org/show_printer.cgi?recnum=HP-DeskJet_870C%0a%0a%0aImpressoras visualmente ok...não foi feito teste de impressão nelas.\\%0a8 sem fonte\\%0a5 que somente cabo de 3 pino de alimentação precisa para alimentação.%0a%0a%0a5 Impressoras estão detonadas.
+time=1187390518
+author:1187390518=Avena
+diff:1187390518:1187390518:=1,26d0%0a%3c Lista Impressoras HPs%0a%3c %0a%3c Funciona Perfeitamente em Linux.%0a%3c %0a%3c DeskJet 600\\%0a%3c http://www.linuxprinting.org/show_printer.cgi?recnum=HP-DeskJet_600\\%0a%3c DeskJet 670C\\%0a%3c http://www.linuxprinting.org/show_printer.cgi?recnum=HP-DeskJet_670C\\%0a%3c DeskJet 680C\\%0a%3c http://www.linuxprinting.org/show_printer.cgi?recnum=HP-DeskJet_680C\\%0a%3c DeskJet 692C\\%0a%3c http://www.linuxprinting.org/show_printer.cgi?recnum=HP-DeskJet_692C\\%0a%3c DeskJet 695C\\%0a%3c http://www.linuxprinting.org/show_printer.cgi?recnum=HP-DeskJet_695C\\%0a%3c DeskJet 820C\\%0a%3c http://www.linuxprinting.org/show_printer.cgi?recnum=HP-DeskJet_820C\\%0a%3c DeskJet 870C\\%0a%3c http://www.linuxprinting.org/show_printer.cgi?recnum=HP-DeskJet_870C%0a%3c %0a%3c %0a%3c Impressoras visualmente ok...não foi feito teste de impressão nelas.\\%0a%3c 8 sem fonte\\%0a%3c 5 que somente cabo de 3 pino de alimentação precisa para alimentação.%0a%3c %0a%3c %0a%3c 5 Impressoras estão detonadas.%0a\ No newline at end of file%0a
+host:1187390518=189.5.47.137

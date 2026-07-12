@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Debianlennyltsp42ViaRede — LTSP</title>
+<link rel="stylesheet" href="/css/bootstrap.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+body{background:#f5f5f5;font-family:'Poppins',sans-serif;}
+.ltsp-header{background:#1a237e;color:#fff;padding:20px 0;}
+.ltsp-header h1{margin:0;font-size:1.5rem;}
+.ltsp-sidebar{background:#fff;border-right:1px solid #e0e0e0;padding:20px;min-height:calc(100vh - 120px);font-size:0.9rem;}
+.ltsp-sidebar ul{list-style:none;padding:0;margin:0;}
+.ltsp-sidebar li{margin-bottom:6px;}
+.ltsp-sidebar a{color:#333;text-decoration:none;}
+.ltsp-sidebar a:hover{color:#1a237e;text-decoration:underline;}
+.ltsp-sidebar .sidehead{font-weight:700;margin-top:16px;margin-bottom:8px;font-size:0.85rem;text-transform:uppercase;color:#1a237e;}
+.ltsp-content{background:#fff;padding:30px;min-height:calc(100vh - 120px);}
+.ltsp-content h2{color:#1a237e;margin-top:24px;margin-bottom:12px;font-size:1.4rem;}
+.ltsp-content h3{color:#333;margin-top:20px;margin-bottom:10px;font-size:1.2rem;}
+.ltsp-content p{margin-bottom:12px;line-height:1.6;}
+.ltsp-content pre{background:#f5f5f5;border:1px solid #e0e0e0;padding:12px;overflow-x:auto;font-size:0.85rem;border-radius:4px;}
+.ltsp-content code{background:#f5f5f5;padding:2px 6px;font-size:0.85rem;border-radius:3px;}
+.ltsp-content ul{margin-bottom:12px;padding-left:20px;}
+.ltsp-content li{margin-bottom:4px;}
+.ltsp-breadcrumb{font-size:0.85rem;color:#666;margin-bottom:16px;}
+.ltsp-breadcrumb a{color:#1a237e;}
+.ltsp-content hr{margin:24px 0;border:0;border-top:1px solid #e0e0e0;}
+</style>
+</head>
+<body>
+<div class="ltsp-header">
+<div class="container">
+<div class="row align-items-center">
+<div class="col"><a href="/ltsp/" style="color:#fff;text-decoration:none"><h1>LTSP · Documentação em português</h1></a></div>
+<div class="col-auto"><a href="/" class="text-white-50 text-decoration-none">← Voltar ao currículo</a></div>
+</div></div></div>
+<div class="container"><div class="row">
+<div class="col-md-3"><div class="ltsp-sidebar"><ul><li><a href="/ltsp/">Página Inicial</a></li></ul></ul><div class="sidehead"><strong>Debian</strong></div><ul><li><a href="http://www.ltsp.org" target="_blank" rel="noopener">LTSP</a></li></ul><ul><li><a href="http://debian.org" target="_blank" rel="noopener">Debian</a></li></ul><ul><li><a href="https://www.ubuntu.com" target="_blank" rel="noopener">Ubuntu</a></li></ul></div></div>
+<div class="col-md-9"><div class="ltsp-content">
+<div class="ltsp-breadcrumb"><a href="/ltsp/">LTSP</a> &raquo; Main</div>
+<p>Para o funcionamento do LTSP, é preciso alguns programas.\\</p>
+<p><strong># apt-get install dhcp3-server tftpd-hpa portmap nfs-kernel-server</strong></p>
+<p>Pra usar o ltsp-utils instalar bibliotecas do perl\\</p>
+<p><strong># apt-get install libwww-perl libhtml-parser-perl libhtml-tagset-perl libhtml-tree-perl liburi-perl</strong></p>
+<p>Caso onde esteja a internet veja muito ruim de velocidade, aqui vai os pacotes .deb utilizados na instalação.\\</p>
+<p>'''[@</p>
+<p># wget http://idsorocaba.batemacumba.net/debian_lenny_pacotes_deb/pacotes_deb_ltsp42_lenny.tar.gz</p>
+<p># tar zxvf pacotes_deb_ltsp42_lenny.tar.gz</p>
+<p># dpkg -i *.deb</p>
+<p>@]'''</p>
+<p>Vamos instalar o ltsp-utils, com ele instalamos e configuramos o LTSP 4.2.\\</p>
+<p>http://ltsp.mirrors.tds.net/pub/ltsp/utils/ ou\\</p>
+<p>http://idsorocaba.batemacumba.net/ltsp/utils/\\</p>
+<pre># wget http://ltsp.mirrors.tds.net/pub/ltsp/utils/ltsp-utils-0.25-0.tgz
+# tar xvf ltsp-utils-0.25-0.tgz
+# cd ltsp-utils
+# sh install.sh 
+Installing ltspadmin
+Installing ltspcfg
+Installing ltspinfo
+
+Installation of ltsp-utils complete</pre>
+<p>No Debian Lenny o pacote <strong>ltsp-utils</strong> não é mais oficial, por isso pegar o fonte para instalar.</p>
+<hr>
+<p>Abra o <strong>#ltspadmin</strong></p>
+<p>http://idsorocaba.batemacumba.net/imagens_debian_lenny/ltspadmin_conf_install.png</p>
+<p>Na tela do ltspadmin vamos primeiro em <strong>Configure the installer options</strong></p>
+<p>Em <strong>Where to retrieve packages from?</strong> vamos manter como esta:\\</p>
+<p><strong>[=http://ltsp.mirrors.tds.net/pub/ltsp/ltsp-4.2/=]</strong></p>
+<p>na opção abaixo '''In which directory would you like to place the LTSP client tree?\\</p>
+<p>[/opt/ltsp]'''\\</p>
+<p>Indicado manter o padrão e pra outras pode deixar em branco e dar enter.\\</p>
+<p>http://idsorocaba.batemacumba.net/imagens_debian_lenny/via_rede/ltspadmin_conf_install-feito.png</p>
+<p>Como agora estamos mantendo tudo como veio no ltsp-utils, sem alterar caminhos de instalação, já estamos pontos, vamos instalar.</p>
+<p>Para instalar vamos em <strong>Install/Update LTSP Packages</strong>\\</p>
+<p>Pela opção agora usar o endereço de internet, ele vai se conectar ao endereço...\\</p>
+<p>http://idsorocaba.batemacumba.net/imagens_debian_lenny/via_rede/ltspadmin-recebendo-servidor.png\\</p>
+<p>para receber a lista de pacotes do LTSP 4.2\\</p>
+<p>http://idsorocaba.batemacumba.net/imagens_debian_lenny/via_rede/ltspadmin-pacotes-mostrados.png</p>
+<p>Tecle <strong>A</strong> para selecionar todos arquivos para instalação\\</p>
+<p>http://idsorocaba.batemacumba.net/imagens_debian_lenny/via_rede/ltspadmin-pacotes-selecionados.png</p>
+<p>e <strong>Q</strong> para começar o Download\\</p>
+<p>http://idsorocaba.batemacumba.net/imagens_debian_lenny/via_rede/ltspadmin-pacotes-sem-baixados.png\\</p>
+<p>Veja que agora acontece o Download de todos os pacotes que estão no site. Vai demorar se tiver uma internet/rede lenta.</p>
+<p>Vai baixar e instalar, no final tecle <strong>Enter</strong> para continuar</p>
+<hr>
+<p>Com LTSP já instalado, falta somente configurar, <strong><em>a configuração do LTSP4.2 instalado via rede é quase a mesma do <a href="/ltsp/Main.DebianLennyLtsp42.html">LTSP 4.2 instalado usando uma ISO (um arquivo .iso).</a></strong></em></p>
+<p>Vai somente mudar o passo 3\\</p>
+<p>http://idsorocaba.batemacumba.net/imagens_debian_lenny/ltspcfg-c.png\\</p>
+<p><strong>3 - DHCP configuration</strong>\\</p>
+<p>que vamos poder utilizar outras versões do kernel que vai para os terminais.</p>
+<p><strong>3 - DHCP configuration</strong>\\</p>
+<p>aqui criei o arquivo dhcpd.conf\\</p>
+<p>Do you want to build a dhcpd.conf file (y/n) ? <strong>Y</strong></p>
+<p>em outro Terminal/Aba faça\\</p>
+<p><strong>#mv /etc/dhcp3/dhcpd.conf.sample /etc/dhcp3/dhcpd.conf</strong></p>
+<p>E agora edite o dhcpd.conf\\</p>
+<p><strong>#nano /etc/dhcp3/dhcpd.conf</strong></p>
+<p>e procure por:</p>
+<pre>option domain-name            &quot;your_domain.org&quot;;   # You really should fix this</pre>
+<p>e coloque o domínio da sua rede.\\</p>
+<p>Sugestão usar "ltsp"</p>
+<pre>option domain-name            &quot;ltsp&quot;;   # You really should fix this</pre>
+<p>procure a linha - subnet 192.168.0.0 netmask 255.255.255.0</p>
+<pre> subnet 192.168.0.0 netmask 255.255.255.0 {
+ range 192.168.0.100 192.168.0.199;
+ if substring (option vendor-class-identifier, 0, 9) = &quot;PXEClient&quot; {
+ filename &quot;/lts/2.6.16.1-ltsp-1/pxelinux.0&quot;;
+ }
+ else{
+ filename &quot;/lts/vmlinuz-2.6.16.1-ltsp-1&quot;;
+ }
+ }</pre>
+<p>Verifica se esta com o ip de sua rede configurada na eth1.</p>
+<p>Em um Terminal/Aba execute: <strong>ls /tftpboot/lts</strong> e veja o retorno.</p>
+<pre># ls /tftpboot/lts/
+2.6.16.1-ltsp-2  2.6.20.9-ltsp-1          vmlinuz-2.6.17.8-ltsp-1
+2.6.17.8-ltsp-1  vmlinuz-2.6.16.1-ltsp-2  vmlinuz-2.6.20.9-ltsp-1</pre>
+<p>Temos assim 3 versões para usar.\\</p>
+<p>Versão 1 - <strong>2.6.16.1-ltsp-2</strong>\\</p>
+<p>Versão 2 - <strong>2.6.17.8-ltsp-1</strong>\\</p>
+<p>Versão 3 - <strong>2.6.20.9-ltsp-1</strong></p>
+<p>No dhcpd.conf criado esta escrito a versão - 2.6.16.1-ltsp-1 - só que LTSP tem instalado a: 2.6.16.1-ltsp-<strong>2</strong>.\\</p>
+<p>Mude para <strong>2.6.16.1-ltsp-2</strong> e o LTSP já vai funcionar, ou pode escolher usar a também: <strong>2.6.17.8-ltsp-1</strong> ou <strong>2.6.20.9-ltsp-1</strong></p>
+<p>Agora faça as mudanças no <strong>option domain-name</strong>, <strong>subnet</strong> e no <strong>filename</strong> -, o dhcp.conf deve ficar assim.</p>
+<pre># dhcpd.conf
+
+ ddns-update-style ad-hoc;
+
+ option subnet-mask 255.255.255.0;
+ option broadcast-address 192.168.20.255;
+ option routers 192.168.20.1;
+ option domain-name-servers 192.168.20.1;
+ option domain-name &quot;ltsp&quot;; # You really should fix this
+ option option-128 code 128 = string;
+ option option-129 code 129 = text;
+
+
+ get-lease-hostnames true;
+
+ next-server 192.168.20.1;
+ option root-path &quot;192.168.20.1:/opt/ltsp/i386&quot;;
+
+ subnet 192.168.20.0 netmask 255.255.255.0 {
+ range 192.168.20.100 192.168.20.110;
+ if substring (option vendor-class-identifier, 0, 9) = &quot;PXEClient&quot; {
+ filename &quot;/lts/2.6.16.1-ltsp-2/pxelinux.0&quot;;
+ }
+ else{
+ filename &quot;/lts/vmlinuz-2.6.16.1-ltsp-2&quot;;
+ }
+ }
+#
+# If you need to pass parameters on the kernel command line, you can
+# do it with option-129. In order for Etherboot to look at option-129,
+# you MUST have option-128 set to a specific value. The value is a
+# special Etherboot signature of &#x27;e4:45:74:68:00:00&#x27;.
+#
+# Add these two lines to the host entry that needs kernel parameters
+#
+# option option-128 e4:45:74:68:00:00; # NOT a mac address
+# option option-129 &quot;NIC=ne IO=0x300&quot;;
+#</pre>
+<p>Feito tudo...execute.\\</p>
+<p><strong>#/etc/init.d/dhcp3-server restart</strong></p>
+<pre># /etc/init.d/dhcp3-server restart
+Stopping DHCP server: dhcpd3 failed!
+Starting DHCP server: dhcpd3.</pre>
+<p>dhcp3-server ligou corretamente.</p>
+<p>Siga todos os passos da instalação feito com ISO do LTSP e no final reinicie a maquina e faça os teste nos terminais.</p>
+</div></div></div></div>
+<script src="/js/bootstrap.bundle.min.js"></script>
+</body></html>

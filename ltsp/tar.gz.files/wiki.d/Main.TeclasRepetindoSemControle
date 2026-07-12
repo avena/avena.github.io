@@ -1,0 +1,14 @@
+version=pmwiki-2.1.27 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (X11; U; Linux i686; pt-BR; rv:1.8.1.6) Gecko/20070723 Iceweasel/2.0.0.6 (Debian-2.0.0.6-0etch1)
+author=Avena
+csum=
+ctime=1193450071
+host=189.5.57.238
+name=Main.TeclasRepetindoSemControle
+rev=1
+targets=
+text=Caso você tenha um terminal que carrega o ltsp, aparece a tela de login e parece estar tudo ok, mas ao digitar uma letra somente uma vez ela se repete muito mais.%0a%0aTipo digita somente uma vez a letra '''a''', mas aparece '''aaaaaa''' para controlar isso faça o seguinte.%0a%0aAbra o '''nano /etc/dhcp3/dhcpd.conf'''%0a[@host ws150 {                                      # escolha um host para o terminal%0a       hardware ethernet     00:08:C7:4B:FC:CD;     # mude para o Mac Address da placa de rede do terminal%0a       fixed-address         192.168.20.150;        # defina um ip fixo para este terminal.%0a       option option-128     e4:45:74:68:00:00;     # não mude essa linha...isso não é um mac%0a       option option-129     "acpi=off";            # evita disparo de letras.%0a       filename              "/lts/vmlinuz-2.6.17.3-ltsp-1";%0a}@]
+time=1193450071
+author:1193450071=Avena
+diff:1193450071:1193450071:=1,12d0%0a%3c Caso você tenha um terminal que carrega o ltsp, aparece a tela de login e parece estar tudo ok, mas ao digitar uma letra somente uma vez ela se repete muito mais.%0a%3c %0a%3c Tipo digita somente uma vez a letra '''a''', mas aparece '''aaaaaa''' para controlar isso faça o seguinte.%0a%3c %0a%3c Abra o '''nano /etc/dhcp3/dhcpd.conf'''%0a%3c [@host ws150 {                                      # escolha um host para o terminal%0a%3c        hardware ethernet     00:08:C7:4B:FC:CD;     # mude para o Mac Address da placa de rede do terminal%0a%3c        fixed-address         192.168.20.150;        # defina um ip fixo para este terminal.%0a%3c        option option-128     e4:45:74:68:00:00;     # não mude essa linha...isso não é um mac%0a%3c        option option-129     "acpi=off";            # evita disparo de letras.%0a%3c        filename              "/lts/vmlinuz-2.6.17.3-ltsp-1";%0a%3c }@]%0a\ No newline at end of file%0a
+host:1193450071=189.5.57.238

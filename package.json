@@ -3,15 +3,20 @@
   "version": "1.0.0",
   "description": "Starter template for Bootstrap Websites",
   "main": "index.js",
-  "scripts": {
-    "sass:build": "sass --no-source-map scss:css",
-    "sass:watch": "sass --no-source-map --watch scss:css"
-  },
   "author": "",
   "license": "ISC",
+  "scripts": {
+    "sass:build": "sass --no-source-map scss:css",
+    "sass:watch": "sass --no-source-map --watch scss:css",
+    "start": "browser-sync start --server --port 3000 --files=\"css/*.css, *.html\" --no-notify",
+    "watch": "npm run sass:watch & browser-sync start --server --port 3000 --files=\"css/*.css, *.html\" --no-notify"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^7.2.0",
     "bootstrap": "^5.3.8",
     "sass": "^1.97.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^3.0.0"
   }
 }

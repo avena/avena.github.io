@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>ConfiguracaoLtsConf — LTSP</title>
+<link rel="stylesheet" href="/css/bootstrap.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+body{background:#f5f5f5;font-family:'Poppins',sans-serif;}
+.ltsp-header{background:#1a237e;color:#fff;padding:20px 0;}
+.ltsp-header h1{margin:0;font-size:1.5rem;}
+.ltsp-sidebar{background:#fff;border-right:1px solid #e0e0e0;padding:20px;min-height:calc(100vh - 120px);font-size:0.9rem;}
+.ltsp-sidebar ul{list-style:none;padding:0;margin:0;}
+.ltsp-sidebar li{margin-bottom:6px;}
+.ltsp-sidebar a{color:#333;text-decoration:none;}
+.ltsp-sidebar a:hover{color:#1a237e;text-decoration:underline;}
+.ltsp-sidebar .sidehead{font-weight:700;margin-top:16px;margin-bottom:8px;font-size:0.85rem;text-transform:uppercase;color:#1a237e;}
+.ltsp-content{background:#fff;padding:30px;min-height:calc(100vh - 120px);}
+.ltsp-content h2{color:#1a237e;margin-top:24px;margin-bottom:12px;font-size:1.4rem;}
+.ltsp-content h3{color:#333;margin-top:20px;margin-bottom:10px;font-size:1.2rem;}
+.ltsp-content p{margin-bottom:12px;line-height:1.6;}
+.ltsp-content pre{background:#f5f5f5;border:1px solid #e0e0e0;padding:12px;overflow-x:auto;font-size:0.85rem;border-radius:4px;}
+.ltsp-content code{background:#f5f5f5;padding:2px 6px;font-size:0.85rem;border-radius:3px;}
+.ltsp-content ul{margin-bottom:12px;padding-left:20px;}
+.ltsp-content li{margin-bottom:4px;}
+.ltsp-breadcrumb{font-size:0.85rem;color:#666;margin-bottom:16px;}
+.ltsp-breadcrumb a{color:#1a237e;}
+.ltsp-content hr{margin:24px 0;border:0;border-top:1px solid #e0e0e0;}
+</style>
+</head>
+<body>
+<div class="ltsp-header">
+<div class="container">
+<div class="row align-items-center">
+<div class="col"><a href="/ltsp/" style="color:#fff;text-decoration:none"><h1>LTSP · Documentação em português</h1></a></div>
+<div class="col-auto"><a href="/" class="text-white-50 text-decoration-none">← Voltar ao currículo</a></div>
+</div></div></div>
+<div class="container"><div class="row">
+<div class="col-md-3"><div class="ltsp-sidebar"><ul><li><a href="/ltsp/">Página Inicial</a></li></ul></ul><div class="sidehead"><strong>Debian</strong></div><ul><li><a href="http://www.ltsp.org" target="_blank" rel="noopener">LTSP</a></li></ul><ul><li><a href="http://debian.org" target="_blank" rel="noopener">Debian</a></li></ul><ul><li><a href="https://www.ubuntu.com" target="_blank" rel="noopener">Ubuntu</a></li></ul></div></div>
+<div class="col-md-9"><div class="ltsp-content">
+<div class="ltsp-breadcrumb"><a href="/ltsp/">LTSP</a> &raquo; Main</div>
+<p>Entendo melhor a Configuração ....e coisa esta ficando mais bonita e limpa.</p>
+<p><strong>/opt/ltsp/i386/etc/lts.conf</strong></p>
+<pre>#        X_MOUSE_PROTOCOL   = &quot;PS/2&quot;
+#        X_MOUSE_PROTOCOL   = &quot;ImPS/2&quot;
+#        X_MOUSE_DEVICE     = &quot;/dev/psaux&quot;
+#
+# !!! AVISO!!!
+# Teste de configuracao feita em micro com resolucação de 1280x1024 = isso pode estar prejudicando os teste nos terminais.
+#
+# Manual ver:
+# /opt/ltsp/i386/etc/lts.conf.readme
+
+[Default]
+        SERVER             = 192.168.20.1
+        XSERVER            = vesa
+        X_MOUSE_PROTOCOL   = &quot;Microsoft&quot;
+        X_MOUSE_DEVICE     = &quot;/dev/ttyS0&quot;
+        X_VERTREFRESH      = &quot;60&quot;
+        USE_XFS            = N
+        XkbRules           = all
+        XkbModel           = abnt2
+        XkbLayout          = br
+        SCREEN_01          = startx
+        SCREEN_02          = shell
+
+#mouse com scroll
+[Scroll]
+        X_MOUSE_PROTOCOL = ImPS/2
+        X_MOUSE_BUTTONS  = 5
+        X_ZAxisMapping   = &quot;4 5&quot;
+
+# p180mhz com 32mb ram (tinha 64mb...32mb passo para terminal acima=ws110)
+# esta lindo com 1024x768 -placa video sis -offboard
+[ws105.ltsp]
+       X_COLOR_DEPTH      = 24
+
+#****** inico da area pc100+video tridente+32mb ram = drive vesa+800x600  ****
+#****** tinham 16mb... levar todos ate 32mb ram                           ****
+
+[ws110.ltsp]
+       XSERVER            = vesa
+
+[ws111.ltsp]
+       XSERVER            = vesa
+
+# pc100 com realtek8139 - 16mb e 800x600
+# memoria com paridade
+# mas levar ate 32mb ram..pois somente com 16mb o X trava
+[ws112.ltsp]
+       XSERVER            = vesa
+
+# ****** fim da area de pc100 com trident *****
+#
+# 55 fica com onda...60 fica onda tambem...conf no setup bios
+# com 55 ele sobe ate 1152x768 - com 60 nao
+[ws120.ltsp]
+       X_VERTREFRESH      = 55
+       X_MODE_0           = 1024x768
+</pre>
+<p><strong>/etc/dhcp3/dhcpd.conf</strong></p>
+<pre># RealTek 8139A do 180mhz com 32mb ram (tinha 64mb....32mb foi um p100mhz)
+host ws105 {
+       hardware ethernet     00:E0:7D:80:25:39;
+       fixed-address         192.168.20.105;
+       filename              &quot;/lts/vmlinuz-2.6.17.3-ltsp-1&quot;;
+}
+
+# Realtek 8029 pc100 usando VESA=800x600 16bits
+host ws110 {
+       hardware ethernet     00:E0:4C:DD:3B:0E;
+       fixed-address         192.168.20.110;
+       filename              &quot;/lts/vmlinuz-2.6.17.3-ltsp-1&quot;;
+}
+
+# outro pc100 com video=trident - usa VESA fica 800x600
+host ws111 {
+       hardware ethernet     00:80:AD:41:84:31;
+       fixed-address         192.168.20.111;
+       filename              &quot;/lts/vmlinuz-2.6.17.3-ltsp-1&quot;;
+}
+
+# pc100 com realtek8139 - com 16mb ficou em 800x600
+# memoria com paridade.
+host ws112 {
+       hardware ethernet     00:E0:7D:81:77:8D;
+       fixed-address         192.168.20.112;
+       filename              &quot;/lts/vmlinuz-2.6.17.3-ltsp-1&quot;;
+}
+
+# sis onboard - tinha que compartilhar mais memoria no setup para placa de video=1024x768
+host ws120 {
+       hardware ethernet     00:02:44:36:53:D8;
+       fixed-address         192.168.20.120;
+       filename              &quot;/lts/vmlinuz-2.6.17.3-ltsp-1&quot;;
+}
+
+# 486 de casa - maquina de teste :)
+host ws150 {
+       hardware ethernet     00:08:C7:4B:FC:CD;
+       fixed-address         192.168.20.150;
+       option option-128     e4:45:74:68:00:00;  # teclado ps/2
+       option option-129     &quot;acpi=off&quot;;      #teclado ps/2..evita disparo de letras.
+       filename              &quot;/lts/vmlinuz-2.6.17.3-ltsp-1&quot;;
+}</pre>
+<p>Cores e Placa de Video Trident PCI\\</p>
+<p>Se placa de vídeo for trident e micro tiver boa configuração - p200mhz + 32mb ram vai poder trabalhar por padrão com 1024x768 e 16bits=65 mil cores.</p>
+<p>Para este mesmo terminal, trabalhar com 24bits=16 milhões cores, faça um configuração a parte para maquina e use:\\</p>
+<p>[@       XSERVER            = vesa@]</p>
+<p>Ver quais resoluções de tela a placa suporta. no Terminal Leve, faça login no X e abra um Terminal e execute:\\</p>
+<p>[@$xrandr@]</p>
+<p>Mais tarde melhorar/deixar mais limpa o arquivo lts.conf - com o LIKE\\</p>
+<p>Micros pc100 com placas trident (usando drive vesa) fazer um LIKE para isso.</p>
+<pre># LIKE = section name
+#     Allow sections to inherit the settings from other sections.
+#
+#     added in ltsp 4.0
+#
+#     Here is an example where you have several HP Vectras and several Dell
+#     Dimension PCs that you are using:
+#
+#          [Vectra]
+#              X_MOUSE_DEVICE   = /dev/ttyS0
+#              X_MOUSE_PROTOCOL = Microsoft
+#
+#          [Dimension]
+#              X_MOUSE_DEVICE   = /dev/psaux
+#              X_MOUSE_PROTOCOL = IMPS/2
+#
+#          [ws001] LIKE = Vectra
+#
+#          [ws002] LIKE = Vectra
+#
+#          [ws003] LIKE = Vectra
+#
+#          [ws004] LIKE = Dimension
+#
+#          [ws005]
+#              LIKE               = Dimension
+#              PRINTER_0_DEVICE   = /dev/ttyS1
+#              PRINTER_0_TYPE     = S
+#
+#          [ws006] LIKE = Dimension
+#
+#     Notice that ws005 inherits from Dimension, but also includes a local
+#     printer.</pre>
+<p>'''Documentação muito boa sobre Video cards\\</p>
+<p>http://wiki.ltsp.org/twiki/bin/view/Ltsp/VideoCards'''</p>
+</div></div></div></div>
+<script src="/js/bootstrap.bundle.min.js"></script>
+</body></html>

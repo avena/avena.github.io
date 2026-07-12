@@ -11,7 +11,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0, 0, 0, 0.7);
 }
 
 .header .text-container {
@@ -22,8 +22,156 @@
   font-family: 'lora-regular', serif;
 }
 
-.header .social {
-  bottom: 50px;
+.navbar {
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  padding: 12px 0;
+}
+
+.navbar .nav-link {
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 8px 14px !important;
+  transition: color 0.2s;
+}
+
+.navbar .nav-link:hover {
+  color: var(--bs-primary) !important;
+}
+
+.language-switch a {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.language-switch a:hover,
+.language-switch a.active {
+  color: #fff;
+}
+
+.services-section .card:hover,
+.skills-section .card:hover,
+.projects-section .card:hover {
+  transform: translateY(-4px);
+  transition: all 0.3s ease;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1) !important;
+}
+
+.step-number {
+  font-family: 'Lora', serif;
+  opacity: 0.3;
+}
+
+.timeline {
+  position: relative;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--bs-primary);
+  opacity: 0.3;
+}
+
+.timeline-card {
+  position: relative;
+  padding-left: 45px;
+  margin-bottom: 2rem;
+}
+
+.timeline-card:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 9px;
+  top: 24px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--bs-primary);
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 2px var(--bs-primary);
+  z-index: 1;
+}
+
+.timeline-card .card {
+  border-left: 4px solid var(--bs-primary) !important;
+  transition: all 0.3s ease;
+}
+
+.timeline-card .card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1) !important;
+}
+
+.timeline-card .card ul {
+  padding-left: 1.2rem;
+  font-size: 0.9rem;
+}
+
+.timeline-card .card ul li {
+  margin-bottom: 0.3rem;
+  line-height: 1.5;
+}
+
+.timeline-card .badge {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 576px) {
+  .timeline-card {
+    padding-left: 35px;
+  }
+  .timeline::before {
+    left: 10px;
+  }
+  .timeline-dot {
+    left: 4px;
+  }
+}
+
+section {
+  padding: 80px 0;
+}
+
+section h2 {
+  font-family: 'Lora', serif;
+  font-weight: 600;
+}
+
+.btn-primary {
+  background: var(--bs-primary);
+  border: none;
+  padding: 10px 28px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.btn-outline-light {
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.contact-section {
+  background: linear-gradient(135deg, #151515 0%, #2a2a2a 100%);
+}
+
+.footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .about-img {
@@ -49,17 +197,17 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0, 0, 0, 0.7);
 }
 
 .services .container {
   z-index: 10;
 }
 
-@media(max-width: 767px) {
- .header .social i {
+@media (max-width: 767px) {
+  .header .social i {
     font-size: 30px;
-  } 
+  }
 
   .header .roles {
     font-size: 18px !important;
@@ -75,6 +223,4 @@
     border-bottom: var(--bs-dark) solid 1px;
     padding-bottom: 20px;
   }
-
-
 }

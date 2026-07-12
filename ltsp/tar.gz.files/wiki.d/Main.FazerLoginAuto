@@ -1,0 +1,23 @@
+version=pmwiki-2.1.27 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (X11; U; Linux i686; pt-BR; rv:1.8.1.6) Gecko/20070723 Iceweasel/2.0.0.6 (Debian-2.0.0.6-0etch1)
+author=Avena
+csum=
+ctime=1192053533
+host=189.5.45.248
+name=Main.FazerLoginAuto
+rev=4
+targets=
+text=Cada Terminal entrar auto em um usuário diferente direto. Sem ter que esperar.\\%0aO que chega mais proximo ao ideal é:%0a'''Autologin with KDM'''\\%0ahttp://ltsp.sourceforge.net/contrib/autologin_kdm.html%0a%0aHow to Enable Automatic Login on Linux\\%0ahttp://www.linfo.org/automatic_login.html%0a%0aAuto login in gdm?\\%0ahttp://lists.freebsd.org/pipermail/freebsd-gnome/2004-April/006029.html%0a%0aGDM AutoLogin\\%0ahttp://www.perturb.org/display/entry/812/%0a%0aMais dúvidas e exemplos práticos\\%0ahttp://www.guiadohardware.net/tutoriais/tutorial-configuracao-kurumin-terminal-server/%0a%0aBuilding X terminals with Linux\\%0ahttp://development.gbdirect.co.uk/xterminal.html
+time=1192132465
+author:1192132465=Avena
+diff:1192132465:1192055763:=0a1,6%0a> Ate o momento foi habilitar:%0a> http://idsorocaba.ourproject.org/anexo/login-auto-gdmsetup-seguranca.png%0a> com isso o Terminal liga e se não apertar nada do teclado em 6 segundo ele entra auto no usuário ''teste''...se apertar alguma tecla ou for selecionado outro usuário, muda o tempo para 30segundos.\\%0a> Passados os 30 segundos, entra no usuário teste.%0a> %0a> ToDo\\%0a
+host:1192132465=189.5.45.248
+author:1192055763=Avena
+diff:1192055763:1192053551:=1,9c1,3%0a%3c Ate o momento foi habilitar:%0a%3c http://idsorocaba.ourproject.org/anexo/login-auto-gdmsetup-seguranca.png%0a%3c com isso o Terminal liga e se não apertar nada do teclado em 6 segundo ele entra auto no usuário ''teste''...se apertar alguma tecla ou for selecionado outro usuário, muda o tempo para 30segundos.\\%0a%3c Passados os 30 segundos, entra no usuário teste.%0a%3c %0a%3c ToDo\\%0a%3c Cada Terminal entrar auto em um usuário diferente direto. Sem ter que esperar.\\%0a%3c O que chega mais proximo ao ideal é:%0a%3c '''Autologin with KDM'''\\%0a---%0a> http://www.gnome.org/projects/gdm/docs.html%0a> %0a> Autologin with KDM\\%0a
+host:1192055763=189.5.45.248
+author:1192053551=Avena
+diff:1192053551:1192053533:=18c18%0a%3c Building X terminals with Linux\\%0a---%0a> Building X terminals with Linux%0a
+host:1192053551=189.5.45.248
+author:1192053533=Avena
+diff:1192053533:1192053533:=1,19d0%0a%3c http://www.gnome.org/projects/gdm/docs.html%0a%3c %0a%3c Autologin with KDM\\%0a%3c http://ltsp.sourceforge.net/contrib/autologin_kdm.html%0a%3c %0a%3c How to Enable Automatic Login on Linux\\%0a%3c http://www.linfo.org/automatic_login.html%0a%3c %0a%3c Auto login in gdm?\\%0a%3c http://lists.freebsd.org/pipermail/freebsd-gnome/2004-April/006029.html%0a%3c %0a%3c GDM AutoLogin\\%0a%3c http://www.perturb.org/display/entry/812/%0a%3c %0a%3c Mais dúvidas e exemplos práticos\\%0a%3c http://www.guiadohardware.net/tutoriais/tutorial-configuracao-kurumin-terminal-server/%0a%3c %0a%3c Building X terminals with Linux%0a%3c http://development.gbdirect.co.uk/xterminal.html%0a\ No newline at end of file%0a
+host:1192053533=189.5.45.248

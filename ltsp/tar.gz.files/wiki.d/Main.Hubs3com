@@ -1,0 +1,14 @@
+version=pmwiki-2.1.27 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (X11; U; Linux i686; pt-BR;MEGAUPLOAD 1.0; rv:1.8.1.5) Gecko/20070719 Iceweasel/2.0.0.5 (Debian-2.0.0.5-0etch1)
+author=
+csum=
+ctime=1185455654
+host=189.5.42.237
+name=Main.Hubs3com
+rev=1
+targets=
+text=Os 4 Hubs estão ok\\%0a1 dos Hub esta somente com porta12 com problema.%0a%0aCada Hub tem 12portas.\\%0aPara ter 24portas, será preciso ligar dois Hub em conjunto... para isso use um Cabo [[http://pt.wikipedia.org/wiki/Crossover_%2528redes_de_computadores%2529|Crossover]]\\%0a[@Servidor com LTSP ----ligado---> Hub1 ----uma porta do Hub1 com cabo crossover ligado----> Hub2@]\\%0aAssim é possível ligar 22 Terminais Leves.
+time=1185455654
+author:1185455654=
+diff:1185455654:1185455654:=1,7d0%0a%3c Os 4 Hubs estão ok\\%0a%3c 1 dos Hub esta somente com porta12 com problema.%0a%3c %0a%3c Cada Hub tem 12portas.\\%0a%3c Para ter 24portas, será preciso ligar dois Hub em conjunto... para isso use um Cabo [[http://pt.wikipedia.org/wiki/Crossover_%2528redes_de_computadores%2529|Crossover]]\\%0a%3c [@Servidor com LTSP ----ligado---> Hub1 ----uma porta do Hub1 com cabo crossover ligado----> Hub2@]\\%0a%3c Assim é possível ligar 22 Terminais Leves.%0a\ No newline at end of file%0a
+host:1185455654=189.5.42.237

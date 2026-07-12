@@ -1,0 +1,30 @@
+version=pmwiki-2.2.113 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:65.0) Gecko/20100101 Firefox/65.0
+author=
+charset=ISO-8859-1
+csum=
+ctime=1418759176
+host=186.207.75.102
+name=Main.SourcesListWheezy
+rev=6
+targets=
+text=Editar o sources.list com Gedit\\%0a[@gedit /etc/apt/sources.list@]%0a%0a[@%0a# Line commented out by installer because it failed to verify:%0adeb http://security.debian.org/ wheezy/updates main %0a# Line commented out by installer because it failed to verify:%0a# deb-src http://security.debian.org/ wheezy/updates main %0a%0a# wheezy-updates, previously known as 'volatile'%0a# A network mirror was not selected during install.  The following entries%0a# are provided as examples, but you should amend them as appropriate%0a# for your mirror of choice.%0a%0adeb http://ftp.debian.org/debian/ wheezy-updates main %0a# deb-src http://ftp.debian.org/debian/ wheezy-updates main %0a%0a%0a#debian%0a# deb http://http.us.debian.org/debian/ wheezy main contrib non-free%0a# deb ftp://mirrors.kernel.org/debian/ wheezy main contrib non-free%0a# deb http://download.unesp.br/linux/debian/ wheezy main contrib non-free%0adeb http://ftp.br.debian.org/debian/ wheezy main contrib non-free%0adeb-src http://ftp.br.debian.org/debian/ wheezy main contrib non-free%0a%0a#som video%0a#deb http://www.deb-multimedia.org wheezy main non-free%0a#deb http://www.deb-multimedia.org wheezy-backports main%0a#deb http://linorg.usp.br/debian-marillat/ wheezy main non-free%0a#deb-src http://linorg.usp.br/debian-marillat/ wheezy main non-free%0adeb ftp://ftp.br.debian.org/debian-multimedia wheezy main non-free%0adeb-src ftp://ftp.br.debian.org/debian-multimedia wheezy main non-free%0adeb ftp://ftp.br.debian.org/debian-multimedia wheezy-backports main%0a%0a%0a#backports%0a#deb ftp://ftp.br.debian.org/debian wheezy-backports main contrib non-free%0adeb http://linorg.usp.br/debian wheezy-backports main contrib non-free%0a@]%0a%0ae também adicione as chaves%0a[@gpg --keyserver subkeys.pgp.net --recv-keys 07DC563D1F41B907%0agpg --export --armor 07DC563D1F41B907 | apt-key add -%0a@]%0a%0ae termine executando:\\%0a'''apt-get update'''
+time=1554183003
+author:1554183003=
+diff:1554183003:1418760719:=0a1,2%0a> Foi útil, te ajudou ou gostou?? %3cg:plusone size="small">%3c/g:plusone>%0a> %0a
+host:1554183003=186.207.75.102
+author:1418760719=
+diff:1418760719:1418760181:=42a43,45%0a> depois execute:\\%0a> '''apt-get update'''%0a> %0a46,49c49%0a%3c @]%0a%3c %0a%3c e termine executando:\\%0a%3c '''apt-get update'''%0a\ No newline at end of file%0a---%0a> @]%0a\ No newline at end of file%0a
+host:1418760719=177.157.138.74
+author:1418760181=
+diff:1418760181:1418760163:=47c47,49%0a%3c [@gpg --keyserver subkeys.pgp.net --recv-keys 07DC563D1F41B907%0a---%0a> %0a> [@%0a> gpg --keyserver subkeys.pgp.net --recv-keys 07DC563D1F41B907%0a
+host:1418760181=177.157.138.74
+author:1418760163=
+diff:1418760163:1418759413:=46,51c46,47%0a%3c e também adicione as chaves%0a%3c %0a%3c [@%0a%3c gpg --keyserver subkeys.pgp.net --recv-keys 07DC563D1F41B907%0a%3c gpg --export --armor 07DC563D1F41B907 | apt-key add -%0a%3c @]%0a\ No newline at end of file%0a---%0a> e também instale as chaves do endereços\\%0a> '''apt-get install debian-multimedia-keyring debian-keyring'''%0a
+host:1418760163=177.157.138.74
+author:1418759413=
+diff:1418759413:1418759176:=39,40c39,40%0a%3c #deb ftp://ftp.br.debian.org/debian wheezy-backports main contrib non-free%0a%3c deb http://linorg.usp.br/debian wheezy-backports main contrib non-free%0a---%0a> deb ftp://ftp.br.debian.org/debian wheezy-backports main contrib non-free%0a> %0a
+host:1418759413=177.157.138.74
+author:1418759176=
+diff:1418759176:1418759176:=1,47d0%0a%3c Foi útil, te ajudou ou gostou?? %3cg:plusone size="small">%3c/g:plusone>%0a%3c %0a%3c Editar o sources.list com Gedit\\%0a%3c [@gedit /etc/apt/sources.list@]%0a%3c %0a%3c [@%0a%3c # Line commented out by installer because it failed to verify:%0a%3c deb http://security.debian.org/ wheezy/updates main %0a%3c # Line commented out by installer because it failed to verify:%0a%3c # deb-src http://security.debian.org/ wheezy/updates main %0a%3c %0a%3c # wheezy-updates, previously known as 'volatile'%0a%3c # A network mirror was not selected during install.  The following entries%0a%3c # are provided as examples, but you should amend them as appropriate%0a%3c # for your mirror of choice.%0a%3c %0a%3c deb http://ftp.debian.org/debian/ wheezy-updates main %0a%3c # deb-src http://ftp.debian.org/debian/ wheezy-updates main %0a%3c %0a%3c %0a%3c #debian%0a%3c # deb http://http.us.debian.org/debian/ wheezy main contrib non-free%0a%3c # deb ftp://mirrors.kernel.org/debian/ wheezy main contrib non-free%0a%3c # deb http://download.unesp.br/linux/debian/ wheezy main contrib non-free%0a%3c deb http://ftp.br.debian.org/debian/ wheezy main contrib non-free%0a%3c deb-src http://ftp.br.debian.org/debian/ wheezy main contrib non-free%0a%3c %0a%3c #som video%0a%3c #deb http://www.deb-multimedia.org wheezy main non-free%0a%3c #deb http://www.deb-multimedia.org wheezy-backports main%0a%3c #deb http://linorg.usp.br/debian-marillat/ wheezy main non-free%0a%3c #deb-src http://linorg.usp.br/debian-marillat/ wheezy main non-free%0a%3c deb ftp://ftp.br.debian.org/debian-multimedia wheezy main non-free%0a%3c deb-src ftp://ftp.br.debian.org/debian-multimedia wheezy main non-free%0a%3c deb ftp://ftp.br.debian.org/debian-multimedia wheezy-backports main%0a%3c %0a%3c %0a%3c #backports%0a%3c deb ftp://ftp.br.debian.org/debian wheezy-backports main contrib non-free%0a%3c %0a%3c @]%0a%3c %0a%3c depois execute:\\%0a%3c '''apt-get update'''%0a%3c %0a%3c e também instale as chaves do endereços\\%0a%3c '''apt-get install debian-multimedia-keyring debian-keyring'''%0a
+host:1418759176=177.157.138.74

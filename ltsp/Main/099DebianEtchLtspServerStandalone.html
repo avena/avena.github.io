@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>099DebianEtchLtspServerStandalone — LTSP</title>
+<link rel="stylesheet" href="/css/bootstrap.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+body{background:#f5f5f5;font-family:'Poppins',sans-serif;}
+.ltsp-header{background:#1a237e;color:#fff;padding:20px 0;}
+.ltsp-header h1{margin:0;font-size:1.5rem;}
+.ltsp-sidebar{background:#fff;border-right:1px solid #e0e0e0;padding:20px;min-height:calc(100vh - 120px);font-size:0.9rem;}
+.ltsp-sidebar ul{list-style:none;padding:0;margin:0;}
+.ltsp-sidebar li{margin-bottom:6px;}
+.ltsp-sidebar a{color:#333;text-decoration:none;}
+.ltsp-sidebar a:hover{color:#1a237e;text-decoration:underline;}
+.ltsp-sidebar .sidehead{font-weight:700;margin-top:16px;margin-bottom:8px;font-size:0.85rem;text-transform:uppercase;color:#1a237e;}
+.ltsp-content{background:#fff;padding:30px;min-height:calc(100vh - 120px);}
+.ltsp-content h2{color:#1a237e;margin-top:24px;margin-bottom:12px;font-size:1.4rem;}
+.ltsp-content h3{color:#333;margin-top:20px;margin-bottom:10px;font-size:1.2rem;}
+.ltsp-content p{margin-bottom:12px;line-height:1.6;}
+.ltsp-content pre{background:#f5f5f5;border:1px solid #e0e0e0;padding:12px;overflow-x:auto;font-size:0.85rem;border-radius:4px;}
+.ltsp-content code{background:#f5f5f5;padding:2px 6px;font-size:0.85rem;border-radius:3px;}
+.ltsp-content ul{margin-bottom:12px;padding-left:20px;}
+.ltsp-content li{margin-bottom:4px;}
+.ltsp-breadcrumb{font-size:0.85rem;color:#666;margin-bottom:16px;}
+.ltsp-breadcrumb a{color:#1a237e;}
+.ltsp-content hr{margin:24px 0;border:0;border-top:1px solid #e0e0e0;}
+</style>
+</head>
+<body>
+<div class="ltsp-header">
+<div class="container">
+<div class="row align-items-center">
+<div class="col"><a href="/ltsp/" style="color:#fff;text-decoration:none"><h1>LTSP · Documentação em português</h1></a></div>
+<div class="col-auto"><a href="/" class="text-white-50 text-decoration-none">← Voltar ao currículo</a></div>
+</div></div></div>
+<div class="container"><div class="row">
+<div class="col-md-3"><div class="ltsp-sidebar"><ul><li><a href="/ltsp/">Página Inicial</a></li></ul></ul><div class="sidehead"><strong>Debian</strong></div><ul><li><a href="http://www.ltsp.org" target="_blank" rel="noopener">LTSP</a></li></ul><ul><li><a href="http://debian.org" target="_blank" rel="noopener">Debian</a></li></ul><ul><li><a href="https://www.ubuntu.com" target="_blank" rel="noopener">Ubuntu</a></li></ul></div></div>
+<div class="col-md-9"><div class="ltsp-content">
+<div class="ltsp-breadcrumb"><a href="/ltsp/">LTSP</a> &raquo; Main</div>
+<p>Aqui pretendemos fazer via\\</p>
+<p>#apt-get install ltsp-server-standalone openssh-server\\</p>
+<p>#ltsp-build-client - <a href="http://idsorocaba.ourproject.org/anexo/ltsp-build-client-pacotes" target="_blank" rel="noopener">pacotes</a> instalados</p>
+<p>Usando os repositorios do Etch Oficiais\\</p>
+<p>[@deb http://security.debian.org/ etch/updates main contrib</p>
+<p>deb http://ftp.br.debian.org/debian etch main contrib non-free@]</p>
+<p><strong>O que vira o LTSP0.99debian11 - pois no <a href="http://http.us.debian.org/debian/dists/etch/main/binary-i386/" target="_blank" rel="noopener">Packages.gz</a> esta listado o 0.99...mas no repositorio <a href="http://ftp.br.debian.org/debian/pool/main/l/ltsp/" target="_blank" rel="noopener">ltsp</a> se encontra também versões mais novas como a 5.0.39 - ai sim seria ltsp5...ou não? </strong> '+Ver como pegar os pacotes 5.0.XX dos repositorios oficiais.+'</p>
+<p><strong>Documento fonte principal sobre a instalação</strong>\\</p>
+<p><strong>http://wiki.debian.org/LTSP/Howto</strong></p>
+<p>Telas Capturadas\\</p>
+<p>http://idsorocaba.ourproject.org/debian_etch_ltsp_server_standalone/</p>
+<p><strong>Configuração da Placa</strong>\\</p>
+<p>Vamos aqui usar a <strong>eth1</strong>, configuração da eth1 fica deste jeito.</p>
+<p>[@auto eth1</p>
+<p>iface eth1 inet static</p>
+<p>address   192.168.0.1</p>
+<p>netmask   255.255.255.0</p>
+<p>network   192.168.0.0</p>
+<p>broadcast 192.168.0.255@]</p>
+<p>depois execute...\\</p>
+<p><strong>#/etc/init.d/networking restart</strong></p>
+<p><strong>Configuração do DHCP3-Server</strong>\\</p>
+<p>Para configurar o dhcp3-server, usamos o exemplo de configuração que esta:\\</p>
+<p><strong>/etc/ltsp/dhcpd.conf</strong> ou <strong>/usr/share/doc/ltsp-server/examples/dhcpd.conf</strong></p>
+<p>[@authoritative;</p>
+<p>subnet 192.168.0.0 netmask 255.255.255.0 {</p>
+<p>range 192.168.0.20 192.168.0.250;</p>
+<p>option domain-name "example.com";</p>
+<p>option domain-name-servers 192.168.0.1;</p>
+<p>option broadcast-address 192.168.0.255;</p>
+<p>option routers 192.168.0.1;</p>
+<p>option subnet-mask 255.255.255.0;</p>
+<p>if substring( option vendor-class-identifier, 0, 9 ) = "PXEClient" {</p>
+<p>filename "/ltsp/i386/pxelinux.0";</p>
+<p>}</p>
+<p>else{</p>
+<p>filename "/ltsp/i386/nbi.img";</p>
+<p>}</p>
+<p>option root-path "/opt/ltsp/i386";</p>
+<p>}@]</p>
+<p>e vamos colocar no <strong>nano /etc/dhcp3/dhcpd.conf</strong></p>
+<p>[@next-server 192.168.0.1;</p>
+<p>authoritative;</p>
+<p>subnet 192.168.0.0 netmask 255.255.255.0 {</p>
+<p>range 192.168.0.20 192.168.0.250;</p>
+<p>option domain-name "ltsp";</p>
+<p>option domain-name-servers 192.168.0.1;</p>
+<p>option broadcast-address 192.168.0.255;</p>
+<p>option routers 192.168.0.1;</p>
+<p>option subnet-mask 255.255.255.0;</p>
+<p>if substring( option vendor-class-identifier, 0, 9 ) = "PXEClient" {</p>
+<p>filename "/ltsp/i386/pxelinux.0";</p>
+<p>}</p>
+<p>else{</p>
+<p>filename "/ltsp/i386/nbi.img";</p>
+<p>}</p>
+<p>option root-path "/opt/ltsp/i386";</p>
+<p>}@]</p>
+<p>a linha <strong>next-server 192.168.0.1;</strong> é colocado pois o etch é afetado pelo http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=416868\\</p>
+<p><strong>next-server ip.addres.of.server;</strong> - http://wiki.debian.org/LTSP/Howto</p>
+<p><strong>Configurar o exports</strong>\\</p>
+<p><strong>nano /etc/exports</strong>\\</p>
+<p>[@/opt/ltsp *(ro,no_root_squash,no_subtree_check)@]</p>
+<p>Ligue os terminais e bom divertimento.</p>
+</div></div></div></div>
+<script src="/js/bootstrap.bundle.min.js"></script>
+</body></html>

@@ -1,0 +1,14 @@
+version=pmwiki-2.1.27 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (Windows; U; Windows NT 5.1; pt-BR; rv:1.9.0.6) Gecko/2009011913 Firefox/3.0.6
+author=
+csum=
+ctime=1236107910
+host=189.5.43.34
+name=Main.OndeEstaPacotesLtspDebianLenny
+rev=1
+targets=
+text='''CDs - http://cdimage.debian.org/debian-cd/5.0.0/i386/list-cd'''\\%0aCD - 15%0a[@%0altsp-server_5.1.10-2_all.deb%0a@]%0a%0aCD - 18%0a[@%0altsp-server-standalone_5.1.10-2_all.deb%0altspfs_0.5.3-3_i386.deb%0a@]%0a%0aCD - 27%0a[@%0altspfsd_0.5.3-3_i386.deb%0a@]%0a%0aCD - 30%0a[@%0altsp-client-core_5.1.10-2_i386.deb%0altsp-client_5.1.10-2_i386.deb%0altsp-controlaula_1.3-4_all.deb%0a@]%0a%0a'''DVDs - http://cdimage.debian.org/debian-cd/5.0.0/i386/list-dvd/'''\\%0aDVD-3%0a[@%0altsp-server-standalone_5.1.10-2_all.deb%0altsp-server_5.1.10-2_all.deb%0altspfs_0.5.3-3_i386.deb%0a@]%0a%0aDVD-4%0a[@%0altspfsd_0.5.3-3_i386.deb%0a@]%0a%0aDVD -5 %0a[@%0altsp-client-core_5.1.10-2_i386.deb%0altsp-client_5.1.10-2_i386.deb%0altsp-controlaula_1.3-4_all.deb%0a@]%0a
+time=1236107910
+author:1236107910=
+diff:1236107910:1236107910:=1,43d0%0a%3c '''CDs - http://cdimage.debian.org/debian-cd/5.0.0/i386/list-cd'''\\%0a%3c CD - 15%0a%3c [@%0a%3c ltsp-server_5.1.10-2_all.deb%0a%3c @]%0a%3c %0a%3c CD - 18%0a%3c [@%0a%3c ltsp-server-standalone_5.1.10-2_all.deb%0a%3c ltspfs_0.5.3-3_i386.deb%0a%3c @]%0a%3c %0a%3c CD - 27%0a%3c [@%0a%3c ltspfsd_0.5.3-3_i386.deb%0a%3c @]%0a%3c %0a%3c CD - 30%0a%3c [@%0a%3c ltsp-client-core_5.1.10-2_i386.deb%0a%3c ltsp-client_5.1.10-2_i386.deb%0a%3c ltsp-controlaula_1.3-4_all.deb%0a%3c @]%0a%3c %0a%3c '''DVDs - http://cdimage.debian.org/debian-cd/5.0.0/i386/list-dvd/'''\\%0a%3c DVD-3%0a%3c [@%0a%3c ltsp-server-standalone_5.1.10-2_all.deb%0a%3c ltsp-server_5.1.10-2_all.deb%0a%3c ltspfs_0.5.3-3_i386.deb%0a%3c @]%0a%3c %0a%3c DVD-4%0a%3c [@%0a%3c ltspfsd_0.5.3-3_i386.deb%0a%3c @]%0a%3c %0a%3c DVD -5 %0a%3c [@%0a%3c ltsp-client-core_5.1.10-2_i386.deb%0a%3c ltsp-client_5.1.10-2_i386.deb%0a%3c ltsp-controlaula_1.3-4_all.deb%0a%3c @]%0a
+host:1236107910=189.5.43.34

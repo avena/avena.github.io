@@ -1,0 +1,30 @@
+version=pmwiki-2.2.113 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:65.0) Gecko/20100101 Firefox/65.0
+author=
+charset=ISO-8859-1
+csum=
+ctime=1234883872
+host=186.207.75.102
+name=Main.SourcesListLenny
+rev=6
+targets=
+text=Editar o sources.list com Gedit\\%0a[@gedit /etc/apt/sources.list@]%0a%0a[@%0a#segurança%0adeb http://security.debian.org/ lenny/updates main contrib%0adeb-src http://security.debian.org/ lenny/updates main contrib%0a%0a#debian%0a# deb http://http.us.debian.org/debian/ lenny main contrib non-free%0a# deb ftp://mirrors.kernel.org/debian/ lenny main contrib non-free%0a# deb http://download.unesp.br/linux/debian/ lenny main contrib non-free%0adeb http://ftp.br.debian.org/debian/ lenny main contrib non-free%0adeb-src http://ftp.br.debian.org/debian/ lenny main contrib non-free%0a%0a#som video%0a# gpg --keyserver subkeys.pgp.net --recv-keys 07DC563D1F41B907%0a# gpg --export --armor 07DC563D1F41B907 | apt-key add -%0adeb http://www.debian-multimedia.org/ lenny main%0adeb-src http://www.debian-multimedia.org/ lenny main%0a%0a#backports - ainda nao foi ligado um backports para lenny%0a# gpg --keyserver subkeys.pgp.net --recv-keys EA8E8B2116BA136C%0a# gpg --export --armor EA8E8B2116BA136C | apt-key add -%0adeb http://www.backports.org/debian lenny-backports main contrib non-free%0adeb-src http://www.backports.org/debian lenny-backports main contrib non-free%0a%0a#este volatile veio ja com instalacao%0a# Line commented out by installer because it failed to verify:%0adeb http://volatile.debian.org/debian-volatile lenny/volatile main%0a# Line commented out by installer because it failed to verify:%0adeb-src http://volatile.debian.org/debian-volatile lenny/volatile main%0a%0a@]%0a%0adepois execute:\\%0a'''apt-get update'''%0a%0ae também instale as chaves do endereços\\%0a'''apt-get install debian-multimedia-keyring debian-backports-keyring'''%0a
+time=1554183049
+author:1554183049=
+diff:1554183049:1306958697:=0a1,2%0a> Foi útil, te ajudou ou gostou?? %3cg:plusone size="small">%3c/g:plusone>%0a> %0a
+host:1554183049=186.207.75.102
+author:1306958697=
+diff:1306958697:1282931440:=1,2d0%0a%3c Foi útil, te ajudou ou gostou?? %3cg:plusone size="small">%3c/g:plusone>%0a%3c %0a
+host:1306958697=189.5.39.209
+author:1282931440=
+diff:1282931440:1282931392:=7,8c7%0a%3c deb-src http://security.debian.org/ lenny/updates main contrib%0a%3c %0a---%0a> %0a
+host:1282931440=189.62.198.30
+author:1282931392=
+diff:1282931392:1250712399:=13,14c13%0a%3c deb-src http://ftp.br.debian.org/debian/ lenny main contrib non-free%0a%3c %0a---%0a> %0a19,20c18%0a%3c deb-src http://www.debian-multimedia.org/ lenny main%0a%3c %0a---%0a> %0a25,26c23%0a%3c deb-src http://www.backports.org/debian lenny-backports main contrib non-free%0a%3c %0a---%0a> %0a
+host:1282931392=189.62.198.30
+author:1250712399=
+diff:1250712399:1234883872:=9,13c9,13%0a%3c # deb http://http.us.debian.org/debian/ lenny main contrib non-free%0a%3c # deb ftp://mirrors.kernel.org/debian/ lenny main contrib non-free%0a%3c # deb http://download.unesp.br/linux/debian/ lenny main contrib non-free%0a%3c deb http://ftp.br.debian.org/debian/ lenny main contrib non-free%0a%3c %0a---%0a> deb http://http.us.debian.org/debian/ lenny main contrib non-free%0a> # deb ftp://mirrors.kernel.org/debian/ lenny main non-free%0a> # deb http://download.unesp.br/linux/debian/ lenny main%0a> # deb http://ftp.br.debian.org/debian/ lenny main contrib non-free%0a> %0a22,23c22,24%0a%3c deb http://www.backports.org/debian lenny-backports main contrib non-free%0a%3c %0a---%0a> #deb http://www.backports.org/debian lenny-backports main contrib non-free%0a> #%0a> %0a26c27%0a%3c deb http://volatile.debian.org/debian-volatile lenny/volatile main%0a---%0a> #deb http://volatile.debian.org/debian-volatile lenny/volatile main%0a28,36c29,32%0a%3c deb-src http://volatile.debian.org/debian-volatile lenny/volatile main%0a%3c %0a%3c @]%0a%3c %0a%3c depois execute:\\%0a%3c '''apt-get update'''%0a%3c %0a%3c e também instale as chaves do endereços\\%0a%3c '''apt-get install debian-multimedia-keyring debian-backports-keyring'''%0a---%0a> #deb-src http://volatile.debian.org/debian-volatile lenny/volatile main%0a> %0a> %0a> @]%0a\ No newline at end of file%0a
+host:1250712399=201.83.84.147
+author:1234883872=
+diff:1234883872:1234883872:=1,32d0%0a%3c Editar o sources.list com Gedit\\%0a%3c [@gedit /etc/apt/sources.list@]%0a%3c %0a%3c [@%0a%3c #segurança%0a%3c deb http://security.debian.org/ lenny/updates main contrib%0a%3c %0a%3c #debian%0a%3c deb http://http.us.debian.org/debian/ lenny main contrib non-free%0a%3c # deb ftp://mirrors.kernel.org/debian/ lenny main non-free%0a%3c # deb http://download.unesp.br/linux/debian/ lenny main%0a%3c # deb http://ftp.br.debian.org/debian/ lenny main contrib non-free%0a%3c %0a%3c #som video%0a%3c # gpg --keyserver subkeys.pgp.net --recv-keys 07DC563D1F41B907%0a%3c # gpg --export --armor 07DC563D1F41B907 | apt-key add -%0a%3c deb http://www.debian-multimedia.org/ lenny main%0a%3c %0a%3c #backports - ainda nao foi ligado um backports para lenny%0a%3c # gpg --keyserver subkeys.pgp.net --recv-keys EA8E8B2116BA136C%0a%3c # gpg --export --armor EA8E8B2116BA136C | apt-key add -%0a%3c #deb http://www.backports.org/debian lenny-backports main contrib non-free%0a%3c #%0a%3c %0a%3c #este volatile veio ja com instalacao%0a%3c # Line commented out by installer because it failed to verify:%0a%3c #deb http://volatile.debian.org/debian-volatile lenny/volatile main%0a%3c # Line commented out by installer because it failed to verify:%0a%3c #deb-src http://volatile.debian.org/debian-volatile lenny/volatile main%0a%3c %0a%3c %0a%3c @]%0a\ No newline at end of file%0a
+host:1234883872=200.144.5.29

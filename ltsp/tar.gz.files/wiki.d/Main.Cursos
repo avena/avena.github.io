@@ -1,0 +1,20 @@
+version=pmwiki-2.1.27 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (X11; U; Linux i686; pt-BR; rv:1.8.1.6) Gecko/20070723 Iceweasel/2.0.0.6 (Debian-2.0.0.6-0etch1)
+author=Avena
+csum=
+ctime=1185270340
+host=189.5.45.248
+name=Main.Cursos
+rev=3
+targets=
+text='''Sites/Web/Rede'''\\%0a- http://comunidade.cdtc.org.br\\%0a- http://www.estudiolivre.org\\%0a- Curso Linux - http://www.dcc.ufrj.br/~davivercillo/linux/index.html%0a%0a'''Idéias de Cursos/Oficinas'''\\%0a- introdução a sistemas operacionais;\\%0a- curso de gnu/linux básico / intermediário;\\%0a- pacote de escritório OpenOffice.Org (ou nome BrOffice, sei lá);\\%0a- introdução ao vim :) nano, pico ...editores modo texto\\%0a- Shell (talvez esteja embutido no curso de gnu/linux)\\%0a- Internet (navegador, cliente de email, IRC, IM, etc)\\%0a- introdução a programação;\\%0a- introdução a programação usando python;\\%0a- introdução ao LaTeX...\\%0a- radio web\\%0a- musica, vídeo, som, gráficos
+time=1192286091
+author:1192286091=Avena
+diff:1192286091:1185734620:=4,5c4,5%0a%3c - Curso Linux - http://www.dcc.ufrj.br/~davivercillo/linux/index.html%0a%3c %0a---%0a> %0a> %0a
+host:1192286091=189.5.45.248
+author:1185734620=Avena
+diff:1185734620:1185270340:minor=17c17%0a%3c - musica, vídeo, som, gráficos%0a\ No newline at end of file%0a---%0a> - musica, vídeo, som, gráficos\\%0a\ No newline at end of file%0a
+host:1185734620=189.5.42.237
+author:1185270340=
+diff:1185270340:1185270340:=1,17d0%0a%3c '''Sites/Web/Rede'''\\%0a%3c - http://comunidade.cdtc.org.br\\%0a%3c - http://www.estudiolivre.org\\%0a%3c %0a%3c %0a%3c '''Idéias de Cursos/Oficinas'''\\%0a%3c - introdução a sistemas operacionais;\\%0a%3c - curso de gnu/linux básico / intermediário;\\%0a%3c - pacote de escritório OpenOffice.Org (ou nome BrOffice, sei lá);\\%0a%3c - introdução ao vim :) nano, pico ...editores modo texto\\%0a%3c - Shell (talvez esteja embutido no curso de gnu/linux)\\%0a%3c - Internet (navegador, cliente de email, IRC, IM, etc)\\%0a%3c - introdução a programação;\\%0a%3c - introdução a programação usando python;\\%0a%3c - introdução ao LaTeX...\\%0a%3c - radio web\\%0a%3c - musica, vídeo, som, gráficos\\%0a\ No newline at end of file%0a
+host:1185270340=189.5.42.237

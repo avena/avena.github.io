@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>TerminaisLevesPlacasNe2000 — LTSP</title>
+<link rel="stylesheet" href="/css/bootstrap.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+body{background:#f5f5f5;font-family:'Poppins',sans-serif;}
+.ltsp-header{background:#1a237e;color:#fff;padding:20px 0;}
+.ltsp-header h1{margin:0;font-size:1.5rem;}
+.ltsp-sidebar{background:#fff;border-right:1px solid #e0e0e0;padding:20px;min-height:calc(100vh - 120px);font-size:0.9rem;}
+.ltsp-sidebar ul{list-style:none;padding:0;margin:0;}
+.ltsp-sidebar li{margin-bottom:6px;}
+.ltsp-sidebar a{color:#333;text-decoration:none;}
+.ltsp-sidebar a:hover{color:#1a237e;text-decoration:underline;}
+.ltsp-sidebar .sidehead{font-weight:700;margin-top:16px;margin-bottom:8px;font-size:0.85rem;text-transform:uppercase;color:#1a237e;}
+.ltsp-content{background:#fff;padding:30px;min-height:calc(100vh - 120px);}
+.ltsp-content h2{color:#1a237e;margin-top:24px;margin-bottom:12px;font-size:1.4rem;}
+.ltsp-content h3{color:#333;margin-top:20px;margin-bottom:10px;font-size:1.2rem;}
+.ltsp-content p{margin-bottom:12px;line-height:1.6;}
+.ltsp-content pre{background:#f5f5f5;border:1px solid #e0e0e0;padding:12px;overflow-x:auto;font-size:0.85rem;border-radius:4px;}
+.ltsp-content code{background:#f5f5f5;padding:2px 6px;font-size:0.85rem;border-radius:3px;}
+.ltsp-content ul{margin-bottom:12px;padding-left:20px;}
+.ltsp-content li{margin-bottom:4px;}
+.ltsp-breadcrumb{font-size:0.85rem;color:#666;margin-bottom:16px;}
+.ltsp-breadcrumb a{color:#1a237e;}
+.ltsp-content hr{margin:24px 0;border:0;border-top:1px solid #e0e0e0;}
+</style>
+</head>
+<body>
+<div class="ltsp-header">
+<div class="container">
+<div class="row align-items-center">
+<div class="col"><a href="/ltsp/" style="color:#fff;text-decoration:none"><h1>LTSP · Documentação em português</h1></a></div>
+<div class="col-auto"><a href="/" class="text-white-50 text-decoration-none">← Voltar ao currículo</a></div>
+</div></div></div>
+<div class="container"><div class="row">
+<div class="col-md-3"><div class="ltsp-sidebar"><ul><li><a href="/ltsp/">Página Inicial</a></li></ul></ul><div class="sidehead"><strong>Debian</strong></div><ul><li><a href="http://www.ltsp.org" target="_blank" rel="noopener">LTSP</a></li></ul><ul><li><a href="http://debian.org" target="_blank" rel="noopener">Debian</a></li></ul><ul><li><a href="https://www.ubuntu.com" target="_blank" rel="noopener">Ubuntu</a></li></ul></div></div>
+<div class="col-md-9"><div class="ltsp-content">
+<div class="ltsp-breadcrumb"><a href="/ltsp/">LTSP</a> &raquo; Main</div>
+<p>Grande parte dos Micros que estão bons são do modelo:\\</p>
+<p>100mhz de processador\\</p>
+<p>16mb memória\\</p>
+<p>alguns com hd de 1.7gb\\</p>
+<p>colocando um placa de rede Epro100 da intel.\\</p>
+<p>rom gravada em um disquete e usada: <a href="http://idsorocaba.batemacumba.net/avena/boot_placa/eb-5.4.3-eepro100.zdsk" target="_blank" rel="noopener">eb-5.4.3-eepro100.zdsk</a>\\</p>
+<p>Gravar no disquete a rom\\</p>
+<p><strong>[=$cat eb-5.4.3-eepro100.zdsk > /dev/fd0=]</strong>\\</p>
+<p>100mhz de processador\\</p>
+<p><em>16mb memória</em> - <strong>Remover os 16m ou Colocar Memória ate chegar em 32MB</strong></p>
+<p>Estou agora entendo melhor como mexer com lts.conf (que para terminais seria o seu xorg)...com isso a configuração esta ficando mais limpa. Não tão porca como estava antes.\\</p>
+<p><a href="/ltsp/configuracao_lts_conf.html">Configuração no lts.conf</a></p>
+<hr>
+<p>Fazendo maquina funcionar com a NE2000 - Será que consegue.</p>
+<p>Terminais leves com o LTSP - Atualizado para o LTSP 4.2\\</p>
+<p>http://www.guiadohardware.net/guias/17/</p>
+<p>Placa de rede NE2000 não foi ainda.</p>
+<p>O "MOPTS=nolock,ro,wsize=2048,rsize=2048" (dica do Jorge L.) é uma configuração, transmitida ao driver da placa. Ela é necessária nas versões recentes do LTSP, pois força o sistema a utilizar buffers de dados de 2 KB para a placa de rede. Sem ela, diversas placas de rede ISA, como a própria 3C509 não funcionam.\\</p>
+<p>Se você estiver usando uma daquelas placas NE 2000 antigas (que no Linux são ativadas pelo módulo "ne"), onde ainda é preciso especificar o endereço de I/O usado pela placa, você deve incluí-lo na linha logo depois do módulo, como em:\\</p>
+<p>option option-129 "<strong>NIC=ne IO=0x300</strong> MOPTS=nolock,ro,wsize=2048,rsize=2048";</p>
+<p>http://www.guiadohardware.net/guias/17/index7.php\\</p>
+<p>dhcp.conf</p>
+<p>[@host ws110 {</p>
+<p>hardware ethernet       00:C0:DF:80:3F:BF; #mac da ne2000</p>
+<p>fixed-address           192.168.20.110;</p>
+<p>filename                "/lts/vmlinuz-2.6.17.3-ltsp-1";</p>
+<p>option option-128       e4:45:74:68:00:00;       # NOT a mac address</p>
+<p>option option-129       "NIC=ne IO=0x260"; # no 486</p>
+<p>}@]</p>
+<p>Duvida colocada na lista do ltsp-br\\</p>
+<p>http://listas.cipsga.org.br/pipermail/ltsp-br-discuss/2007-May/000334.html</p>
+<p>com a placa de rede NE2000 que são 10Mbs e ISA.</p>
+<p>Mesmo tendo as placa NE2000 ISA, as placas mae tem slot pci. (as duas maquinas de teste que estão comigo tem 2 slot pci vago) e algumas maquinas deve ter placa de rede PCI</p>
+<p>esta NE2000 ISA deve ser famosa... na documentação do ltsp fala dela. :)</p>
+<hr>
+<p>Para placas de rede antigas baseadas no padrão ISA, não é tão importante que você determine o tipo exato. Primeiro, a maioria delas são placas ne2000 ou 3Com 3c509. Você precisa apenas obter o driver Etherboot correto, o que seleciona o tipo correto de mídia na placa 10 base-2 (Coax) e 10 base-T (Twisted pair).\\</p>
+<p>http://ltsp.sourceforge.net/documentation/ltsp-4.1/ltsp-4.1-ptbr.html</p>
+<hr>
+<p>http://ltsp.sourceforge.net/documentation/ltsp-3.0.0/instructions-br-3.0.html\\</p>
+<p><strong>Placas de rede ISA</strong>\\</p>
+<p>Os kernels LTSP podem detectar automaticamente a placa rede, se ela for uma placa PCI. Se não for, então você tem que especificar qual driver de rede para carregar. Algumas placas ISA ainda requerem que a opção IO seja passada para o módulo.\\</p>
+<p>Você pode especificar o driver da placa e o endereço IO adicionando uma entrada para a seção individual do host no arquivo dhcpd.conf. Here está um exemplo para uma estação com uma placa de rede NE2000.</p>
+<p>[@host ws001 {</p>
+<p>hardware ethernet     00:E0:06:E8:00:84;</p>
+<p>fixed-address         192.168.0.1;</p>
+<p>filename              "/lts/vmlinuz-2.4.18-ltsp-1";</p>
+<p>option option-128     e4:45:74:68:00:00;</p>
+<p>option option-129     "NIC=ne IO=0x300";</p>
+<p>}@]</p>
+<p>Há uma coisa muito importante para notificar sobre o exemplo acima. O valor especificado para <strong>'option-128</strong> NÃO é o endereço MAC. O valor <strong>e4:45:74:68:00:00</strong> é um valor especial que o Etherboot requer. Se ele não estiver lá, ou for alguma coisa diferente do valor acima, então todas as outras opções estendidas serão ignoradas pelo Etherboot.\\</p>
+<p><strong>Também, se você está usando um DHCP da ISC, versão 3.0 ou acima</strong>, então você vai precisar adicionar algumas linhas próximo ao topo do arquivo dhcpd.conf, para definir os tipos de valores que serão especificados com a opção 128 e 129. No mínimo 2 linhas do fragmento seguinte mostram como elas devem ser especificadas.</p>
+<p>[@option domain-name-servers    192.168.0.254;</p>
+<p>option domain-name            "yourdomain.com";</p>
+<p>option root-path              "192.168.0.254:/opt/ltsp/i386";</p>
+<p>option option-128 code 128 = string;</p>
+<p>option option-129 code 129 = text;@]</p>
+<hr>
+<p><strong>4. Configurando o serviço DHCP (no servidor)</strong></p>
+<p>Com o DHPC instalado, editar o /etc/dhcpd.conf.\\</p>
+<p>Deve estar assim:\\</p>
+<p>[@  ddns-update-style ad-hoc;</p>
+<p>default-lease-time 21600;</p>
+<p>max-lease-time 21600;</p>
+<p>option subnet-mask 255.255.255.0;</p>
+<p>option broadcast-address 192.168.2.255;</p>
+<p>option domain-name-servers 192.168.2.1;</p>
+<p>options routers 192.168.2.1;</p>
+<p>option root-path 192.168.2.1:/opt/ltsp/i386&#8243;:</p>
+<p>#Para placas isa</p>
+<p>#option option-128 code 128 = string;</p>
+<p>#option option-129 code 129 = text;</p>
+<p>shared-network WORKSTATIONS {</p>
+<p>subnet 192.168.2.0 netmask 255.255.255.0 {</p>
+<p>}</p>
+<p>}</p>
+<p>group {</p>
+<p>use-host-decl-names on;</p>
+<p>host term1 {</p>
+<p>hardware ethernet 00:99:99:99:99:99; # Endereço MAC desse terminal</p>
+<p>fixed-address 192.168.2.2;</p>
+<p>filename /lts/vmlinuz-2.4.21-ltsp-1;</p>
+<p># se a placa for isa</p>
+<p>#option option-128 e4:45:74:68:00:00;</p>
+<p>#option option-129 NIC=ne IO=0×320;</p>
+<p>}</p>
+<p>host term2 {</p>
+<p>hardware ethernet 00:99:99:99:99:99;</p>
+<p>fixed-address 192.168.2.3;</p>
+<p>filename /lts/vmlinuz-2.4.21-ltsp-1;</p>
+<p>}</p>
+<p>}@]</p>
+<p>http://www.ajudalinux.org/wps/?p=13</p>
+<hr>
+<p><strong>:. Mais configurações</strong>\\</p>
+<p>Se você estiver usando placas de rede ISA nas estações, é preciso adicionar algumas linhas adicionais no arquivo <strong>/etc/dhcp3/dhcpd.conf</strong>, especificando o módulo usado pela placa (você já pesquisou sobre isso para gerar o disquete do rom-o-matic, lembra? :)\\</p>
+<p>Antes de mais nada, descomente (ou inclua) estas duas linhas, que serão as duas primeiras linhas do arquivo:\\</p>
+<p>option option-128 code 128 = string;\\</p>
+<p>option option-129 code 129 = text;\\</p>
+<p>Mais à baixo, dentro da seção referente à estação, você deverá adicionar mais duas linhas, mantendo as anteriores:</p>
+<p>[@host ws001 {</p>
+<p>hardware ethernet 00:E0:06:E8:00:84;</p>
+<p>fixed-address 192.168.0.1;</p>
+<p>filename "/lts/vmlinuz-2.4.18-ltsp-1";</p>
+<p>option option-128 e4:45:74:68:00:00;</p>
+<p>option option-129 "NIC=3c509";</p>
+<p>}@]</p>
+<p>Substitua o "3c509" pelo módulo da placa de rede usada. Não altere o "e4:45:74:68:00:00" este não é um endereço MAC, mas sim uma string que ativa a linha com o módulo da placa.\\</p>
+<p>Se você estiver usando uma daquelas placas antigas, onde ainda é preciso especificar o endereço de I/O usado pela placa, você deve incluí-lo na linha logo depois do módulo, como em:\\</p>
+<p>[=option option-129 "NIC=ne IO=0x300";=]\\</p>
+<p>(o driver "ne" dá suporte às placas NE 2000 compatible)</p>
+<hr>
+<p><strong>:. Só pra não perder a piada :-p</strong>\\</p>
+<p>Juntando umas peças velhas que estavam jogadas por aqui, acabei montando mais um micro, um velho 486 SX 25 com 8 pentes de 1 MB e uma placa de vídeo VESA tão antiga quanto o resto. Como não tinha mais um gabinete, ele acabou virando esse amontoado aqui:</p>
+<p>%center%http://idsorocaba.batemacumba.net/imagens/img-995b1405.jpg</p>
+<p>O mais interessante é que apesar de tudo, a sucataiada funcionou como terminal, foi só gravar o módulo da placa 3com509 e espetar um drive de disquetes:</p>
+<p>%center%http://idsorocaba.batemacumba.net/imagens/img-02d0bb0f.jpg</p>
+<p>Como ele utiliza uma placa de rede ISA, precisei adicionar aquelas duas linhas no arquivo <strong>/etc/dhcp3/dhcpd.conf</strong>, que ficou assim:</p>
+<p>[@# terminal 2:</p>
+<p>host ws002 {</p>
+<p>hardware ethernet 00:60:08:37:3F:BA;</p>
+<p>fixed-address 192.168.0.12;</p>
+<p>filename "/tftpboot/lts/vmlinuz-2.4.19-ltsp-1";</p>
+<p>option option-128 e4:45:74:68:00:00;</p>
+<p>option option-129 "NIC=3c509";</p>
+<p>}@]</p>
+<p>A configuração da placa de vídeo foi a parte mais complicada, pois ela não funciona com a detecção automática do vídeo (acontece com a maioria das placas ISA ou VLB). A melhor configuração que encontrei foi usar o driver "vesa" com 8 bits de cor (funciona tanto a 800x600 quanto a 1024x768). Existe também a opção de usar o driver "vga", mas não é muito agradável de trabalhar a 640x480 com 16 cores...\\</p>
+<p>Segundo a página de compatibilidade do X (<a href="http://www.xfree.org/4.2.1/Status.html%29" target="_blank" rel="noopener">http://www.xfree.org/4.2.1/Status.html)</a> ela talvez funcionasse com o driver "trident" (aparece como não testado) que me daria um melhor desempenho, mas não funcionou.\\</p>
+<p>A placa também funciona usando 16 bits de cor com o driver vesa, mas as cores ficam trocadas, talvez por defeito na placa. Também precisei configurar o mouse serial, ligado na COM1.\\</p>
+<p>No final, a configuração no arquivo <strong>/opt/ltsp/i386/etc/lts.conf</strong> ficou assim:</p>
+<p>[@[ws002]</p>
+<p>XSERVER = vesa</p>
+<p>X_MODE_0 = 800x600</p>
+<p>X_VERTREFRESH = 60 #(Refresh rate)</p>
+<p>X_COLOR_DEPTH = 8 #(Bits de Cor)</p>
+<p>X_MOUSE_PROTOCOL = "Microsoft"</p>
+<p>X_MOUSE_DEVICE = "/dev/ttyS0"</p>
+<p>X_MOUSE_RESOLUTION = 400</p>
+<p>X_MOUSE_BUTTONS = 2</p>
+<p>X_MOUSE_EMULATE3BTN = Y</p>
+<p>USE_NFS_SWAP = Y</p>
+<p>SWAPFILE_SIZE = 16m</p>
+<p>RUNLEVEL = 5@]</p>
+<p>Os últimos segredos estavam no próprio setup da placa. Tive que ativar o cache L1 e L2 (o padrão nesta placa é eles ficarem desativados!) e ativar o Video Bios Shadow. Esta opção não tem efeito se você estiver usando um driver adequado para a placa de vídeo, mas ao utilizar o driver vesa genérico a própria placa fica responsável por processar as instruções, fazendo com que a ativação do Video Bios Shadow chegue a representar um desempenho de mais de 100% para a velocidade do vídeo.\\</p>
+<p>Sem o cache e sem o Video Bios Shadow o desempenho desse micro era ridículo, ele demorava mais de 5 segundos pra montar uma tela, mas depois das alterações ele ficou brutalmente mais rápido, o suficiente para fazer algo útil.\\</p>
+<p>Em geral, vale bem mais à pena usar placas um pouco mais novas, que já tenham pelo menos slots PCI. Mas, colocar essas porcarias velhas pra funcionar não deixa de ser um passatempo.</p>
+<hr>
+<p>Referencias (por google)\\</p>
+<p>qual o driver correto(rom-o-matic) p/ placa de rede ISA\\</p>
+<p>http://www.ltsp-br.org/forum/viewtopic.php?p=639&sid=bd518eb3272f12ed6a4a29e7f7caa828</p>
+<p>Tutorial preliminar sobre a configuração do Kurumin Terminal Server\\</p>
+<p>http://www.guiadohardware.net/tutoriais/083/</p>
+</div></div></div></div>
+<script src="/js/bootstrap.bundle.min.js"></script>
+</body></html>

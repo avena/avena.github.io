@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>SourcesListWheezy — LTSP</title>
+<link rel="stylesheet" href="/css/bootstrap.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+body{background:#f5f5f5;font-family:'Poppins',sans-serif;}
+.ltsp-header{background:#1a237e;color:#fff;padding:20px 0;}
+.ltsp-header h1{margin:0;font-size:1.5rem;}
+.ltsp-sidebar{background:#fff;border-right:1px solid #e0e0e0;padding:20px;min-height:calc(100vh - 120px);font-size:0.9rem;}
+.ltsp-sidebar ul{list-style:none;padding:0;margin:0;}
+.ltsp-sidebar li{margin-bottom:6px;}
+.ltsp-sidebar a{color:#333;text-decoration:none;}
+.ltsp-sidebar a:hover{color:#1a237e;text-decoration:underline;}
+.ltsp-sidebar .sidehead{font-weight:700;margin-top:16px;margin-bottom:8px;font-size:0.85rem;text-transform:uppercase;color:#1a237e;}
+.ltsp-content{background:#fff;padding:30px;min-height:calc(100vh - 120px);}
+.ltsp-content h2{color:#1a237e;margin-top:24px;margin-bottom:12px;font-size:1.4rem;}
+.ltsp-content h3{color:#333;margin-top:20px;margin-bottom:10px;font-size:1.2rem;}
+.ltsp-content p{margin-bottom:12px;line-height:1.6;}
+.ltsp-content pre{background:#f5f5f5;border:1px solid #e0e0e0;padding:12px;overflow-x:auto;font-size:0.85rem;border-radius:4px;}
+.ltsp-content code{background:#f5f5f5;padding:2px 6px;font-size:0.85rem;border-radius:3px;}
+.ltsp-content ul{margin-bottom:12px;padding-left:20px;}
+.ltsp-content li{margin-bottom:4px;}
+.ltsp-breadcrumb{font-size:0.85rem;color:#666;margin-bottom:16px;}
+.ltsp-breadcrumb a{color:#1a237e;}
+.ltsp-content hr{margin:24px 0;border:0;border-top:1px solid #e0e0e0;}
+</style>
+</head>
+<body>
+<div class="ltsp-header">
+<div class="container">
+<div class="row align-items-center">
+<div class="col"><a href="/ltsp/" style="color:#fff;text-decoration:none"><h1>LTSP · Documentação em português</h1></a></div>
+<div class="col-auto"><a href="/" class="text-white-50 text-decoration-none">← Voltar ao currículo</a></div>
+</div></div></div>
+<div class="container"><div class="row">
+<div class="col-md-3"><div class="ltsp-sidebar"><ul><li><a href="/ltsp/">Página Inicial</a></li></ul></ul><div class="sidehead"><strong>Debian</strong></div><ul><li><a href="http://www.ltsp.org" target="_blank" rel="noopener">LTSP</a></li></ul><ul><li><a href="http://debian.org" target="_blank" rel="noopener">Debian</a></li></ul><ul><li><a href="https://www.ubuntu.com" target="_blank" rel="noopener">Ubuntu</a></li></ul></div></div>
+<div class="col-md-9"><div class="ltsp-content">
+<div class="ltsp-breadcrumb"><a href="/ltsp/">LTSP</a> &raquo; Main</div>
+<p>Editar o sources.list com Gedit\\</p>
+<p>[@gedit /etc/apt/sources.list@]</p>
+<pre># Line commented out by installer because it failed to verify:
+deb http://security.debian.org/ wheezy/updates main 
+# Line commented out by installer because it failed to verify:
+# deb-src http://security.debian.org/ wheezy/updates main 
+
+# wheezy-updates, previously known as &#x27;volatile&#x27;
+# A network mirror was not selected during install.  The following entries
+# are provided as examples, but you should amend them as appropriate
+# for your mirror of choice.
+
+deb http://ftp.debian.org/debian/ wheezy-updates main 
+# deb-src http://ftp.debian.org/debian/ wheezy-updates main 
+
+
+#debian
+# deb http://http.us.debian.org/debian/ wheezy main contrib non-free
+# deb ftp://mirrors.kernel.org/debian/ wheezy main contrib non-free
+# deb http://download.unesp.br/linux/debian/ wheezy main contrib non-free
+deb http://ftp.br.debian.org/debian/ wheezy main contrib non-free
+deb-src http://ftp.br.debian.org/debian/ wheezy main contrib non-free
+
+#som video
+#deb http://www.deb-multimedia.org wheezy main non-free
+#deb http://www.deb-multimedia.org wheezy-backports main
+#deb http://linorg.usp.br/debian-marillat/ wheezy main non-free
+#deb-src http://linorg.usp.br/debian-marillat/ wheezy main non-free
+deb ftp://ftp.br.debian.org/debian-multimedia wheezy main non-free
+deb-src ftp://ftp.br.debian.org/debian-multimedia wheezy main non-free
+deb ftp://ftp.br.debian.org/debian-multimedia wheezy-backports main
+
+
+#backports
+#deb ftp://ftp.br.debian.org/debian wheezy-backports main contrib non-free
+deb http://linorg.usp.br/debian wheezy-backports main contrib non-free</pre>
+<p>e também adicione as chaves</p>
+<p>[@gpg --keyserver subkeys.pgp.net --recv-keys 07DC563D1F41B907</p>
+<p>gpg --export --armor 07DC563D1F41B907 | apt-key add -</p>
+<p>@]</p>
+<p>e termine executando:\\</p>
+<p><strong>apt-get update</strong></p>
+</div></div></div></div>
+<script src="/js/bootstrap.bundle.min.js"></script>
+</body></html>

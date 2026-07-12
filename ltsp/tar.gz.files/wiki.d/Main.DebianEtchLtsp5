@@ -1,0 +1,17 @@
+version=pmwiki-2.1.27 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (X11; U; Linux i686; pt-BR; rv:1.8.1.8) Gecko/20071004 Iceweasel/2.0.0.8 (Debian-2.0.0.6+2.0.0.8-0etch1)
+author=Avena
+csum=
+ctime=1187395994
+host=189.32.215.206
+name=Main.DebianEtchLtsp5
+rev=2
+targets=Main.5031DebianEtchLtspServerStandalone
+text=http://wiki.debian.org/LTSP/Howto%0a%0a[[5031DebianEtchLtspServerStandalone|LTSP5 vai apt-get e repositório etch-ltsp-backports]]%0a%0a'''Como instalar via Tarball?'''%0a%0a[=wget -c http://ltsp.mirrors.tds.net /pub/ltsp/ltsp-5.0/ltsp_debian _etch_i386-1.tar.bz2=]\\%0abunzip ltsp_debian_etch_i386-1.tar.bz2\\%0a%0a[=wget http://ltsp.mirrors.tds.net /pub/ltsp/ltsp-5.0/ltsp-update -kernels-2.tar.bz2=]\\%0a[=wget http://ltsp.mirrors.tds.net /pub/ltsp/ltsp-5.0/ltsp-update -sshkeys-2.tar.bz2=]%0a
+time=1195930534
+author:1195930534=Avena
+diff:1195930534:1187395994:=3,6c3,14%0a%3c [[5031DebianEtchLtspServerStandalone|LTSP5 vai apt-get e repositório etch-ltsp-backports]]%0a%3c %0a%3c '''Como instalar via Tarball?'''%0a%3c %0a---%0a> Por esta um pouco desatualizado este Debian etch xfce (versão antes do etch virar stable)...o aptitude manda uns pacote que é mais atualização.%0a> %0a> Mas com: aptitude install ltsp-server openssh-server - ele instala junto os: nfs-kernel-server - tftpd-hpa, e recomenda instalar o dhcp3-server%0a> %0a> Usar mesma linha de dependências do ltsp4.2\\%0a> '''apt-get install dhcp3-server tftpd-hpa portmap nfs-kernel-server'''\\%0a> %0a> Trocar pelo apt-get, pois aptitude depois que instala o ltsp, o aptitude fica querendo remover pacotes importantes que não deveria remover.%0a> %0a> %0a> '''Como instalar?'''%0a> %0a11a20,28%0a> %0a> '''apt-get install dhcp3-server tftpd-hpa portmap nfs-kernel-server'''%0a> %0a> ...continuar???%0a> %0a> ----%0a> Conversas e duvidas:\\%0a> instalação ltsp5.0 em debian etch\\%0a> http://listas.cipsga.org.br/pipermail/ltsp-br-discuss/2007-May/000355.html%0a\ No newline at end of file%0a
+host:1195930534=189.32.215.206
+author:1187395994=Avena
+diff:1187395994:1187395994:=1,28d0%0a%3c http://wiki.debian.org/LTSP/Howto%0a%3c %0a%3c Por esta um pouco desatualizado este Debian etch xfce (versão antes do etch virar stable)...o aptitude manda uns pacote que é mais atualização.%0a%3c %0a%3c Mas com: aptitude install ltsp-server openssh-server - ele instala junto os: nfs-kernel-server - tftpd-hpa, e recomenda instalar o dhcp3-server%0a%3c %0a%3c Usar mesma linha de dependências do ltsp4.2\\%0a%3c '''apt-get install dhcp3-server tftpd-hpa portmap nfs-kernel-server'''\\%0a%3c %0a%3c Trocar pelo apt-get, pois aptitude depois que instala o ltsp, o aptitude fica querendo remover pacotes importantes que não deveria remover.%0a%3c %0a%3c %0a%3c '''Como instalar?'''%0a%3c %0a%3c [=wget -c http://ltsp.mirrors.tds.net /pub/ltsp/ltsp-5.0/ltsp_debian _etch_i386-1.tar.bz2=]\\%0a%3c bunzip ltsp_debian_etch_i386-1.tar.bz2\\%0a%3c %0a%3c [=wget http://ltsp.mirrors.tds.net /pub/ltsp/ltsp-5.0/ltsp-update -kernels-2.tar.bz2=]\\%0a%3c [=wget http://ltsp.mirrors.tds.net /pub/ltsp/ltsp-5.0/ltsp-update -sshkeys-2.tar.bz2=]%0a%3c %0a%3c '''apt-get install dhcp3-server tftpd-hpa portmap nfs-kernel-server'''%0a%3c %0a%3c ...continuar???%0a%3c %0a%3c ----%0a%3c Conversas e duvidas:\\%0a%3c instalação ltsp5.0 em debian etch\\%0a%3c http://listas.cipsga.org.br/pipermail/ltsp-br-discuss/2007-May/000355.html%0a\ No newline at end of file%0a
+host:1187395994=189.5.47.137

@@ -1,0 +1,26 @@
+version=pmwiki-2.1.27 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.1.15) Gecko/20080612 Iceweasel/2.0.0.15 (Debian-2.0.0.15-0etch1)
+author=
+csum=
+ctime=1184953222
+host=201.62.24.8
+name=Main.SourcesList
+rev=5
+targets=
+text=Editar o sources.list com Gedit\\%0a[@gedit /etc/apt/sources.list@]%0a%0a[@%0a#segurança%0adeb http://security.debian.org/ etch/updates main contrib%0a%0a#debian%0adeb http://http.us.debian.org/debian/ etch main non-free%0a# deb ftp://mirrors.kernel.org/debian/ etch main non-free%0a# deb http://download.unesp.br/linux/debian/ etch main%0a# deb http://ftp.br.debian.org/debian/ etch main contrib non-free%0a%0a#som video%0a# gpg --keyserver subkeys.pgp.net --recv-keys 07DC563D1F41B907%0a# gpg --export --armor 07DC563D1F41B907 | apt-key add -%0adeb http://www.debian-multimedia.org/ etch main%0a%0a#backports%0a# gpg --keyserver subkeys.pgp.net --recv-keys EA8E8B2116BA136C%0a# gpg --export --armor EA8E8B2116BA136C | apt-key add -%0adeb http://www.backports.org/debian etch-backports main contrib non-free%0a%0a@]
+time=1227299373
+author:1227299373=
+diff:1227299373:1222188890:=16c16%0a%3c # gpg --export --armor 07DC563D1F41B907 | apt-key add -%0a---%0a> # gpg --export --armor 07DC563D1F41B907 | sudo apt-key add -%0a21c21%0a%3c # gpg --export --armor EA8E8B2116BA136C | apt-key add -%0a---%0a> # gpg --export --armor EA8E8B2116BA136C | sudo apt-key add -%0a
+host:1227299373=201.62.24.8
+author:1222188890=
+diff:1222188890:1220825961:=1,3d0%0a%3c Editar o sources.list com Gedit\\%0a%3c [@gedit /etc/apt/sources.list@]%0a%3c %0a
+host:1222188890=201.62.24.8
+author:1220825961=
+diff:1220825961:1197469356:=10a11,15%0a> #scribus%0a> # gpg --keyserver subkeys.pgp.net --recv-keys EEF818CF%0a> # gpg --armor --export EEF818CF | apt-key add -%0a> deb http://debian.scribus.net/debian/ etch main non-free contrib%0a> %0a
+host:1220825961=189.32.214.24
+author:1197469356=
+diff:1197469356:1184953222:=22,23d21%0a%3c # gpg --keyserver subkeys.pgp.net --recv-keys EA8E8B2116BA136C%0a%3c # gpg --export --armor EA8E8B2116BA136C | sudo apt-key add -%0a
+host:1197469356=201.62.21.57
+author:1184953222=
+diff:1184953222:1184953222:=1,24d0%0a%3c [@%0a%3c #segurança%0a%3c deb http://security.debian.org/ etch/updates main contrib%0a%3c %0a%3c #debian%0a%3c deb http://http.us.debian.org/debian/ etch main non-free%0a%3c # deb ftp://mirrors.kernel.org/debian/ etch main non-free%0a%3c # deb http://download.unesp.br/linux/debian/ etch main%0a%3c # deb http://ftp.br.debian.org/debian/ etch main contrib non-free%0a%3c %0a%3c #scribus%0a%3c # gpg --keyserver subkeys.pgp.net --recv-keys EEF818CF%0a%3c # gpg --armor --export EEF818CF | apt-key add -%0a%3c deb http://debian.scribus.net/debian/ etch main non-free contrib%0a%3c %0a%3c #som video%0a%3c # gpg --keyserver subkeys.pgp.net --recv-keys 07DC563D1F41B907%0a%3c # gpg --export --armor 07DC563D1F41B907 | sudo apt-key add -%0a%3c deb http://www.debian-multimedia.org/ etch main%0a%3c %0a%3c #backports%0a%3c deb http://www.backports.org/debian etch-backports main contrib non-free%0a%3c %0a%3c @]%0a\ No newline at end of file%0a
+host:1184953222=189.5.42.237

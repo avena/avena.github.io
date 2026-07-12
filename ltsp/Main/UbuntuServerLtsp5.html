@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>UbuntuServerLtsp5 — LTSP</title>
+<link rel="stylesheet" href="/css/bootstrap.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+body{background:#f5f5f5;font-family:'Poppins',sans-serif;}
+.ltsp-header{background:#1a237e;color:#fff;padding:20px 0;}
+.ltsp-header h1{margin:0;font-size:1.5rem;}
+.ltsp-sidebar{background:#fff;border-right:1px solid #e0e0e0;padding:20px;min-height:calc(100vh - 120px);font-size:0.9rem;}
+.ltsp-sidebar ul{list-style:none;padding:0;margin:0;}
+.ltsp-sidebar li{margin-bottom:6px;}
+.ltsp-sidebar a{color:#333;text-decoration:none;}
+.ltsp-sidebar a:hover{color:#1a237e;text-decoration:underline;}
+.ltsp-sidebar .sidehead{font-weight:700;margin-top:16px;margin-bottom:8px;font-size:0.85rem;text-transform:uppercase;color:#1a237e;}
+.ltsp-content{background:#fff;padding:30px;min-height:calc(100vh - 120px);}
+.ltsp-content h2{color:#1a237e;margin-top:24px;margin-bottom:12px;font-size:1.4rem;}
+.ltsp-content h3{color:#333;margin-top:20px;margin-bottom:10px;font-size:1.2rem;}
+.ltsp-content p{margin-bottom:12px;line-height:1.6;}
+.ltsp-content pre{background:#f5f5f5;border:1px solid #e0e0e0;padding:12px;overflow-x:auto;font-size:0.85rem;border-radius:4px;}
+.ltsp-content code{background:#f5f5f5;padding:2px 6px;font-size:0.85rem;border-radius:3px;}
+.ltsp-content ul{margin-bottom:12px;padding-left:20px;}
+.ltsp-content li{margin-bottom:4px;}
+.ltsp-breadcrumb{font-size:0.85rem;color:#666;margin-bottom:16px;}
+.ltsp-breadcrumb a{color:#1a237e;}
+.ltsp-content hr{margin:24px 0;border:0;border-top:1px solid #e0e0e0;}
+</style>
+</head>
+<body>
+<div class="ltsp-header">
+<div class="container">
+<div class="row align-items-center">
+<div class="col"><a href="/ltsp/" style="color:#fff;text-decoration:none"><h1>LTSP · Documentação em português</h1></a></div>
+<div class="col-auto"><a href="/" class="text-white-50 text-decoration-none">← Voltar ao currículo</a></div>
+</div></div></div>
+<div class="container"><div class="row">
+<div class="col-md-3"><div class="ltsp-sidebar"><ul><li><a href="/ltsp/">Página Inicial</a></li></ul></ul><div class="sidehead"><strong>Debian</strong></div><ul><li><a href="http://www.ltsp.org" target="_blank" rel="noopener">LTSP</a></li></ul><ul><li><a href="http://debian.org" target="_blank" rel="noopener">Debian</a></li></ul><ul><li><a href="https://www.ubuntu.com" target="_blank" rel="noopener">Ubuntu</a></li></ul></div></div>
+<div class="col-md-9"><div class="ltsp-content">
+<div class="ltsp-breadcrumb"><a href="/ltsp/">LTSP</a> &raquo; Main</div>
+<p>Comentário do Lucas...usou Edubuntu com LTSP5. a instalação foi ridícula de fácil...auto configurou a eth0 e eth1, mas o ltsp5 esta com um boot mais lento nos terminas em relação ao LTSP4.2.</p>
+<p>Instalação feita em Ubuntu 7.04</p>
+<p>/usr/share/doc/ltsp-server/QuickInstall</p>
+<p>[@sudo apt-get install ltsp-server-standalone openssh-server</p>
+<p>Now create your Thin Client environment on the server by running:</p>
+<p>sudo ltsp-build-client@]</p>
+<p>Ubuntu Server já vem com LTSP5</p>
+<p>Ubuntu Server edition includes thin client support using LTSP (Linux Terminal Server Project). LTSP-5, the latest release, offers a simple installation and easy maintenance.\\</p>
+<p>http://www.ubuntu.com/products/WhatIsUbuntu/serveredition</p>
+<p>'''UbuntuLTSP\\</p>
+<p>https://help.ubuntu.com/community/UbuntuLTSP\\</p>
+<p>http://doc.ubuntu.com/edubuntu/handbook/C/'''</p>
+<p>Docs.\\</p>
+<p>https://help.ubuntu.com/community/LTSPServerSetup\\</p>
+<p>https://help.ubuntu.com/community/UbuntuLTSP/Tour\\</p>
+<p>http://doc.ubuntu-fr.org/serveur/ltsp\\</p>
+<p>http://www.edubuntu.org/GettingStarted\\</p>
+<p>http://www.edubuntu.org/ThinClientConfig</p>
+<p><strong>Arquivos de Conf</strong></p>
+<p>nano /etc/default/tftpd-hpa</p>
+<p>[@#Defaults for tftpd-hpa</p>
+<p>RUN_DAEMON="no"</p>
+<p>OPTIONS="-l -s /var/lib/tftpboot"@]</p>
+<p>/var/lib/tftpboot/ltsp/i386# ls</p>
+<p>[@abi-2.6.20-15-386     initrd.img                nbi.img                pxelinux.0    System.map-2.6.20-15-386  vmlinuz-2.6.20-15-386</p>
+<p>config-2.6.20-15-386  initrd.img-2.6.20-15-386  nbi.img-2.6.20-15-386  pxelinux.cfg  vmlinuz@]</p>
+<p>cat /etc/network/interfaces</p>
+<p>[@auto lo</p>
+<p>iface lo inet loopback</p>
+<p>auto eth1</p>
+<p>iface eth1 inet dhcp</p>
+<p>auto eth0</p>
+<p>iface eth0 inet static</p>
+<p>address   192.168.0.1</p>
+<p>netmask   255.255.255.0</p>
+<p>network   192.168.0.0</p>
+<p>broadcast 192.168.0.255@]</p>
+<p>cat /etc/dhcp3/dhcpd.conf</p>
+<p>[@#</p>
+<p># Sample configuration file for ISC dhcpd for Debian</p>
+<p>#</p>
+<p># $Id: dhcpd.conf,v 1.1.1.1 2002/05/21 00:07:44 peloy Exp $</p>
+<p>#</p>
+<p># The ddns-updates-style parameter controls whether or not the server will</p>
+<p># attempt to do a DNS update when a lease is confirmed. We default to the</p>
+<p># behavior of the version 2 packages ('none', since DHCP v2 didn't</p>
+<p># have support for DDNS.)</p>
+<p>ddns-update-style none;</p>
+<p># option definitions common to all supported networks...</p>
+<p>option domain-name "example.org";</p>
+<p>option domain-name-servers ns1.example.org, ns2.example.org;</p>
+<p>default-lease-time 600;</p>
+<p>max-lease-time 7200;</p>
+<p># If this DHCP server is the official DHCP server for the local</p>
+<p># network, the authoritative directive should be uncommented.</p>
+<p>#authoritative;</p>
+<p># Use this to send dhcp log messages to a different log file (you also</p>
+<p># have to hack syslog.conf to complete the redirection).</p>
+<p>log-facility local7;</p>
+<p># No service will be given on this subnet, but declaring it helps the</p>
+<p># DHCP server to understand the network topology.</p>
+<p>#subnet 10.152.187.0 netmask 255.255.255.0 {</p>
+<p>#}</p>
+<p># This is a very basic subnet declaration.</p>
+<p>#subnet 10.254.239.0 netmask 255.255.255.224 {</p>
+<p>#  range 10.254.239.10 10.254.239.20;</p>
+<p>#  option routers rtr-239-0-1.example.org, rtr-239-0-2.example.org;</p>
+<p>#}</p>
+<p># This declaration allows BOOTP clients to get dynamic addresses,</p>
+<p># which we don't really recommend.</p>
+<p>#subnet 10.254.239.32 netmask 255.255.255.224 {</p>
+<p>#  range dynamic-bootp 10.254.239.40 10.254.239.60;</p>
+<p>#  option broadcast-address 10.254.239.31;</p>
+<p>#  option routers rtr-239-32-1.example.org;</p>
+<p>#}</p>
+<p># A slightly different configuration for an internal subnet.</p>
+<p>#subnet 10.5.5.0 netmask 255.255.255.224 {</p>
+<p>#  range 10.5.5.26 10.5.5.30;</p>
+<p>#  option domain-name-servers ns1.internal.example.org;</p>
+<p>#  option domain-name "internal.example.org";</p>
+<p>#  option routers 10.5.5.1;</p>
+<p>#  option broadcast-address 10.5.5.31;</p>
+<p>#  default-lease-time 600;</p>
+<p>#  max-lease-time 7200;</p>
+<p>#}</p>
+<p># Hosts which require special configuration options can be listed in</p>
+<p># host statements.   If no address is specified, the address will be</p>
+<p># allocated dynamically (if possible), but the host-specific information</p>
+<p># will still come from the host declaration.</p>
+<p>#host passacaglia {</p>
+<p>#  hardware ethernet 0:0:c0:5d:bd:95;</p>
+<p>#  filename "vmunix.passacaglia";</p>
+<p>#  server-name "toccata.fugue.com";</p>
+<p>#}</p>
+<p># Fixed IP addresses can also be specified for hosts.   These addresses</p>
+<p># should not also be listed as being available for dynamic assignment.</p>
+<p># Hosts for which fixed IP addresses have been specified can boot using</p>
+<p># BOOTP or DHCP.   Hosts for which no fixed address is specified can only</p>
+<p># be booted with DHCP, unless there is an address range on the subnet</p>
+<p># to which a BOOTP client is connected which has the dynamic-bootp flag</p>
+<p># set.</p>
+<p>#host fantasia {</p>
+<p>#  hardware ethernet 08:00:07:26:c0:a5;</p>
+<p>#  fixed-address fantasia.fugue.com;</p>
+<p>#}</p>
+<p># You can declare a class of clients and then do address allocation</p>
+<p># based on that.   The example below shows a case where all clients</p>
+<p># in a certain class get addresses on the 10.17.224/24 subnet, and all</p>
+<p># other clients get addresses on the 10.0.29/24 subnet.</p>
+<p>#class "foo" {</p>
+<p>#  match if substring (option vendor-class-identifier, 0, 4) = "SUNW";</p>
+<p>#}</p>
+<p>#shared-network 224-29 {</p>
+<p>#  subnet 10.17.224.0 netmask 255.255.255.0 {</p>
+<p>#    option routers rtr-224.example.org;</p>
+<p>#  }</p>
+<p>#  subnet 10.0.29.0 netmask 255.255.255.0 {</p>
+<p>#    option routers rtr-29.example.org;</p>
+<p>#  }</p>
+<p>#  pool {</p>
+<p>#    allow members of "foo";</p>
+<p>#    range 10.17.224.10 10.17.224.250;</p>
+<p>#  }</p>
+<p>#  pool {</p>
+<p>#    deny members of "foo";</p>
+<p>#    range 10.0.29.10 10.0.29.230;</p>
+<p>#  }</p>
+<p>#}@]</p>
+<p>cat /etc/ltsp/dhcpd.conf</p>
+<p>[@authoritative;</p>
+<p>subnet 192.168.0.0 netmask 255.255.255.0 {</p>
+<p>range 192.168.0.20 192.168.0.250;</p>
+<p>option domain-name "ltspteste";</p>
+<p>option domain-name-servers 192.168.0.1;</p>
+<p>option broadcast-address 192.168.0.255;</p>
+<p>option routers 192.168.0.1;</p>
+<p>option subnet-mask 255.255.255.0;</p>
+<p>if substring( option vendor-class-identifier, 0, 9 ) = "PXEClient" {</p>
+<p>filename "/ltsp/i386/pxelinux.0";</p>
+<p>}</p>
+<p>else{</p>
+<p>filename "/ltsp/i386/nbi.img";</p>
+<p>}</p>
+<p>option root-path "/opt/ltsp/i386";</p>
+<p>}@]</p>
+<p>cat /etc/inetd.conf</p>
+<p>[@# /etc/inetd.conf:  see inetd(8) for further informations.</p>
+<p>#</p>
+<p># Internet superserver configuration database</p>
+<p>#</p>
+<p>#</p>
+<p># Lines starting with "#:LABEL:" or "#<off>#" should not</p>
+<p># be changed unless you know what you are doing!</p>
+<p>#</p>
+<p># If you want to disable an entry so it isn't touched during</p>
+<p># package updates just comment it out with a single '#' character.</p>
+<p>#</p>
+<p># Packages should modify this file by using update-inetd(8)</p>
+<p>#</p>
+<p># <service_name> <sock_type> <proto> <flags> <user> <server_path> <args></p>
+<p>#</p>
+<p>#:INTERNAL: Internal services</p>
+<p>#discard                stream  tcp     nowait  root    internal</p>
+<p>#discard                dgram   udp     wait    root    internal</p>
+<p>#daytime                stream  tcp     nowait  root    internal</p>
+<p>#time           stream  tcp     nowait  root    internal</p>
+<p>#:STANDARD: These are standard services.</p>
+<p>#:BSD: Shell, login, exec and talk are BSD protocols.</p>
+<p>#:MAIL: Mail, news and uucp services.</p>
+<p>#:INFO: Info services</p>
+<p>#:BOOT: TFTP service is provided primarily for booting.  Most sites</p>
+<p>#       run this only on machines acting as "boot servers."</p>
+<p>tftp           dgram   udp     wait    root  /usr/sbin/in.tftpd /usr/sbin/in.tftpd -s /var/lib/tftpboot</p>
+<p>#:RPC: RPC based services</p>
+<p>#:HAM-RADIO: amateur-radio services</p>
+<p>#:OTHER: Other services</p>
+<p>9571           stream  tcp     nowait  nobody /usr/sbin/tcpd /usr/sbin/ldminfod</p>
+<p>9572                    stream  tcp     nowait  nobody /usr/sbin/tcpd /usr/sbin/nbdswapd@]</p>
+<p>cat /etc/exports</p>
+<p>[@# /etc/exports: the access control list for filesystems which may be exported</p>
+<p>#               to NFS clients.  See exports(5).</p>
+<p>#</p>
+<p># Example for NFSv2 and NFSv3:</p>
+<p># /srv/homes       hostname1(rw,sync) hostname2(ro,sync)</p>
+<p>#</p>
+<p># Example for NFSv4:</p>
+<p># /srv/nfs4        gss/krb5i(rw,sync,fsid=0,crossmnt)</p>
+<p># /srv/nfs4/homes  gss/krb5i(rw,sync)</p>
+<p>#</p>
+<p># Automatically added by ltsp-server</p>
+<p>/opt/ltsp       *(ro,no_root_squash,async)@]</p>
+<p>No - /usr/share/doc/ltsp-server - tem uma pasta com alguns texto/docs interessantes de se ver.\\</p>
+<p>http://idsorocaba.batemacumba.net/anexo/ltsp-server.tar.gz\\</p>
+<p>Dentro tem: <a href="/ltsp/workstation.html">workstation</a> - <a href="/ltsp/dhcpd-dnsmasq.html">dhcpd-dnsmasq</a> - <a href="/ltsp/swap.html">swap</a></p>
+</div></div></div></div>
+<script src="/js/bootstrap.bundle.min.js"></script>
+</body></html>

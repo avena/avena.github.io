@@ -1,0 +1,17 @@
+version=pmwiki-2.1.27 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (X11; U; Linux i686; pt-BR; rv:1.8.1.10) Gecko/20071115 Iceweasel/2.0.0.10 (Debian-2.0.0.10-0etch1)
+author=avena
+csum=
+ctime=1192133397
+host=189.5.38.67
+name=Main.OutrosGerenciadores
+rev=2
+targets=
+text=LANBR - GERENCIADOR DE LAN HOUSES E CYBER CAFÉS EM LINUX\\%0ahttp://www.portalcriativa.com.br/LanBr.html%0a%0ahttp://openkiosk.sourceforge.net\\%0aOpenKiosk is an integrated multi-platform kiosk management system. OpenKiosk is ideally suited for use in locations where a controlled computing environment is paramount such as public access systems, libraries, school computer laboratories, internet cafes and more!%0a%0aCCL - Cafe Con Leche\\%0ahttp://ccl.sourceforge.net\\%0aCCL (libccls + libcclc) is a library that intends to make the development of internet cafe programs easier, doing some of the work for you. libccls is used to make the server part, and libcclc is used to make the client. It is currently a work in progress, the APIs are subject to changes.%0a%0a%0ahttp://sourceforge.net/projects/ltsp-thinadmin/\\%0aLTSP-ThinAdmin is a front-end for LTSP. It allows to manage thin clients configuration in a LTSP server, using a graphical interface. LTSP-ThinAdmin was designed for EduLinux (www.edulinux.cl) but it would have to work in any LTSP server.
+time=1201886768
+author:1201886768=avena
+diff:1201886768:1192133397:=9,13c9%0a%3c CCL (libccls + libcclc) is a library that intends to make the development of internet cafe programs easier, doing some of the work for you. libccls is used to make the server part, and libcclc is used to make the client. It is currently a work in progress, the APIs are subject to changes.%0a%3c %0a%3c %0a%3c http://sourceforge.net/projects/ltsp-thinadmin/\\%0a%3c LTSP-ThinAdmin is a front-end for LTSP. It allows to manage thin clients configuration in a LTSP server, using a graphical interface. LTSP-ThinAdmin was designed for EduLinux (www.edulinux.cl) but it would have to work in any LTSP server.%0a\ No newline at end of file%0a---%0a> CCL (libccls + libcclc) is a library that intends to make the development of internet cafe programs easier, doing some of the work for you. libccls is used to make the server part, and libcclc is used to make the client. It is currently a work in progress, the APIs are subject to changes.%0a\ No newline at end of file%0a
+host:1201886768=189.5.38.67
+author:1192133397=Avena
+diff:1192133397:1192133397:=1,9d0%0a%3c LANBR - GERENCIADOR DE LAN HOUSES E CYBER CAFÉS EM LINUX\\%0a%3c http://www.portalcriativa.com.br/LanBr.html%0a%3c %0a%3c http://openkiosk.sourceforge.net\\%0a%3c OpenKiosk is an integrated multi-platform kiosk management system. OpenKiosk is ideally suited for use in locations where a controlled computing environment is paramount such as public access systems, libraries, school computer laboratories, internet cafes and more!%0a%3c %0a%3c CCL - Cafe Con Leche\\%0a%3c http://ccl.sourceforge.net\\%0a%3c CCL (libccls + libcclc) is a library that intends to make the development of internet cafe programs easier, doing some of the work for you. libccls is used to make the server part, and libcclc is used to make the client. It is currently a work in progress, the APIs are subject to changes.%0a\ No newline at end of file%0a
+host:1192133397=189.5.45.248

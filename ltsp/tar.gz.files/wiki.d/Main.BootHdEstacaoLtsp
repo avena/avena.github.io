@@ -1,0 +1,14 @@
+version=pmwiki-2.1.27 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.6) Gecko/20070725 Firefox/2.0.0.6
+author=Avena
+csum=
+ctime=1190422145
+host=189.5.47.137
+name=Main.BootHdEstacaoLtsp
+rev=1
+targets=
+text=%0a%0a%0aReferências:\\%0ahttp://www.vivaolinux.com.br/dicas/verDica.php?codigo=9222\\%0ahttp://gufsc.das.ufsc.br/tiki-index.php?page=BootHDLTSP%0a
+time=1190422145
+author:1190422145=Avena
+diff:1190422145:1190422145:=1,6d0%0a%3c %0a%3c %0a%3c %0a%3c Referências:\\%0a%3c http://www.vivaolinux.com.br/dicas/verDica.php?codigo=9222\\%0a%3c http://gufsc.das.ufsc.br/tiki-index.php?page=BootHDLTSP%0a
+host:1190422145=189.5.47.137

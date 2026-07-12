@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Swap — LTSP</title>
+<link rel="stylesheet" href="/css/bootstrap.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+body{background:#f5f5f5;font-family:'Poppins',sans-serif;}
+.ltsp-header{background:#1a237e;color:#fff;padding:20px 0;}
+.ltsp-header h1{margin:0;font-size:1.5rem;}
+.ltsp-sidebar{background:#fff;border-right:1px solid #e0e0e0;padding:20px;min-height:calc(100vh - 120px);font-size:0.9rem;}
+.ltsp-sidebar ul{list-style:none;padding:0;margin:0;}
+.ltsp-sidebar li{margin-bottom:6px;}
+.ltsp-sidebar a{color:#333;text-decoration:none;}
+.ltsp-sidebar a:hover{color:#1a237e;text-decoration:underline;}
+.ltsp-sidebar .sidehead{font-weight:700;margin-top:16px;margin-bottom:8px;font-size:0.85rem;text-transform:uppercase;color:#1a237e;}
+.ltsp-content{background:#fff;padding:30px;min-height:calc(100vh - 120px);}
+.ltsp-content h2{color:#1a237e;margin-top:24px;margin-bottom:12px;font-size:1.4rem;}
+.ltsp-content h3{color:#333;margin-top:20px;margin-bottom:10px;font-size:1.2rem;}
+.ltsp-content p{margin-bottom:12px;line-height:1.6;}
+.ltsp-content pre{background:#f5f5f5;border:1px solid #e0e0e0;padding:12px;overflow-x:auto;font-size:0.85rem;border-radius:4px;}
+.ltsp-content code{background:#f5f5f5;padding:2px 6px;font-size:0.85rem;border-radius:3px;}
+.ltsp-content ul{margin-bottom:12px;padding-left:20px;}
+.ltsp-content li{margin-bottom:4px;}
+.ltsp-breadcrumb{font-size:0.85rem;color:#666;margin-bottom:16px;}
+.ltsp-breadcrumb a{color:#1a237e;}
+.ltsp-content hr{margin:24px 0;border:0;border-top:1px solid #e0e0e0;}
+</style>
+</head>
+<body>
+<div class="ltsp-header">
+<div class="container">
+<div class="row align-items-center">
+<div class="col"><a href="/ltsp/" style="color:#fff;text-decoration:none"><h1>LTSP · Documentação em português</h1></a></div>
+<div class="col-auto"><a href="/" class="text-white-50 text-decoration-none">← Voltar ao currículo</a></div>
+</div></div></div>
+<div class="container"><div class="row">
+<div class="col-md-3"><div class="ltsp-sidebar"><ul><li><a href="/ltsp/">Página Inicial</a></li></ul></ul><div class="sidehead"><strong>Debian</strong></div><ul><li><a href="http://www.ltsp.org" target="_blank" rel="noopener">LTSP</a></li></ul><ul><li><a href="http://debian.org" target="_blank" rel="noopener">Debian</a></li></ul><ul><li><a href="https://www.ubuntu.com" target="_blank" rel="noopener">Ubuntu</a></li></ul></div></div>
+<div class="col-md-9"><div class="ltsp-content">
+<div class="ltsp-breadcrumb"><a href="/ltsp/">LTSP</a> &raquo; Main</div>
+<pre>there are a few options to enable swap in ltsp.
+
+(this assumes an ltsp dir of /opt/ltsp, and achitecture of i386, adjust to your
+configuration if necessary)
+
+
+using local swap partitions from the hard disk:
+
+add to /opt/ltsp/i386/etc/lts.conf:
+
+[Default]
+USE_LOCAL_SWAP=Y
+
+
+network swap using NBD:
+
+touch /opt/ltsp/i386/etc/nbd-client
+
+in /opt/ltsp/i386/etc/lts.conf:
+
+[Default]
+NBD_SWAP=Y
+
+
+apt-get install nbd-server
+
+update-inetd --group LTSP --add &quot;9210 stream tcp nowait nobody /usr/sbin/tcpd /usr/sbin/nbdswapd&quot;
+
+
+encrypting swap space:
+
+in /opt/ltsp/i386/etc/lts.conf:
+
+ENCRYPT_SWAP=Y
+
+and install the cryptsetup package:
+
+chroot /opt/ltsp/i386 apt-get install cryptsetup
+
+
+alternately, you can configure nbd-server the hard way:
+
+apt-get install nbd-server
+
+in /etc/nbd-server:
+
+NBD_PORT[0]=9210
+NBD_FILE[0]=/opt/ltsp/swap/swapfile.%s
+NBD_SERVER_OPTS[0]=&quot;&quot;
+
+invoke-rc.d nbd-server start
+
+
+create a file for each possible ip address that will attempt
+to connect to the server:
+
+# size in megabytes
+size=100
+your_ip_addresses=&quot;10.0.2.2 10.0.2.3 10.0.2.4 ...&quot;
+mkdir -p /opt/ltsp/swap/
+for a in $your_ip_addresse ; do
+  dd if=/dev/zero of=/opt/ltsp/swap/swapfile.$a bs=1024k count=$size
+done</pre>
+</div></div></div></div>
+<script src="/js/bootstrap.bundle.min.js"></script>
+</body></html>

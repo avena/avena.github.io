@@ -1,0 +1,21 @@
+version=pmwiki-2.2.82 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:63.0) Gecko/20100101 Firefox/63.0
+author=
+charset=ISO-8859-1
+csum=
+ctime=1436101774
+host=186.207.68.18
+name=Main.SourcesListJessie
+rev=3
+targets=
+text=%0a[@%0a# Line commented out by installer because it failed to verify:%0adeb http://security.debian.org/ jessie/updates contrib main  %0a# Line commented out by installer because it failed to verify:%0adeb-src http://security.debian.org/ jessie/updates contrib main  %0a%0a# jessie-updates, previously known as 'volatile'%0a# A network mirror was not selected during install.  The following entries%0a# are provided as examples, but you should amend them as appropriate%0a# for your mirror of choice.%0a%0adeb http://ftp.debian.org/debian/ jessie-updates contrib main  %0adeb-src http://ftp.debian.org/debian/ jessie-updates contrib main  %0a%0a#debian%0a# deb http://http.us.debian.org/debian/ jessie main contrib non-free%0a# deb ftp://mirrors.kernel.org/debian/ jessie main contrib non-free%0a# deb http://download.unesp.br/linux/debian/ jessie main contrib non-free%0adeb http://ftp.br.debian.org/debian/ jessie main contrib non-free%0adeb-src http://ftp.br.debian.org/debian/ jessie main contrib non-free%0a%0a#som video%0a#deb http://www.deb-multimedia.org jessie main non-free%0a#deb http://www.deb-multimedia.org jessie-backports main%0a#deb http://linorg.usp.br/debian-marillat/ jessie main non-free%0a#deb-src http://linorg.usp.br/debian-marillat/ jessie main non-free%0adeb ftp://ftp.br.debian.org/debian-multimedia jessie main non-free%0adeb-src ftp://ftp.br.debian.org/debian-multimedia jessie main non-free%0adeb ftp://ftp.br.debian.org/debian-multimedia jessie-backports main%0a%0a%0a#backports%0a#deb ftp://ftp.br.debian.org/debian jessie-backports main contrib non-free%0adeb http://linorg.usp.br/debian jessie-backports main contrib non-free%0a@]
+time=1544193674
+author:1544193674=
+diff:1544193674:1436101816:=1d0%0a%3c %0a
+host:1544193674=186.207.68.18
+author:1436101816=
+diff:1436101816:1436101774:=2,14d1%0a%3c # Line commented out by installer because it failed to verify:%0a%3c deb http://security.debian.org/ jessie/updates contrib main  %0a%3c # Line commented out by installer because it failed to verify:%0a%3c deb-src http://security.debian.org/ jessie/updates contrib main  %0a%3c %0a%3c # jessie-updates, previously known as 'volatile'%0a%3c # A network mirror was not selected during install.  The following entries%0a%3c # are provided as examples, but you should amend them as appropriate%0a%3c # for your mirror of choice.%0a%3c %0a%3c deb http://ftp.debian.org/debian/ jessie-updates contrib main  %0a%3c deb-src http://ftp.debian.org/debian/ jessie-updates contrib main  %0a%3c %0a21a9%0a> %0a34a23%0a> %0a
+host:1436101816=191.205.41.145
+author:1436101774=
+diff:1436101774:1436101774:=1,24d0%0a%3c [@%0a%3c #debian%0a%3c # deb http://http.us.debian.org/debian/ jessie main contrib non-free%0a%3c # deb ftp://mirrors.kernel.org/debian/ jessie main contrib non-free%0a%3c # deb http://download.unesp.br/linux/debian/ jessie main contrib non-free%0a%3c deb http://ftp.br.debian.org/debian/ jessie main contrib non-free%0a%3c deb-src http://ftp.br.debian.org/debian/ jessie main contrib non-free%0a%3c %0a%3c %0a%3c #som video%0a%3c #deb http://www.deb-multimedia.org jessie main non-free%0a%3c #deb http://www.deb-multimedia.org jessie-backports main%0a%3c #deb http://linorg.usp.br/debian-marillat/ jessie main non-free%0a%3c #deb-src http://linorg.usp.br/debian-marillat/ jessie main non-free%0a%3c deb ftp://ftp.br.debian.org/debian-multimedia jessie main non-free%0a%3c deb-src ftp://ftp.br.debian.org/debian-multimedia jessie main non-free%0a%3c deb ftp://ftp.br.debian.org/debian-multimedia jessie-backports main%0a%3c %0a%3c %0a%3c #backports%0a%3c #deb ftp://ftp.br.debian.org/debian jessie-backports main contrib non-free%0a%3c deb http://linorg.usp.br/debian jessie-backports main contrib non-free%0a%3c %0a%3c @]%0a\ No newline at end of file%0a
+host:1436101774=191.205.41.145

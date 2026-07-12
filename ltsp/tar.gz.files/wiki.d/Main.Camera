@@ -1,0 +1,17 @@
+version=pmwiki-2.1.27 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.1.16) Gecko/20110107 Iceweasel/3.5.16 (like Firefox/3.5.16)
+author=
+csum=
+ctime=1185454386
+host=189.5.38.169
+name=Main.Camera
+rev=2
+targets=
+text='''[[http://tecnologia.terra.com.br/interna/0,,OI1019724-EI4797,00.html|Câmera fotográfica pode ser baixada da Internet]]'''%0a%0aUma empresa chamada Linatree inventou uma câmera fotográfica que pode ser baixada da Internet. Na verdade, trata-se de um esquema em formato PDF que deve ser impresso, recortado e montado. A câmera analógica tem o nome de "pinhole", algo como furo de alfinete. Isso porque as lentes são substituidas justamente por um pequeno furo no qual a luz entra para gravar a imagem em um filme de sensibilidade média.\\%0aA câmera de papel utiliza filmes PAN, da Ilford, Neopan 100, da Fuji, ou qualquer um de 35 milímetros. A partir dos links abaixo, o usuário baixa o esquema em formato PDF ou comprimido, e também pode acompanhar uma animação que ensina como montar a câmera:%0a%0a[[http://idsorocaba.batemacumba.net/anexo/Linatree_Brochure.pdf|Local em PDF]]\\%0a[[http://www.linatree.com/brochure/en/Linatree_Brochure.pdf|Baixe o esquema em PDF]]\\%0a[[http://www.linatree.com/brochure/en/Linatree_Brochure.zip|Baixe o esquema em ZIP]]\\%0a[[http://www.linatree.com/pinhole/guide/|Veja a animação]]
+time=1297811735
+author:1297811735=
+diff:1297811735:1185454386:=6c6%0a%3c [[http://idsorocaba.batemacumba.net/anexo/Linatree_Brochure.pdf|Local em PDF]]\\%0a---%0a> [[http://idsorocaba.ourproject.org/anexo/Linatree_Brochure.pdf|Local em PDF]]\\%0a
+host:1297811735=189.5.38.169
+author:1185454386=
+diff:1185454386:1185454386:=1,9d0%0a%3c '''[[http://tecnologia.terra.com.br/interna/0,,OI1019724-EI4797,00.html|Câmera fotográfica pode ser baixada da Internet]]'''%0a%3c %0a%3c Uma empresa chamada Linatree inventou uma câmera fotográfica que pode ser baixada da Internet. Na verdade, trata-se de um esquema em formato PDF que deve ser impresso, recortado e montado. A câmera analógica tem o nome de "pinhole", algo como furo de alfinete. Isso porque as lentes são substituidas justamente por um pequeno furo no qual a luz entra para gravar a imagem em um filme de sensibilidade média.\\%0a%3c A câmera de papel utiliza filmes PAN, da Ilford, Neopan 100, da Fuji, ou qualquer um de 35 milímetros. A partir dos links abaixo, o usuário baixa o esquema em formato PDF ou comprimido, e também pode acompanhar uma animação que ensina como montar a câmera:%0a%3c %0a%3c [[http://idsorocaba.ourproject.org/anexo/Linatree_Brochure.pdf|Local em PDF]]\\%0a%3c [[http://www.linatree.com/brochure/en/Linatree_Brochure.pdf|Baixe o esquema em PDF]]\\%0a%3c [[http://www.linatree.com/brochure/en/Linatree_Brochure.zip|Baixe o esquema em ZIP]]\\%0a%3c [[http://www.linatree.com/pinhole/guide/|Veja a animação]]%0a\ No newline at end of file%0a
+host:1185454386=189.5.42.237

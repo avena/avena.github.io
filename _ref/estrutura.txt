@@ -1,0 +1,132 @@
+================================================================================
+SITE DE REFERÊNCIA: https://felipegazolla.dev/
+================================================================================
+Felipe Gazolla — Full Stack Developer
+================================================================================
+
+ESTRUTURA GERAL (Single-page com âncoras + sub-páginas)
+================================================================================
+
+IDIOMAS
+  /        → Português (raiz)
+  /en      → Inglês
+  /es      → Espanhol (não verifiquei se existe)
+
+URLS
+  /                         → pt home
+  /en                       → en home
+  /en/servicos              → en serviços (sub-página dedicada)
+  /en#sobre                 → âncora sobre (inglês)
+  /en#servicos              → âncora serviços (inglês)
+  /en#projetos              → âncora projetos (inglês)
+  /en#contato               → âncora contato (inglês)
+
+SEÇÕES DA HOME
+================================================================================
+
+1. HEADER
+   - Wordmark "Felipe Gazolla."
+   - Nav: Services, Projects, About, Contact, LinkedIn
+   - Language switch PT | EN (destaca o idioma atual)
+
+2. HERO
+   - Status: "Open to projects and full-time roles"
+   - Kicker: "Full Stack Developer · Lagoa Vermelha, Brazil"
+   - Title: "From the field / to code."
+   - Portrait photo
+   - Sub: "I build complete digital products — web, mobile and SaaS..."
+   - CTAs: "View services" / "View projects"
+   - Recruiter cue: "Résumé · LinkedIn"
+
+3. SERVIÇOS (id="servicos")
+   - Title: "What I build."
+   - Lead: "Tailor-made products, from concept to deploy..."
+   - 5 service cards:
+     a) Website & Landing page
+     b) SaaS MVP
+     c) Mobile app
+     d) Automation & integrations
+     e) Custom system
+   - Link: "View all services →" (aponta para /en/servicos)
+
+4. SOBRE (id="sobre")
+   - Title: "About me."
+   - Lead: "I came from Agronomy and ended up in code..."
+   - 4 paragraphs about background, work, motivation, personal projects
+
+5. SKILLS
+   - Title: "Skills."
+   - Lead: "Skills grouped by area."
+   - Groups:
+     - Frontend: React, Next.js, TypeScript, JavaScript, SCSS, Tailwind CSS, Dashboards, Admin interfaces
+     - Backend: Node.js, PHP, Laravel, REST APIs, Authentication, Modular architecture
+     - Mobile: Flutter, React Native, Apps with maps, Mobile experiences integrated with web systems
+     - Database: MySQL, Data modeling, Operational data, Agricultural data
+     - Product & Domain: SaaS, Management systems, AgroTech, Real estate, Automation, Dashboards, Maps, UX
+
+6. JORNADA (id="trajetoria")
+   - Title: "Journey."
+   - Lead: "From agtech roots to software engineering..."
+   - Timeline:
+     - 2020: First administrative experiences
+     - 2021: Start of Software Engineering
+     - 2022-2025: Real estate market
+     - 2025-present: Technology applied to agriculture
+     - 2024-2026: Personal projects and complete systems
+
+7. PROJETOS (id="projetos")
+   - Title: "Featured projects."
+   - Lead: "Real systems reimagined as interactive demos..."
+   - 6 project cards (each with date, title, tags, description):
+     a) Fito Agrícola (real) - AgroTech, Mobile, SaaS
+     b) Loqfy - SaaS, Operations
+     c) RedlineKart - Operations, SaaS, Services
+     d) Auto Detailing - Services, Operations, SaaS
+     e) Medical Clinic System - Health, SaaS, Operations
+     f) Disparador - Automation, SaaS
+   - Link: "View all projects →"
+
+8. HOW I WORK (id="como-trabalho")
+   - Title: "How I work."
+   - Steps:
+     01 Conversation
+     02 Proposal
+     03 Build
+     04 Delivery & support
+
+9. CONTATO (id="contato")
+   - Title: "Let's talk ?"
+   - Lead: "Open to opportunities..."
+   - CTAs: "Get in touch" / "LinkedIn"
+
+10. FOOTER
+    - Brand: "Felipe Gazolla." + Full Stack Developer · Lagoa Vermelha, Brazil
+    - Nav: Services, Résumé, Contact, LinkedIn
+    - Copyright © 2026 · Felipe Gazolla
+
+SUB-PÁGINA: /en/servicos
+================================================================================
+- Title: "Services — Felipe Gazolla"
+- Nav igual à home
+- H1: "What I build for you."
+- Lead: "From a marketing site to a full SaaS..."
+- Packages detalhados (cada serviço com bullet points):
+  - Website & Landing page
+  - SaaS MVP
+  - Mobile app
+  - Automation & integrations
+  - Custom system
+- "How it works" (mesmo 4 steps)
+- "Why me" (3 bullet points)
+- CTA: "Request a quote"
+- Footer igual
+
+OBSERVAÇÕES TÉCNICAS
+================================================================================
+- Usa gerador de site estático (provavelmente Astro, Hugo ou 11ty)
+- URLs limpas sem .html (próprio do SSG)
+- Language switcher no header muda o href para /en / /pt
+- JSON-LD estruturado para SEO (Person + WebSite schema)
+- Design limpo, tipografia moderna, cards com sombra suave
+- Cores: fundo escuro no hero, cards brancos, detalhes em cor de destaque (laranja/tomate)
+- Seções ocupam viewport inteira com padding generoso

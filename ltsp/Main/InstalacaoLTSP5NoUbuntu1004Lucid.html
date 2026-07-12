@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Vamos aos passos de configuração e instalação. — LTSP</title>
+<link rel="stylesheet" href="/css/bootstrap.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+body{background:#f5f5f5;font-family:'Poppins',sans-serif;}
+.ltsp-header{background:#1a237e;color:#fff;padding:20px 0;}
+.ltsp-header h1{margin:0;font-size:1.5rem;}
+.ltsp-sidebar{background:#fff;border-right:1px solid #e0e0e0;padding:20px;min-height:calc(100vh - 120px);font-size:0.9rem;}
+.ltsp-sidebar ul{list-style:none;padding:0;margin:0;}
+.ltsp-sidebar li{margin-bottom:6px;}
+.ltsp-sidebar a{color:#333;text-decoration:none;}
+.ltsp-sidebar a:hover{color:#1a237e;text-decoration:underline;}
+.ltsp-sidebar .sidehead{font-weight:700;margin-top:16px;margin-bottom:8px;font-size:0.85rem;text-transform:uppercase;color:#1a237e;}
+.ltsp-content{background:#fff;padding:30px;min-height:calc(100vh - 120px);}
+.ltsp-content h2{color:#1a237e;margin-top:24px;margin-bottom:12px;font-size:1.4rem;}
+.ltsp-content h3{color:#333;margin-top:20px;margin-bottom:10px;font-size:1.2rem;}
+.ltsp-content p{margin-bottom:12px;line-height:1.6;}
+.ltsp-content pre{background:#f5f5f5;border:1px solid #e0e0e0;padding:12px;overflow-x:auto;font-size:0.85rem;border-radius:4px;}
+.ltsp-content code{background:#f5f5f5;padding:2px 6px;font-size:0.85rem;border-radius:3px;}
+.ltsp-content ul{margin-bottom:12px;padding-left:20px;}
+.ltsp-content li{margin-bottom:4px;}
+.ltsp-breadcrumb{font-size:0.85rem;color:#666;margin-bottom:16px;}
+.ltsp-breadcrumb a{color:#1a237e;}
+.ltsp-content hr{margin:24px 0;border:0;border-top:1px solid #e0e0e0;}
+</style>
+</head>
+<body>
+<div class="ltsp-header">
+<div class="container">
+<div class="row align-items-center">
+<div class="col"><a href="/ltsp/" style="color:#fff;text-decoration:none"><h1>LTSP · Documentação em português</h1></a></div>
+<div class="col-auto"><a href="/" class="text-white-50 text-decoration-none">← Voltar ao currículo</a></div>
+</div></div></div>
+<div class="container"><div class="row">
+<div class="col-md-3"><div class="ltsp-sidebar"><ul><li><a href="/ltsp/">Página Inicial</a></li></ul></ul><div class="sidehead"><strong>Debian</strong></div><ul><li><a href="http://www.ltsp.org" target="_blank" rel="noopener">LTSP</a></li></ul><ul><li><a href="http://debian.org" target="_blank" rel="noopener">Debian</a></li></ul><ul><li><a href="https://www.ubuntu.com" target="_blank" rel="noopener">Ubuntu</a></li></ul></div></div>
+<div class="col-md-9"><div class="ltsp-content">
+<div class="ltsp-breadcrumb"><a href="/ltsp/">LTSP</a> &raquo; Main</div>
+<p>Para o funcionamento do LTSP, é preciso alguns programas.\\</p>
+<p><strong># apt-get install dhcp3-server debconf-utils debootstrap ldm-server ltsp-server ltspfs nbd-server openbsd-inetd squashfs-tools tftpd-hpa  xbase-clients </strong></p>
+<p>Além destes pacotes possível instalar o: <strong>ltsp-server-standalone</strong>\\</p>
+<p>com ele vem uma configuração de dhcp-server, que vai estar localizada em:\\</p>
+<p><strong>/etc/ltsp/dhcpd.conf</strong></p>
+<h2>Vamos aos passos de configuração e instalação.</h2>
+<h3>1 - Configuração de interface de rede</h3>
+<p>O servidor deve ter duas placas de rede, vamos usar aqui no exemplo a eth1 com ip 192.168.20.1 para o LTSP\\</p>
+<p>Para isso vamos abrir o:\\</p>
+<p><strong>#nano /etc/network/interfaces</strong>\\</p>
+<p>E colocar a seguinte configuração na eth1 deste jeito.</p>
+<p>[@auto eth1</p>
+<p>iface eth1 inet static</p>
+<p>address   192.168.30.1</p>
+<p>netmask   255.255.255.0</p>
+<p>network   192.168.30.0</p>
+<p>broadcast 192.168.30.255@]</p>
+<p>depois executar...\\</p>
+<p><strong>#/etc/init.d/networking restart</strong></p>
+<h3>2 - Configuração do DHCP3-Server</h3>
+<p>E edite o dhcpd.conf\\</p>
+<p><strong>#nano /etc/dhcp3/dhcpd.conf</strong></p>
+<p>O valor: <em>authoritative</em>; - somente coloca dhcp-server com mais <strong>autoridade/autoritário</strong> sobre outras conf ou dhcps. se tiver somente um dhcp-server na rede deixe ligado.</p>
+<p>E caso instalou o <strong>ltsp-server-standalone</strong> a configuração de dhcp-server vai estar localizada em:\\</p>
+<p><strong>/etc/ltsp/dhcpd.conf</strong></p>
+<p>Agora faça as mudanças no <strong>option domain-name</strong>, <strong>option domain-name-servers</strong> e na <strong>subnet</strong>, o dhcpd.conf deve ficar assim.</p>
+<pre>authoritative;
+
+subnet 192.168.30.0 netmask 255.255.255.0 {
+    range 192.168.30.20 192.168.30.250;
+    option domain-name &quot;ltsp&quot;;
+    option domain-name-servers 208.67.222.222, 192.168.30.1;
+    option broadcast-address 192.168.30.255;
+    option routers 192.168.30.1;
+#    next-server 192.168.30.1;
+#    get-lease-hostnames true;
+    option subnet-mask 255.255.255.0;
+    option root-path &quot;/opt/ltsp/i386&quot;;
+    if substring( option vendor-class-identifier, 0, 9 ) = &quot;PXEClient&quot; {
+        filename &quot;/ltsp/i386/pxelinux.0&quot;;
+    } else {
+        filename &quot;/ltsp/i386/nbi.img&quot;;
+    }
+}</pre>
+<p>Complete de editar o dhcpd.conf e informe ao dhcp-server em qual interface de rede vai responder/escutar os pedidos de conexão.\\</p>
+<p><strong>nano /etc/default/dhcp3-server</strong></p>
+<p>[@# On what interfaces should the DHCP server (dhcpd) serve DHCP requests?</p>
+<p>#       Separate multiple interfaces with spaces, e.g. "eth0 eth1".</p>
+<p>INTERFACES="eth1"@]</p>
+<p>No caso esta <strong>eth1</strong> pois usaremos esta interface.</p>
+<p>Feito tudo...execute.\\</p>
+<p><strong>#/etc/init.d/dhcp3-server restart</strong></p>
+<pre>sudo /etc/init.d/dhcp3-server restart
+ * Stopping DHCP server dhcpd3                                                               [fail] 
+ * Starting DHCP server dhcpd3                                                               [ OK ]</pre>
+<p>dhcp3 ligou corretamente.</p>
+<h3>3 - Configuração do tftpd-hpa</h3>
+<p>Abra o:\\</p>
+<p><strong>#nano /etc/default/tftpd-hpa</strong>\\</p>
+<p>Veja se esta com esta configuração, caso não esteja, deixe o arquivo <strong>tftpd-hpa</strong> deste jeito...</p>
+<pre># /etc/default/tftpd-hpa
+
+TFTP_USERNAME=&quot;tftp&quot;
+TFTP_DIRECTORY=&quot;/var/lib/tftpboot&quot;
+TFTP_ADDRESS=&quot;0.0.0.0:69&quot;
+TFTP_OPTIONS=&quot;--secure&quot;</pre>
+<p>Salve, de restart no tftpd-hpa:</p>
+<p>[@$ sudo /etc/init.d/tftpd-hpa restart</p>
+<p>Rather than invoking init scripts through /etc/init.d, use the service(8)</p>
+<p>utility, e.g. service tftpd-hpa restart</p>
+<p>Since the script you are attempting to invoke has been converted to an</p>
+<p>Upstart job, you may also use the restart(8) utility, e.g. restart tftpd-hpa</p>
+<p>tftpd-hpa start/running, process 27182@]</p>
+<p>e vai estar pronto, esta sendo o processo 27182 (tftpd-hpa start/running, process 27182) no caso acima.</p>
+<h3>4 - Configuração do NBD-Server</h3>
+<p>O nbd-server vai ser configurando colando uma linhas com valores no /etc/inetd.conf \\</p>
+<p>Vamos editar o arquivo:\\</p>
+<p><strong>nano /etc/inetd.conf </strong></p>
+<pre>9571           stream  tcp     nowait  nobody /usr/sbin/tcpd /usr/sbin/ldminfod
+9572                    stream  tcp     nowait  nobody /usr/sbin/tcpd /usr/sbin/nbdswapd
+2000               stream  tcp nowait  nobody /usr/sbin/tcpd /usr/sbin/nbdrootd /opt/ltsp/images/i386.img</pre>
+<p>O arquivo tendo esta configuracao, vamos iniciar os serviços.\\</p>
+<p><strong>/etc/init.d/openbsd-inetd restart</strong></p>
+<pre>* Restarting internet superserver inetd                                                     [ OK ] </pre>
+<p>Estas 3 linhas acimas deve estar dentro do inetd.conf - somente a ultima linha que inicia com 2000 (valor informa a porta) que se refere ao <strong>nbdrootd</strong> que vai negociar com terminal a <strong>i386.img</strong> (que no caso e sistema de arquivos) criado com <strong>ltsp-update-image</strong></p>
+<p>As outras ldminfod e nbdswapd, a primeira refere do ldm, tela de login do LTSP5 e segunda e pra ser usado no caso de swap no terminal usando recurso do servidor.</p>
+<h3>5 - Configurações extras e como verificar se tudo esta perfeito.</h3>
+<p>Pra NBD-Server poder atuar na rede vamos editar o arquivo:\\</p>
+<p><strong>nano /etc/hosts.allow</strong></p>
+<pre>nbdrootd: ALL: keepalive
+nbdswapd: ALL: keepalive</pre>
+<p>O arquivo hosts.allow deve ter linhas acimas, para assim permitir/allow a todos micros/hospedeiros/hosts (por isso hosts.allow) conseguir negociar com o NBD-Server.</p>
+<p>Verificar se esta tudo rodando, vamos ver pelas porta dos programas.</p>
+<p>dhcp3-server - 67\\</p>
+<p>[@sudo netstat -anp | grep 67</p>
+<p>udp        0      0 0.0.0.0:67              0.0.0.0:*                           1566/dhcpd3 @]</p>
+<p>tftpd-hpa - 69\\</p>
+<p>[@sudo netstat -anp | grep 69</p>
+<p>udp        0      0 0.0.0.0:69              0.0.0.0:*                           966/in.tftpd@]</p>
+<p>nbd-server - 2000\\</p>
+<p>[@sudo netstat -anp | grep 2000</p>
+<p>tcp        0      0 0.0.0.0:2000            0.0.0.0:*               OUÇA       1606/inetd   @]</p>
+<p>Esta tudo rodando. Ligue os terminais e bom trabalho.</p>
+<p>Recomendo ver os vídeos pois mesmo longos...ali tem todos os problemas e telas de como ficar o ambiente LTSP5 em pleno funcionando.</p>
+<h3>6 - Sistemas de boot - pxe, etherboot/gpxe</h3>
+<p>No inicio estava usando o etherboot antigo, recomendo a todos que usa disquete, cd, pendrive ou memoria flash com etherboot antigo, ir no [++<a href="http://www.rom-o-matic.net/" target="_blank" rel="noopener">ROM-o-matic.net</a>++] e pegar novamente as imagens de boot de cada placa mas em [++gPXE++].</p>
+<h4>Vídeos</h4>
+<p><strong>Titulo:</strong> Mostrando o LTSP4.2 no Debian Squeeze\\</p>
+<p><iframe width="560" height="315" src="https://www.youtube.com/embed/lAJHaWcv5uM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>\\</p>
+<p><strong>Sobre:</strong> Mostrando com o virtualbox e etherboot, como seria o boot de terminal usando o LTSP4.2 instalado no Debian Squeeze</p>
+<p><strong>Titulo:</strong> Instalação do LTSP5 no Ubuntu 10.04 - parando na conf do NBD\\</p>
+<p><iframe width="560" height="315" src="https://www.youtube.com/embed/2xlYhM2qdbE?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>\\</p>
+<p><strong>Sobre:</strong> Video onde mostro em detalhes a instalação/configuração do dhcp3-server, tftpd-hpa, boot via rede, contrucao do ambiente LTSP5 com ltsp-build-client, mostrando que possível fazer com ele. E somente parando o vídeo por erro de boot e conf, que fecho e explico na parte 3.</p>
+<p><strong>Titulo:</strong> Fechando o problema com NBD-Server e mudando o sistema de etherboot\\</p>
+<p><iframe width="560" height="315" src="https://www.youtube.com/embed/NXMeVnIgbJM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>\\</p>
+<p><strong>Sobre:</strong> Vídeo final onde fecho o problema do NBD-Server, seja resolvendo problema de configuração de rede do ambiente virtual, mais o importante e mudança do sistema etherboot, que agora sendo GPXE tem o funcionamento correto dos terminais.</p>
+</div></div></div></div>
+<script src="/js/bootstrap.bundle.min.js"></script>
+</body></html>

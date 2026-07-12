@@ -1,0 +1,14 @@
+version=pmwiki-2.1.27 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (X11; U; Linux i686; pt-BR; rv:1.8.1.8) Gecko/20071004 Iceweasel/2.0.0.8 (Debian-2.0.0.6+2.0.0.8-0etch1)
+author=Avena
+csum=
+ctime=1196035896
+host=189.32.215.206
+name=Main.FuseLtsp5
+rev=1
+targets=
+text='''Fuse'''\\%0ahttp://wiki.debian.org/DebianEdu/HowTo/LocalDeviceLtspfs?highlight=%2528DebianEdu%252FHowTo%252F%2529%0a%0aInstalar no ambiente do ltsp\\%0a[@chroot /opt/ltsp/i386%0aapt-get install ltspfsd@]%0a%0aCarregar o modulo no Servidor\\%0a[@modprobe fuse@]%0a%0aTenha certeza que servidor vai carregar o modulo fuse a cada boot\\%0a[@echo "fuse" >> /etc/modules@]%0a%0aE adiciona no /lts.conf%0a[@[default]%0aLOCALDEV=True@]%0a%0aAdicione os usuarios no grupo do fuse\\%0a[@add avena fuse@]
+time=1196035896
+author:1196035896=Avena
+diff:1196035896:1196035896:=1,19d0%0a%3c '''Fuse'''\\%0a%3c http://wiki.debian.org/DebianEdu/HowTo/LocalDeviceLtspfs?highlight=%2528DebianEdu%252FHowTo%252F%2529%0a%3c %0a%3c Instalar no ambiente do ltsp\\%0a%3c [@chroot /opt/ltsp/i386%0a%3c apt-get install ltspfsd@]%0a%3c %0a%3c Carregar o modulo no Servidor\\%0a%3c [@modprobe fuse@]%0a%3c %0a%3c Tenha certeza que servidor vai carregar o modulo fuse a cada boot\\%0a%3c [@echo "fuse" >> /etc/modules@]%0a%3c %0a%3c E adiciona no /lts.conf%0a%3c [@[default]%0a%3c LOCALDEV=True@]%0a%3c %0a%3c Adicione os usuarios no grupo do fuse\\%0a%3c [@add avena fuse@]%0a\ No newline at end of file%0a
+host:1196035896=189.32.215.206

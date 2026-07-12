@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>5031DebianEtchLtspServerStandalone — LTSP</title>
+<link rel="stylesheet" href="/css/bootstrap.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+body{background:#f5f5f5;font-family:'Poppins',sans-serif;}
+.ltsp-header{background:#1a237e;color:#fff;padding:20px 0;}
+.ltsp-header h1{margin:0;font-size:1.5rem;}
+.ltsp-sidebar{background:#fff;border-right:1px solid #e0e0e0;padding:20px;min-height:calc(100vh - 120px);font-size:0.9rem;}
+.ltsp-sidebar ul{list-style:none;padding:0;margin:0;}
+.ltsp-sidebar li{margin-bottom:6px;}
+.ltsp-sidebar a{color:#333;text-decoration:none;}
+.ltsp-sidebar a:hover{color:#1a237e;text-decoration:underline;}
+.ltsp-sidebar .sidehead{font-weight:700;margin-top:16px;margin-bottom:8px;font-size:0.85rem;text-transform:uppercase;color:#1a237e;}
+.ltsp-content{background:#fff;padding:30px;min-height:calc(100vh - 120px);}
+.ltsp-content h2{color:#1a237e;margin-top:24px;margin-bottom:12px;font-size:1.4rem;}
+.ltsp-content h3{color:#333;margin-top:20px;margin-bottom:10px;font-size:1.2rem;}
+.ltsp-content p{margin-bottom:12px;line-height:1.6;}
+.ltsp-content pre{background:#f5f5f5;border:1px solid #e0e0e0;padding:12px;overflow-x:auto;font-size:0.85rem;border-radius:4px;}
+.ltsp-content code{background:#f5f5f5;padding:2px 6px;font-size:0.85rem;border-radius:3px;}
+.ltsp-content ul{margin-bottom:12px;padding-left:20px;}
+.ltsp-content li{margin-bottom:4px;}
+.ltsp-breadcrumb{font-size:0.85rem;color:#666;margin-bottom:16px;}
+.ltsp-breadcrumb a{color:#1a237e;}
+.ltsp-content hr{margin:24px 0;border:0;border-top:1px solid #e0e0e0;}
+</style>
+</head>
+<body>
+<div class="ltsp-header">
+<div class="container">
+<div class="row align-items-center">
+<div class="col"><a href="/ltsp/" style="color:#fff;text-decoration:none"><h1>LTSP · Documentação em português</h1></a></div>
+<div class="col-auto"><a href="/" class="text-white-50 text-decoration-none">← Voltar ao currículo</a></div>
+</div></div></div>
+<div class="container"><div class="row">
+<div class="col-md-3"><div class="ltsp-sidebar"><ul><li><a href="/ltsp/">Página Inicial</a></li></ul></ul><div class="sidehead"><strong>Debian</strong></div><ul><li><a href="http://www.ltsp.org" target="_blank" rel="noopener">LTSP</a></li></ul><ul><li><a href="http://debian.org" target="_blank" rel="noopener">Debian</a></li></ul><ul><li><a href="https://www.ubuntu.com" target="_blank" rel="noopener">Ubuntu</a></li></ul></div></div>
+<div class="col-md-9"><div class="ltsp-content">
+<div class="ltsp-breadcrumb"><a href="/ltsp/">LTSP</a> &raquo; Main</div>
+<p>O processo é bem proximo a da <a href="http://idsorocaba.ourproject.org/index.php?n=Main.099DebianEtchLtspServerStandalone" target="_blank" rel="noopener">Versão 0.99</a></p>
+<p>Mas agora usaremos um repositório que no seu aquivo <a href="http://pkg-ltsp.alioth.debian.org/debian/dists/etch-ltsp-backports/main/binary-i386/Packages" target="_blank" rel="noopener">Packages</a> aponta para versão mais nova do LTSP, no caso <strong>5.0.31debian2~0.etch.1</strong></p>
+<p>O documento base será <a href="http://wiki.debian.org/LTSP/Howto" target="_blank" rel="noopener">LTSP Howto</a> mas vai seguir o passos descritos abaixo do <strong>If you want to use newer LTSP related packages (with ltspfs and pulseaudio sound):</strong>, este pacotes são mais novos e tem pacotes tem o pulseaudio que possibilita ligar som nos terminais e o ltspfs que permite usar os dispositivos locais dos terminais.</p>
+<hr>
+<p>Uma documentação que usa também pode ser vista em <a href="http://gutocarvalho.net/mediawiki/index.php/LTSP_Pantaneiro" target="_blank" rel="noopener">LTSP 5 + LTSPFS + PULSEAUDIO</a></p>
+<p><strong>ltspfs</strong>\\</p>
+<p>Este sistema de arquivos remoto que permite o uso de dispositivos removíveis nos terminais LTSP. Basicamente é um daemon que roda no terminal e o módulo para utilizar FUSE (user space file system) sendo conectado ao servidor LTSP.</p>
+<p><strong>pulseaudio</strong>\\</p>
+<p>Servidor de audio para redes. Possibilita que a gente possa utilizar os recursos de audio nos terminais leves (thin-clients) a partir de seus dispositivos locais.</p>
+<hr>
+<p>Linha indicada no <a href="http://wiki.debian.org/LTSP/Howto" target="_blank" rel="noopener">LTSP Howto</a>\\</p>
+<p>[@ltsp-build-client --extra-mirror "http://pkg-ltsp.alioth.debian.org/debian etch-ltsp-backports main" --apt-key /etc/apt/trusted.gpg@]</p>
+<p>Passo 1 - Editar o sources.list e acrecentar a linha do:\\</p>
+<p><strong>[=deb http://pkg-ltsp.alioth.debian.org/debian etch-ltsp-backports main=]</strong></p>
+<p>[@deb cdrom:[Debian GNU/Linux 4.0 r1 _Etch_ - Official i386 kde-CD Binary-1 20070819-12:11]/ etch contrib main</p>
+<p>deb cdrom:[Debian GNU/Linux 4.0 r1 _Etch_ - Official i386 CD Binary-1 20070819-11:52]/ etch contrib main</p>
+<p># Line commented out by installer because it failed to verify:</p>
+<p>deb http://security.debian.org/ etch/updates main contrib</p>
+<p># Line commented out by installer because it failed to verify:</p>
+<p>#deb-src http://security.debian.org/ etch/updates main contrib</p>
+<p>deb http://ftp.br.debian.org/debian/ etch main contrib non-free</p>
+<p>#pacotes novos do ltsp 5 para etch</p>
+<p>deb http://pkg-ltsp.alioth.debian.org/debian etch-ltsp-backports main@]</p>
+<p>as linhas que se refere ao CDs não é obrigatorio...estão ali pois uso os CDs para ajudar na instalação de alguns pacotes.</p>
+<p>Instalar ssh-server\\</p>
+<p>apt-get install openssh-server</p>
+<p>Instalar o ltsp-server-standalone\\</p>
+<p>[@debian:/home/avena# @]<strong>[@apt-get install ltsp-server-standalone@]</strong></p>
+<p>[@Lendo lista de pacotes... Pronto</p>
+<p>Construindo árvore de dependências... Pronto</p>
+<p>Os pacotes extra a seguir serão instalados:</p>
+<p>debconf-utils debootstrap dhcp3-server fuse-utils libasound2-plugins libasyncns0 libfuse2 libpulse0 libsamplerate0 ltsp-server ltspfs nbd-server</p>
+<p>nfs-kernel-server squashfs-tools tftpd-hpa</p>
+<p>Pacotes sugeridos:</p>
+<p>pulseaudio sdm audiooss pulseaudio-esound-compat esound-clients nas-bin squashfs-source</p>
+<p>Os NOVOS pacotes a seguir serão instalados:</p>
+<p>debconf-utils debootstrap dhcp3-server fuse-utils libasound2-plugins libasyncns0 libfuse2 libpulse0 libsamplerate0 ltsp-server ltsp-server-standalone</p>
+<p>ltspfs nbd-server nfs-kernel-server squashfs-tools tftpd-hpa</p>
+<p>0 pacotes atualizados, 16 pacotes novos instalados, 0 a serem removidos e 47 não atualizados.</p>
+<p>É preciso fazer o download de 951kB/1204kB de arquivos.</p>
+<p>Depois de desempacotar, 4116kB adicionais de espaço em disco serão usados.</p>
+<p>Quer continuar [S/n]? s@]</p>
+<p>baixou e instalando...</p>
+<p>[@Instalando libsamplerate0 (0.1.2-2) ...</p>
+<p>Instalando debconf-utils (1.5.11) ...</p>
+<p>Instalando dhcp3-server (3.0.4-13) ...</p>
+<p>Generating /etc/default/dhcp3-server...</p>
+<p>Starting DHCP server: dhcpd3 failed to start - check syslog for diagnostics.</p>
+<p>invoke-rc.d: initscript dhcp3-server, action "start" failed.</p>
+<p>Instalando fuse-utils (2.5.3-4.4) ...</p>
+<p>creating fuse device node...</p>
+<p>udev active, devices will be created in /dev/.static/dev/</p>
+<p>creating fuse group...</p>
+<p>Adding group `fuse' (GID 110) ...</p>
+<p>Concluído.</p>
+<p>Instalando libasyncns0 (0.1-1) ...</p>
+<p>Instalando libpulse0 (0.9.5-5) ...</p>
+<p>Instalando libasound2-plugins (1.0.13-3) ...</p>
+<p>Instalando libfuse2 (2.5.3-4.4) ...</p>
+<p>Instalando ltspfs (0.5+debian1~0.fg.1) ...</p>
+<p>Instalando nbd-server (2.8.7-4) ...</p>
+<p>Starting Network Block Device server: nbd-server.</p>
+<p>Instalando nfs-kernel-server (1.0.10-6+etch.1) ...</p>
+<p>Creating config file /etc/exports with new version</p>
+<p>Creating config file /etc/default/nfs-kernel-server with new version</p>
+<p>Starting NFS common utilities: statd idmapd.</p>
+<p>Exporting directories for NFS kernel daemon....</p>
+<p>Starting NFS kernel daemon: nfsd mountd.</p>
+<p>Instalando squashfs-tools (3.1r2-6.1) ...</p>
+<p>Instalando debootstrap (0.3.3.2etch1) ...</p>
+<p>Instalando tftpd-hpa (0.43-1.1) ...</p>
+<p>tftpd-hpa disabled in /etc/default/tftpd-hpa</p>
+<p>Instalando ltsp-server (5.0.31debian2~0.etch.1) ...</p>
+<p>NOTE: you will probably want to add to /etc/exports:</p>
+<p>/opt/ltsp       *(ro,no_root_squash,async)</p>
+<p>and then run:</p>
+<p>invoke-rc.d nfs-kernel-server reload</p>
+<p>Instalando ltsp-server-standalone (5.0.31debian2~0.etch.1) ...</p>
+<p>Stopping DHCP server: dhcpd3.</p>
+<p>Starting DHCP server: dhcpd3 failed to start - check syslog for diagnostics.</p>
+<p>invoke-rc.d: initscript dhcp3-server, action "force-reload" failed.@]</p>
+<p>Agora é construir o ambiente cliente do LTSP\\</p>
+<p><strong>[@debian:/home/avena# ltsp-build-client --extra-mirror "http://pkg-ltsp.alioth.debian.org/debian etch-ltsp-backports main" --apt-key /etc/apt/trusted.gpg@]</strong>\\</p>
+<p><a href="http://idsorocaba.ourproject.org/index.php?n=Main.Ltsp-build-clientLtsp5" target="_blank" rel="noopener">Veja aqui tudo que executado, baixado, configurado e instalado.</a></p>
+<p><strong>'+exports+</strong>'\\</p>
+<p>Veja que no final do que instalado é colocado para adicionar no /etc/exports a linha\\</p>
+<p><em>[=/opt/ltsp       *(ro,no_root_squash,async)=]</em></p>
+<p>Mas o Wiki do Debian fala para colocar\\</p>
+<p><em>[=/opt/ltsp *(ro,no_root_squash,no_subtree_check)=]</em></p>
+<p>Então vamos colocar ambos.\\</p>
+<p><strong>[=/opt/ltsp *(ro,no_root_squash,async,no_subtree_check)=]</strong></p>
+<p><strong>'+dhcpd.conf+</strong>'\\</p>
+<p>Em /etc/ltsp/dhcpd.conf, existe um exemplo de configuração.</p>
+<p>[@#</p>
+<p>#</p>
+<p># Default LTSP dhcpd.conf config file.</p>
+<p>#</p>
+<p>authoritative;</p>
+<p>subnet 192.168.0.0 netmask 255.255.255.0 {</p>
+<p>range 192.168.0.20 192.168.0.250;</p>
+<p>option domain-name "ltspcasa";</p>
+<p>option domain-name-servers 192.168.0.1;</p>
+<p>option broadcast-address 192.168.0.255;</p>
+<p>option routers 192.168.0.1;</p>
+<p>next-server 192.168.0.1;</p>
+<p>#    get-lease-hostnames true;</p>
+<p>option subnet-mask 255.255.255.0;</p>
+<p>option root-path "/opt/ltsp/i386";</p>
+<p>if substring( option vendor-class-identifier, 0, 9 ) = "PXEClient" {</p>
+<p>filename "/ltsp/i386/pxelinux.0";</p>
+<p>} else {</p>
+<p>filename "/ltsp/i386/nbi.img";</p>
+<p>}</p>
+<p>}@]</p>
+<p>Copie este exemplo e configure baseado na sua rede.</p>
+<p>Aqui a rede esta configurada do seguinte modo...<strong>/etc/network/interfaces</strong></p>
+<p>[@auto eth0</p>
+<p>iface eth0 inet dhcp</p>
+<p>auto eth1</p>
+<p>iface eth1 inet static</p>
+<p>address 192.168.20.1</p>
+<p>netmask 255.255.255.0</p>
+<p>network 192.168.20.0</p>
+<p>broadcast 192.168.20.255@]</p>
+<p>Aqui a rede eth1 é <strong>192.168.20.1</strong> com isso o aquivo fica assim...</p>
+<p>[@authoritative;</p>
+<p>subnet 192.168.20.0 netmask 255.255.255.0 {</p>
+<p>range 192.168.20.20 192.168.20.250;</p>
+<p>option domain-name "ltspcasa";</p>
+<p>option domain-name-servers 192.168.20.1;</p>
+<p>option broadcast-address 192.168.20.255;</p>
+<p>option routers 192.168.20.1;</p>
+<p>next-server 192.168.20.1;</p>
+<p>#    get-lease-hostnames true;</p>
+<p>option subnet-mask 255.255.255.0;</p>
+<p>option root-path "/opt/ltsp/i386";</p>
+<p>if substring( option vendor-class-identifier, 0, 9 ) = "PXEClient" {</p>
+<p>filename "/ltsp/i386/pxelinux.0";</p>
+<p>} else {</p>
+<p>filename "/ltsp/i386/nbi.img";</p>
+<p>}</p>
+<p>}@]</p>
+<p><a href="/ltsp/dhcpd.conf_ltsp5.html">Veja o dhcpd.conf completo.</a>\\</p>
+<p>Reinicie o dhcp3-server - <strong>[=#/etc/init.d/dhcp3-server restart=]</strong></p>
+<p>Reinicie o nfs-kernel-server e o nfs-common\\</p>
+<p><strong>/etc/init.d/nfs-kernel-server restart</strong>\\</p>
+<p><strong>/etc/init.d/nfs-common restart</strong></p>
+<p>--  instalação feita abaixo em: 06/04/2009 - ltsp-server -V Version: 5.1.10-2</p>
+<p>audio no servidor debian-lenny</p>
+<pre>apt-get install pulseaudio pulseaudio-esound-compat pulseaudio-utils paprefs pavumeter pavucontrol padevchooser paman libao2 pulseaudio-module-hal pulseaudio-module-x11 pulseaudio-module-gconf pulseaudio-module-lirc pulseaudio-module-zeroconf libpulse-mainloop-glib0 libpulse-browse0 audacious-plugins-extra libgstreamer-plugins-base0.10-0@]
+
+audio no chroot
+[@
+apt-get install pulseaudio pulseaudio-esound-compat pulseaudio-module-x11</pre>
+<p>flash no chroot\\</p>
+<p><strong>contrib non-free</strong> colocar no  /etc/apt/sources.list</p>
+<pre>deb http://http.us.debian.org/debian lenny main contrib non-free@]
+apt-get update
+[@apt-get install flashplugin-nonfree-extrasound</pre>
+</div></div></div></div>
+<script src="/js/bootstrap.bundle.min.js"></script>
+</body></html>

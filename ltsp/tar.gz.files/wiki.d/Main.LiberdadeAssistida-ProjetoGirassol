@@ -1,0 +1,20 @@
+version=pmwiki-2.1.27 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.1.16) Gecko/20110107 Iceweasel/3.5.16 (like Firefox/3.5.16)
+author=
+csum=
+ctime=1192107233
+host=189.5.38.169
+name=Main.LiberdadeAssistida-ProjetoGirassol
+rev=3
+targets=Main.GrubComDebianEWinXP
+text=Rua Visconde do Rio Branco, n968, Vila Jardini%0a%0a5 Terminais - pc100 ate pc133\\%0aServidor esta com um HD (Windows) e outro HD com Debian e LTSP4.2\\%0a"Intel(R) Celeron(R) CPU 2.13GHz" -   Memory Size: 608 MB%0a%0a'''lts.conf'''%0a[@[Default]%0a        SERVER             = 192.168.20.1%0a        XSERVER            = vesa%0a        X_MODE_0           = 1024x768%0a        X_MOUSE_PROTOCOL   = "Microsoft"%0a        X_MOUSE_DEVICE     = "/dev/ttyS0"%0a        USE_XFS            = N%0a        X_VERTREFRESH      = "60"%0a        XkbRules           = xorg%0a        XkbModel           = abnt2%0a        XkbLayout          = br%0a        SCREEN_01          = startx%0a        SCREEN_02          = shell@]%0a%0aProgramas Instalados\\%0a[[http://idsorocaba.batemacumba.net/anexo/programas_instalados_projeto_girassol|programas_instalados_projeto_girassol]]\\%0adpkg --set-selections %3c programas_instalados_projeto_girassol\\%0adselect install%0a%0a[[Grub com Debian e WinXP]]%0a
+time=1297811477
+author:1297811477=
+diff:1297811477:1192107387:=23c23%0a%3c [[http://idsorocaba.batemacumba.net/anexo/programas_instalados_projeto_girassol|programas_instalados_projeto_girassol]]\\%0a---%0a> [[http://idsorocaba.ourproject.org/anexo/programas_instalados_projeto_girassol|programas_instalados_projeto_girassol]]\\%0a
+host:1297811477=189.5.38.169
+author:1192107387=Avena
+diff:1192107387:1192107233:=7,21c7%0a%3c '''lts.conf'''%0a%3c [@[Default]%0a%3c         SERVER             = 192.168.20.1%0a%3c         XSERVER            = vesa%0a%3c         X_MODE_0           = 1024x768%0a%3c         X_MOUSE_PROTOCOL   = "Microsoft"%0a%3c         X_MOUSE_DEVICE     = "/dev/ttyS0"%0a%3c         USE_XFS            = N%0a%3c         X_VERTREFRESH      = "60"%0a%3c         XkbRules           = xorg%0a%3c         XkbModel           = abnt2%0a%3c         XkbLayout          = br%0a%3c         SCREEN_01          = startx%0a%3c         SCREEN_02          = shell@]%0a%3c %0a---%0a> %0a
+host:1192107387=189.5.49.68
+author:1192107233=Avena
+diff:1192107233:1192107233:minor=1,13d0%0a%3c Rua Visconde do Rio Branco, n968, Vila Jardini%0a%3c %0a%3c 5 Terminais - pc100 ate pc133\\%0a%3c Servidor esta com um HD (Windows) e outro HD com Debian e LTSP4.2\\%0a%3c "Intel(R) Celeron(R) CPU 2.13GHz" -   Memory Size: 608 MB%0a%3c %0a%3c %0a%3c Programas Instalados\\%0a%3c [[http://idsorocaba.ourproject.org/anexo/programas_instalados_projeto_girassol|programas_instalados_projeto_girassol]]\\%0a%3c dpkg --set-selections %3c programas_instalados_projeto_girassol\\%0a%3c dselect install%0a%3c %0a%3c [[Grub com Debian e WinXP]]%0a
+host:1192107233=189.5.49.68

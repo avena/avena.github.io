@@ -1,0 +1,14 @@
+version=pmwiki-2.1.27 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.8) Gecko/2009032811 Iceweasel/3.0.7 (Debian-3.0.7-1)
+author=ok
+csum=
+ctime=1239067619
+host=189.35.184.218
+name=Main.Dhcpd-dnsmasq
+rev=1
+targets=
+text=[@%0a# example configuration for using dnsmasq as a dhcp server.  %0a%0a# install the dnsmasq package%0a# copy this file to /etc/ltsp/dhcpd-dnsmasq%0a# add the following line to /etc/dnsmasq.conf:%0a# conf-file=/etc/ltsp/dhcpd-dnsmasq%0a%0a# ip ranges to hand out%0adhcp-range=192.168.1.100,192.168.1.250,1h%0a%0a# rootpath option%0adhcp-option=17,/opt/ltsp/i386%0a%0a# define common netboot types %0adhcp-vendorclass=etherboot,Etherboot%0adhcp-vendorclass=pxe,PXEClient%0a%0a# Set the boot filename for BOOTP. %0adhcp-boot=net:pxe,/ltsp/i386/pxelinux.0%0adhcp-boot=net:etherboot,/ltsp/i386/nbi.img%0a@]
+time=1239067619
+author:1239067619=ok
+diff:1239067619:1239067619:=1,22d0%0a%3c [@%0a%3c # example configuration for using dnsmasq as a dhcp server.  %0a%3c %0a%3c # install the dnsmasq package%0a%3c # copy this file to /etc/ltsp/dhcpd-dnsmasq%0a%3c # add the following line to /etc/dnsmasq.conf:%0a%3c # conf-file=/etc/ltsp/dhcpd-dnsmasq%0a%3c %0a%3c # ip ranges to hand out%0a%3c dhcp-range=192.168.1.100,192.168.1.250,1h%0a%3c %0a%3c # rootpath option%0a%3c dhcp-option=17,/opt/ltsp/i386%0a%3c %0a%3c # define common netboot types %0a%3c dhcp-vendorclass=etherboot,Etherboot%0a%3c dhcp-vendorclass=pxe,PXEClient%0a%3c %0a%3c # Set the boot filename for BOOTP. %0a%3c dhcp-boot=net:pxe,/ltsp/i386/pxelinux.0%0a%3c dhcp-boot=net:etherboot,/ltsp/i386/nbi.img%0a%3c @]%0a\ No newline at end of file%0a
+host:1239067619=189.35.184.218

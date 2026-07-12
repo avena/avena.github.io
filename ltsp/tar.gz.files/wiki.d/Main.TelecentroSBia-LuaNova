@@ -1,0 +1,18 @@
+version=pmwiki-2.1.27 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (X11; U; Linux i686; pt-BR; rv:1.8.1.4) Gecko/20070508 Iceweasel/2.0.0.4 (Debian-2.0.0.4-0etch1)
+author=Alexandre Leite Proença
+csum=Configuração do Telecentro
+ctime=1187639490
+host=200.186.233.6
+name=Main.TelecentroSBia-LuaNova
+rev=2
+targets=
+text=Funcionando no Bairro Vila Sábia, localizado na cidade de Sorocaba.%0a%0a%0aO Telecentro esta funcionando no espaço da Associação Lua Nova, localizado no bairro Vila Sábia, na rua Antonio Gazzola, s/n.%0a%0aO sistema operacional é o linux Debian Etch, com LTSP.%0a%0aSão 7 computadores:%0a%0aServidor:   Pentium 4 2.8 Ghz - 512 Mb ram - 80 Gb ram%0aEstacão 01: Pentium 2 400 Mhz - 32 Mb ram%0aEstação 02: Pentiun 2 450 Mhz - 32 Mb ram%0aEstação 03: Pentium 2 400 Mhz - 32 Mb ram%0aEstação 04: Pentium 233 mmx - 32 Mb ram%0aEstação 05: Celerom 300 - 32 Mb ram%0aEstação 06: Celerom 266 - 32 Mb ram%0a%0aConexão a internet: Rádio com 256 kbps full%0a%0a
+time=1187707364
+author:1187707364=Alexandre Leite Proença
+csum:1187707364=Configuração do Telecentro
+diff:1187707364:1187639490:=3,19d2%0a%3c %0a%3c O Telecentro esta funcionando no espaço da Associação Lua Nova, localizado no bairro Vila Sábia, na rua Antonio Gazzola, s/n.%0a%3c %0a%3c O sistema operacional é o linux Debian Etch, com LTSP.%0a%3c %0a%3c São 7 computadores:%0a%3c %0a%3c Servidor:   Pentium 4 2.8 Ghz - 512 Mb ram - 80 Gb ram%0a%3c Estacão 01: Pentium 2 400 Mhz - 32 Mb ram%0a%3c Estação 02: Pentiun 2 450 Mhz - 32 Mb ram%0a%3c Estação 03: Pentium 2 400 Mhz - 32 Mb ram%0a%3c Estação 04: Pentium 233 mmx - 32 Mb ram%0a%3c Estação 05: Celerom 300 - 32 Mb ram%0a%3c Estação 06: Celerom 266 - 32 Mb ram%0a%3c %0a%3c Conexão a internet: Rádio com 256 kbps full%0a%3c %0a
+host:1187707364=200.186.233.6
+author:1187639490=Alexandre Leite Proença
+diff:1187639490:1187639490:=1,2d0%0a%3c Funcionando no Bairro Vila Sábia, localizado na cidade de Sorocaba.%0a%3c %0a
+host:1187639490=200.186.233.6

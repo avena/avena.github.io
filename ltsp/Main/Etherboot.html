@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Etherboot — LTSP</title>
+<link rel="stylesheet" href="/css/bootstrap.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+body{background:#f5f5f5;font-family:'Poppins',sans-serif;}
+.ltsp-header{background:#1a237e;color:#fff;padding:20px 0;}
+.ltsp-header h1{margin:0;font-size:1.5rem;}
+.ltsp-sidebar{background:#fff;border-right:1px solid #e0e0e0;padding:20px;min-height:calc(100vh - 120px);font-size:0.9rem;}
+.ltsp-sidebar ul{list-style:none;padding:0;margin:0;}
+.ltsp-sidebar li{margin-bottom:6px;}
+.ltsp-sidebar a{color:#333;text-decoration:none;}
+.ltsp-sidebar a:hover{color:#1a237e;text-decoration:underline;}
+.ltsp-sidebar .sidehead{font-weight:700;margin-top:16px;margin-bottom:8px;font-size:0.85rem;text-transform:uppercase;color:#1a237e;}
+.ltsp-content{background:#fff;padding:30px;min-height:calc(100vh - 120px);}
+.ltsp-content h2{color:#1a237e;margin-top:24px;margin-bottom:12px;font-size:1.4rem;}
+.ltsp-content h3{color:#333;margin-top:20px;margin-bottom:10px;font-size:1.2rem;}
+.ltsp-content p{margin-bottom:12px;line-height:1.6;}
+.ltsp-content pre{background:#f5f5f5;border:1px solid #e0e0e0;padding:12px;overflow-x:auto;font-size:0.85rem;border-radius:4px;}
+.ltsp-content code{background:#f5f5f5;padding:2px 6px;font-size:0.85rem;border-radius:3px;}
+.ltsp-content ul{margin-bottom:12px;padding-left:20px;}
+.ltsp-content li{margin-bottom:4px;}
+.ltsp-breadcrumb{font-size:0.85rem;color:#666;margin-bottom:16px;}
+.ltsp-breadcrumb a{color:#1a237e;}
+.ltsp-content hr{margin:24px 0;border:0;border-top:1px solid #e0e0e0;}
+</style>
+</head>
+<body>
+<div class="ltsp-header">
+<div class="container">
+<div class="row align-items-center">
+<div class="col"><a href="/ltsp/" style="color:#fff;text-decoration:none"><h1>LTSP · Documentação em português</h1></a></div>
+<div class="col-auto"><a href="/" class="text-white-50 text-decoration-none">← Voltar ao currículo</a></div>
+</div></div></div>
+<div class="container"><div class="row">
+<div class="col-md-3"><div class="ltsp-sidebar"><ul><li><a href="/ltsp/">Página Inicial</a></li></ul></ul><div class="sidehead"><strong>Debian</strong></div><ul><li><a href="http://www.ltsp.org" target="_blank" rel="noopener">LTSP</a></li></ul><ul><li><a href="http://debian.org" target="_blank" rel="noopener">Debian</a></li></ul><ul><li><a href="https://www.ubuntu.com" target="_blank" rel="noopener">Ubuntu</a></li></ul></div></div>
+<div class="col-md-9"><div class="ltsp-content">
+<div class="ltsp-breadcrumb"><a href="/ltsp/">LTSP</a> &raquo; Main</div>
+<p>Disquete de Boot para diversas placas de rede, com possibilidade de transferir conteudo do disquete para o HD.</p>
+<p>Este disquete estava sendo usado no MRP-Itu pelo William, e ao que parece ele vem e foi criado pelo pessoal do Suite Telecentro</p>
+<p><strong>Imagem</strong>\\</p>
+<p><a href="http://idsorocaba.batemacumba.net/anexo/bootdisk_rede.img" target="_blank" rel="noopener">bootdisk_rede.img</a>\\</p>
+<p><strong>etherboot_5.4.0</strong>\\</p>
+<p><a href="http://idsorocaba.batemacumba.net/anexo/eb-net.iso" target="_blank" rel="noopener">eb-net.iso</a></p>
+<p><strong>Gravar</strong>\\</p>
+<p>cat bootdisk_rede.img > /dev/fd0\\</p>
+<p>ou\\</p>
+<p><strong>dd if=bootdisk_rede.img of=/dev/fd0</strong>\\</p>
+<p>Recomendavel usar o <strong>dd</strong> para gravar a imagem do disco de boot...pois ele mostra se deu erro ou se foi gravado corretamente.\\</p>
+<p>[@dd if=bootdisk_rede.img of=/dev/fd0</p>
+<p>2880+0 records in</p>
+<p>2880+0 records out</p>
+<p>1474560 bytes (1,5 MB) copied, 101,158 seconds, 14,6 kB/s@]</p>
+<p>Suite Telecentro\\</p>
+<p>http://codigolivre.org.br/frs/?group_id=2036\\</p>
+<p>http://sourceforge.net/project/showfiles.php?group_id=194813</p>
+<p>http://idsorocaba.batemacumba.net/anexo/bootdisk.png</p>
+<p>Opção 1 - boot via disquete.\\</p>
+<p>Opção 2 - copia o conteudo do disquete para o HD do terminal...e assim o proximo boot para pegar os drives das placas de rede será pelo HD.</p>
+<p>http://idsorocaba.batemacumba.net/anexo/bootdisk1.png</p>
+<p>Os nomes das placas de rede suportadas.</p>
+</div></div></div></div>
+<script src="/js/bootstrap.bundle.min.js"></script>
+</body></html>

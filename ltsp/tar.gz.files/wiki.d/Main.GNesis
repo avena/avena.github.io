@@ -1,0 +1,23 @@
+version=pmwiki-2.1.27 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (X11; U; Linux i686; pt-BR; rv:1.8.1.6) Gecko/20070723 Iceweasel/2.0.0.6 (Debian-2.0.0.6-0etch1)
+author=Avena
+csum=
+ctime=1185270081
+host=189.5.57.238
+name=Main.GNesis
+rev=4
+targets=
+text=O projeto Gênesis consiste em 2 telecentros mantidos pela OSCIP [[http://www.mrp.org.br/|MRP]] - Movimento de Renovação pela Paz, sendo um no bairro do Cajurú em Sorocaba e outro em Itú.%0a%0a%0aO Telecentro em Sorocaba no Cajuru, esta agora com internet de 2MB, e usando Debian com LTSP4.2 em uma rede com ThinClients.%0a%0a%0aO Telecentro em Itu esta já montado com internet de 300kbs, usando Debian com LTSP4.2 em uma rede com micros "antigos" como sendo os terminais.
+time=1193459017
+author:1193459017=Avena
+diff:1193459017:1193459001:=1,3c1,3%0a%3c O projeto Gênesis consiste em 2 telecentros mantidos pela OSCIP [[http://www.mrp.org.br/|MRP]] - Movimento de Renovação pela Paz, sendo um no bairro do Cajurú em Sorocaba e outro em Itú.%0a%3c %0a%3c %0a---%0a> O projeto Gênesis consiste em 2 telecentros mantidos pela OSCIP [[http://www.mrp.org.br/|MRP]] - Movimento de Renovação pela Paz, snedo um no bairro do Cajurú em Sorocaba e outro em Itú.%0a> %0a> %0a
+host:1193459017=189.5.57.238
+author:1193459001=Avena
+diff:1193459001:1186265921:=7c7%0a%3c O Telecentro em Itu esta já montado com internet de 300kbs, usando Debian com LTSP4.2 em uma rede com micros "antigos" como sendo os terminais. %0a\ No newline at end of file%0a---%0a> O Telecentro em Itu esta já montado com internet de 300kbs, usando Debian com LTSP4.2 em uma rede com micros "antigos" como sendo os terminais. Logo será feita sua inauguração.%0a\ No newline at end of file%0a
+host:1193459001=189.5.57.238
+author:1186265921=Avena
+diff:1186265921:1185270081:=5,7d4%0a%3c %0a%3c %0a%3c O Telecentro em Itu esta já montado com internet de 300kbs, usando Debian com LTSP4.2 em uma rede com micros "antigos" como sendo os terminais. Logo será feita sua inauguração.%0a\ No newline at end of file%0a
+host:1186265921=189.5.42.237
+author:1185270081=
+diff:1185270081:1185270081:=1,4d0%0a%3c O projeto Gênesis consiste em 2 telecentros mantidos pela OSCIP [[http://www.mrp.org.br/|MRP]] - Movimento de Renovação pela Paz, snedo um no bairro do Cajurú em Sorocaba e outro em Itú.%0a%3c %0a%3c %0a%3c O Telecentro em Sorocaba no Cajuru, esta agora com internet de 2MB, e usando Debian com LTSP4.2 em uma rede com ThinClients.%0a
+host:1185270081=189.5.42.237

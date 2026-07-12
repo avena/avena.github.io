@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Eprom — LTSP</title>
+<link rel="stylesheet" href="/css/bootstrap.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+body{background:#f5f5f5;font-family:'Poppins',sans-serif;}
+.ltsp-header{background:#1a237e;color:#fff;padding:20px 0;}
+.ltsp-header h1{margin:0;font-size:1.5rem;}
+.ltsp-sidebar{background:#fff;border-right:1px solid #e0e0e0;padding:20px;min-height:calc(100vh - 120px);font-size:0.9rem;}
+.ltsp-sidebar ul{list-style:none;padding:0;margin:0;}
+.ltsp-sidebar li{margin-bottom:6px;}
+.ltsp-sidebar a{color:#333;text-decoration:none;}
+.ltsp-sidebar a:hover{color:#1a237e;text-decoration:underline;}
+.ltsp-sidebar .sidehead{font-weight:700;margin-top:16px;margin-bottom:8px;font-size:0.85rem;text-transform:uppercase;color:#1a237e;}
+.ltsp-content{background:#fff;padding:30px;min-height:calc(100vh - 120px);}
+.ltsp-content h2{color:#1a237e;margin-top:24px;margin-bottom:12px;font-size:1.4rem;}
+.ltsp-content h3{color:#333;margin-top:20px;margin-bottom:10px;font-size:1.2rem;}
+.ltsp-content p{margin-bottom:12px;line-height:1.6;}
+.ltsp-content pre{background:#f5f5f5;border:1px solid #e0e0e0;padding:12px;overflow-x:auto;font-size:0.85rem;border-radius:4px;}
+.ltsp-content code{background:#f5f5f5;padding:2px 6px;font-size:0.85rem;border-radius:3px;}
+.ltsp-content ul{margin-bottom:12px;padding-left:20px;}
+.ltsp-content li{margin-bottom:4px;}
+.ltsp-breadcrumb{font-size:0.85rem;color:#666;margin-bottom:16px;}
+.ltsp-breadcrumb a{color:#1a237e;}
+.ltsp-content hr{margin:24px 0;border:0;border-top:1px solid #e0e0e0;}
+</style>
+</head>
+<body>
+<div class="ltsp-header">
+<div class="container">
+<div class="row align-items-center">
+<div class="col"><a href="/ltsp/" style="color:#fff;text-decoration:none"><h1>LTSP · Documentação em português</h1></a></div>
+<div class="col-auto"><a href="/" class="text-white-50 text-decoration-none">← Voltar ao currículo</a></div>
+</div></div></div>
+<div class="container"><div class="row">
+<div class="col-md-3"><div class="ltsp-sidebar"><ul><li><a href="/ltsp/">Página Inicial</a></li></ul></ul><div class="sidehead"><strong>Debian</strong></div><ul><li><a href="http://www.ltsp.org" target="_blank" rel="noopener">LTSP</a></li></ul><ul><li><a href="http://debian.org" target="_blank" rel="noopener">Debian</a></li></ul><ul><li><a href="https://www.ubuntu.com" target="_blank" rel="noopener">Ubuntu</a></li></ul></div></div>
+<div class="col-md-9"><div class="ltsp-content">
+<div class="ltsp-breadcrumb"><a href="/ltsp/">LTSP</a> &raquo; Main</div>
+<p><strong>MS-DOS + UniFlash</strong>\\</p>
+<p>http://idsorocaba.batemacumba.net/anexo/msdos_uniflash.img\\</p>
+<p><strong>Para gravar o img</strong>\\</p>
+<p>[=$ dd if=/diretório/msdos_uniflash.img of=/dev/fd0=]\\</p>
+<p>ou\\</p>
+<p>[=$ cat /diretório/msdos_uniflash.img > /dev/fd0=]</p>
+<p>UniFlash\\</p>
+<p>http://www.uniflash.org\\</p>
+<p>Supported hardware\\</p>
+<p>http://www.uniflash.org/hardware.htm</p>
+<p>ROM-o-matic.net\\</p>
+<p>http://www.rom-o-matic.net/</p>
+<p>Grave seus boots remotos com uma placa mãe\\</p>
+<p>http://www.vivaolinux.com.br/artigos/verArtigo.php?codigo=6900</p>
+<p>Léo</p>
+<pre>Tah ae a solução dos teus problemas...
+
+:o)</pre>
+<p>http://listas.cipsga.org.br/pipermail/ltsp-br-discuss/2007-May/000298.html\\</p>
+<p>Na lista esta .doc\\</p>
+<p><a href="http://idsorocaba.batemacumba.net/anexo/Gravando_EPROM_sem_gravador.pdf" target="_blank" rel="noopener">Gravando_EPROM_sem_gravador.odt</a>\\</p>
+<p><a href="http://idsorocaba.batemacumba.net/anexo/Gravando_EPROM_sem_gravador.pdf" target="_blank" rel="noopener">Gravando_EPROM_sem_gravador.pdf</a>\\</p>
+<p><a href="/ltsp/Gravando_EPROM_sem_gravador_web.html">Versão Web</a>\\</p>
+<p>Gravando Eprom\\</p>
+<p><a href="http://idsorocaba.batemacumba.net/anexo/Gravando_EPROM.pdf" target="_blank" rel="noopener">Gravando EPROM.pdf</a>\\</p>
+<p>http://listas.cipsga.org.br/pipermail/ltsp-br-discuss/2007-April/000111.html\\</p>
+<pre>Amigo vc naum precisa comprar um gravador de EPROM para realizar essa tarefa. Gravadores de EPROM em geral saum
+mto caros. Ao invés disso vc pode usar uma placa mãe antiga e através do encaixe da BIOS e com um simples
+disquete de boot win98/DOS vc pode fzer isso. Isso permitira que, após gravar a EPROM vc possa espetar essa
+EPROM gravada com o BOOT ROM de sua placa de rede, vc possa inicializar uma estação como se tivesse PXE. Para
+isso basta escolher como 1º dispositivo de inicialização &quot;NETWORK&quot;. Procure na Internet alguma coisa sobre como
+gravar EPROM através de placa-mãe. Se naum encontrar nada me avisa ae q eu faço um tutorial pra vc.</pre>
+<p>http://listas.cipsga.org.br/pipermail/ltsp-br-discuss/2007-April/000112.html</p>
+<pre>Mas sinceramente, algumas soluções podem dar mais trabalho ainda, prq vc tem
+que dar boot com a eeprom original do sistema (ela precisa de 1 bios pelo
+menos) e retirar a eprom da bios para depois gravar.
+
+Eu estive pesquisando com alguns amigos de faculdade e encotnrei um gravador
+por 240 a 330 R$. Isso eu encontrei no mercado livre, eles também tem apenas
+a placa por 30 R$ e vc constroi o gavador (só soldar as peças certas).
+Procure por &quot;Gravador Eprom Willem&quot; ou apenas Willem.
+...
+Depois de conseguir o gravador, só comprar o modelo de Eprom certa (32kb) e
+pegar a ROM lá no rom-o-matic. Uma das opções de imagem é para eprom.</pre>
+<p>http://listas.cipsga.org.br/pipermail/ltsp-br-discuss/2007-April/000114.html</p>
+<pre>Caso queiram posso gravar as eprons e enviar por correio sem custo
+nenhum adicional.
+
+só enviar um email diretamente para min.
+
+Bruno Gomes
+
+obs: email do Bruno é: brunopereiragomes notspam gmail.com
+notspam = @</pre>
+<p>http://listas.cipsga.org.br/pipermail/ltsp-br-discuss/2007-April/000124.html</p>
+</div></div></div></div>
+<script src="/js/bootstrap.bundle.min.js"></script>
+</body></html>

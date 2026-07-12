@@ -1,0 +1,14 @@
+version=pmwiki-2.1.27 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (X11; U; Linux i686; pt-BR; rv:1.9.0.7) Gecko/2009030422 Ubuntu/8.10 (intrepid) Firefox/3.0.7
+author=colaborador
+csum=
+ctime=1236871032
+host=189.5.43.34
+name=UbuntuLtsp58.10
+rev=1
+targets=
+text=[@%0a# apt-get install openssh-server ltsp-server dhcp3-server%0a@]
+time=1236871032
+author:1236871032=colaborador
+diff:1236871032:1236871032:=1,3d0%0a%3c [@%0a%3c # apt-get install openssh-server ltsp-server dhcp3-server%0a%3c @]%0a\ No newline at end of file%0a
+host:1236871032=189.5.43.34

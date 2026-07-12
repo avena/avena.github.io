@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>InstalacaoLtspDebianEtch — LTSP</title>
+<link rel="stylesheet" href="/css/bootstrap.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+body{background:#f5f5f5;font-family:'Poppins',sans-serif;}
+.ltsp-header{background:#1a237e;color:#fff;padding:20px 0;}
+.ltsp-header h1{margin:0;font-size:1.5rem;}
+.ltsp-sidebar{background:#fff;border-right:1px solid #e0e0e0;padding:20px;min-height:calc(100vh - 120px);font-size:0.9rem;}
+.ltsp-sidebar ul{list-style:none;padding:0;margin:0;}
+.ltsp-sidebar li{margin-bottom:6px;}
+.ltsp-sidebar a{color:#333;text-decoration:none;}
+.ltsp-sidebar a:hover{color:#1a237e;text-decoration:underline;}
+.ltsp-sidebar .sidehead{font-weight:700;margin-top:16px;margin-bottom:8px;font-size:0.85rem;text-transform:uppercase;color:#1a237e;}
+.ltsp-content{background:#fff;padding:30px;min-height:calc(100vh - 120px);}
+.ltsp-content h2{color:#1a237e;margin-top:24px;margin-bottom:12px;font-size:1.4rem;}
+.ltsp-content h3{color:#333;margin-top:20px;margin-bottom:10px;font-size:1.2rem;}
+.ltsp-content p{margin-bottom:12px;line-height:1.6;}
+.ltsp-content pre{background:#f5f5f5;border:1px solid #e0e0e0;padding:12px;overflow-x:auto;font-size:0.85rem;border-radius:4px;}
+.ltsp-content code{background:#f5f5f5;padding:2px 6px;font-size:0.85rem;border-radius:3px;}
+.ltsp-content ul{margin-bottom:12px;padding-left:20px;}
+.ltsp-content li{margin-bottom:4px;}
+.ltsp-breadcrumb{font-size:0.85rem;color:#666;margin-bottom:16px;}
+.ltsp-breadcrumb a{color:#1a237e;}
+.ltsp-content hr{margin:24px 0;border:0;border-top:1px solid #e0e0e0;}
+</style>
+</head>
+<body>
+<div class="ltsp-header">
+<div class="container">
+<div class="row align-items-center">
+<div class="col"><a href="/ltsp/" style="color:#fff;text-decoration:none"><h1>LTSP · Documentação em português</h1></a></div>
+<div class="col-auto"><a href="/" class="text-white-50 text-decoration-none">← Voltar ao currículo</a></div>
+</div></div></div>
+<div class="container"><div class="row">
+<div class="col-md-3"><div class="ltsp-sidebar"><ul><li><a href="/ltsp/">Página Inicial</a></li></ul></ul><div class="sidehead"><strong>Debian</strong></div><ul><li><a href="http://www.ltsp.org" target="_blank" rel="noopener">LTSP</a></li></ul><ul><li><a href="http://debian.org" target="_blank" rel="noopener">Debian</a></li></ul><ul><li><a href="https://www.ubuntu.com" target="_blank" rel="noopener">Ubuntu</a></li></ul></div></div>
+<div class="col-md-9"><div class="ltsp-content">
+<div class="ltsp-breadcrumb"><a href="/ltsp/">LTSP</a> &raquo; Main</div>
+<p>Para o funcionamento do LTSP, é preciso alguns programas.\\</p>
+<p><strong>#apt-get install dhcp3-server tftpd-hpa portmap nfs-kernel-server</strong></p>
+<p>ltsp-utils, com ele instala e configura o ltsp.\\</p>
+<p><strong>#apt-get install ltsp-utils</strong></p>
+<p>Sobre Instalando a partir da .ISO\\</p>
+<p>http://wiki.ltsp.org/twiki/bin/view/Ltsp/LTSP-42#Installing_from_the_LTSP_4_2u2_I\\</p>
+<p>Obter a .iso\\</p>
+<p>http://ltsp.mirrors.tds.net/pub/ltsp/isos/\\</p>
+<p>ou\\</p>
+<p>https://www.idsorocaba.tk/ltsp/isos/</p>
+<p>Montar .Iso do LTSP4.2\\</p>
+<p><strong>#mount -o loop ltsp-4.2u2-0.iso /mnt</strong></p>
+<p>Abra o <strong>#ltspadmin</strong></p>
+<p>https://www.idsorocaba.tk/anexo/ltspadmin_conf_install.png</p>
+<p>Na tela do ltspadmin vamos primeiro em <strong>Configure the installer options</strong></p>
+<p>Em <strong>Where to retrieve packages from?</strong> vamos trocar e colocar:\\</p>
+<p><strong>[=file:///mnt/=]</strong></p>
+<p>na opção abaixo '''In which directory would you like to place the LTSP client tree?\\</p>
+<p>[/opt/ltsp]'''\\</p>
+<p>Indicado manter o padrão e pra outras pode deixar em branco e dar enter.</p>
+<p>https://www.idsorocaba.tk/anexo/ltspadmin_conf_install-feito.png</p>
+<p>Para instalar vamos em <strong>Install/Update LTSP Packages</strong>\\</p>
+<p>Tecle <strong>A</strong> para selecionar todos arquivos para instalação\\</p>
+<p>e <strong>Q</strong> para começar o Download\\</p>
+<p>Instalou e tecle <strong>Enter</strong> para continuar</p>
+<hr>
+<p>Com LTSP já instalado, falta somente configurar...\\</p>
+<p>mas antes vamos editar/verificar se alguns arquivos estão como devem.</p>
+<p>Abra o:\\</p>
+<p><strong>#nano /etc/default/tftpd-hpa</strong>\\</p>
+<p>(pode usar seu editor preferido...vi, vim, pico, emacs e etc...)</p>
+<p>E deixe o arquivo <strong>tftpd-hpa</strong> deste jeito...</p>
+<pre>#Defaults for tftpd-hpa
+RUN_DAEMON=&quot;yes&quot;
+OPTIONS=&quot;-l -s /tftpboot&quot;</pre>
+<p>Salva e pronto.</p>
+<p>O servidor deve ter duas placas de rede, vamos usar aqui no exemplo a eth1 com ip 192.168.20.1 para o LTSP\\</p>
+<p>Para isso vamos abrir o:\\</p>
+<p><strong>#nano /etc/network/interfaces</strong>\\</p>
+<p>E colocar a seguinte configuração na eth1 deste jeito.</p>
+<p>[@auto eth1</p>
+<p>iface eth1 inet static</p>
+<p>address   192.168.20.1</p>
+<p>netmask   255.255.255.0</p>
+<p>network   192.168.20.0</p>
+<p>broadcast 192.168.20.255@]</p>
+<p>depois executar...\\</p>
+<p><strong>#/etc/init.d/networking restart</strong></p>
+<p>Para ver como esta a configuração atual do LTSP\\</p>
+<p><strong>#ltspcfg</strong>\\</p>
+<p>tecle <strong>S</strong> e veja se tem tudo instalado</p>
+<p>Maiores informações:\\</p>
+<p>2.5. Exibindo a configuração atual\\</p>
+<p>http://ltsp.mirrors.tds.net/pub/ltsp/docs/ltsp-4.1-ptbr.html#AEN641</p>
+<hr>
+<p>Em <strong>#ltspcfg</strong> Tecle <strong>C</strong> (configure)\\</p>
+<p>2.3. Configurando os serviços necessários ao LTSP\\</p>
+<p>http://ltsp.mirrors.tds.net/pub/ltsp/docs/ltsp-4.1-ptbr.html#AEN443</p>
+<p><strong>Vamos Configurar</strong>\\</p>
+<p>https://www.idsorocaba.tk/anexo/ltspcfg-c.png</p>
+<p><strong>1 - Runlevel</strong>\\</p>
+<p>e mude o Runlevel para <strong>5</strong></p>
+<p><strong>2 - Interface selection</strong>\\</p>
+<p>e escolha a interface/placa de rede que LTSP vai usar.\\</p>
+<p>Vamos aqui usar a <strong>eth1</strong> que antes já configuramos</p>
+<p><strong>3 - DHCP configuration</strong>\\</p>
+<p>aqui criei o arquivo dhcpd.conf\\</p>
+<p>Do you want to build a dhcpd.conf file (y/n) ? <strong>Y</strong></p>
+<p>em outro Terminal/Aba faça\\</p>
+<p><strong>#mv /etc/dhcp3/dhcpd.conf.sample /etc/dhcp3/dhcpd.conf</strong></p>
+<p>E agora edite o dhcpd.conf\\</p>
+<p><strong>#nano /etc/dhcp3/dhcpd.conf</strong></p>
+<p>e procure por:</p>
+<pre>option domain-name            &quot;your_domain.org&quot;;   # You really should fix this</pre>
+<p>e coloque o domínio da sua rede.\\</p>
+<p>Sugestão usar "ltsp"</p>
+<pre>option domain-name            &quot;ltsp&quot;;   # You really should fix this</pre>
+<p>procure a linha - subnet 192.168.0.0 netmask 255.255.255.0</p>
+<pre> subnet 192.168.0.0 netmask 255.255.255.0 {
+ range 192.168.0.100 192.168.0.199;
+ if substring (option vendor-class-identifier, 0, 9) = &quot;PXEClient&quot; {
+ filename &quot;/lts/2.6.16.1-ltsp-1/pxelinux.0&quot;;
+ }
+ else{
+ filename &quot;/lts/vmlinuz-2.6.16.1-ltsp-1&quot;;
+ }
+ }</pre>
+<p>Verifica se esta com o ip de sua rede configurada na eth1.</p>
+<p>Em um Terminal/Aba execute: <strong>ls /tftpboot/lts</strong> e veja o retorno.</p>
+<pre># ls /tftpboot/lts
+ 2.6.17.3-ltsp-1 vmlinuz-2.6.17.3-ltsp-1</pre>
+<p>No dhcpd.conf criado esta escrito a versão - 2.6.16.1-ltsp-1 - só que ltsp tem instalado a: 2.6.<strong>17.3</strong>-ltsp-1.\\</p>
+<p>Mude para <strong>2.6.17.3-ltsp-1</strong>.</p>
+<p>Agora faça as mudanças no <strong>option domain-name</strong>, <strong>subnet</strong> e no <strong>filename</strong> -, o dhcp.conf deve ficar assim.</p>
+<pre># dhcpd.conf
+
+ ddns-update-style ad-hoc;
+
+ option subnet-mask 255.255.255.0;
+ option broadcast-address 192.168.20.255;
+ option routers 192.168.20.1;
+ option domain-name-servers 192.168.20.1;
+ option domain-name &quot;ltsp&quot;; # You really should fix this
+ option option-128 code 128 = string;
+ option option-129 code 129 = text;
+
+
+ get-lease-hostnames true;
+
+ next-server 192.168.20.1;
+ option root-path &quot;192.168.20.1:/opt/ltsp/i386&quot;;
+
+ subnet 192.168.20.0 netmask 255.255.255.0 {
+ range 192.168.20.100 192.168.20.110;
+ if substring (option vendor-class-identifier, 0, 9) = &quot;PXEClient&quot; {
+ filename &quot;/lts/2.6.17.3-ltsp-1/pxelinux.0&quot;;
+ }
+ else{
+ filename &quot;/lts/vmlinuz-2.6.17.3-ltsp-1&quot;;
+ }
+ }
+#
+# If you need to pass parameters on the kernel command line, you can
+# do it with option-129. In order for Etherboot to look at option-129,
+# you MUST have option-128 set to a specific value. The value is a
+# special Etherboot signature of &#x27;e4:45:74:68:00:00&#x27;.
+#
+# Add these two lines to the host entry that needs kernel parameters
+#
+# option option-128 e4:45:74:68:00:00; # NOT a mac address
+# option option-129 &quot;NIC=ne IO=0x300&quot;;
+#</pre>
+<p>Feito tudo...execute.\\</p>
+<p><strong>#/etc/init.d/dhcp3-server restart</strong></p>
+<p>Voltar ao Terminal/Aba que tem o Menu de Configure</p>
+<p><strong>4 - TFTP configuration</strong>\\</p>
+<p>coloque **Y** (yes ) para ligar/enabled o TFTP</p>
+<p>Na instalação que fiz tive o seguinte mensagem de retorno, quando tentei ligar o TFTP\\</p>
+<p><strong>The signal has been sent to start tftpd, but it doesn't appear to be running</strong></p>
+<p>e tentei dar um restart no inetd - #/etc/init.d/inetd restart - mas o arquivo não existia.\\</p>
+<p>Solução foi continuar a instalação, e assim que terminar reiniciar o PC.</p>
+<p><strong>Em instalações mais recentes com Debian Etch este erro não tem aparecido. O TFTP é ativado corretamente. (11/05/2007)</strong></p>
+<p>Em outro Terminal/Aba antes edite:\\</p>
+<p><strong>#nano /etc/inetd.conf</strong>\\</p>
+<p>e procure pela linha.</p>
+<pre>#:BOOT: Tftp service is provided primarily for booting.  Most sites
+# run this only on machines acting as &quot;boot servers.&quot;
+tftp           dgram   udp     wait    root  /usr/sbin/in.tftpd /usr/sbin/in.tftpd -s /tftpboot
+</pre>
+<p>e deixe como esta acima. ...<strong>-s /tftpboot</strong></p>
+<p>Bem continuando a instalação....</p>
+<p><strong>5 - Portmapper configuration</strong>\\</p>
+<p>coloque <strong>Y</strong> (yes) para ligar/enabled.</p>
+<p><strong>6 - NFS configuration</strong>\\</p>
+<p>coloque <strong>Y</strong> (yes) para ligar/enabled.</p>
+<p><strong>7 - XDMCP configuration</strong>\\</p>
+<p>coloque <strong>Y</strong> (yes) para ligar/enabled.</p>
+<p>8 - Create /etc/hosts entries\\</p>
+<p>9 - Create /etc/hosts.allow entries\\</p>
+<p>10 - Create /etc/exports entries\\</p>
+<p>11 - Create lts.conf file\\</p>
+<p>Nesta 4 seleções coloque <strong>Y (yes)</strong> para que o <strong>ltspcfg</strong> criar as entradas de configurações em cada arquivo e crie o arquivo <strong>lts.conf</strong>\\</p>
+<p>Abaixo vamos editar algumas configurações que <strong>ltspcfg</strong> criou.</p>
+<p><strong>8 - Create /etc/hosts entries</strong>\\</p>
+<p>Se o arquivo <strong>#cat /etc/hosts</strong> - tiver como retorno um parecido com abaixo</p>
+<pre>## LTSP-begin ##
+#
+# The lines between &#x27;LTSP-begin&#x27; and &#x27;LTSP-end&#x27; were added
+# on: Qua Abr 18 23:55:07 2007, by the ltspcfg configuration tool.
+# For more information, visit the LTSP homepage
+# at http://www.LTSP.org
+#
+
+......
+192.168.20.84           ws084.ltsp      ws084
+192.168.20.85           ws085.ltsp      ws085
+192.168.20.86           ws086.ltsp      ws086
+192.168.20.87           ws087.ltsp      ws087
+......
+</pre>
+<p>esta tudo ok</p>
+<p><strong>9 - Create /etc/hosts.allow entries</strong>\\</p>
+<p>Edite o arquivo <strong>#nano /etc/hosts.allow</strong></p>
+<pre>bootpd:     0.0.0.0
+in.tftpd:   192.168.20.0
+portmap:    192.168.20.0</pre>
+<p>mude para ip que tu tem configurado no seu servidor. No caso aqui: <strong>192.168.20.1</strong></p>
+<pre>bootpd:     0.0.0.0
+in.tftpd:   192.168.20.1
+portmap:    192.168.20.1</pre>
+<p>Salve e pronto.</p>
+<p><strong>10 - Create /etc/exports entries</strong>\\</p>
+<p>Edite o arquivo <strong>#nano /etc/exports</strong> - mudando para o ip do servidor. Deve ficar assim:</p>
+<pre>## LTSP-begin ##
+#
+# The lines between &#x27;LTSP-begin&#x27; and &#x27;LTSP-end&#x27; were added
+# on: Qua Abr 18 23:57:57 2007, by the ltspcfg configuration tool.
+# For more information, visit the LTSP homepage
+# at http://www.LTSP.org
+#
+
+/opt/ltsp                 192.168.20.1/255.255.255.0(ro,no_root_squash,sync)
+/var/opt/ltsp/swapfiles   192.168.20.1/255.255.255.0(rw,no_root_squash,async)
+
+## LTSP-end ##</pre>
+<p>Pronto....reinicie a maquina e faça os teste nos terminais.</p>
+<p>Pelo problema no inetd foi preciso eu reiniciar...mas depois eu fui em <strong>ltspcfg</strong> e fui ver o <strong>S</strong> Status (ou <strong>#ltspcfg -p</strong>) e estava o TFTP rodando e nos terminais funcionou.</p>
+<pre>Interface IP Address      Netmask         Network         Broadcast        Used
+eth0      xxx.xx.xxx.xxx  255.255.252.0   xxx.xx.xxx.x    255.255.255.255
+eth1      192.168.20.1    255.255.255.0   192.168.20.0    192.168.20.255  &lt;-----
+
+Service    Installed   Enabled   Running   Notes
+dhcpd      Yes         Yes       Yes       Version 3
+tftpd      Yes         Yes       Yes       Has &#x27;-s&#x27; flag
+portmapper Yes         Yes       Yes
+nfs        Yes         Yes       Yes
+xdmcp      Yes         Yes       Yes       gdm   Using: gdm
+
+File                                Configured  Notes
+/etc/hosts                          Yes
+/etc/hosts.allow                    Yes
+/etc/exports                        Yes
+/opt/ltsp/i386/etc/lts.conf         Yes
+
+Configured runlevel: 5         (value of initdefault in /etc/inittab)
+   Current runlevel: 5         (output of the &#x27;runlevel&#x27; command)
+
+Installation dir...: /opt/ltsp
+
+Press &lt;enter&gt; to return to the main menu...</pre>
+<p>Maiores Informações de Instalação no Debian e exemplos de arquivo de configuração.\\</p>
+<p>http://www.ltsp-br.org/wiki2/doku.php?id=debian\\</p>
+<p>http://oca.idbrasil.org.br/wiki2/index.php/Instala%C3%A7%C3%A3o_LTSP_4.2\\</p>
+<hr>
+<p>Logs da Conversa\\</p>
+<p><strong>Log1</strong> <a href="https://www.idsorocaba.tk/anexo/log-gtalk-ltsp-br-19-04.txt" target="_blank" rel="noopener">log-gtalk-ltsp-br-19-04.txt</a>\\</p>
+<p><strong>Log2</strong> <a href="https://www.idsorocaba.tk/anexo/log-irc-ltsp-br-19-04.txt" target="_blank" rel="noopener">log-irc-ltsp-br-19-04.txt</a>\\</p>
+<p><strong>Log3</strong> <a href="https://www.idsorocaba.tk/anexo/log-irc-ltsp-br-20-04.txt" target="_blank" rel="noopener">log-irc-ltsp-br-20-04.txt</a>\\</p>
+<p>e-mails para listas\\</p>
+<p>debian etch (ltsp4.2u2 ou ltsp5.0 ou via aptitude install ltsp-utils)\\</p>
+<p>http://listas.cipsga.org.br/pipermail/ltsp-br-discuss/2007-April/000151.html\\</p>
+<p>Erro no dhcpd.conf\\</p>
+<p>http://listas.cipsga.org.br/pipermail/ltsp-br-discuss/2007-April/000162.html\\</p>
+<p>http://lists.debian.org/debian-user-portuguese/2007/04/msg01092.html\\</p>
+<p>erro no boot via disquete (tftp erro - file not found)\\</p>
+<p>http://listas.cipsga.org.br/pipermail/ltsp-br-discuss/2007-April/000169.html\\</p>
+<p>http://listas.cipsga.org.br/pipermail/ltsp-br-discuss/2007-April/000170.html\\</p>
+<p>http://listas.cipsga.org.br/pipermail/ltsp-br-discuss/2007-April/000191.html\\</p>
+<p>(solução final com Lucas no IRC - log3)</p>
+<p>Saber o Modelo da Placa de Rede\\</p>
+<p><strong>#lspci -n</strong></p>
+<pre>00:00.0 0600: 1039:0648 (rev 51)
+00:01.0 0604: 1039:0003
+00:02.0 0601: 1039:0963 (rev 25)
+00:02.1 0c05: 1039:0016
+00:02.5 0101: 1039:5513
+00:02.7 0401: 1039:7012 (rev a0)
+00:03.0 0c03: 1039:7001 (rev 0f)
+00:03.1 0c03: 1039:7001 (rev 0f)
+00:03.3 0c03: 1039:7002
+00:0b.0 0200: 10ec:8139 (rev 10)
+00:0c.0 0200: 1106:3106 (rev 86)
+01:00.0 0300: 10de:0322 (rev a1)</pre>
+<p>desta retorno usar somente as linhas que tem **0200**\\</p>
+<pre>00:0b.0 0200: 10ec:8139 (rev 10)
+00:0c.0 0200: 1106:3106 (rev 86)</pre>
+<p><strong>#lspci -n | grep "Class 0200"</strong>\\</p>
+<p>lista somente as linhas que tem <strong>0200</strong></p>
+<p>Saber o MAC addresses\\</p>
+<p><strong>#ifconfig</strong></p>
+<pre>eth0       Encapsulamento do Link: Ethernet  Endereço de HW 00:08:54:14:8D:AD
+          inet end.: 201.72.186.116  Bcast:255.255.255.255  Masc:255.255.252.0
+          endereço inet6: fe80::208:54ff:fe14:8dad/64 Escopo:Link
+          UP BROADCASTRUNNING MULTICAST  MTU:1500  Métrica:1
+          RX packets:1347710 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:129501 errors:0 dropped:0 overruns:0 carrier:0
+          colisões:0 txqueuelen:1000
+          RX bytes:134473888 (128.2 MiB)  TX bytes:101212397 (96.5 MiB)
+          IRQ:193 Endereço de E/S:0x9400</pre>
+<p>MAC addresses\\</p>
+<p>Endereço de HW <strong>00:08:54:14:8D:AD</strong></p>
+<p>Algumas informações sobre <a href="/ltsp/configuracao_lts_conf.html">configuração no lts.conf</a></p>
+</div></div></div></div>
+<script src="/js/bootstrap.bundle.min.js"></script>
+</body></html>

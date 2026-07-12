@@ -1,0 +1,17 @@
+version=pmwiki-2.1.27 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.1.16) Gecko/20110107 Iceweasel/3.5.16 (like Firefox/3.5.16)
+author=
+csum=
+ctime=1187390727
+host=189.5.38.169
+name=Main.Scanners
+rev=2
+targets=
+text=''Genius ColorPage-EP funcionava (via Debian com VMWarePlayer rodando Winxp)'' (sobre isso ver [[http://idsorocaba.batemacumba.net/avena/index.php?n=Main.Vmware|avena - vmware]])%0a%0a''Nikon Scantouch AX-110 não consegui funcionar.''%0a%0aOs que estiver funcionando e não for usar doar para outra instituição, se estiver pifado fazer MetaProdutos ou dar um uso artístico.
+time=1297811545
+author:1297811545=
+diff:1297811545:1187390727:=1,2c1,2%0a%3c ''Genius ColorPage-EP funcionava (via Debian com VMWarePlayer rodando Winxp)'' (sobre isso ver [[http://idsorocaba.batemacumba.net/avena/index.php?n=Main.Vmware|avena - vmware]])%0a%3c %0a---%0a> ''Genius ColorPage-EP funcionava (via Debian com VMWarePlayer rodando Winxp)'' (sobre isso ver [[http://idsorocaba.ourproject.org/avena/index.php?n=Main.Vmware|avena - vmware]])%0a> %0a
+host:1297811545=189.5.38.169
+author:1187390727=Avena
+diff:1187390727:1187390727:=1,5d0%0a%3c ''Genius ColorPage-EP funcionava (via Debian com VMWarePlayer rodando Winxp)'' (sobre isso ver [[http://idsorocaba.ourproject.org/avena/index.php?n=Main.Vmware|avena - vmware]])%0a%3c %0a%3c ''Nikon Scantouch AX-110 não consegui funcionar.''%0a%3c %0a%3c Os que estiver funcionando e não for usar doar para outra instituição, se estiver pifado fazer MetaProdutos ou dar um uso artístico.%0a\ No newline at end of file%0a
+host:1187390727=189.5.47.137

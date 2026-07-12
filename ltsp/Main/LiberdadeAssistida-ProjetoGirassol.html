@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>LiberdadeAssistida-ProjetoGirassol — LTSP</title>
+<link rel="stylesheet" href="/css/bootstrap.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+body{background:#f5f5f5;font-family:'Poppins',sans-serif;}
+.ltsp-header{background:#1a237e;color:#fff;padding:20px 0;}
+.ltsp-header h1{margin:0;font-size:1.5rem;}
+.ltsp-sidebar{background:#fff;border-right:1px solid #e0e0e0;padding:20px;min-height:calc(100vh - 120px);font-size:0.9rem;}
+.ltsp-sidebar ul{list-style:none;padding:0;margin:0;}
+.ltsp-sidebar li{margin-bottom:6px;}
+.ltsp-sidebar a{color:#333;text-decoration:none;}
+.ltsp-sidebar a:hover{color:#1a237e;text-decoration:underline;}
+.ltsp-sidebar .sidehead{font-weight:700;margin-top:16px;margin-bottom:8px;font-size:0.85rem;text-transform:uppercase;color:#1a237e;}
+.ltsp-content{background:#fff;padding:30px;min-height:calc(100vh - 120px);}
+.ltsp-content h2{color:#1a237e;margin-top:24px;margin-bottom:12px;font-size:1.4rem;}
+.ltsp-content h3{color:#333;margin-top:20px;margin-bottom:10px;font-size:1.2rem;}
+.ltsp-content p{margin-bottom:12px;line-height:1.6;}
+.ltsp-content pre{background:#f5f5f5;border:1px solid #e0e0e0;padding:12px;overflow-x:auto;font-size:0.85rem;border-radius:4px;}
+.ltsp-content code{background:#f5f5f5;padding:2px 6px;font-size:0.85rem;border-radius:3px;}
+.ltsp-content ul{margin-bottom:12px;padding-left:20px;}
+.ltsp-content li{margin-bottom:4px;}
+.ltsp-breadcrumb{font-size:0.85rem;color:#666;margin-bottom:16px;}
+.ltsp-breadcrumb a{color:#1a237e;}
+.ltsp-content hr{margin:24px 0;border:0;border-top:1px solid #e0e0e0;}
+</style>
+</head>
+<body>
+<div class="ltsp-header">
+<div class="container">
+<div class="row align-items-center">
+<div class="col"><a href="/ltsp/" style="color:#fff;text-decoration:none"><h1>LTSP · Documentação em português</h1></a></div>
+<div class="col-auto"><a href="/" class="text-white-50 text-decoration-none">← Voltar ao currículo</a></div>
+</div></div></div>
+<div class="container"><div class="row">
+<div class="col-md-3"><div class="ltsp-sidebar"><ul><li><a href="/ltsp/">Página Inicial</a></li></ul></ul><div class="sidehead"><strong>Debian</strong></div><ul><li><a href="http://www.ltsp.org" target="_blank" rel="noopener">LTSP</a></li></ul><ul><li><a href="http://debian.org" target="_blank" rel="noopener">Debian</a></li></ul><ul><li><a href="https://www.ubuntu.com" target="_blank" rel="noopener">Ubuntu</a></li></ul></div></div>
+<div class="col-md-9"><div class="ltsp-content">
+<div class="ltsp-breadcrumb"><a href="/ltsp/">LTSP</a> &raquo; Main</div>
+<p>Rua Visconde do Rio Branco, n968, Vila Jardini</p>
+<p>5 Terminais - pc100 ate pc133\\</p>
+<p>Servidor esta com um HD (Windows) e outro HD com Debian e LTSP4.2\\</p>
+<p>"Intel(R) Celeron(R) CPU 2.13GHz" -   Memory Size: 608 MB</p>
+<p><strong>lts.conf</strong></p>
+<p>[@[Default]</p>
+<p>SERVER             = 192.168.20.1</p>
+<p>XSERVER            = vesa</p>
+<p>X_MODE_0           = 1024x768</p>
+<p>X_MOUSE_PROTOCOL   = "Microsoft"</p>
+<p>X_MOUSE_DEVICE     = "/dev/ttyS0"</p>
+<p>USE_XFS            = N</p>
+<p>X_VERTREFRESH      = "60"</p>
+<p>XkbRules           = xorg</p>
+<p>XkbModel           = abnt2</p>
+<p>XkbLayout          = br</p>
+<p>SCREEN_01          = startx</p>
+<p>SCREEN_02          = shell@]</p>
+<p>Programas Instalados\\</p>
+<p><a href="http://idsorocaba.batemacumba.net/anexo/programas_instalados_projeto_girassol" target="_blank" rel="noopener">programas_instalados_projeto_girassol</a>\\</p>
+<p>dpkg --set-selections < programas_instalados_projeto_girassol\\</p>
+<p>dselect install</p>
+<p><a href="/ltsp/Grub com Debian e WinXP.html">Grub com Debian e WinXP</a></p>
+</div></div></div></div>
+<script src="/js/bootstrap.bundle.min.js"></script>
+</body></html>

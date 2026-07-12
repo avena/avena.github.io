@@ -1,0 +1,35 @@
+version=pmwiki-2.1.27 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.1.16) Gecko/20110107 Iceweasel/3.5.16 (like Firefox/3.5.16)
+author=
+csum=
+ctime=1185560208
+host=189.5.38.169
+name=Main.Etherboot
+rev=8
+targets=
+text=Disquete de Boot para diversas placas de rede, com possibilidade de transferir conteudo do disquete para o HD.%0a%0aEste disquete estava sendo usado no MRP-Itu pelo William, e ao que parece ele vem e foi criado pelo pessoal do Suite Telecentro%0a%0a'''Imagem'''\\%0a[[http://idsorocaba.batemacumba.net/anexo/bootdisk_rede.img|bootdisk_rede.img]]\\%0a'''etherboot_5.4.0'''\\%0a[[http://idsorocaba.batemacumba.net/anexo/eb-net.iso|eb-net.iso]]%0a%0a'''Gravar'''\\%0acat bootdisk_rede.img > /dev/fd0\\%0aou\\%0a'''dd if=bootdisk_rede.img of=/dev/fd0'''\\%0aRecomendavel usar o '''dd''' para gravar a imagem do disco de boot...pois ele mostra se deu erro ou se foi gravado corretamente.\\%0a[@dd if=bootdisk_rede.img of=/dev/fd0%0a2880+0 records in%0a2880+0 records out%0a1474560 bytes (1,5 MB) copied, 101,158 seconds, 14,6 kB/s@]%0a%0aSuite Telecentro\\%0ahttp://codigolivre.org.br/frs/?group_id=2036\\%0ahttp://sourceforge.net/project/showfiles.php?group_id=194813%0a%0ahttp://idsorocaba.batemacumba.net/anexo/bootdisk.png%0aOpção 1 - boot via disquete.\\%0aOpção 2 - copia o conteudo do disquete para o HD do terminal...e assim o proximo boot para pegar os drives das placas de rede será pelo HD.%0a%0a%0ahttp://idsorocaba.batemacumba.net/anexo/bootdisk1.png%0aOs nomes das placas de rede suportadas.%0a
+time=1297811462
+author:1297811462=
+diff:1297811462:1219357179:=6c6%0a%3c [[http://idsorocaba.batemacumba.net/anexo/bootdisk_rede.img|bootdisk_rede.img]]\\%0a---%0a> [[http://idsorocaba.ourproject.org/anexo/bootdisk_rede.img|bootdisk_rede.img]]\\%0a8,9c8,9%0a%3c [[http://idsorocaba.batemacumba.net/anexo/eb-net.iso|eb-net.iso]]%0a%3c %0a---%0a> [[http://idsorocaba.ourproject.org/anexo/eb-net.iso|eb-net.iso]]%0a> %0a24c24%0a%3c http://idsorocaba.batemacumba.net/anexo/bootdisk.png%0a---%0a> http://idsorocaba.ourproject.org/anexo/bootdisk.png%0a29c29%0a%3c http://idsorocaba.batemacumba.net/anexo/bootdisk1.png%0a---%0a> http://idsorocaba.ourproject.org/anexo/bootdisk1.png%0a
+host:1297811462=189.5.38.169
+author:1219357179=
+diff:1219357179:1202357251:=13c13%0a%3c '''dd if=bootdisk_rede.img of=/dev/fd0'''\\%0a---%0a> '''dd if=bootdisk_rede.img of=/dev/fdo'''\\%0a
+host:1219357179=201.62.24.8
+author:1202357251=
+diff:1202357251:1202355461:=14c14%0a%3c Recomendavel usar o '''dd''' para gravar a imagem do disco de boot...pois ele mostra se deu erro ou se foi gravado corretamente.\\%0a---%0a> Recomendavel usar o '''dd''' para gravar a imagem do disco de boot...pois ele mostra se der erro ou se foi gravado corretamente.\\%0a
+host:1202357251=201.62.24.8
+author:1202355461=
+diff:1202355461:1190424209:=11,19c11,12%0a%3c cat bootdisk_rede.img > /dev/fd0\\%0a%3c ou\\%0a%3c '''dd if=bootdisk_rede.img of=/dev/fdo'''\\%0a%3c Recomendavel usar o '''dd''' para gravar a imagem do disco de boot...pois ele mostra se der erro ou se foi gravado corretamente.\\%0a%3c [@dd if=bootdisk_rede.img of=/dev/fd0%0a%3c 2880+0 records in%0a%3c 2880+0 records out%0a%3c 1474560 bytes (1,5 MB) copied, 101,158 seconds, 14,6 kB/s@]%0a%3c %0a---%0a> cat bootdisk_rede.img > /dev/fd0%0a> %0a
+host:1202355461=201.62.24.8
+author:1190424209=Avena
+diff:1190424209:1185560873:=6,9c6,7%0a%3c [[http://idsorocaba.ourproject.org/anexo/bootdisk_rede.img|bootdisk_rede.img]]\\%0a%3c '''etherboot_5.4.0'''\\%0a%3c [[http://idsorocaba.ourproject.org/anexo/eb-net.iso|eb-net.iso]]%0a%3c %0a---%0a> [[http://idsorocaba.ourproject.org/anexo/bootdisk_rede.img|bootdisk_rede.img]]%0a> %0a
+host:1190424209=189.5.47.137
+author:1185560873=
+diff:1185560873:1185560818:=1,2c1,2%0a%3c Disquete de Boot para diversas placas de rede, com possibilidade de transferir conteudo do disquete para o HD.%0a%3c %0a---%0a> Disquete de Boot para diversas placas de rede PCI, com possibilidade de transferir conteudo do disquete para o HD.%0a> %0a
+host:1185560873=189.5.42.237
+author:1185560818=
+diff:1185560818:1185560208:=14,21d13%0a%3c %0a%3c http://idsorocaba.ourproject.org/anexo/bootdisk.png%0a%3c Opção 1 - boot via disquete.\\%0a%3c Opção 2 - copia o conteudo do disquete para o HD do terminal...e assim o proximo boot para pegar os drives das placas de rede será pelo HD.%0a%3c %0a%3c %0a%3c http://idsorocaba.ourproject.org/anexo/bootdisk1.png%0a%3c Os nomes das placas de rede suportadas.%0a
+host:1185560818=189.5.42.237
+author:1185560208=
+diff:1185560208:1185560208:=1,13d0%0a%3c Disquete de Boot para diversas placas de rede PCI, com possibilidade de transferir conteudo do disquete para o HD.%0a%3c %0a%3c Este disquete estava sendo usado no MRP-Itu pelo William, e ao que parece ele vem e foi criado pelo pessoal do Suite Telecentro%0a%3c %0a%3c '''Imagem'''\\%0a%3c [[http://idsorocaba.ourproject.org/anexo/bootdisk_rede.img|bootdisk_rede.img]]%0a%3c %0a%3c '''Gravar'''\\%0a%3c cat bootdisk_rede.img > /dev/fd0%0a%3c %0a%3c Suite Telecentro\\%0a%3c http://codigolivre.org.br/frs/?group_id=2036\\%0a%3c http://sourceforge.net/project/showfiles.php?group_id=194813%0a
+host:1185560208=189.5.42.237

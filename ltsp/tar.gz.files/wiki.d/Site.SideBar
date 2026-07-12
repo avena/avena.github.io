@@ -1,0 +1,54 @@
+version=pmwiki-2.2.82 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0
+author=
+charset=ISO-8859-1
+csum=
+host=172.68.26.13
+name=Site.SideBar
+passwdedit=@_site_edit
+rev=14
+targets=Main.HomePage,Main.WikiSandbox,Site.SideBar
+text=* [[Main/HomePage|Página Inicial]]%0a* [[Main/WikiSandbox|Caixa de Areia]]%0a%0a%25sidehead%25 '''Debian'''%0a* [[http://www.ltsp.org|LTSP]]%0a* [[http://debian.org|Debian]]%0a* [[https://www.ubuntu.com|Ubuntu]]%0a%0a%0a%0a%25right%25 [-[[Site.SideBar?action=edit | edit SideBar]]-]%0a%0a
+time=1539332351
+author:1539332351=
+diff:1539332351:1523127245:=7a8,14%0a> %0a> %0a> %25sidehead%25 '''Apoie e financie'''%0a> %0a> (:input form target="flattr" action="https://flattr.com/thing/142831/Documentacao-sobre-LTSP-em-Debian-e-Ubuntu" method="get":)%0a> (:input image src="http://i52.tinypic.com/2aetic3.jpg" alt="Flattr":)%0a> (:input end:)%0a
+host:1539332351=172.68.26.13
+author:1523127245=
+diff:1523127245:1392986782:=3a4,7%0a> %25sidehead%25 Site Espelho%0a> * [[http://idsorocaba.ourproject.org|ID Sorocaba - OurProject]]%0a> %0a> %0a5,9c9,12%0a%3c * [[http://www.ltsp.org|LTSP]]%0a%3c * [[http://debian.org|Debian]]%0a%3c * [[https://www.ubuntu.com|Ubuntu]]%0a%3c %0a%3c %0a---%0a> * [[http://debian.org/|Debian]]%0a> * [[http://www.forumdebian.com.br/forum/|Forum Debian-BR]]%0a> * [[http://wiki.forumdebian.com.br|Wiki do Forum Debian-BR]]%0a> %0a13a17,22%0a> (:input end:)%0a> %0a> (:input form target="pagseguro" action="https://pagseguro.uol.com.br/checkout/doacao.jhtml" method="post":)%0a> (:input hidden name="email_cobranca" value="avena@batemacumba.net":)%0a> (:input hidden name="moeda" value="BRL":)%0a> (:input image src="https://p.simg.uol.com.br/out/pagseguro/i/botoes/doacoes/94x52-doar-assina.gif" alt="Pague com PagSeguro - é rápido, grátis e seguro!":)%0a
+host:1523127245=186.207.76.102
+author:1392986782=
+diff:1392986782:1306882666:=12a13,16%0a> %25sidehead%25 Links%0a> * [[http://www.metareciclagem.org| Metareciclagem]]%0a> * [[http://www.mocambos.net | Rede Mocambos]]%0a> %0a
+host:1392986782=200.145.44.4
+author:1306882666=
+diff:1306882666:1306882647:=30c30,41%0a%3c %0a---%0a> %3cscript type="text/javascript">%3c!--%0a> google_ad_client = "ca-pub-6003460122552741";%0a> /* ID Sorocaba */%0a> google_ad_slot = "4984616204";%0a> google_ad_width = 120;%0a> google_ad_height = 240;%0a> //-->%0a> %3c/script>%0a> %3cscript type="text/javascript"%0a> src="http://pagead2.googlesyndication.com/pagead/show_ads.js">%0a> %3c/script>%0a> %0a
+host:1306882666=189.5.39.209
+author:1306882647=
+diff:1306882647:1299533614:=30,43c30,31%0a%3c %3cscript type="text/javascript">%3c!--%0a%3c google_ad_client = "ca-pub-6003460122552741";%0a%3c /* ID Sorocaba */%0a%3c google_ad_slot = "4984616204";%0a%3c google_ad_width = 120;%0a%3c google_ad_height = 240;%0a%3c //-->%0a%3c %3c/script>%0a%3c %3cscript type="text/javascript"%0a%3c src="http://pagead2.googlesyndication.com/pagead/show_ads.js">%0a%3c %3c/script>%0a%3c %0a%3c %25right%25 [-[[Site.SideBar?action=edit | edit SideBar]]-]%0a%3c %0a---%0a> %0a> %25right%25 [-[[Site.SideBar?action=edit | edit SideBar]]-]%0a\ No newline at end of file%0a
+host:1306882647=189.5.39.209
+author:1299533614=
+diff:1299533614:1299533319:=26c26%0a%3c (:input image src="https://p.simg.uol.com.br/out/pagseguro/i/botoes/doacoes/94x52-doar-assina.gif" alt="Pague com PagSeguro - é rápido, grátis e seguro!":)%0a---%0a> (:input image src="https://p.simg.uol.com.br/out/pagseguro/i/botoes/doacoes/209x48-doar-assina.gif" alt="Pague com PagSeguro - é rápido, grátis e seguro!":)%0a
+host:1299533614=189.32.218.109
+author:1299533319=
+diff:1299533319:1299533184:=20c20%0a%3c (:input image src="http://i52.tinypic.com/2aetic3.jpg" alt="Flattr":)%0a---%0a> (:input image src="http://raphaelhertzog.com/files/2010/07/flattr-foss-logo-small.png" alt="Flattr":)%0a
+host:1299533319=189.32.218.109
+author:1299533184=
+diff:1299533184:1296189454:=17,30c17%0a%3c %25sidehead%25 '''Apoie e financie'''%0a%3c %0a%3c (:input form target="flattr" action="https://flattr.com/thing/142831/Documentacao-sobre-LTSP-em-Debian-e-Ubuntu" method="get":)%0a%3c (:input image src="http://raphaelhertzog.com/files/2010/07/flattr-foss-logo-small.png" alt="Flattr":)%0a%3c (:input end:)%0a%3c %0a%3c (:input form target="pagseguro" action="https://pagseguro.uol.com.br/checkout/doacao.jhtml" method="post":)%0a%3c (:input hidden name="email_cobranca" value="avena@batemacumba.net":)%0a%3c (:input hidden name="moeda" value="BRL":)%0a%3c (:input image src="https://p.simg.uol.com.br/out/pagseguro/i/botoes/doacoes/209x48-doar-assina.gif" alt="Pague com PagSeguro - é rápido, grátis e seguro!":)%0a%3c (:input end:)%0a%3c %0a%3c %0a%3c %0a---%0a> %0a
+host:1299533184=189.32.218.109
+author:1296189454=
+diff:1296189454:1296189439:=17c17,31%0a%3c %0a---%0a> %25sidehead%25 [[PmWiki/PmWiki]]%0a> * [[PmWiki/Initial Setup Tasks]]  %0a> * [[PmWiki/Basic Editing]]%0a> * [[PmWiki/Documentation Index]]%0a> * [[PmWiki/FAQ | PmWiki FAQ ]]%0a> * [[PmWiki/PmWikiPhilosophy]]%0a> * [[PmWiki/Release Notes]]%0a> * [[PmWiki/ChangeLog]]%0a> %0a> %25sidehead%25 [[http://www.pmwiki.org | pmwiki.org ]]%0a> * [[Cookbook:CookbookBasics | Cookbook (addons) ]]%0a> * [[Cookbook:Skins | Skins (themes) ]]%0a> * [[PITS:PITS | PITS (issue tracking) ]]%0a> * [[PmWiki/Mailing Lists]]%0a> %0a
+host:1296189454=189.32.224.162
+author:1296189439=
+diff:1296189439:1236377683:=4,7d3%0a%3c %25sidehead%25 Site Espelho%0a%3c * [[http://idsorocaba.ourproject.org|ID Sorocaba - OurProject]]%0a%3c %0a%3c %0a
+host:1296189439=189.32.224.162
+author:1236377683=colaborador
+diff:1236377683:1189362658:minor=4,12d3%0a%3c %25sidehead%25 '''Debian'''%0a%3c * [[http://debian.org/|Debian]]%0a%3c * [[http://www.forumdebian.com.br/forum/|Forum Debian-BR]]%0a%3c * [[http://wiki.forumdebian.com.br|Wiki do Forum Debian-BR]]%0a%3c %0a%3c %25sidehead%25 Links%0a%3c * [[http://www.metareciclagem.org| Metareciclagem]]%0a%3c * [[http://www.mocambos.net | Rede Mocambos]]%0a%3c %0a
+host:1236377683=189.5.43.34
+author:1189362658=Avena
+diff:1189362658:1185573118:=1,3c1,3%0a%3c * [[Main/HomePage|Página Inicial]]%0a%3c * [[Main/WikiSandbox|Caixa de Areia]]%0a%3c %0a---%0a> * [[Main/HomePage]]%0a> * [[Main/WikiSandbox]]%0a> %0a
+host:1189362658=189.5.47.137
+author:1185573118=
+diff:1185573118:1185573082:=0a1%0a> * [[Main/Inicial]]%0a
+host:1185573118=189.5.42.237
+author:1185573082=
+diff:1185573082:1125550800:=1d0%0a%3c * [[Main/Inicial]]%0a
+host:1185573082=189.5.42.237

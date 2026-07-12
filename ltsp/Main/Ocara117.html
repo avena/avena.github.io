@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ocara117 — LTSP</title>
+<link rel="stylesheet" href="/css/bootstrap.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+body{background:#f5f5f5;font-family:'Poppins',sans-serif;}
+.ltsp-header{background:#1a237e;color:#fff;padding:20px 0;}
+.ltsp-header h1{margin:0;font-size:1.5rem;}
+.ltsp-sidebar{background:#fff;border-right:1px solid #e0e0e0;padding:20px;min-height:calc(100vh - 120px);font-size:0.9rem;}
+.ltsp-sidebar ul{list-style:none;padding:0;margin:0;}
+.ltsp-sidebar li{margin-bottom:6px;}
+.ltsp-sidebar a{color:#333;text-decoration:none;}
+.ltsp-sidebar a:hover{color:#1a237e;text-decoration:underline;}
+.ltsp-sidebar .sidehead{font-weight:700;margin-top:16px;margin-bottom:8px;font-size:0.85rem;text-transform:uppercase;color:#1a237e;}
+.ltsp-content{background:#fff;padding:30px;min-height:calc(100vh - 120px);}
+.ltsp-content h2{color:#1a237e;margin-top:24px;margin-bottom:12px;font-size:1.4rem;}
+.ltsp-content h3{color:#333;margin-top:20px;margin-bottom:10px;font-size:1.2rem;}
+.ltsp-content p{margin-bottom:12px;line-height:1.6;}
+.ltsp-content pre{background:#f5f5f5;border:1px solid #e0e0e0;padding:12px;overflow-x:auto;font-size:0.85rem;border-radius:4px;}
+.ltsp-content code{background:#f5f5f5;padding:2px 6px;font-size:0.85rem;border-radius:3px;}
+.ltsp-content ul{margin-bottom:12px;padding-left:20px;}
+.ltsp-content li{margin-bottom:4px;}
+.ltsp-breadcrumb{font-size:0.85rem;color:#666;margin-bottom:16px;}
+.ltsp-breadcrumb a{color:#1a237e;}
+.ltsp-content hr{margin:24px 0;border:0;border-top:1px solid #e0e0e0;}
+</style>
+</head>
+<body>
+<div class="ltsp-header">
+<div class="container">
+<div class="row align-items-center">
+<div class="col"><a href="/ltsp/" style="color:#fff;text-decoration:none"><h1>LTSP · Documentação em português</h1></a></div>
+<div class="col-auto"><a href="/" class="text-white-50 text-decoration-none">← Voltar ao currículo</a></div>
+</div></div></div>
+<div class="container"><div class="row">
+<div class="col-md-3"><div class="ltsp-sidebar"><ul><li><a href="/ltsp/">Página Inicial</a></li></ul></ul><div class="sidehead"><strong>Debian</strong></div><ul><li><a href="http://www.ltsp.org" target="_blank" rel="noopener">LTSP</a></li></ul><ul><li><a href="http://debian.org" target="_blank" rel="noopener">Debian</a></li></ul><ul><li><a href="https://www.ubuntu.com" target="_blank" rel="noopener">Ubuntu</a></li></ul></div></div>
+<div class="col-md-9"><div class="ltsp-content">
+<div class="ltsp-breadcrumb"><a href="/ltsp/">LTSP</a> &raquo; Main</div>
+<p>http://banto.hipatia.info/softwarelivre/ocara.html\\</p>
+<p>Ocara é um gerenciador de telecentros. É necessário ter instalado na máquina servidora apache, mysql e php. Ver <a href="http://banto.hipatia.info/softwarelivre/lamp.html" target="_blank" rel="noopener">lamp</a>\\</p>
+<p><strong>Pegue o pacote:</strong>\\</p>
+<p>[@$ wget -c http://banto.hipatia.info/softwarelivre/arquivos/ocara-1.1-7_all.deb@]\\</p>
+<p>ou aqui <a href="http://idsorocaba.batemacumba.net/anexo/ocara-1.1-7_all.deb" target="_blank" rel="noopener">ocara-1.1-7_all.deb</a></p>
+<p><strong>instale:</strong>\\</p>
+<p>[@# dpkg -i ocara-1.1-7_all.deb@]</p>
+<p>http://lourenzo.blog.br/2007/07/14/rodando-o-sistema-ocara-no-debian/\\</p>
+<p>Este artigo é fruto de trabalho colaborativo, em favor de um telecentro em Sorocaba.</p>
+<p>Fernando Avena estava instalando o sistema oCara em uma máquina Debian, seguindo as instruções na página:\\</p>
+<p>http://banto.hipatia.info/softwarelivre/ocara.html\\</p>
+<p>Seguindo o tutorial localmente, precisei instalar o <strong>xdialog</strong> e o <strong>mysqltcl</strong>:</p>
+<pre>$ sudo apt-get install xdialog mysqltcl</pre>
+<p>Ao concluir a instalação, me deparei com o problema que o Avena queria resolver:</p>
+<p><strong>Warning</strong>: Unknown: Your script possibly relies on a session side-effect which existed until PHP 4.2.3. Please be advised that the session extension does not consider global variables as a source of data, unless register_globals is enabled. You can disable this functionality and this warning by setting session.bug_compat_42 or session.bug_compat_warn to off, respectively. in <strong>Unknown</strong> on line <strong>0</strong></p>
+<p>Bom, isso basicamente significa que o sistema oCara usa de uma maneira antiquada e não recomendada as sessões PHP. Ele usa o velho e difamado register_globals, uma opção de configuração do PHP que abre vários tipos de vulnerabilidades.\\</p>
+<p>Mas como o sistema rodaria apenas localmente, há menos riscos aqui. Então através de um simples comando, liberei o register_globals na pasta do oCara (no Debian, /var/www/telecentro por padrão).\\</p>
+<p>Isso deve ser feito com permissões de root, com o comando <strong>su</strong></p>
+<pre># echo &quot;php_value register_globals 1&quot;; &gt;&gt; .htaccess</pre>
+<p>Este comando cria um arquivo <strong>.htaccess</strong> (configuração local do apache) caso não exista, e adiciona - sem sobrescrever o arquivo caso exista - a opção que libera o register_globals na pasta do oCara.\\</p>
+<p>Mas isso não funciona se você não permitir que os arquivos <strong>.htaccess</strong> sejam lidos pelo apache. Você permite isso editando a configuração global do site em que vai rodar o oCara (como root):\\</p>
+<p>Abra o arquivo <strong>/etc/apache2/sites-enabled/000-default</strong> (isso pode variar de acordo com suas configurações) como root, e procure:</p>
+<pre>&lt;Directory /var/www/&gt;
+Options Indexes FollowSymLinks MultiViews
+AllowOverride None
+Order allow,deny
+allow from all</pre>
+<p>Altere a linha AllowOverride <strong>None</strong> para AllowOverride <strong>All</strong>\\</p>
+<p>Agora estamos quase lá!\\</p>
+<p>Só falta trocar a codificação dos scripts para UTF-8, que é padrão no Debian. Na pasta do oCara, execute o seguinte comando como root:</p>
+<pre>for i in `find .`;\
+do if [ -f $i ];\
+then printf &quot;Convertendo $i ...&quot; ;\
+iconv $i --from=iso-8859-1 --to=utf-8 &gt; $i.utf;\
+rm $i;\
+mv $i.utf $i;\
+printf &quot;OK&quot;; echo;\
+fi; done;</pre>
+<p>E pronto! A essas alturas, oCara deve estar funcionando beleza!</p>
+<p>http://avena.myftp.org/mediawiki/index.php/Telecentro_ocara\\</p>
+<p><strong>Dava um erro de Caracteres e de Login.</strong>\\</p>
+<p>Solução simples que Lourenzo mandou...\\</p>
+<p>[@echo "php_value register_globals 1" >> .htaccess@]\\</p>
+<p><strong>aqui já vai rodar, mas com bug nos acentos</strong>\\</p>
+<p><em>for i in *; do if [ -f $i ]; then iconv $i --from=iso-8859-1 --to=utf-8 > $i.utf; fi; done;</em>\\</p>
+<p>rm *.utf</p>
+<p><strong>usar esta linha na verdade</strong>\\</p>
+<p>cp . ../telecentro.bak -rfv; for i in *; do if [ -f $i ]; then iconv $i --from=iso-8859-1 --to=utf-8 > $i.utf; rm $i; mv $i.utf $i; fi; done;</p>
+<p>debian:/var/www/telecentro# cat .htaccess php_value register_globals 1\\</p>
+<p>debian:/var/www/telecentro# pico /etc/apache2/sites-enabled/000-default\\</p>
+<pre>&lt;Directory /var/www/&gt;
+               Options Indexes FollowSymLinks MultiViews
+               AllowOverride **All**
+               Order allow,deny
+               allow from all
+</pre>
+<p>None por All</p>
+<p><strong>Menu com acentução errada.</strong>\\</p>
+<p>iconv menuArrays.js -fiso-8859-1 -tutf-8 >menuArrays.js.new\\</p>
+<p>mv menuArrays.js menuArrays.js.bak\\</p>
+<p>mv menuArrays.js.new menuArrays.js\\</p>
+<p><strong>Dentro da Pasta Funções</strong>\\</p>
+<p>debian:/var/www/telecentro/cd funcoes/js\\</p>
+<p>debian:/var/www/telecentro/funcoes/js# for i in *; do if [ -f $i ]; then iconv $i --from=iso-8859-1 --to=utf-8 > $i.utf; rm $i; mv $i.utf $i; fi; done;</p>
+</div></div></div></div>
+<script src="/js/bootstrap.bundle.min.js"></script>
+</body></html>

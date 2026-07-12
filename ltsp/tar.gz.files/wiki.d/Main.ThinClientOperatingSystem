@@ -1,0 +1,14 @@
+version=pmwiki-2.1.27 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (X11; U; Linux i686; pt-BR; rv:1.8.1.8) Gecko/20071004 Iceweasel/2.0.0.8 (Debian-2.0.0.6+2.0.0.8-0etch1)
+author=avena
+csum=
+ctime=1194961313
+host=189.32.215.206
+name=Main.ThinClientOperatingSystem
+rev=1
+targets=
+text=Ler/Instalar e ver qual é disso: http://www.tcosproject.org
+time=1194961313
+author:1194961313=avena
+diff:1194961313:1194961313:=1d0%0a%3c Ler/Instalar e ver qual é disso: http://www.tcosproject.org%0a\ No newline at end of file%0a
+host:1194961313=189.32.215.206

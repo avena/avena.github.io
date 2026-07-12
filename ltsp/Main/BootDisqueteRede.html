@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>BootDisqueteRede — LTSP</title>
+<link rel="stylesheet" href="/css/bootstrap.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+body{background:#f5f5f5;font-family:'Poppins',sans-serif;}
+.ltsp-header{background:#1a237e;color:#fff;padding:20px 0;}
+.ltsp-header h1{margin:0;font-size:1.5rem;}
+.ltsp-sidebar{background:#fff;border-right:1px solid #e0e0e0;padding:20px;min-height:calc(100vh - 120px);font-size:0.9rem;}
+.ltsp-sidebar ul{list-style:none;padding:0;margin:0;}
+.ltsp-sidebar li{margin-bottom:6px;}
+.ltsp-sidebar a{color:#333;text-decoration:none;}
+.ltsp-sidebar a:hover{color:#1a237e;text-decoration:underline;}
+.ltsp-sidebar .sidehead{font-weight:700;margin-top:16px;margin-bottom:8px;font-size:0.85rem;text-transform:uppercase;color:#1a237e;}
+.ltsp-content{background:#fff;padding:30px;min-height:calc(100vh - 120px);}
+.ltsp-content h2{color:#1a237e;margin-top:24px;margin-bottom:12px;font-size:1.4rem;}
+.ltsp-content h3{color:#333;margin-top:20px;margin-bottom:10px;font-size:1.2rem;}
+.ltsp-content p{margin-bottom:12px;line-height:1.6;}
+.ltsp-content pre{background:#f5f5f5;border:1px solid #e0e0e0;padding:12px;overflow-x:auto;font-size:0.85rem;border-radius:4px;}
+.ltsp-content code{background:#f5f5f5;padding:2px 6px;font-size:0.85rem;border-radius:3px;}
+.ltsp-content ul{margin-bottom:12px;padding-left:20px;}
+.ltsp-content li{margin-bottom:4px;}
+.ltsp-breadcrumb{font-size:0.85rem;color:#666;margin-bottom:16px;}
+.ltsp-breadcrumb a{color:#1a237e;}
+.ltsp-content hr{margin:24px 0;border:0;border-top:1px solid #e0e0e0;}
+</style>
+</head>
+<body>
+<div class="ltsp-header">
+<div class="container">
+<div class="row align-items-center">
+<div class="col"><a href="/ltsp/" style="color:#fff;text-decoration:none"><h1>LTSP · Documentação em português</h1></a></div>
+<div class="col-auto"><a href="/" class="text-white-50 text-decoration-none">← Voltar ao currículo</a></div>
+</div></div></div>
+<div class="container"><div class="row">
+<div class="col-md-3"><div class="ltsp-sidebar"><ul><li><a href="/ltsp/">Página Inicial</a></li></ul></ul><div class="sidehead"><strong>Debian</strong></div><ul><li><a href="http://www.ltsp.org" target="_blank" rel="noopener">LTSP</a></li></ul><ul><li><a href="http://debian.org" target="_blank" rel="noopener">Debian</a></li></ul><ul><li><a href="https://www.ubuntu.com" target="_blank" rel="noopener">Ubuntu</a></li></ul></div></div>
+<div class="col-md-9"><div class="ltsp-content">
+<div class="ltsp-breadcrumb"><a href="/ltsp/">LTSP</a> &raquo; Main</div>
+<p>Se o Terminal Leve tiver boa quantidade de memória, e tiver um CD-Rom, mas infelizmente somente faz boot via A/Floppy</p>
+<p>Grave em um Disquete o <a href="http://idsorocaba.batemacumba.net/anexo/bootmanager.img" target="_blank" rel="noopener">bootmanager.img</a></p>
+<p><strong>dd if=bootmanager.img of=/dev/fd0</strong></p>
+<p>Com ele no Disquete é dar o boot via disquete, depois é só escolher o boot via CD-Rom, e depois com uma Distro Linux Live-CD procurar o MAC Address e Modelo.</p>
+<p>Caso o Terminal Leve não tenha memória suficiente, tente usar o <a href="http://www.zelow.no/floppyfw/" target="_blank" rel="noopener">floppyfw</a>\\</p>
+<p>floppyfw is a router with the advanced firewall-capabilities in Linux that fits on one single floppy disc.</p>
+<p>Grave ele no Disquete\\</p>
+<p><strong>dd if=floppyfw-3.0.0.img of=/dev/fd0</strong></p>
+<p>ate o momento vi que ele tem o <strong>ifconfig</strong> o que facilita para obter o MAC Address\\</p>
+<p>o comando lspci ele não tem, e o floppyfw suporta algumas placas.</p>
+<ul>
+<li>3com 3c509, 3c59x and 3c90x</li>
+<li>NE2000 Compatible cards</li>
+<li>Tulip based cards.</li>
+<li>intel EtherExpress PCI-cards. (10 ad 100Mbit)</li>
+<li>RealTek rt8139 and friends.</li>
+<li>RealTek rt8139+ and friends.</li>
+<li>AMD PCNet32 (which also is the adapter used in vmware)</li>
+</ul>
+<p>se você vendo a placa tem idéia já do modelo da placa e considera que o floopyfw suporta ela... execute um <strong>dmesg</strong> para ver se ele esta usando, ou esta suportando a placa.</p>
+<p>o floppyfw tem vários aplicativos de rede...deve ter ainda um jeito de saber o modelo. mas como deve ter acesso físico a placa, com isso também pode saber o modelo.</p>
+<p>Para saber o Modelo da Placa de Rede\\</p>
+<p><strong>#lspci -n</strong></p>
+<p>[@00:00.0 0600: 1039:0648 (rev 51)</p>
+<p>00:01.0 0604: 1039:0003</p>
+<p>00:02.0 0601: 1039:0963 (rev 25)</p>
+<p>00:02.1 0c05: 1039:0016</p>
+<p>00:02.5 0101: 1039:5513</p>
+<p>00:02.7 0401: 1039:7012 (rev a0)</p>
+<p>00:03.0 0c03: 1039:7001 (rev 0f)</p>
+<p>00:03.1 0c03: 1039:7001 (rev 0f)</p>
+<p>00:03.3 0c03: 1039:7002</p>
+<p>00:0b.0 0200: 10ec:8139 (rev 10)</p>
+<p>00:0c.0 0200: 1106:3106 (rev 86)</p>
+<p>01:00.0 0300: 10de:0322 (rev a1)@]</p>
+<p>desta retorno usar somente as linhas que tem **0200**</p>
+<p>[@00:0b.0 0200: 10ec:8139 (rev 10)</p>
+<p>00:0c.0 0200: 1106:3106 (rev 86)@]</p>
+<p><strong>#lspci -n | grep "Class 0200"</strong>\\</p>
+<p>lista somente as linhas que tem **0200**</p>
+<p>Saber o MAC addresses\\</p>
+<p><strong>#ifconfig</strong></p>
+<pre>eth0       Encapsulamento do Link: Ethernet  Endereço de HW 00:08:54:14:8D:AD
+          inet end.: 201.72.186.116  Bcast:255.255.255.255  Masc:255.255.252.0
+          endereço inet6: fe80::208:54ff:fe14:8dad/64 Escopo:Link
+          UP BROADCASTRUNNING MULTICAST  MTU:1500  Métrica:1
+          RX packets:1347710 errors:0 dropped:0 overruns:0 frame:0
+          TX packets:129501 errors:0 dropped:0 overruns:0 carrier:0
+          colisões:0 txqueuelen:1000
+          RX bytes:134473888 (128.2 MiB)  TX bytes:101212397 (96.5 MiB)
+          IRQ:193 Endereço de E/S:0x9400</pre>
+<p>MAC addresses\\</p>
+<p>Endereço de HW <strong>00:08:54:14:8D:AD</strong></p>
+<p>etherboot zlilo\\</p>
+<p>http://osl.birzeit.edu:8080/wiki2/index.php/LTSP_guide_on_Fedora</p>
+<p><strong><a href="http://www.zelow.no/floppyfw/download/floppyfw-3.0/floppyfw-3.0.2/" target="_blank" rel="noopener">floppyfw-3.0.2</a></strong>\\</p>
+<p><a href="http://idsorocaba.batemacumba.net/anexo/floppyfw-3.0.2.img" target="_blank" rel="noopener">floppyfw-3.0.2.img</a>\\</p>
+<p><a href="http://idsorocaba.batemacumba.net/anexo/floppyfw-3.0.2.iso" target="_blank" rel="noopener">floppyfw-3.0.2.iso</a>\\</p>
+<p><a href="http://idsorocaba.batemacumba.net/anexo/floppyfw-3.0.2-pppoe.img" target="_blank" rel="noopener">floppyfw-3.0.2-pppoe.img</a></p>
+</div></div></div></div>
+<script src="/js/bootstrap.bundle.min.js"></script>
+</body></html>

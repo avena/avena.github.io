@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>SuiteTelecentro — LTSP</title>
+<link rel="stylesheet" href="/css/bootstrap.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+body{background:#f5f5f5;font-family:'Poppins',sans-serif;}
+.ltsp-header{background:#1a237e;color:#fff;padding:20px 0;}
+.ltsp-header h1{margin:0;font-size:1.5rem;}
+.ltsp-sidebar{background:#fff;border-right:1px solid #e0e0e0;padding:20px;min-height:calc(100vh - 120px);font-size:0.9rem;}
+.ltsp-sidebar ul{list-style:none;padding:0;margin:0;}
+.ltsp-sidebar li{margin-bottom:6px;}
+.ltsp-sidebar a{color:#333;text-decoration:none;}
+.ltsp-sidebar a:hover{color:#1a237e;text-decoration:underline;}
+.ltsp-sidebar .sidehead{font-weight:700;margin-top:16px;margin-bottom:8px;font-size:0.85rem;text-transform:uppercase;color:#1a237e;}
+.ltsp-content{background:#fff;padding:30px;min-height:calc(100vh - 120px);}
+.ltsp-content h2{color:#1a237e;margin-top:24px;margin-bottom:12px;font-size:1.4rem;}
+.ltsp-content h3{color:#333;margin-top:20px;margin-bottom:10px;font-size:1.2rem;}
+.ltsp-content p{margin-bottom:12px;line-height:1.6;}
+.ltsp-content pre{background:#f5f5f5;border:1px solid #e0e0e0;padding:12px;overflow-x:auto;font-size:0.85rem;border-radius:4px;}
+.ltsp-content code{background:#f5f5f5;padding:2px 6px;font-size:0.85rem;border-radius:3px;}
+.ltsp-content ul{margin-bottom:12px;padding-left:20px;}
+.ltsp-content li{margin-bottom:4px;}
+.ltsp-breadcrumb{font-size:0.85rem;color:#666;margin-bottom:16px;}
+.ltsp-breadcrumb a{color:#1a237e;}
+.ltsp-content hr{margin:24px 0;border:0;border-top:1px solid #e0e0e0;}
+</style>
+</head>
+<body>
+<div class="ltsp-header">
+<div class="container">
+<div class="row align-items-center">
+<div class="col"><a href="/ltsp/" style="color:#fff;text-decoration:none"><h1>LTSP · Documentação em português</h1></a></div>
+<div class="col-auto"><a href="/" class="text-white-50 text-decoration-none">← Voltar ao currículo</a></div>
+</div></div></div>
+<div class="container"><div class="row">
+<div class="col-md-3"><div class="ltsp-sidebar"><ul><li><a href="/ltsp/">Página Inicial</a></li></ul></ul><div class="sidehead"><strong>Debian</strong></div><ul><li><a href="http://www.ltsp.org" target="_blank" rel="noopener">LTSP</a></li></ul><ul><li><a href="http://debian.org" target="_blank" rel="noopener">Debian</a></li></ul><ul><li><a href="https://www.ubuntu.com" target="_blank" rel="noopener">Ubuntu</a></li></ul></div></div>
+<div class="col-md-9"><div class="ltsp-content">
+<div class="ltsp-breadcrumb"><a href="/ltsp/">LTSP</a> &raquo; Main</div>
+<p>Conjunto de programas GNU/Linux utilizados em Telecentros Comunitarios. Contem: Debian Sarge/Etch, KDE/GNOME, LTSP (reaproveitando computadores ultrapassados), BD MySQL, Gimp, servidor Apache, ambiente PHP, jogos educacionais, Ocara, etc.</p>
+<p>http://codigolivre.org.br/frs/?group_id=2036\\</p>
+<p>http://sourceforge.net/projects/suitetelecentro - tem beta6</p>
+<p>A versão <strong>beta6</strong> vem com Debian Etch, pessoal tem falado bem e que esta muito bom. Mais novo é beta6.</p>
+<hr>
+<p>já está disponível para download a versão beta6 da suítetelecentro nos endereços a seguir. é importante baixar também o roteiro de instalação disponibilizado para facilitar a compreensão das diferenças em relação à versão estável anterior (debian sarge).</p>
+<p>http://sourceforge.net/projects/suitetelecentro\\</p>
+<p>(clicar em download (aba cinza) e depois em browse all files)</p>
+<p>http://codigolivre.org.br/projects/suitetelecentro</p>
+<p>para quem já está com o telecentro funcionando sugerimos experimentar num hd à parte essa instalação.</p>
+<p>a grande novidade é o processo de instalação que ficou bastante simplificado. bastam dois enters. uma vez feito o cabeamento entre estações, switch e servidor o sistema e estações devem levantar sem problemas.</p>
+<p>foi incluído um script (pequeno programa) que pode ser chamado como root na linha de comando. basta digitar menu_telecentro e teclar enter. serão mostradas as seguintes opções:</p>
+<p>1 Criar disquete de boot\\</p>
+<p>2 Cadastrar máquinas\\</p>
+<p>3 Configurar vídeo\\</p>
+<p>4 Configurar mouse\\</p>
+<p>5 Acrescentar memória swap\\</p>
+<p>6 Alterar senha BD MySQL</p>
+<p>explicando:\\</p>
+<p>a) a opção 1 permite criar um disquete que servirá para iniciar a estação por esse disquete ou gravar a inicialização pelo hd\\</p>
+<p>b) caso ocorram problemas com vídeo e mouse poderão ser utilizados as opções 2, 3 e 4. nesse caso as configurações serão feitas manualmente\\</p>
+<p>c) a opção 5 permite aumentar a memória das estações com menos de 64 mb utilizando recursos do HD do servidor.\\</p>
+<p>d) a opção 6 é destinada à alteração da senha do BDMySQL</p>
+<p>por limitação de espaço excluímos o Gimp e o pacote Gcompris (jogos educacionais para crianças de 5 a 10 anos). sugerimos que uma vez feita a instalação esses programas sejam incorporados.</p>
+<hr>
+<p>Observações de rápida uso/instalação do Suite Telecentro beta5</p>
+<p>Na hora do boot, se der enter direto, ele ira criar as partições, formatar e instalar o sistema diretamente, mas na hora de boot também pode ser escolhido: <strong>particionar</strong> - com este é possível manualmente criar as partições e ver quais vão ser formatadas ou não. bom pois assim pode evitar de formatar o /home.</p>
+<p>É criado os usurário tux, usr01 ate usr50.</p>
+<hr>
+<p>No - /etc/network/interfaces - a placa eth0 (em alguns a placa de rede on-board) fica como sendo a que vai funcionar o ltsp para rede local de terminais...e onde o dhcp3-server vai estar escutando.</p>
+<p>[@allow-hotplug eth0</p>
+<p>iface eth0 inet static</p>
+<p>address 192.168.17.254</p>
+<p>netmask 255.255.255.0</p>
+<p>network 192.168.17.0</p>
+<p>broadcast 192.168.17.255@]</p>
+<p>e eth1 que se conectaria a internet via dhcp</p>
+<p>[@allow-hotplug eth0</p>
+<p>iface eth0 inet dhcp@]</p>
+<hr>
+<p>O arquivo /etc/dhcp3/dhcpd.conf - me pareceu muito poluído e muito da configuração lá dentro desnecessária.\\</p>
+<p><a href="http://idsorocaba.batemacumba.net/anexo/suitetelecentro/dhcpd.conf" target="_blank" rel="noopener">dhcpd.conf</a></p>
+<p>Vários  host ws001 - host ws002 ate ws030.</p>
+<p>[@   host ws001 {</p>
+<p>hardware ethernet    00:00:00:00:00:00;</p>
+<p>fixed-address        192.168.17.1;</p>
+<p>if substring (option vendor-class-identifier, 0, 9) = "PXEClient" {</p>
+<p>filename "/tftpboot/lts/2.6.20.9-ltsp-1/pxelinux.0";</p>
+<p>} else {</p>
+<p>filename "/tftpboot/lts/vmlinuz-2.6.20.9-ltsp-1";</p>
+<p>}</p>
+<p>}@]</p>
+<p>o que faz com que o /opt/ltsp-4.2/i386/etc/lts.conf - fique grande...mas ele também esta muito poluído.</p>
+<p>[@[ws001]</p>
+<p>X_MOUSE_PROTOCOL   = "PS/2"</p>
+<p>X_MOUSE_DEVICE     = "/dev/psaux"</p>
+<p>X_MOUSE_RESOLUTION = 400</p>
+<p>X_MOUSE_BUTTONS    = 3</p>
+<p>XkbModel           = "abnt2"</p>
+<p>XkbLayout          = "br"</p>
+<p>X_MODE_0           = 1024x768</p>
+<p>X_COLOR_DEPTH      = 16</p>
+<p>X_HORZSYNC         = 28-49</p>
+<p>X_VERTREFRESH      = 43-72</p>
+<p>[ws002]</p>
+<p>X_MOUSE_PROTOCOL   = "PS/2"</p>
+<p>X_MOUSE_DEVICE     = "/dev/psaux"</p>
+<p>X_MOUSE_RESOLUTION = 400</p>
+<p>X_MOUSE_BUTTONS    = 3</p>
+<p>XkbModel           = "abnt2"</p>
+<p>XkbLayout          = "br"</p>
+<p>X_MODE_0           = 1024x768</p>
+<p>X_COLOR_DEPTH      = 16</p>
+<p>X_HORZSYNC         = 28-49</p>
+<p>X_VERTREFRESH      = 43-72</p>
+<p>........ate ws030</p>
+<p>@]</p>
+<hr>
+<p><strong>Mouse</strong>\\</p>
+<p>as linhas relacionadas ao mouse...</p>
+<pre>        X_MOUSE_PROTOCOL   = &quot;PS/2&quot;
+        X_MOUSE_DEVICE     = &quot;/dev/psaux&quot;
+        X_MOUSE_RESOLUTION = 400
+        X_MOUSE_BUTTONS    = 3@]
+são totalmente desnecessárias, pois isso tudo o ltsp joga no terminais por padrão/&#x27;&#x27;&#x27;default&#x27;&#x27;&#x27;.
+
+&#x27;&#x27;&#x27;The default value for this is &quot;PS/2&quot;.\\
+The default value for this is /dev/psaux.\\
+The default value for this is 400.\\
+The default value for this is 3.&#x27;&#x27;&#x27;
+
+ver isso em: /opt/ltsp-4.2/i386/etc/lts.conf.readme
+[@
+#  X_MOUSE_PROTOCOL
+#     Any value that will work for the XFree86 Pointer Protocol keyword can be
+#     put here.  Typical values include &quot;Microsoft&quot; and &quot;PS/2&quot;.  The default
+#     value for this is &quot;PS/2&quot;.
+#
+#  X_MOUSE_DEVICE
+#     This is the device node that the mouse is connected to.  If it is a
+#     serial mouse, this would be a serial port, such as /dev/ttyS0 or
+#     /dev/ttyS1.  If it is a PS/2 keyboard mouse, this value would be
+#     /dev/psaux.  The default value for this is /dev/psaux.
+#
+#  X_MOUSE_RESOLUTION
+#     This is the &#x27;Resolution&#x27; value in the XF86Config file.  A typical value
+#     for a serial mouse is 50 and a typical value for a PS/2 mouse is 400.
+#     The default value for this is 400.
+#
+#  X_MOUSE_BUTTONS
+#     This tells the system how many buttons the mouse has.  Usually set to
+#     2 or 3.  The default value for this is 3.@]
+
+Uma boa configuração seria a inclusão das linhas
+[@[Default]
+        X_MOUSE_PROTOCOL   = &quot;Microsoft&quot;
+        X_MOUSE_DEVICE     = &quot;/dev/ttyS0&quot;@]
+
+Essa linha habilita o uso de mouse serial na porta serial 1, se o cabo serial estiver ligado na porta serial 2 dentro no pc, deve somente mudar para:\\
+[@/dev/ttyS1@]
+
+&#x27;&#x27;&#x27;Colocando Serial no Default&#x27;&#x27;&#x27;
+[@[Default]
+        X_MOUSE_PROTOCOL   = &quot;Microsoft&quot;
+        X_MOUSE_DEVICE     = &quot;/dev/ttyS0&quot;@]
+ou
+[@[Default]
+        X_MOUSE_PROTOCOL   = &quot;Microsoft&quot;
+        X_MOUSE_DEVICE     = &quot;/dev/ttyS1&quot;@]
+
+Você evita de ter quer repetir em toda vez a configuração do mouse, e ainda vai conseguir usar 3 tipos de mouse em qualquer terminal, &#x27;&#x27;&#x27;mouse serial, mouse ps/2 e mouse usb&#x27;&#x27;&#x27; (ltsp joga os valores por padão/default para ps/2 e usb) - &#x27;&#x27;Dos ps/2 e usb que tiver scroll, scroll não vão funcionar&#x27;&#x27; 
+
+&#x27;&#x27;&#x27;Mouse PS/2 ou USB funcionando o Scroll&#x27;&#x27;&#x27;\\
+&#x27;&#x27;&#x27;[[http://listas.cipsga.org.br/pipermail/ltsp-br-discuss/2007-August/000590.html|[Ltsp-br-discuss] mouse usb ativar scroll??]]&#x27;&#x27;&#x27;
+[@        X_MOUSE_PROTOCOL = ImPS/2
+        X_MOUSE_BUTTONS  = 5
+        X_ZAxisMapping   = &quot;4 5&quot;@]
+
+Se todos o mouse que você usa são ps/2 ou usb e tem scroll coloque isso no Default
+[@[Default]
+        SERVER             = 192.168.17.254
+        XSERVER            = auto
+        USE_XFS            = N
+        SCREEN_01          = startx
+        LOCAL_STORAGE      = Y
+        X_MOUSE_PROTOCOL   = ImPS/2
+        X_MOUSE_BUTTONS    = 5
+        X_ZAxisMapping     = &quot;4 5&quot;@]
+
+Se grande parte dos mouse for ps/2 e usb com scroll, e tiver algum/alguns mouse serial, ai mais facil fazer uma configuração somente para estes terminais com mouse serial.
+
+-----
+
+O uso do &#x27;&#x27;&#x27;X_COLOR_DEPTH      = 16&#x27;&#x27;&#x27;
+
+O X_COLOR_DEPTH      = 16 - não é preciso colocar, pois 16bits é um valor padrão que ltsp joga nos terminais. 
+
+&#x27;&#x27;&#x27;The default value is 16.&#x27;&#x27;&#x27;
+
+info em: /opt/ltsp-4.2/i386/etc/lts.conf.readme
+[@#  X_COLOR_DEPTH
+#     This is the number of bits to use for the color depth.  Possible values
+#     are 8, 15, 16, 24 and 32.  8 bits will give 256 colors, 16 will give
+#     65536 colors, 24 will give 16 million colors and 32 bits will give
+#     4.2 billion colors!  Not all X servers support all of these values.
+#     The default value is 16.@]
+
+Em todo caso se os terminais tiver placas de video boas. e possivel usar 24 ou 32, e assim ter muita mais cores.\\
+&#x27;&#x27;&#x27;24&#x27;&#x27;&#x27; will give &#x27;&#x27;&#x27;16 million colors&#x27;&#x27;&#x27; and &#x27;&#x27;&#x27;32&#x27;&#x27;&#x27; bits will give &#x27;&#x27;&#x27;4.2 billion colors&#x27;&#x27;&#x27;! 
+
+
+-----
+&#x27;&#x27;&#x27;Screen&#x27;&#x27;&#x27;
+
+Vem configurado o lts.conf com:
+[@      SCREEN_01          = startx@]
+
+é legal acrescentar o screen2 como um shell
+[@      SCREEN_02          = shell@]
+
+assim depois que terminal carregar o ltsp, com o CTRL+F2, é possivel executar 353 comandos como root pegando info do terminal, entre ele ifconfig (e assim saber qual ip e mac o terminal tem) - cat /tmp/XF86Config.1 (ver o xfree que terminal esta criando...info do X que ltsp mandou para terminal) entre outros.
+
+[@[Default]
+        SCREEN_01          = startx
+        SCREEN_02          = shell@]
+
+-----
+&#x27;&#x27;&#x27;Uso do LIKE&#x27;&#x27;&#x27;
+
+[@# LIKE = section name
+#     Allow sections to inherit the settings from other sections.
+#
+#     added in ltsp 4.0
+#
+#     Here is an example where you have several HP Vectras and several Dell
+#     Dimension PCs that you are using:
+#
+#          [Vectra]
+#              X_MOUSE_DEVICE   = /dev/ttyS0
+#              X_MOUSE_PROTOCOL = Microsoft
+#
+#          [Dimension]
+#              X_MOUSE_DEVICE   = /dev/psaux
+#              X_MOUSE_PROTOCOL = IMPS/2
+#
+#          [ws001] LIKE = Vectra
+#
+#          [ws002] LIKE = Vectra
+#
+#          [ws003] LIKE = Vectra
+#
+#          [ws004] LIKE = Dimension
+#
+#          [ws005]
+#              LIKE               = Dimension
+#              PRINTER_0_DEVICE   = /dev/ttyS1
+#              PRINTER_0_TYPE     = S
+#
+#          [ws006] LIKE = Dimension
+#
+#     Notice that ws005 inherits from Dimension, but also includes a local
+#     printer.@]
+
+[@LIKE = Serial
+        X_MOUSE_PROTOCOL   = &quot;Microsoft&quot;
+        X_MOUSE_DEVICE     = &quot;/dev/ttyS0&quot;@]
+
+[@LIKE = Scroll
+        X_MOUSE_PROTOCOL = ImPS/2
+        X_MOUSE_BUTTONS  = 5
+        X_ZAxisMapping   = &quot;4 5&quot;@]
+
+[@LIKE = Vesa
+        XSERVER            = vesa@]
+
+[@LIKE = Padrao
+        X_MOUSE_PROTOCOL   = &quot;PS/2&quot;
+        X_MOUSE_DEVICE     = &quot;/dev/psaux&quot;
+        X_MOUSE_RESOLUTION = 400
+        X_MOUSE_BUTTONS    = 3
+        XkbModel           = &quot;abnt2&quot;
+        XkbLayout          = &quot;br&quot;
+        X_MODE_0           = 1024x768
+        X_COLOR_DEPTH      = 16
+        X_HORZSYNC         = 28-49
+        X_VERTREFRESH      = 43-72
+
+[ws001] LIKE = Padrao
+
+[ws002] LIKE = Padrao
+        X_MOUSE_PROTOCOL = ImPS/2
+        X_MOUSE_BUTTONS  = 5
+        X_ZAxisMapping   = &quot;4 5&quot;@]
+ 
+</pre>
+</div></div></div></div>
+<script src="/js/bootstrap.bundle.min.js"></script>
+</body></html>

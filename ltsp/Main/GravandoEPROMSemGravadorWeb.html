@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Gravando EPROM sem gravador — LTSP</title>
+<link rel="stylesheet" href="/css/bootstrap.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+body{background:#f5f5f5;font-family:'Poppins',sans-serif;}
+.ltsp-header{background:#1a237e;color:#fff;padding:20px 0;}
+.ltsp-header h1{margin:0;font-size:1.5rem;}
+.ltsp-sidebar{background:#fff;border-right:1px solid #e0e0e0;padding:20px;min-height:calc(100vh - 120px);font-size:0.9rem;}
+.ltsp-sidebar ul{list-style:none;padding:0;margin:0;}
+.ltsp-sidebar li{margin-bottom:6px;}
+.ltsp-sidebar a{color:#333;text-decoration:none;}
+.ltsp-sidebar a:hover{color:#1a237e;text-decoration:underline;}
+.ltsp-sidebar .sidehead{font-weight:700;margin-top:16px;margin-bottom:8px;font-size:0.85rem;text-transform:uppercase;color:#1a237e;}
+.ltsp-content{background:#fff;padding:30px;min-height:calc(100vh - 120px);}
+.ltsp-content h2{color:#1a237e;margin-top:24px;margin-bottom:12px;font-size:1.4rem;}
+.ltsp-content h3{color:#333;margin-top:20px;margin-bottom:10px;font-size:1.2rem;}
+.ltsp-content p{margin-bottom:12px;line-height:1.6;}
+.ltsp-content pre{background:#f5f5f5;border:1px solid #e0e0e0;padding:12px;overflow-x:auto;font-size:0.85rem;border-radius:4px;}
+.ltsp-content code{background:#f5f5f5;padding:2px 6px;font-size:0.85rem;border-radius:3px;}
+.ltsp-content ul{margin-bottom:12px;padding-left:20px;}
+.ltsp-content li{margin-bottom:4px;}
+.ltsp-breadcrumb{font-size:0.85rem;color:#666;margin-bottom:16px;}
+.ltsp-breadcrumb a{color:#1a237e;}
+.ltsp-content hr{margin:24px 0;border:0;border-top:1px solid #e0e0e0;}
+</style>
+</head>
+<body>
+<div class="ltsp-header">
+<div class="container">
+<div class="row align-items-center">
+<div class="col"><a href="/ltsp/" style="color:#fff;text-decoration:none"><h1>LTSP · Documentação em português</h1></a></div>
+<div class="col-auto"><a href="/" class="text-white-50 text-decoration-none">← Voltar ao currículo</a></div>
+</div></div></div>
+<div class="container"><div class="row">
+<div class="col-md-3"><div class="ltsp-sidebar"><ul><li><a href="/ltsp/">Página Inicial</a></li></ul></ul><div class="sidehead"><strong>Debian</strong></div><ul><li><a href="http://www.ltsp.org" target="_blank" rel="noopener">LTSP</a></li></ul><ul><li><a href="http://debian.org" target="_blank" rel="noopener">Debian</a></li></ul><ul><li><a href="https://www.ubuntu.com" target="_blank" rel="noopener">Ubuntu</a></li></ul></div></div>
+<div class="col-md-9"><div class="ltsp-content">
+<div class="ltsp-breadcrumb"><a href="/ltsp/">LTSP</a> &raquo; Main</div>
+<h2>Gravando EPROM sem gravador</h2>
+<p><strong>PASSO-A-PASSO:</strong>\\</p>
+<p><strong>1</strong>-Identifique o modelo da sua placa de rede,</p>
+<p><strong>2</strong>-Verifique os modelos que possuem um soquete para FLASH ROOM (EPROM). Este soquete terá 28 ou 32 pinos. As mais recentes são todas com 32 pinos. Modelos mais comuns: Realtek 8139d, VIA Rhine 6105, etc...</p>
+<p><strong>3</strong>-Acesse o site __<a href="http://www.rom-o-matic.net/" target="_blank" rel="noopener">http://www.rom-o-matic.net</a>__ para fazer o download da ROM de sua placa. Em "Choose ROM output format:" selecione: <strong>BINARY ROM IMAGE .ZROM</strong></p>
+<p>Obs: para evitar retrabalho teste primeiro o driver do boot para disquete, se funcionar baixe o driver para gravar na EPROM da sua placa de rede.</p>
+<p><strong>4</strong>-Salve os arquivos em uma pasta específica.</p>
+<p><strong>5</strong>-Crie um disco de boot, pode ser do W98 mesmo, mas deixe ele com o mínimo de arquivo, livre!</p>
+<p><strong>6</strong>-Detalhe: Você terá que usar todo a memória do seu chip EPROM, logo se o arquivo que vc pegou no rom-o-matic for de tamanho 16KB ou 32KB, vc terá que replicá-lo para que fique com o tamanho exato da EPROM que vc conseguiu. Veja o exemplo: - O arquivo original da VIA RHINE é de 32KB e a BIOS (EPROM) (FLASH ROM) é de 128KB, logo: No terminal (linux), dentro da pasta onde vc gravou o arquivo original com a ROM da sua placa, digite o seguinte comando:</p>
+<p>[@#cat via-6105m.zrom via-6105m.zrom via-6105m.zrom via-6105m.zrom > via-6105m.128@]</p>
+<p>ou seja, o conteúdo foi aumentado 4x para se adequar ao tamanho em KB da EPROM. Caso a EPROM seja de 256KB, vc terá que repetir o arquivo original de 32KB 8x, ou seja: 32x8=256KB. Pronto, o arquivo para gravar na EPROM foi devidamente preparado.</p>
+<p><strong>7</strong>-Copie este arquivo para dentro daquele disco de boot que vc criou no passo 5,</p>
+<p><strong>8</strong>-Acesse o site: <a href="http://www.uniflash.org" target="_blank" rel="noopener">http://www.uniflash.org</a></p>
+<p>Neste site existe em "download" o programa que gravará a sua eprom, chamado UNIFLASH. Baixe-o, descompate o arquivo e salve tudo para dentro daquele mesmo diquete de boot feito no passo 5.</p>
+<p><strong>Importante: Neste site, em "Supported hardware", vc encontrará inúmeras informações sobre EPROM (FLASH ROM) que vc poderá decaptar das placas mãe "inativas" para servir como EPROM da sua placa de rede. Apesar de muitos não saberem disso, posso garantir que funcionam 100%. Retire o chip BIOS de placas mãe velhas e inativas; Retire a etiqueta (se houver) e procurare o código do chip nas tabelas do site. Vc verá inclusive o tamanho em KB da eprom.</strong></p>
+<p>Ao usar o programa Uniflash, vc notará que ele reconhece qual o modelo, tamanho e fabricante da EPROM.\\</p>
+<p><strong>9</strong>- Escolha um micro funcionando (não muito novo), acredito que a partir de um Pentium II vc não terá problemas, que será usado como seu GRAVADOR DE EPROM!!!</p>
+<p>Por isso, não escolha um micro muito novo, caso vc dê um vacilo, poderá queimar esta placa mãe.</p>
+<p>Dica:Desconecte todos os periféricos possíveis;\\</p>
+<p>Conecte apenas: Drive 1.44, Teclado, Fonte, Placa de vídeo.\\</p>
+<p>Desta forma o risco ao tirar e recolocar as EPROMs com o micro ligado, será bem menor.\\</p>
+<p><strong>10</strong>-Começando a gravar as EPROM´s...</p>
+<p><strong>Dica: Use uma pulseira anti-estática plugada em uma parte metálica qualquer mas que esteja aterrada somente para dar maior segurança!</strong></p>
+<p><strong>10.1</strong>-Antes de ligar o micro vc deve retirar o BIOS da placa mãe deste micro e deixá-lo semi-encaixado. Isto facilitará na hora de retirá-la, <strong>Dica: Observe com muita atenção a posição do BIOS, tem posição certa. Ligou errado: QUEIMA!</strong></p>
+<p><strong>10.2</strong>-Ligue o micro (GRAVADOR) com o disquete de boot e deixe carregar o SO,</p>
+<p><strong>10.3</strong>-Execute o programa <strong>UNIFLASH</strong> e faça uma cópia de segurança do <strong>BIOS ORIGINAL</strong>: <strong>-WRITE BACKUP BIOS IMAGE TO FILE 1º opção</strong>, e salve com um nome qualquer no disquete:</p>
+<p><strong>10.4</strong>-Após o boot e o backup, com uma chave de fenda ou com uma chave de sacar integrados, retire o BIOS da placa mãe COM O MICRO LIGADO;</p>
+<p><strong>10.5</strong>-Coloque o outro BIOS (<strong>na posição CERTA!</strong>) na placa mãe, se estiver com a pulseira anti-estática será mais garantido, aí vc poderá pegar normalmente no chip. Não precisa encaixar totalmente, basta que todos os pinos fiquem conectados ao soquete;</p>
+<p><strong>10.6</strong>-Ainda dentro do programa UNIFLASH, vá para a 4º opção: <strong>- REDETECT FLASH ROM</strong> (O programa reconhecerá os parâmetros do novo BIOS);</p>
+<p><strong>10.7</strong>-Vá para a 2º opção: <strong>- FLASH BIOS IMAGE INCLUDING BOOTBLOCK;</strong></p>
+<p><strong>10.8</strong>-Em IMAGE FILE NAME: Digite exatamente igual, o nome do arquivo que vc aumentou anteriormente (caso tenha sido necessário) aquele que antes era de 32KB e agora ficou com 128KB ou 256KB;</p>
+<p><strong>10.9</strong>-Pronto, o programa iniciará a gravação da EPROM;</p>
+<p><strong>10.10</strong>-Aconselho gravar logo todas que vc tem, o risco é menor. Lembre-se sempre que ao trocar a EPROM, vá na 4º opção para REDECTAR o chip;</p>
+<p><strong>10.11</strong>-Quando terminar as gravações, desligue o micro e reconecte a EPROM original do micro. Funcionou novamente? Blz, então você fez tudo certo!</p>
+<p><strong>11</strong>- Modifique a programação da placa de rede para INICIAR O BOOT PELA ROM\\</p>
+<p>- Quando vc compra as placas de rede, normalmente elas, por mais fubentas que sejam, vêem com um disquete que, além de conter os DRIVERS, certamente contem também um executável para programar sua placa de rede,\\</p>
+<p>- Procure este executável, normalmente no diretório raiz do disquete. Na VIA RHINE, o arquivo é um tal de DIAG.EXE\\</p>
+<p>- Neste exemplo, execute o DIAG e com F4 modifique a opção BOOT ROM,\\</p>
+<p>- Faça o mesmo procedimento para todas as placas,\\</p>
+<p>- Encaixe a EPROM GRAVADA e PRONTO!!!\\</p>
+<p>- Coloque nos terminais e veja o resultado.\\</p>
+<p>Dica: Caso tenha dado algo errado, o micro ficará procurando o BOOT no disquete, aquela velha mensagem de erro quando não se tem Sistema Operacional instalado.</p>
+<p>OBS.: Em algumas placas de rede, não é necessário a reprogramação pelo disco da placa de rede, basta mudar o boot na BIOS mesmo para NETWORK e funciona bem.</p>
+<p>Bom era isso...\\</p>
+<p>BOA SORTE!!! :o)\\</p>
+</div></div></div></div>
+<script src="/js/bootstrap.bundle.min.js"></script>
+</body></html>

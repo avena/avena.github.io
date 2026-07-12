@@ -1,0 +1,22 @@
+User-Agent: *
+Allow: /
+Allow: /metajimfotos
+Allow: /pub/skins/pmwiki-idsorocaba
+Disallow: /semfio
+Disallow: /anexo
+Disallow: /boot_placa
+Disallow: /cookbook
+Disallow: /local
+Disallow: /debian_etch_ltsp_server_standalone	
+Disallow: /debian_lenny_pacotes_deb
+Disallow: /imagens
+Disallow: /imagens_debian_lenny
+Disallow: /ltsp
+Disallow: /ltsp-4.2
+Disallow: /pub
+Disallow: /scripts
+Disallow: /site
+Disallow: /uploads
+Disallow: /wiki.d
+Disallow: /wikilib.d
+

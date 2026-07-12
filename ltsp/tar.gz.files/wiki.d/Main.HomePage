@@ -1,0 +1,119 @@
+version=pmwiki-2.2.113 ordered=1 urlencoded=1
+agent=Mozilla/5.0 (X11; Linux x86_64; rv:85.0) Gecko/20100101 Firefox/85.0
+author=
+charset=ISO-8859-1
+csum=
+host=187.180.165.207
+name=Main.HomePage
+rev=248
+targets=Main.InstalacaoLTSP42DebianSqueeze,Main.DebianLennyLtsp42,Main.InstalacaoLtspDebianEtch,Main.InstalacaoLTSP42NoUbuntu1404LTSTrustyTahr,Main.InstalacaoLTSP5NoUbuntu1004Lucid,Ubuntu10.04Ltsp42,Main.ArchlinuxLtsp42,Main.ConfiguracaoLtsConf,Main.SourcesListBuster,Main.SourcesListJessie,Main.SourcesListWheezy,Main.SourcesListSqueeze,Main.SourcesListLenny,Main.Info,Main.Cursos,Main.Oficinas,Main.ListaEspacoProjetos
+text=!! A versão mantida/desenvolvida oficialmente é a LTSP 5. [[https://code.launchpad.net/ltsp|Visite e leia.]] %0a%0a%0a'''Material de referencia para configuração de um Telecentro Livre''' %0a%0a!!! Debian%0a* [[Instalacao_LTSP42_Debian_Squeeze|Instalação LTSP4.2 no Debian Squeeze]]%0a* [[DebianLennyLtsp42|Instalação LTSP4.2 no Debian Lenny]]%0a* [[InstalacaoLtspDebianEtch|Instalação LTSP4.2 no Debian Etch]]%0a%0a!!! Ubuntu%0a* [[Instalacao_LTSP42_no_Ubuntu_1404_LTS_Trusty_Tahr|Instalação LTSP4.2 no Ubuntu 14.04.5 LTS (Trusty Tahr)]]%0a* [[Instalacao_LTSP5_no_Ubuntu_10_04_Lucid|Instalação LTSP5 no Ubuntu 10.04 Lucid]]%0a* [[Ubuntu_10.04_Ltsp42|Instalação LTSP4.2 no Ubuntu 10.04 Lucid]]%0a%0a!!! Archlinux%0a* [[ArchlinuxLtsp42|Instalação LTSP4.2 no ArchLinux]]%0a%0a!!! Confs%0a* [[configuracao_lts_conf|Configuração do lts.conf]]%0a* [[sources_list_buster|Sources.list do Debian Buster]]%0a* [[sources_list_jessie|Sources.list do Debian Jessie]]%0a* [[sources_list_wheezy|Sources.list do Debian Wheezy]]%0a* [[sources_list_squeeze|Sources.list do Debian Squeeze]]%0a* [[sources_list_lenny|Sources.list do Debian Lenny]]%0a%0a!!! Idéias/Sugestões%0a*[[info|Informações/Pesquisa]]%0a*[[cursos|Cursos]]%0a*[[Oficinas]]%0a*[[lista_espaco_projetos|Lista de Espaços/Projetos em Sorocaba]]%0a%0a
+time=1612491457
+author:1612491457=
+diff:1612491457:1554182538:=21d20%0a%3c * [[sources_list_buster|Sources.list do Debian Buster]]%0a
+host:1612491457=187.180.165.207
+author:1554182538=
+diff:1554182538:1539332876:=4c4%0a%3c '''Material de referencia para configuração de um Telecentro Livre''' %0a---%0a> '''Material de referencia para configuração de um Telecentro Livre''' %3cg:plusone size="small">%3c/g:plusone>%0a
+host:1554182538=186.207.75.102
+author:1539332876=
+diff:1539332876:1539332659:=3d2%0a%3c %0a5d3%0a%3c %0a
+host:1539332876=172.68.27.146
+author:1539332659=
+diff:1539332659:1539332409:=29a30,51%0a> %0a> %0a> %0a> %3cscript type="text/javascript">%0a>   var _gaq = _gaq || [];%0a>   _gaq.push(['_setAccount', 'UA-22281774-4']);%0a>   _gaq.push(['_trackPageview']);%0a> %0a>   (function() {%0a>     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;%0a>     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';%0a>     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);%0a>   })();%0a> %3c/script>%0a> %0a> %3cscript async src="https://www.googletagmanager.com/gtag/js?id=UA-22281774-4">%3c/script>%0a> %3cscript>%0a>   window.dataLayer = window.dataLayer || [];%0a>   function gtag(){dataLayer.push(arguments);}%0a>   gtag('js', new Date());%0a>   gtag('config', 'UA-22281774-4');%0a> %3c/script>%0a\ No newline at end of file%0a
+host:1539332659=172.68.26.13
+author:1539332409=
+diff:1539332409:1529098120:=1a2,5%0a> %0a> (:input form target="flattr" action="https://flattr.com/thing/142831/Documentacao-sobre-LTSP-em-Debian-e-Ubuntu" method="get":)%0a> (:input image src="https://api.flattr.com/button/flattr-badge-large.png" alt="Flattr":)%0a> (:input end:)%0a
+host:1539332409=172.68.26.13
+author:1529098120=
+diff:1529098120:1529094299:=13a14%0a> * [[Instalacao_LTSP42_no_Ubuntu_1804_LTS_Bionic_Beaver|Instalação LTSP4.2 no Ubuntu 18.04 LTS (Bionic Beaver)]]%0a
+host:1529098120=186.207.76.102
+author:1529094299=
+diff:1529094299:1529041904:=15d14%0a%3c * [[Instalacao_LTSP42_no_Ubuntu_1404_LTS_Trusty_Tahr|Instalação LTSP4.2 no Ubuntu 14.04.5 LTS (Trusty Tahr)]]%0a
+host:1529094299=186.207.76.102
+author:1529041904=
+diff:1529041904:1523152404:=14d13%0a%3c * [[Instalacao_LTSP42_no_Ubuntu_1804_LTS_Bionic_Beaver|Instalação LTSP4.2 no Ubuntu 18.04 LTS (Bionic Beaver)]]%0a
+host:1529041904=186.207.76.102
+author:1523152404=
+diff:1523152404:1523129304:=36a37%0a> %0a45a47%0a> %0a52a55%0a> %0a
+host:1523152404=186.207.76.102
+author:1523129304=
+diff:1523129304:1523129291:=49a50%0a> %3c!-- Global site tag (gtag.js) - Google Analytics -->%0a
+host:1523129304=186.207.76.102
+author:1523129291=
+diff:1523129291:1523127141:=39c39%0a%3c   _gaq.push(['_setAccount', 'UA-22281774-4']);%0a---%0a>   _gaq.push(['_setAccount', 'UA-22281774-1']);%0a48,57d47%0a%3c %3c/script>%0a%3c %0a%3c %3c!-- Global site tag (gtag.js) - Google Analytics -->%0a%3c %3cscript async src="https://www.googletagmanager.com/gtag/js?id=UA-22281774-4">%3c/script>%0a%3c %3cscript>%0a%3c   window.dataLayer = window.dataLayer || [];%0a%3c   function gtag(){dataLayer.push(arguments);}%0a%3c   gtag('js', new Date());%0a%3c %0a%3c   gtag('config', 'UA-22281774-4');%0a
+host:1523129291=186.207.76.102
+author:1523127141=
+diff:1523127141:1436101750:=1,2c1,7%0a%3c !! A versão mantida/desenvolvida oficialmente é a LTSP 5. [[https://code.launchpad.net/ltsp|Visite e leia.]] %0a%3c %0a---%0a> Esta é um pagina Wiki....você pode acrescentar e modificar.%0a> %0a> '''[[lista_espaco_projetos|Lista de Espaços/Projetos em Sorocaba]]'''%0a> %0a> !! A versão mantida/desenvolvida oficialmente é a LTSP 5. [[http://sourceforge.net/apps/mediawiki/ltsp/index.php?title=Ltsp_DownLoads|Visite e leia.]] %0a> %0a> %0a31,32c36,38%0a%3c *[[lista_espaco_projetos|Lista de Espaços/Projetos em Sorocaba]]%0a%3c %0a---%0a> %0a> %0a> ''Criticas....'' '''ai isso aqui é um wiki... modifique.'''%0a
+host:1523127141=186.207.76.102
+author:1436101750=
+diff:1436101750:1418758173:=27d26%0a%3c * [[sources_list_jessie|Sources.list do Debian Jessie]]%0a
+host:1436101750=191.205.41.145
+author:1418758173=
+diff:1418758173:1330405865:=27d26%0a%3c * [[sources_list_wheezy|Sources.list do Debian Wheezy]]%0a
+host:1418758173=177.157.138.74
+author:1330405865=
+diff:1330405865:1306958319:=34,35c34,36%0a%3c %0a%3c %0a---%0a> *[[questionario|Modelo de Questionário/Avaliação]]%0a> %0a> %0a
+host:1330405865=62.113.219.3
+author:1306958319=
+diff:1306958319:1306957490:=12c12%0a%3c '''Material de referencia para configuração de um Telecentro Livre''' %3cg:plusone size="small">%3c/g:plusone>%0a---%0a> '''Material de referencia para configuração de um Telecentro Livre'''%0a14,17c14,16%0a%3c * [[Instalacao_LTSP42_Debian_Squeeze|Instalação LTSP4.2 no Debian Squeeze]]%0a%3c * [[DebianLennyLtsp42|Instalação LTSP4.2 no Debian Lenny]]%0a%3c * [[InstalacaoLtspDebianEtch|Instalação LTSP4.2 no Debian Etch]]%0a%3c %0a---%0a> * [[Instalacao_LTSP42_Debian_Squeeze|Instalação LTSP4.2 no Debian Squeeze]] %3cg:plusone size="small">%3c/g:plusone>%0a> * [[DebianLennyLtsp42|Instalação LTSP4.2 no Debian Lenny]] %3cg:plusone size="small">%3c/g:plusone>%0a> * [[InstalacaoLtspDebianEtch|Instalação LTSP4.2 no Debian Etch]]  %3cg:plusone size="small">%3c/g:plusone>%0a19,21c18,19%0a%3c * [[Instalacao_LTSP5_no_Ubuntu_10_04_Lucid|Instalação LTSP5 no Ubuntu 10.04 Lucid]]%0a%3c * [[Ubuntu_10.04_Ltsp42|Instalação LTSP4.2 no Ubuntu 10.04 Lucid]]%0a%3c %0a---%0a> * [[Instalacao_LTSP5_no_Ubuntu_10_04_Lucid|Instalação LTSP5 no Ubuntu 10.04 Lucid]]  %3cg:plusone size="small">%3c/g:plusone>%0a> * [[Ubuntu_10.04_Ltsp42|Instalação LTSP4.2 no Ubuntu 10.04 Lucid]]  %3cg:plusone size="small">%3c/g:plusone>%0a23,24c21%0a%3c * [[ArchlinuxLtsp42|Instalação LTSP4.2 no ArchLinux]]%0a%3c %0a---%0a> * [[ArchlinuxLtsp42|Instalação LTSP4.2 no ArchLinux]]  %3cg:plusone size="small">%3c/g:plusone>%0a
+host:1306958319=189.5.39.209
+author:1306957490=
+diff:1306957490:1301001598:=14,16c14,16%0a%3c * [[Instalacao_LTSP42_Debian_Squeeze|Instalação LTSP4.2 no Debian Squeeze]] %3cg:plusone size="small">%3c/g:plusone>%0a%3c * [[DebianLennyLtsp42|Instalação LTSP4.2 no Debian Lenny]] %3cg:plusone size="small">%3c/g:plusone>%0a%3c * [[InstalacaoLtspDebianEtch|Instalação LTSP4.2 no Debian Etch]]  %3cg:plusone size="small">%3c/g:plusone>%0a---%0a> * [[Instalacao_LTSP42_Debian_Squeeze|Instalação LTSP4.2 no Debian Squeeze]]%0a> * [[DebianLennyLtsp42|Instalação LTSP4.2 no Debian Lenny]]%0a> * [[InstalacaoLtspDebianEtch|Instalação LTSP4.2 no Debian Etch]]%0a18,19c18,19%0a%3c * [[Instalacao_LTSP5_no_Ubuntu_10_04_Lucid|Instalação LTSP5 no Ubuntu 10.04 Lucid]]  %3cg:plusone size="small">%3c/g:plusone>%0a%3c * [[Ubuntu_10.04_Ltsp42|Instalação LTSP4.2 no Ubuntu 10.04 Lucid]]  %3cg:plusone size="small">%3c/g:plusone>%0a---%0a> * [[Instalacao_LTSP5_no_Ubuntu_10_04_Lucid|Instalação LTSP5 no Ubuntu 10.04 Lucid]]%0a> * [[Ubuntu_10.04_Ltsp42|Instalação LTSP4.2 no Ubuntu 10.04 Lucid]]%0a21c21%0a%3c * [[ArchlinuxLtsp42|Instalação LTSP4.2 no ArchLinux]]  %3cg:plusone size="small">%3c/g:plusone>%0a---%0a> * [[ArchlinuxLtsp42|Instalação LTSP4.2 no ArchLinux]]%0a
+host:1306957490=189.5.39.209
+author:1301001598=
+diff:1301001598:1301001538:=37c37%0a%3c %0a---%0a> %3c!-- google analytics -->%0a
+host:1301001598=189.32.218.109
+author:1301001538=
+diff:1301001538:1300662121:=36,50d35%0a%3c %0a%3c %3c!-- google analytics -->%0a%3c %3cscript type="text/javascript">%0a%3c %0a%3c   var _gaq = _gaq || [];%0a%3c   _gaq.push(['_setAccount', 'UA-22281774-1']);%0a%3c   _gaq.push(['_trackPageview']);%0a%3c %0a%3c   (function() {%0a%3c     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;%0a%3c     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';%0a%3c     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);%0a%3c   })();%0a%3c %0a%3c %3c/script>%0a\ No newline at end of file%0a
+host:1301001538=189.32.218.109
+author:1300662121=
+diff:1300662121:1299608947:=14c14%0a%3c * [[Instalacao_LTSP42_Debian_Squeeze|Instalação LTSP4.2 no Debian Squeeze]]%0a---%0a> * [+[[Instalacao_LTSP42_Debian_Squeeze|Instalação LTSP4.2 no Debian Squeeze]]+]%0a18,19c18,19%0a%3c * [[Instalacao_LTSP5_no_Ubuntu_10_04_Lucid|Instalação LTSP5 no Ubuntu 10.04 Lucid]]%0a%3c * [[Ubuntu_10.04_Ltsp42|Instalação LTSP4.2 no Ubuntu 10.04 Lucid]]%0a---%0a> * [++[[Instalacao_LTSP5_no_Ubuntu_10_04_Lucid|Instalação LTSP5 no Ubuntu 10.04 Lucid]]++]%0a> * [+[[Ubuntu_10.04_Ltsp42|Instalação LTSP4.2 no Ubuntu 10.04 Lucid]]+]%0a
+host:1300662121=189.32.218.109
+author:1299608947=
+diff:1299608947:1299605107:=35a36,47%0a> %0a> As informações te ajudaram? Então nos ajude a manter, pesquisar e divulgar mais informações.\\%0a> %0a> (:input form target="flattr" action="https://flattr.com/thing/142831/Documentacao-sobre-LTSP-em-Debian-e-Ubuntu" method="get":)%0a> (:input image src="http://i52.tinypic.com/2aetic3.jpg" alt="Flattr":)%0a> (:input end:)%0a> %0a> (:input form target="pagseguro" action="https://pagseguro.uol.com.br/checkout/doacao.jhtml" method="post":)%0a> (:input hidden name="email_cobranca" value="avena@batemacumba.net":)%0a> (:input hidden name="moeda" value="BRL":)%0a> (:input image src="https://p.simg.uol.com.br/out/pagseguro/i/botoes/doacoes/209x48-doar-assina.gif" alt="Pague com PagSeguro - é rápido, grátis e seguro!":)%0a> (:input end:)%0a\ No newline at end of file%0a
+host:1299608947=189.32.218.109
+author:1299605107=
+diff:1299605107:1299605026:=18c18%0a%3c * [++[[Instalacao_LTSP5_no_Ubuntu_10_04_Lucid|Instalação LTSP5 no Ubuntu 10.04 Lucid]]++]%0a---%0a> * [++[[Ubuntu_10_04_Ltsp5|Instalação LTSP5 no Ubuntu 10.04 Lucid]]++]%0a
+host:1299605107=189.32.218.109
+author:1299605026=
+diff:1299605026:1299604979:=18c18%0a%3c * [++[[Ubuntu_10_04_Ltsp5|Instalação LTSP5 no Ubuntu 10.04 Lucid]]++]%0a---%0a> * [++[[Ubuntu_10.04_Ltsp5|Instalação LTSP5 no Ubuntu 10.04 Lucid]]++]%0a
+host:1299605026=189.32.218.109
+author:1299604979=
+diff:1299604979:1299533754:=14c14%0a%3c * [+[[Instalacao_LTSP42_Debian_Squeeze|Instalação LTSP4.2 no Debian Squeeze]]+]%0a---%0a> * [[Instalacao_LTSP42_Debian_Squeeze|Instalação LTSP4.2 no Debian Squeeze]]%0a18,19c18%0a%3c * [++[[Ubuntu_10.04_Ltsp5|Instalação LTSP5 no Ubuntu 10.04 Lucid]]++]%0a%3c * [+[[Ubuntu_10.04_Ltsp42|Instalação LTSP4.2 no Ubuntu 10.04 Lucid]]+]%0a---%0a> * [[Ubuntu_10.04_Ltsp42|Instalação LTSP4.2 no Ubuntu 10.04 Lucid]]%0a
+host:1299604979=189.32.218.109
+author:1299533754=
+diff:1299533754:1299533713:=8,11c8,9%0a%3c (:input form target="flattr" action="https://flattr.com/thing/142831/Documentacao-sobre-LTSP-em-Debian-e-Ubuntu" method="get":)%0a%3c (:input image src="https://api.flattr.com/button/flattr-badge-large.png" alt="Flattr":)%0a%3c (:input end:)%0a%3c %0a---%0a> [[https://flattr.com/thing/142831/Documentacao-sobre-LTSP-em-Debian-e-Ubuntu|https://api.flattr.com/button/flattr-badge-large.png]]%0a> %0a
+host:1299533754=189.32.218.109
+author:1299533713=
+diff:1299533713:1299533699:=44c44,52%0a%3c (:input end:)%0a\ No newline at end of file%0a---%0a> (:input end:)%0a> %0a> %0a> %0a> [[https://flattr.com/thing/142831/Documentacao-sobre-LTSP-em-Debian-e-Ubuntu|https://api.flattr.com/button/flattr-badge-large.png]]\\%0a> [[https://flattr.com/thing/142831/Documentacao-sobre-LTSP-em-Debian-e-Ubuntu|http://raphaelhertzog.com/files/2010/07/flattr-foss-logo-small.png]]%0a> %0a> [[http://www.batemacumba.net|https://p.simg.uol.com.br/out/pagseguro/i/botoes/doacoes/94x52-doar-assina.gif]]\\%0a> ou doe qualquer valor usando o pagseguro.%0a\ No newline at end of file%0a
+host:1299533713=189.32.218.109
+author:1299533699=
+diff:1299533699:1299533557:=35,47d34%0a%3c %0a%3c (:input form target="flattr" action="https://flattr.com/thing/142831/Documentacao-sobre-LTSP-em-Debian-e-Ubuntu" method="get":)%0a%3c (:input image src="http://i52.tinypic.com/2aetic3.jpg" alt="Flattr":)%0a%3c (:input end:)%0a%3c %0a%3c (:input form target="pagseguro" action="https://pagseguro.uol.com.br/checkout/doacao.jhtml" method="post":)%0a%3c (:input hidden name="email_cobranca" value="avena@batemacumba.net":)%0a%3c (:input hidden name="moeda" value="BRL":)%0a%3c (:input image src="https://p.simg.uol.com.br/out/pagseguro/i/botoes/doacoes/209x48-doar-assina.gif" alt="Pague com PagSeguro - é rápido, grátis e seguro!":)%0a%3c (:input end:)%0a%3c %0a%3c %0a%3c %0a
+host:1299533699=189.32.218.109
+author:1299533557=
+diff:1299533557:1299448237:=36,39c36%0a%3c [[https://flattr.com/thing/142831/Documentacao-sobre-LTSP-em-Debian-e-Ubuntu|http://raphaelhertzog.com/files/2010/07/flattr-foss-logo-small.png]]%0a%3c %0a%3c [[http://www.batemacumba.net|https://p.simg.uol.com.br/out/pagseguro/i/botoes/doacoes/94x52-doar-assina.gif]]\\%0a%3c ou doe qualquer valor usando o pagseguro.%0a\ No newline at end of file%0a---%0a> [[https://flattr.com/thing/142831/Documentacao-sobre-LTSP-em-Debian-e-Ubuntu|http://raphaelhertzog.com/files/2010/07/flattr-foss-logo-small.png]]%0a\ No newline at end of file%0a
+host:1299533557=189.32.218.109
+author:1299448237=
+diff:1299448237:1299391454:=8,9d7%0a%3c [[https://flattr.com/thing/142831/Documentacao-sobre-LTSP-em-Debian-e-Ubuntu|https://api.flattr.com/button/flattr-badge-large.png]]%0a%3c %0a35,36c33,36%0a%3c [[https://flattr.com/thing/142831/Documentacao-sobre-LTSP-em-Debian-e-Ubuntu|https://api.flattr.com/button/flattr-badge-large.png]]\\%0a%3c [[https://flattr.com/thing/142831/Documentacao-sobre-LTSP-em-Debian-e-Ubuntu|http://raphaelhertzog.com/files/2010/07/flattr-foss-logo-small.png]]%0a\ No newline at end of file%0a---%0a> Visite nossa pagina:%0a> %0a> [[http://www.batemacumba.net|https://p.simg.uol.com.br/out/pagseguro/i/botoes/doacoes/209x48-doar-assina.gif]]\\%0a>  e doe qualquer valor usando o pagseguro.%0a\ No newline at end of file%0a
+host:1299448237=189.32.218.109
+author:1299391454=
+diff:1299391454:1297805556:=5,7c5,7%0a%3c !! A versão mantida/desenvolvida oficialmente é a LTSP 5. [[http://sourceforge.net/apps/mediawiki/ltsp/index.php?title=Ltsp_DownLoads|Visite e leia.]] %0a%3c %0a%3c %0a---%0a> !! A versao mantida/desenvolvida oficialmente é a LTSP 5. [[http://sourceforge.net/apps/mediawiki/ltsp/index.php?title=Ltsp_DownLoads|Visite e leia.]] %0a> %0a> %0a32c32%0a%3c As informações te ajudaram? Então nos ajude a manter, pesquisar e divulgar mais informações.\\%0a---%0a> As informacoes te ajudaram? Então nos ajude a manter, pesquisar e divulgar mais informações.\\%0a
+host:1299391454=189.32.218.109
+author:1297805556=
+diff:1297805556:1297805480:=5,7d4%0a%3c !! A versao mantida/desenvolvida oficialmente é a LTSP 5. [[http://sourceforge.net/apps/mediawiki/ltsp/index.php?title=Ltsp_DownLoads|Visite e leia.]] %0a%3c %0a%3c %0a21a19%0a> %0a
+host:1297805556=189.5.38.169
+author:1297805480=
+diff:1297805480:1297805163:=6c6%0a%3c !!! Debian%0a---%0a> !! Debian%0a10c10,11%0a%3c !!! Ubuntu%0a---%0a> %0a> !! Ubuntu%0a12c13,14%0a%3c !!! Archlinux%0a---%0a> %0a> !! Archlinux%0a14c16,17%0a%3c !!! Confs%0a---%0a> %0a> !! Confs%0a19,20c22%0a%3c %0a%3c !!! Idéias/Sugestões%0a---%0a> '''Idéias/Sugestões'''%0a
+host:1297805480=189.5.38.169
+author:1297805163=
+diff:1297805163:1297805159:=
+host:1297805163=189.5.38.169
+author:1297805159=
+diff:1297805159:1297802745:=6d5%0a%3c !! Debian%0a9,11d7%0a%3c * [[InstalacaoLtspDebianEtch|Instalação LTSP4.2 no Debian Etch]]%0a%3c %0a%3c !! Ubuntu%0a13,14d8%0a%3c %0a%3c !! Archlinux%0a16,17d9%0a%3c %0a%3c !! Confs%0a
+host:1297805159=189.5.38.169
+author:1297802745=
+diff:1297802745:1297789376:=11d10%0a%3c * [[sources_list_squeeze|Sources.list do Debian Squeeze]]%0a
+host:1297802745=189.5.38.169
+author:1297789376=
+diff:1297789376:1296306536:=6d5%0a%3c * [[Instalacao_LTSP42_Debian_Squeeze|Instalação LTSP4.2 no Debian Squeeze]]%0a
+host:1297789376=189.5.38.169

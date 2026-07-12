@@ -1,0 +1,1463 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Ltsp-build-clientLtsp5 — LTSP</title>
+<link rel="stylesheet" href="/css/bootstrap.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+body{background:#f5f5f5;font-family:'Poppins',sans-serif;}
+.ltsp-header{background:#1a237e;color:#fff;padding:20px 0;}
+.ltsp-header h1{margin:0;font-size:1.5rem;}
+.ltsp-sidebar{background:#fff;border-right:1px solid #e0e0e0;padding:20px;min-height:calc(100vh - 120px);font-size:0.9rem;}
+.ltsp-sidebar ul{list-style:none;padding:0;margin:0;}
+.ltsp-sidebar li{margin-bottom:6px;}
+.ltsp-sidebar a{color:#333;text-decoration:none;}
+.ltsp-sidebar a:hover{color:#1a237e;text-decoration:underline;}
+.ltsp-sidebar .sidehead{font-weight:700;margin-top:16px;margin-bottom:8px;font-size:0.85rem;text-transform:uppercase;color:#1a237e;}
+.ltsp-content{background:#fff;padding:30px;min-height:calc(100vh - 120px);}
+.ltsp-content h2{color:#1a237e;margin-top:24px;margin-bottom:12px;font-size:1.4rem;}
+.ltsp-content h3{color:#333;margin-top:20px;margin-bottom:10px;font-size:1.2rem;}
+.ltsp-content p{margin-bottom:12px;line-height:1.6;}
+.ltsp-content pre{background:#f5f5f5;border:1px solid #e0e0e0;padding:12px;overflow-x:auto;font-size:0.85rem;border-radius:4px;}
+.ltsp-content code{background:#f5f5f5;padding:2px 6px;font-size:0.85rem;border-radius:3px;}
+.ltsp-content ul{margin-bottom:12px;padding-left:20px;}
+.ltsp-content li{margin-bottom:4px;}
+.ltsp-breadcrumb{font-size:0.85rem;color:#666;margin-bottom:16px;}
+.ltsp-breadcrumb a{color:#1a237e;}
+.ltsp-content hr{margin:24px 0;border:0;border-top:1px solid #e0e0e0;}
+</style>
+</head>
+<body>
+<div class="ltsp-header">
+<div class="container">
+<div class="row align-items-center">
+<div class="col"><a href="/ltsp/" style="color:#fff;text-decoration:none"><h1>LTSP · Documentação em português</h1></a></div>
+<div class="col-auto"><a href="/" class="text-white-50 text-decoration-none">← Voltar ao currículo</a></div>
+</div></div></div>
+<div class="container"><div class="row">
+<div class="col-md-3"><div class="ltsp-sidebar"><ul><li><a href="/ltsp/">Página Inicial</a></li></ul></ul><div class="sidehead"><strong>Debian</strong></div><ul><li><a href="http://www.ltsp.org" target="_blank" rel="noopener">LTSP</a></li></ul><ul><li><a href="http://debian.org" target="_blank" rel="noopener">Debian</a></li></ul><ul><li><a href="https://www.ubuntu.com" target="_blank" rel="noopener">Ubuntu</a></li></ul></div></div>
+<div class="col-md-9"><div class="ltsp-content">
+<div class="ltsp-breadcrumb"><a href="/ltsp/">LTSP</a> &raquo; Main</div>
+<p>[@debian:/home/avena# ltsp-build-client --extra-mirror "http://pkg-ltsp.alioth.debian.org/debian etch-ltsp-backports main" --apt-key /etc/apt/trusted.gpg</p>
+<p>NOTA: adicionando dist padrão e components para o espelho de segurança:</p>
+<p>http://security.debian.org/ etch/updates main</p>
+<p>I: Retrieving Release</p>
+<p>I: Retrieving Packages</p>
+<p>I: Validating Packages</p>
+<p>I: Resolving dependencies of required packages...</p>
+<p>I: Resolving dependencies of base packages...</p>
+<p>I: Found additional base dependencies: libgcrypt11 libgpg-error0 liblzo1 libopencdk8 tasksel</p>
+<p>I: Checking component main on http://http.us.debian.org/debian...</p>
+<p>I: Retrieving adduser</p>
+<p>I: Validating adduser</p>
+<p>I: Retrieving apt</p>
+<p>I: Validating apt</p>
+<p>I: Retrieving aptitude</p>
+<p>I: Retrieving base-files</p>
+<p>I: Validating base-files</p>
+<p>I: Retrieving base-passwd</p>
+<p>I: Validating base-passwd</p>
+<p>I: Retrieving bash</p>
+<p>I: Validating bash</p>
+<p>I: Retrieving bsdmainutils</p>
+<p>I: Validating bsdmainutils</p>
+<p>I: Retrieving bsdutils</p>
+<p>I: Validating bsdutils</p>
+<p>I: Retrieving coreutils</p>
+<p>I: Validating coreutils</p>
+<p>I: Retrieving cpio</p>
+<p>I: Validating cpio</p>
+<p>I: Retrieving debconf</p>
+<p>I: Validating debconf</p>
+<p>I: Retrieving debconf-i18n</p>
+<p>I: Validating debconf-i18n</p>
+<p>I: Retrieving debian-archive-keyring</p>
+<p>I: Validating debian-archive-keyring</p>
+<p>I: Retrieving debianutils</p>
+<p>I: Validating debianutils</p>
+<p>I: Retrieving dhcp3-client</p>
+<p>I: Validating dhcp3-client</p>
+<p>I: Retrieving dhcp3-common</p>
+<p>I: Validating dhcp3-common</p>
+<p>I: Retrieving diff</p>
+<p>I: Validating diff</p>
+<p>I: Retrieving dmidecode</p>
+<p>I: Validating dmidecode</p>
+<p>I: Retrieving dpkg</p>
+<p>I: Validating dpkg</p>
+<p>I: Retrieving dselect</p>
+<p>I: Validating dselect</p>
+<p>I: Retrieving e2fslibs</p>
+<p>I: Validating e2fslibs</p>
+<p>I: Retrieving e2fsprogs</p>
+<p>I: Validating e2fsprogs</p>
+<p>I: Retrieving ed</p>
+<p>I: Validating ed</p>
+<p>I: Retrieving findutils</p>
+<p>I: Validating findutils</p>
+<p>I: Retrieving gcc-4.1-base</p>
+<p>I: Validating gcc-4.1-base</p>
+<p>I: Retrieving gnupg</p>
+<p>I: Validating gnupg</p>
+<p>I: Retrieving gpgv</p>
+<p>I: Validating gpgv</p>
+<p>I: Retrieving grep</p>
+<p>I: Validating grep</p>
+<p>I: Retrieving gzip</p>
+<p>I: Validating gzip</p>
+<p>I: Retrieving hostname</p>
+<p>I: Validating hostname</p>
+<p>I: Retrieving ifupdown</p>
+<p>I: Validating ifupdown</p>
+<p>I: Retrieving initscripts</p>
+<p>I: Validating initscripts</p>
+<p>I: Retrieving iputils-ping</p>
+<p>I: Validating iputils-ping</p>
+<p>I: Retrieving klogd</p>
+<p>I: Validating klogd</p>
+<p>I: Retrieving laptop-detect</p>
+<p>I: Validating laptop-detect</p>
+<p>I: Retrieving libacl1</p>
+<p>I: Validating libacl1</p>
+<p>I: Retrieving libattr1</p>
+<p>I: Validating libattr1</p>
+<p>I: Retrieving libblkid1</p>
+<p>I: Validating libblkid1</p>
+<p>I: Retrieving libbz2-1.0</p>
+<p>I: Validating libbz2-1.0</p>
+<p>I: Retrieving libc6</p>
+<p>I: Validating libc6</p>
+<p>I: Retrieving libcap1</p>
+<p>I: Validating libcap1</p>
+<p>I: Retrieving libcomerr2</p>
+<p>I: Validating libcomerr2</p>
+<p>I: Retrieving libconsole</p>
+<p>I: Validating libconsole</p>
+<p>I: Retrieving libdb4.2</p>
+<p>I: Validating libdb4.2</p>
+<p>I: Retrieving libdb4.3</p>
+<p>I: Validating libdb4.3</p>
+<p>I: Retrieving libdb4.4</p>
+<p>I: Validating libdb4.4</p>
+<p>I: Retrieving libdevmapper1.02</p>
+<p>I: Validating libdevmapper1.02</p>
+<p>I: Retrieving libgcc1</p>
+<p>I: Validating libgcc1</p>
+<p>I: Retrieving libgcrypt11</p>
+<p>I: Validating libgcrypt11</p>
+<p>I: Retrieving libgnutls13</p>
+<p>I: Validating libgnutls13</p>
+<p>I: Retrieving libgpg-error0</p>
+<p>I: Validating libgpg-error0</p>
+<p>I: Retrieving libldap2</p>
+<p>I: Validating libldap2</p>
+<p>I: Retrieving liblocale-gettext-perl</p>
+<p>I: Validating liblocale-gettext-perl</p>
+<p>I: Retrieving liblzo1</p>
+<p>I: Validating liblzo1</p>
+<p>I: Retrieving libncurses5</p>
+<p>I: Validating libncurses5</p>
+<p>I: Retrieving libncursesw5</p>
+<p>I: Validating libncursesw5</p>
+<p>I: Retrieving libnewt0.52</p>
+<p>I: Validating libnewt0.52</p>
+<p>I: Retrieving libopencdk8</p>
+<p>I: Validating libopencdk8</p>
+<p>I: Retrieving libpam-modules</p>
+<p>I: Validating libpam-modules</p>
+<p>I: Retrieving libpam-runtime</p>
+<p>I: Validating libpam-runtime</p>
+<p>I: Retrieving libpam0g</p>
+<p>I: Validating libpam0g</p>
+<p>I: Retrieving libpopt0</p>
+<p>I: Validating libpopt0</p>
+<p>I: Retrieving libreadline5</p>
+<p>I: Validating libreadline5</p>
+<p>I: Retrieving libsasl2</p>
+<p>I: Validating libsasl2</p>
+<p>I: Retrieving libsasl2-2</p>
+<p>I: Validating libsasl2-2</p>
+<p>I: Retrieving libselinux1</p>
+<p>I: Validating libselinux1</p>
+<p>I: Retrieving libsepol1</p>
+<p>I: Validating libsepol1</p>
+<p>I: Retrieving libsigc++-2.0-0c2a</p>
+<p>I: Validating libsigc++-2.0-0c2a</p>
+<p>I: Retrieving libslang2</p>
+<p>I: Validating libslang2</p>
+<p>I: Retrieving libss2</p>
+<p>I: Validating libss2</p>
+<p>I: Retrieving libssl0.9.8</p>
+<p>I: Validating libssl0.9.8</p>
+<p>I: Retrieving libstdc++6</p>
+<p>I: Validating libstdc++6</p>
+<p>I: Retrieving libtasn1-3</p>
+<p>I: Validating libtasn1-3</p>
+<p>I: Retrieving libtext-charwidth-perl</p>
+<p>I: Validating libtext-charwidth-perl</p>
+<p>I: Retrieving libtext-iconv-perl</p>
+<p>I: Validating libtext-iconv-perl</p>
+<p>I: Retrieving libtext-wrapi18n-perl</p>
+<p>I: Validating libtext-wrapi18n-perl</p>
+<p>I: Retrieving libusb-0.1-4</p>
+<p>I: Validating libusb-0.1-4</p>
+<p>I: Retrieving libuuid1</p>
+<p>I: Validating libuuid1</p>
+<p>I: Retrieving libwrap0</p>
+<p>I: Validating libwrap0</p>
+<p>I: Retrieving locales</p>
+<p>I: Validating locales</p>
+<p>I: Retrieving login</p>
+<p>I: Validating login</p>
+<p>I: Retrieving lsb-base</p>
+<p>I: Validating lsb-base</p>
+<p>I: Retrieving makedev</p>
+<p>I: Validating makedev</p>
+<p>I: Retrieving mawk</p>
+<p>I: Validating mawk</p>
+<p>I: Retrieving mktemp</p>
+<p>I: Validating mktemp</p>
+<p>I: Retrieving module-init-tools</p>
+<p>I: Validating module-init-tools</p>
+<p>I: Retrieving mount</p>
+<p>I: Validating mount</p>
+<p>I: Retrieving nano</p>
+<p>I: Validating nano</p>
+<p>I: Retrieving ncurses-base</p>
+<p>I: Validating ncurses-base</p>
+<p>I: Retrieving ncurses-bin</p>
+<p>I: Validating ncurses-bin</p>
+<p>I: Retrieving net-tools</p>
+<p>I: Validating net-tools</p>
+<p>I: Retrieving netbase</p>
+<p>I: Validating netbase</p>
+<p>I: Retrieving netcat</p>
+<p>I: Validating netcat</p>
+<p>I: Retrieving openbsd-inetd</p>
+<p>I: Validating openbsd-inetd</p>
+<p>I: Retrieving passwd</p>
+<p>I: Validating passwd</p>
+<p>I: Retrieving perl-base</p>
+<p>I: Validating perl-base</p>
+<p>I: Retrieving procps</p>
+<p>I: Validating procps</p>
+<p>I: Retrieving readline-common</p>
+<p>I: Validating readline-common</p>
+<p>I: Retrieving sed</p>
+<p>I: Validating sed</p>
+<p>I: Retrieving sysklogd</p>
+<p>I: Validating sysklogd</p>
+<p>I: Retrieving sysv-rc</p>
+<p>I: Validating sysv-rc</p>
+<p>I: Retrieving sysvinit</p>
+<p>I: Validating sysvinit</p>
+<p>I: Retrieving sysvinit-utils</p>
+<p>I: Validating sysvinit-utils</p>
+<p>I: Retrieving tar</p>
+<p>I: Validating tar</p>
+<p>I: Retrieving tasksel</p>
+<p>I: Validating tasksel</p>
+<p>I: Retrieving tasksel-data</p>
+<p>I: Validating tasksel-data</p>
+<p>I: Retrieving tcpd</p>
+<p>I: Validating tcpd</p>
+<p>I: Retrieving traceroute</p>
+<p>I: Validating traceroute</p>
+<p>I: Retrieving tzdata</p>
+<p>I: Validating tzdata</p>
+<p>I: Retrieving update-inetd</p>
+<p>I: Validating update-inetd</p>
+<p>I: Retrieving util-linux</p>
+<p>I: Validating util-linux</p>
+<p>I: Retrieving vim-common</p>
+<p>I: Validating vim-common</p>
+<p>I: Retrieving vim-tiny</p>
+<p>I: Validating vim-tiny</p>
+<p>I: Retrieving wget</p>
+<p>I: Validating wget</p>
+<p>I: Retrieving zlib1g</p>
+<p>I: Validating zlib1g</p>
+<p>I: Extracting base-files...</p>
+<p>I: Extracting base-passwd...</p>
+<p>I: Extracting bash...</p>
+<p>I: Extracting bsdutils...</p>
+<p>I: Extracting coreutils...</p>
+<p>I: Extracting debconf...</p>
+<p>I: Extracting debconf-i18n...</p>
+<p>I: Extracting debianutils...</p>
+<p>I: Extracting diff...</p>
+<p>I: Extracting dpkg...</p>
+<p>I: Extracting dselect...</p>
+<p>I: Extracting e2fslibs...</p>
+<p>I: Extracting e2fsprogs...</p>
+<p>I: Extracting findutils...</p>
+<p>I: Extracting gcc-4.1-base...</p>
+<p>I: Extracting grep...</p>
+<p>I: Extracting gzip...</p>
+<p>I: Extracting hostname...</p>
+<p>I: Extracting initscripts...</p>
+<p>I: Extracting libacl1...</p>
+<p>I: Extracting libattr1...</p>
+<p>I: Extracting libblkid1...</p>
+<p>I: Extracting libc6...</p>
+<p>I: Extracting libcap1...</p>
+<p>I: Extracting libcomerr2...</p>
+<p>I: Extracting libdb4.3...</p>
+<p>I: Extracting libdevmapper1.02...</p>
+<p>I: Extracting libgcc1...</p>
+<p>I: Extracting liblocale-gettext-perl...</p>
+<p>I: Extracting libncurses5...</p>
+<p>I: Extracting libpam-modules...</p>
+<p>I: Extracting libpam-runtime...</p>
+<p>I: Extracting libpam0g...</p>
+<p>I: Extracting libselinux1...</p>
+<p>I: Extracting libsepol1...</p>
+<p>I: Extracting libslang2...</p>
+<p>I: Extracting libss2...</p>
+<p>I: Extracting libstdc++6...</p>
+<p>I: Extracting libtext-charwidth-perl...</p>
+<p>I: Extracting libtext-iconv-perl...</p>
+<p>I: Extracting libtext-wrapi18n-perl...</p>
+<p>I: Extracting libuuid1...</p>
+<p>I: Extracting login...</p>
+<p>I: Extracting lsb-base...</p>
+<p>I: Extracting makedev...</p>
+<p>I: Extracting mawk...</p>
+<p>I: Extracting mktemp...</p>
+<p>I: Extracting mount...</p>
+<p>I: Extracting ncurses-base...</p>
+<p>I: Extracting ncurses-bin...</p>
+<p>I: Extracting passwd...</p>
+<p>I: Extracting perl-base...</p>
+<p>I: Extracting procps...</p>
+<p>I: Extracting sed...</p>
+<p>I: Extracting sysv-rc...</p>
+<p>I: Extracting sysvinit...</p>
+<p>I: Extracting sysvinit-utils...</p>
+<p>I: Extracting tar...</p>
+<p>I: Extracting tzdata...</p>
+<p>I: Extracting util-linux...</p>
+<p>I: Extracting zlib1g...</p>
+<p>I: Installing core packages...</p>
+<p>I: Unpacking required packages...</p>
+<p>I: Unpacking base-files...</p>
+<p>I: Unpacking base-passwd...</p>
+<p>I: Unpacking bash...</p>
+<p>I: Unpacking bsdutils...</p>
+<p>I: Unpacking coreutils...</p>
+<p>I: Unpacking debconf...</p>
+<p>I: Unpacking debconf-i18n...</p>
+<p>I: Unpacking debianutils...</p>
+<p>I: Unpacking diff...</p>
+<p>I: Unpacking dpkg...</p>
+<p>I: Unpacking dselect...</p>
+<p>I: Unpacking e2fslibs...</p>
+<p>I: Unpacking e2fsprogs...</p>
+<p>I: Unpacking findutils...</p>
+<p>I: Unpacking gcc-4.1-base...</p>
+<p>I: Unpacking grep...</p>
+<p>I: Unpacking gzip...</p>
+<p>I: Unpacking hostname...</p>
+<p>I: Unpacking initscripts...</p>
+<p>I: Unpacking libacl1...</p>
+<p>I: Unpacking libattr1...</p>
+<p>I: Unpacking libblkid1...</p>
+<p>I: Unpacking libc6...</p>
+<p>I: Unpacking libcap1...</p>
+<p>I: Unpacking libcomerr2...</p>
+<p>I: Unpacking libdb4.3...</p>
+<p>I: Unpacking libdevmapper1.02...</p>
+<p>I: Unpacking libgcc1...</p>
+<p>I: Unpacking liblocale-gettext-perl...</p>
+<p>I: Unpacking libncurses5...</p>
+<p>I: Unpacking libpam-modules...</p>
+<p>I: Unpacking libpam-runtime...</p>
+<p>I: Unpacking libpam0g...</p>
+<p>I: Unpacking libselinux1...</p>
+<p>I: Unpacking libsepol1...</p>
+<p>I: Unpacking libslang2...</p>
+<p>I: Unpacking libss2...</p>
+<p>I: Unpacking libstdc++6...</p>
+<p>I: Unpacking libtext-charwidth-perl...</p>
+<p>I: Unpacking libtext-iconv-perl...</p>
+<p>I: Unpacking libtext-wrapi18n-perl...</p>
+<p>I: Unpacking libuuid1...</p>
+<p>I: Unpacking login...</p>
+<p>I: Unpacking lsb-base...</p>
+<p>I: Unpacking makedev...</p>
+<p>I: Unpacking mawk...</p>
+<p>I: Unpacking mktemp...</p>
+<p>I: Unpacking mount...</p>
+<p>I: Unpacking ncurses-base...</p>
+<p>I: Unpacking ncurses-bin...</p>
+<p>I: Unpacking passwd...</p>
+<p>I: Unpacking perl-base...</p>
+<p>I: Unpacking procps...</p>
+<p>I: Unpacking sed...</p>
+<p>I: Unpacking sysv-rc...</p>
+<p>I: Unpacking sysvinit...</p>
+<p>I: Unpacking sysvinit-utils...</p>
+<p>I: Unpacking tar...</p>
+<p>I: Unpacking tzdata...</p>
+<p>I: Unpacking util-linux...</p>
+<p>I: Unpacking zlib1g...</p>
+<p>I: Configuring required packages...</p>
+<p>I: Configuring sysv-rc...</p>
+<p>I: Configuring tzdata...</p>
+<p>I: Configuring gcc-4.1-base...</p>
+<p>I: Configuring libpam-runtime...</p>
+<p>I: Configuring libc6...</p>
+<p>I: Configuring libcap1...</p>
+<p>I: Configuring mktemp...</p>
+<p>I: Configuring libuuid1...</p>
+<p>I: Configuring libpam0g...</p>
+<p>I: Configuring bsdutils...</p>
+<p>I: Configuring perl-base...</p>
+<p>I: Configuring libsepol1...</p>
+<p>I: Configuring tar...</p>
+<p>I: Configuring zlib1g...</p>
+<p>I: Configuring libgcc1...</p>
+<p>I: Configuring libtext-iconv-perl...</p>
+<p>I: Configuring libncurses5...</p>
+<p>I: Configuring libattr1...</p>
+<p>I: Configuring sed...</p>
+<p>I: Configuring e2fslibs...</p>
+<p>I: Configuring base-passwd...</p>
+<p>I: Configuring libcomerr2...</p>
+<p>I: Configuring mawk...</p>
+<p>I: Configuring libdb4.3...</p>
+<p>I: Configuring grep...</p>
+<p>I: Configuring hostname...</p>
+<p>I: Configuring libacl1...</p>
+<p>I: Configuring libslang2...</p>
+<p>I: Configuring libss2...</p>
+<p>I: Configuring findutils...</p>
+<p>I: Configuring liblocale-gettext-perl...</p>
+<p>I: Configuring diff...</p>
+<p>I: Configuring libselinux1...</p>
+<p>I: Configuring libstdc++6...</p>
+<p>I: Configuring libdevmapper1.02...</p>
+<p>I: Configuring libtext-charwidth-perl...</p>
+<p>I: Configuring libtext-wrapi18n-perl...</p>
+<p>I: Configuring coreutils...</p>
+<p>I: Configuring debianutils...</p>
+<p>I: Configuring makedev...</p>
+<p>I: Configuring ncurses-base...</p>
+<p>I: Configuring ncurses-bin...</p>
+<p>I: Configuring libpam-modules...</p>
+<p>I: Configuring base-files...</p>
+<p>I: Configuring libblkid1...</p>
+<p>I: Configuring e2fsprogs...</p>
+<p>I: Configuring gzip...</p>
+<p>I: Configuring dpkg...</p>
+<p>I: Configuring dselect...</p>
+<p>I: Configuring sysvinit-utils...</p>
+<p>I: Configuring bash...</p>
+<p>I: Configuring login...</p>
+<p>I: Configuring lsb-base...</p>
+<p>I: Configuring procps...</p>
+<p>I: Configuring mount...</p>
+<p>I: Configuring passwd...</p>
+<p>I: Configuring initscripts...</p>
+<p>I: Configuring util-linux...</p>
+<p>I: Configuring sysvinit...</p>
+<p>I: Configuring debconf-i18n...</p>
+<p>I: Configuring debconf...</p>
+<p>I: Unpacking the base system...</p>
+<p>I: Unpacking adduser...</p>
+<p>I: Unpacking apt...</p>
+<p>I: Unpacking aptitude...</p>
+<p>I: Unpacking bsdmainutils...</p>
+<p>I: Unpacking cpio...</p>
+<p>I: Unpacking debian-archive-keyring...</p>
+<p>I: Unpacking dhcp3-client...</p>
+<p>I: Unpacking dhcp3-common...</p>
+<p>I: Unpacking dmidecode...</p>
+<p>I: Unpacking ed...</p>
+<p>I: Unpacking gnupg...</p>
+<p>I: Unpacking gpgv...</p>
+<p>I: Unpacking ifupdown...</p>
+<p>I: Unpacking iputils-ping...</p>
+<p>I: Unpacking klogd...</p>
+<p>I: Unpacking laptop-detect...</p>
+<p>I: Unpacking libbz2-1.0...</p>
+<p>I: Unpacking libconsole...</p>
+<p>I: Unpacking libdb4.2...</p>
+<p>I: Unpacking libdb4.4...</p>
+<p>I: Unpacking libgcrypt11...</p>
+<p>I: Unpacking libgnutls13...</p>
+<p>I: Unpacking libgpg-error0...</p>
+<p>I: Unpacking libldap2...</p>
+<p>I: Unpacking liblzo1...</p>
+<p>I: Unpacking libncursesw5...</p>
+<p>I: Unpacking libnewt0.52...</p>
+<p>I: Unpacking libopencdk8...</p>
+<p>I: Unpacking libpopt0...</p>
+<p>I: Unpacking libreadline5...</p>
+<p>I: Unpacking libsasl2...</p>
+<p>I: Unpacking libsasl2-2...</p>
+<p>I: Unpacking libsigc++-2.0-0c2a...</p>
+<p>I: Unpacking libssl0.9.8...</p>
+<p>I: Unpacking libtasn1-3...</p>
+<p>I: Unpacking libusb-0.1-4...</p>
+<p>I: Unpacking libwrap0...</p>
+<p>I: Unpacking locales...</p>
+<p>I: Unpacking module-init-tools...</p>
+<p>I: Unpacking nano...</p>
+<p>I: Unpacking net-tools...</p>
+<p>I: Unpacking netbase...</p>
+<p>I: Unpacking netcat...</p>
+<p>I: Unpacking openbsd-inetd...</p>
+<p>I: Unpacking readline-common...</p>
+<p>I: Unpacking sysklogd...</p>
+<p>I: Unpacking tasksel...</p>
+<p>I: Unpacking tasksel-data...</p>
+<p>I: Unpacking tcpd...</p>
+<p>I: Unpacking traceroute...</p>
+<p>I: Unpacking update-inetd...</p>
+<p>I: Unpacking vim-common...</p>
+<p>I: Unpacking vim-tiny...</p>
+<p>I: Unpacking wget...</p>
+<p>I: Configuring the base system...</p>
+<p>I: Configuring gpgv...</p>
+<p>I: Configuring module-init-tools...</p>
+<p>I: Configuring libtasn1-3...</p>
+<p>I: Configuring libpopt0...</p>
+<p>I: Configuring libusb-0.1-4...</p>
+<p>I: Configuring libgpg-error0...</p>
+<p>I: Configuring update-inetd...</p>
+<p>I: Configuring libssl0.9.8...</p>
+<p>I: Configuring vim-common...</p>
+<p>I: Configuring dmidecode...</p>
+<p>I: Configuring adduser...</p>
+<p>I: Configuring locales...</p>
+<p>I: Configuring traceroute...</p>
+<p>I: Configuring ed...</p>
+<p>I: Configuring liblzo1...</p>
+<p>I: Configuring wget...</p>
+<p>I: Configuring libnewt0.52...</p>
+<p>I: Configuring libdb4.2...</p>
+<p>I: Configuring libdb4.4...</p>
+<p>I: Configuring net-tools...</p>
+<p>I: Configuring libsasl2-2...</p>
+<p>I: Configuring bsdmainutils...</p>
+<p>I: Configuring libsigc++-2.0-0c2a...</p>
+<p>I: Configuring libncursesw5...</p>
+<p>I: Configuring iputils-ping...</p>
+<p>I: Configuring libbz2-1.0...</p>
+<p>I: Configuring libsasl2...</p>
+<p>I: Configuring nano...</p>
+<p>I: Configuring dhcp3-common...</p>
+<p>I: Configuring libconsole...</p>
+<p>I: Configuring cpio...</p>
+<p>I: Configuring vim-tiny...</p>
+<p>I: Configuring readline-common...</p>
+<p>I: Configuring libwrap0...</p>
+<p>I: Configuring netcat...</p>
+<p>I: Configuring tcpd...</p>
+<p>I: Configuring laptop-detect...</p>
+<p>I: Configuring libgcrypt11...</p>
+<p>I: Configuring ifupdown...</p>
+<p>I: Configuring dhcp3-client...</p>
+<p>I: Configuring openbsd-inetd...</p>
+<p>I: Configuring libreadline5...</p>
+<p>I: Configuring libopencdk8...</p>
+<p>I: Configuring libgnutls13...</p>
+<p>I: Configuring libldap2...</p>
+<p>I: Configuring netbase...</p>
+<p>I: Configuring gnupg...</p>
+<p>I: Configuring debian-archive-keyring...</p>
+<p>I: Configuring apt...</p>
+<p>I: Configuring aptitude...</p>
+<p>I: Configuring sysklogd...</p>
+<p>I: Configuring klogd...</p>
+<p>I: Configuring tasksel-data...</p>
+<p>I: Configuring tasksel...</p>
+<p>I: Base system installed successfully.</p>
+<p>Generating locales (this might take a while)...</p>
+<p>pt_BR.UTF-8... done</p>
+<p>Generation complete.</p>
+<p>Adicionado `diversion of /sbin/start-stop-daemon to /sbin/start-stop-daemon.real by ltsp-client'</p>
+<p>OK</p>
+<p>Adicionado `diversion of /etc/mtab to /etc/mtab.real by ltsp-client'</p>
+<p>`/opt/ltsp/i386/etc/apt/sources.list' -> `/opt/ltsp/i386/etc/apt/sources.list.old'</p>
+<p>Obtendo:1 http://pkg-ltsp.alioth.debian.org etch-ltsp-backports Release.gpg [189B]</p>
+<p>Obtendo:2 http://security.debian.org etch/updates Release.gpg [189B]</p>
+<p>Obtendo:3 http://pkg-ltsp.alioth.debian.org etch-ltsp-backports Release [748B]</p>
+<p>Obtendo:4 http://http.us.debian.org etch Release.gpg [378B]</p>
+<p>Obtendo:5 http://security.debian.org etch/updates Release [22,5kB]</p>
+<p>Obtendo:6 http://pkg-ltsp.alioth.debian.org etch-ltsp-backports/main Packages [1895B]</p>
+<p>Atingido http://http.us.debian.org etch Release</p>
+<p>Ign http://http.us.debian.org etch/main Packages/DiffIndex</p>
+<p>Atingido http://http.us.debian.org etch/main Packages</p>
+<p>Obtendo:7 http://security.debian.org etch/updates/main Packages [213kB]</p>
+<p>Baixados 239kB em 16s (14,2kB/s)</p>
+<p>Lendo lista de pacotes... Pronto</p>
+<p>Lendo lista de pacotes... Pronto</p>
+<p>Construindo árvore de dependências... Pronto</p>
+<p>Os pacotes extra a seguir serão instalados:</p>
+<p>alsa-utils binutils busybox console-common console-data console-setup console-terminus cpp cpp-4.1 cryptsetup defoma discover1 discover1-data dmsetup</p>
+<p>dpkg-dev file fontconfig fontconfig-config gtk2-engines gtk2-engines-clearlooks initramfs-tools kbd klibc-utils ldm libasound2 libasound2-plugins</p>
+<p>libasyncns0 libatk1.0-0 libcairo2 libdiscover1 libdrm2 libedit2 libexpat1 libflac7 libfontconfig1 libfontenc1 libfreetype6 libfs6 libgdbm3</p>
+<p>libgl1-mesa-dri libgl1-mesa-glx libglib2.0-0 libglu1-mesa libgtk2.0-0 libgtk2.0-common libice6 libjack0.100.0-0 libjpeg62 libklibc libkrb53 libltdl3</p>
+<p>libmagic1 liboil0.3 libpango1.0-0 libpango1.0-common libpci2 libpng12-0 libpulse0 libsamplerate0 libsm6 libsndfile1 libtiff4 libvolume-id0 libx11-6</p>
+<p>libx11-data libxau6 libxaw7 libxcursor1 libxdmcp6 libxext6 libxfixes3 libxfont1 libxft2 libxi6 libxinerama1 libxkbfile1 libxmu6 libxmuu1 libxpm4</p>
+<p>libxrandr2 libxrender1 libxss1 libxt6 libxtrap6 libxtst6 libxv1 libxxf86dga1 libxxf86vm1 linux-sound-base lsb-release lsof ltsp-client-core ltspfsd make</p>
+<p>mdetect mime-support mknbi nbd-client openssh-client patch pciutils perl perl-base perl-modules pulseaudio pulseaudio-esound-compat python python-minimal</p>
+<p>python2.4 python2.4-minimal syslinux tftp-hpa ttf-dejavu type-handling ucf udev whiptail x11-common xbase-clients xbitmaps xfonts-100dpi xfonts-75dpi</p>
+<p>xfonts-base xfonts-encodings xfonts-scalable xfonts-utils xkb-data xorg xresprobe xserver-xorg xserver-xorg-core xserver-xorg-input-all</p>
+<p>xserver-xorg-input-evdev xserver-xorg-input-kbd xserver-xorg-input-mouse xserver-xorg-input-synaptics xserver-xorg-input-wacom xserver-xorg-video-all</p>
+<p>xserver-xorg-video-apm xserver-xorg-video-ark xserver-xorg-video-ati xserver-xorg-video-chips xserver-xorg-video-cirrus xserver-xorg-video-cyrix</p>
+<p>xserver-xorg-video-dummy xserver-xorg-video-fbdev xserver-xorg-video-glint xserver-xorg-video-i128 xserver-xorg-video-i740 xserver-xorg-video-i810</p>
+<p>xserver-xorg-video-imstt xserver-xorg-video-mga xserver-xorg-video-neomagic xserver-xorg-video-newport xserver-xorg-video-nsc xserver-xorg-video-nv</p>
+<p>xserver-xorg-video-rendition xserver-xorg-video-s3 xserver-xorg-video-s3virge xserver-xorg-video-savage xserver-xorg-video-siliconmotion</p>
+<p>xserver-xorg-video-sis xserver-xorg-video-sisusb xserver-xorg-video-tdfx xserver-xorg-video-tga xserver-xorg-video-trident xserver-xorg-video-tseng</p>
+<p>xserver-xorg-video-v4l xserver-xorg-video-vesa xserver-xorg-video-vga xserver-xorg-video-via xserver-xorg-video-vmware xserver-xorg-video-voodoo xterm</p>
+<p>xutils xutils-dev</p>
+<p>Pacotes sugeridos:</p>
+<p>binutils-doc unicode-data cpp-doc gcc-4.1-locales dosfstools defoma-doc psfontmgr x-ttcidfont-conf dfontmgr debian-keyring libfreetype6-dev krb5-doc</p>
+<p>krb5-user ttf-kochi-gothic ttf-kochi-mincho ttf-thryomanes ttf-baekmuk ttf-arphic-gbsn00lp ttf-arphic-bsmi00lp ttf-arphic-gkai00mp ttf-arphic-bkai00mp</p>
+<p>joystick make-doc-non-dfsg ssh-askpass diff-doc libterm-readline-gnu-perl libterm-readline-perl-perl pulseaudio-utils paprefs pavumeter pavucontrol</p>
+<p>padevchooser paman libgstreamer-plugins-pulse0.10-0 libao-pulse python-doc python-tk python-profiler python2.4-doc mesa-utils xfs xserver gsynaptics</p>
+<p>ksynaptics qsynaptics xfonts-cyrillic pdksh</p>
+<p>Pacotes recomendados:</p>
+<p>alsa-base libft-perl gcc c-compiler bzip2 libatk1.0-data libglib2.0-data hicolor-icon-theme libgtk2.0-bin jackd lsb perl-doc pulseaudio-module-hal</p>
+<p>pulseaudio-module-x11 mtools debconf-utils</p>
+<p>Os NOVOS pacotes a seguir serão instalados:</p>
+<p>alsa-utils binutils busybox console-common console-data console-setup console-terminus cpp cpp-4.1 cryptsetup defoma discover1 discover1-data dmsetup</p>
+<p>dpkg-dev file fontconfig fontconfig-config gtk2-engines gtk2-engines-clearlooks initramfs-tools kbd klibc-utils ldm libasound2 libasound2-plugins</p>
+<p>libasyncns0 libatk1.0-0 libcairo2 libdiscover1 libdrm2 libedit2 libexpat1 libflac7 libfontconfig1 libfontenc1 libfreetype6 libfs6 libgdbm3</p>
+<p>libgl1-mesa-dri libgl1-mesa-glx libglib2.0-0 libglu1-mesa libgtk2.0-0 libgtk2.0-common libice6 libjack0.100.0-0 libjpeg62 libklibc libkrb53 libltdl3</p>
+<p>libmagic1 liboil0.3 libpango1.0-0 libpango1.0-common libpci2 libpng12-0 libpulse0 libsamplerate0 libsm6 libsndfile1 libtiff4 libvolume-id0 libx11-6</p>
+<p>libx11-data libxau6 libxaw7 libxcursor1 libxdmcp6 libxext6 libxfixes3 libxfont1 libxft2 libxi6 libxinerama1 libxkbfile1 libxmu6 libxmuu1 libxpm4</p>
+<p>libxrandr2 libxrender1 libxss1 libxt6 libxtrap6 libxtst6 libxv1 libxxf86dga1 libxxf86vm1 linux-sound-base lsb-release lsof ltsp-client ltsp-client-core</p>
+<p>ltspfsd make mdetect mime-support mknbi nbd-client openssh-client patch pciutils perl perl-modules pulseaudio pulseaudio-esound-compat python</p>
+<p>python-minimal python2.4 python2.4-minimal syslinux tftp-hpa ttf-dejavu type-handling ucf udev whiptail x11-common xbase-clients xbitmaps xfonts-100dpi</p>
+<p>xfonts-75dpi xfonts-base xfonts-encodings xfonts-scalable xfonts-utils xkb-data xorg xresprobe xserver-xorg xserver-xorg-core xserver-xorg-input-all</p>
+<p>xserver-xorg-input-evdev xserver-xorg-input-kbd xserver-xorg-input-mouse xserver-xorg-input-synaptics xserver-xorg-input-wacom xserver-xorg-video-all</p>
+<p>xserver-xorg-video-apm xserver-xorg-video-ark xserver-xorg-video-ati xserver-xorg-video-chips xserver-xorg-video-cirrus xserver-xorg-video-cyrix</p>
+<p>xserver-xorg-video-dummy xserver-xorg-video-fbdev xserver-xorg-video-glint xserver-xorg-video-i128 xserver-xorg-video-i740 xserver-xorg-video-i810</p>
+<p>xserver-xorg-video-imstt xserver-xorg-video-mga xserver-xorg-video-neomagic xserver-xorg-video-newport xserver-xorg-video-nsc xserver-xorg-video-nv</p>
+<p>xserver-xorg-video-rendition xserver-xorg-video-s3 xserver-xorg-video-s3virge xserver-xorg-video-savage xserver-xorg-video-siliconmotion</p>
+<p>xserver-xorg-video-sis xserver-xorg-video-sisusb xserver-xorg-video-tdfx xserver-xorg-video-tga xserver-xorg-video-trident xserver-xorg-video-tseng</p>
+<p>xserver-xorg-video-v4l xserver-xorg-video-vesa xserver-xorg-video-vga xserver-xorg-video-via xserver-xorg-video-vmware xserver-xorg-video-voodoo xterm</p>
+<p>xutils xutils-dev</p>
+<p>Os pacotes a seguir serão atualizados:</p>
+<p>perl-base</p>
+<p>1 pacotes atualizados, 176 pacotes novos instalados, 0 a serem removidos e 3 não atualizados.</p>
+<p>É preciso fazer o download de 76,0MB de arquivos.</p>
+<p>Depois de desempacotar, 204MB adicionais de espaço em disco serão usados.</p>
+<p>Obtendo:1 http://pkg-ltsp.alioth.debian.org etch-ltsp-backports/main ltsp-client-core 5.0.31debian2~0.etch.1 [71,5kB]</p>
+<p>Obtendo:2 http://security.debian.org etch/updates/main perl-base 5.8.8-7etch1 [762kB]</p>
+<p>Obtendo:3 http://http.us.debian.org etch/main console-data 2:1.01-7 [1097kB]</p>
+<p>Obtendo:4 http://pkg-ltsp.alioth.debian.org etch-ltsp-backports/main ltspfsd 0.5+debian1~0.fg.1 [16,1kB]</p>
+<p>Obtendo:5 http://pkg-ltsp.alioth.debian.org etch-ltsp-backports/main ldm 5.0.31debian2~0.etch.1 [176kB]</p>
+<p>Obtendo:6 http://security.debian.org etch/updates/main libmagic1 4.17-5etch3 [275kB]</p>
+<p>Obtendo:7 http://pkg-ltsp.alioth.debian.org etch-ltsp-backports/main ltsp-client 5.0.31debian2~0.etch.1 [35,9kB]</p>
+<p>Obtendo:8 http://security.debian.org etch/updates/main file 4.17-5etch3 [31,9kB]</p>
+<p>Obtendo:9 http://security.debian.org etch/updates/main perl-modules 5.8.8-7etch1 [2314kB]</p>
+<p>Obtendo:10 http://http.us.debian.org etch/main kbd 1.12-17 [350kB]</p>
+<p>Obtendo:11 http://http.us.debian.org etch/main console-common 0.7.69 [131kB]</p>
+<p>Obtendo:12 http://http.us.debian.org etch/main x11-common 1:7.1.0-19 [338kB]</p>
+<p>Obtendo:13 http://http.us.debian.org etch/main libxau6 1:1.0.1-2 [6986B]</p>
+<p>Obtendo:14 http://http.us.debian.org etch/main libxdmcp6 1:1.0.1-2 [10,7kB]</p>
+<p>Obtendo:15 http://http.us.debian.org etch/main libx11-data 2:1.0.3-7 [157kB]</p>
+<p>Obtendo:16 http://http.us.debian.org etch/main libx11-6 2:1.0.3-7 [567kB]</p>
+<p>Obtendo:17 http://security.debian.org etch/updates/main perl 5.8.8-7etch1 [3578kB]</p>
+<p>Obtendo:18 http://http.us.debian.org etch/main libxfixes3 1:4.0.1-5 [9304B]</p>
+<p>Obtendo:19 http://http.us.debian.org etch/main libexpat1 1.95.8-3.4 [62,9kB]</p>
+<p>Obtendo:20 http://http.us.debian.org etch/main libfreetype6 2.2.1-5+etch1 [342kB]</p>
+<p>Obtendo:21 http://http.us.debian.org etch/main ucf 2.0020 [57,7kB]</p>
+<p>Obtendo:22 http://http.us.debian.org etch/main whiptail 0.52.2-10 [34,7kB]</p>
+<p>Obtendo:23 http://http.us.debian.org etch/main libgdbm3 1.8.3-3 [22,5kB]</p>
+<p>Obtendo:24 http://http.us.debian.org etch/main defoma 0.11.10-0.1 [100kB]</p>
+<p>Obtendo:25 http://http.us.debian.org etch/main ttf-dejavu 2.15-1 [3488kB]</p>
+<p>Obtendo:26 http://http.us.debian.org etch/main fontconfig-config 2.4.2-1.2 [149kB]</p>
+<p>Obtendo:27 http://http.us.debian.org etch/main libfontconfig1 2.4.2-1.2 [208kB]</p>
+<p>Obtendo:28 http://http.us.debian.org etch/main libxrender1 1:0.9.1-3 [21,1kB]</p>
+<p>Obtendo:29 http://http.us.debian.org etch/main libxft2 2.1.8.2-8 [44,6kB]</p>
+<p>Obtendo:30 http://http.us.debian.org etch/main libice6 1:1.0.1-2 [42,6kB]</p>
+<p>Obtendo:31 http://http.us.debian.org etch/main libsm6 1:1.0.1-3 [18,0kB]</p>
+<p>Obtendo:32 http://http.us.debian.org etch/main libxt6 1:1.0.2-2 [154kB]</p>
+<p>Obtendo:33 http://http.us.debian.org etch/main libvolume-id0 0.105-4 [62,5kB]</p>
+<p>Obtendo:34 http://http.us.debian.org etch/main udev 0.105-4 [263kB]</p>
+<p>Obtendo:35 http://http.us.debian.org etch/main libfs6 2:1.0.0-4 [24,1kB]</p>
+<p>Obtendo:36 http://http.us.debian.org etch/main libdrm2 2.0.2-0.1 [15,2kB]</p>
+<p>Obtendo:37 http://http.us.debian.org etch/main libxext6 1:1.0.1-2 [24,6kB]</p>
+<p>Obtendo:38 http://http.us.debian.org etch/main libxxf86vm1 1:1.0.1-2 [9778B]</p>
+<p>Obtendo:39 http://http.us.debian.org etch/main libgl1-mesa-glx 6.5.1-0.6 [148kB]</p>
+<p>Obtendo:40 http://http.us.debian.org etch/main libpng12-0 1.2.15~beta5-1 [186kB]</p>
+<p>Obtendo:41 http://http.us.debian.org etch/main libxmu6 1:1.0.2-2 [46,7kB]</p>
+<p>Obtendo:42 http://http.us.debian.org etch/main libxpm4 1:3.5.5-2 [34,4kB]</p>
+<p>Obtendo:43 http://http.us.debian.org etch/main libxaw7 1:1.0.2-4 [179kB]</p>
+<p>Obtendo:44 http://http.us.debian.org etch/main libxcursor1 1.1.7-4 [23,8kB]</p>
+<p>Obtendo:45 http://http.us.debian.org etch/main libxi6 1:1.0.1-4 [16,7kB]</p>
+<p>Obtendo:46 http://http.us.debian.org etch/main libxkbfile1 1:1.0.3-2 [67,8kB]</p>
+<p>Obtendo:47 http://http.us.debian.org etch/main libxmuu1 1:1.0.2-2 [8848B]</p>
+<p>Obtendo:48 http://http.us.debian.org etch/main libxrandr2 2:1.1.0.2-5 [7776B]</p>
+<p>Obtendo:49 http://http.us.debian.org etch/main libxss1 1:1.1.0-1 [6702B]</p>
+<p>Obtendo:50 http://http.us.debian.org etch/main libxtrap6 1:1.0.0-4 [16,6kB]</p>
+<p>Obtendo:51 http://http.us.debian.org etch/main libxtst6 1:1.0.1-5 [11,6kB]</p>
+<p>Obtendo:52 http://http.us.debian.org etch/main libxv1 1:1.0.2-1 [10,2kB]</p>
+<p>Obtendo:53 http://http.us.debian.org etch/main libxxf86dga1 2:1.0.1-2 [11,0kB]</p>
+<p>Obtendo:54 http://http.us.debian.org etch/main xbase-clients 1:7.1.ds1-2 [1211kB]</p>
+<p>Obtendo:55 http://http.us.debian.org etch/main xbitmaps 1.0.1-2 [26,6kB]</p>
+<p>Obtendo:56 http://http.us.debian.org etch/main libfontenc1 1:1.0.2-2 [13,1kB]</p>
+<p>Obtendo:57 http://http.us.debian.org etch/main libxfont1 1:1.2.2-2 [218kB]</p>
+<p>Obtendo:58 http://http.us.debian.org etch/main xserver-xorg-video-apm 1:1.1.1-3 [63,3kB]</p>
+<p>Obtendo:59 http://http.us.debian.org etch/main xserver-xorg-video-ark 1:0.6.0-3 [12,5kB]</p>
+<p>Obtendo:60 http://http.us.debian.org etch/main xserver-xorg-video-ati 1:6.6.3-2 [383kB]</p>
+<p>Obtendo:61 http://http.us.debian.org etch/main xserver-xorg-video-chips 1:1.1.1-4 [75,7kB]</p>
+<p>Obtendo:62 http://http.us.debian.org etch/main xserver-xorg-video-cirrus 1:1.1.0-3 [38,3kB]</p>
+<p>Obtendo:63 http://http.us.debian.org etch/main xserver-xorg-video-cyrix 1:1.1.0-4 [17,9kB]</p>
+<p>Obtendo:64 http://http.us.debian.org etch/main xserver-xorg-video-dummy 1:0.2.0-3 [9626B]</p>
+<p>Obtendo:65 http://http.us.debian.org etch/main xserver-xorg-video-fbdev 1:0.3.1-1 [13,5kB]</p>
+<p>Obtendo:66 http://http.us.debian.org etch/main xserver-xorg-video-glint 1:1.1.1-3 [104kB]</p>
+<p>Obtendo:67 http://http.us.debian.org etch/main xserver-xorg-video-i128 1:1.2.0-3 [28,6kB]</p>
+<p>Obtendo:68 http://http.us.debian.org etch/main xserver-xorg-video-i740 1:1.1.0-3 [25,1kB]</p>
+<p>Obtendo:69 http://http.us.debian.org etch/main xserver-xorg-video-i810 2:1.7.2-4 [162kB]</p>
+<p>Obtendo:70 http://http.us.debian.org etch/main xserver-xorg-video-imstt 1:1.1.0-3 [12,7kB]</p>
+<p>Obtendo:71 http://http.us.debian.org etch/main xserver-xorg-video-mga 1:1.4.4.dfsg.1-2 [82,3kB]</p>
+<p>Obtendo:72 http://http.us.debian.org etch/main xserver-xorg-video-neomagic 1:1.1.1-5 [38,6kB]</p>
+<p>Obtendo:73 http://http.us.debian.org etch/main xserver-xorg-video-newport 1:0.2.0-3 [19,2kB]</p>
+<p>Obtendo:74 http://http.us.debian.org etch/main xserver-xorg-video-nsc 1:2.8.1-3 [119kB]</p>
+<p>Obtendo:75 http://http.us.debian.org etch/main xserver-xorg-video-nv 1:1.2.0-3 [67,6kB]</p>
+<p>Obtendo:76 http://http.us.debian.org etch/main xserver-xorg-video-rendition 1:4.1.0.dfsg.1-4 [24,9kB]</p>
+<p>Obtendo:77 http://http.us.debian.org etch/main xserver-xorg-video-s3 1:0.4.1-5 [30,0kB]</p>
+<p>Obtendo:78 http://http.us.debian.org etch/main xserver-xorg-video-s3virge 1:1.9.1-3 [40,5kB]</p>
+<p>Obtendo:79 http://http.us.debian.org etch/main xserver-xorg-video-savage 1:2.1.2-3 [71,2kB]</p>
+<p>Obtendo:80 http://http.us.debian.org etch/main xserver-xorg-video-siliconmotion 1:1.4.1-4 [44,7kB]</p>
+<p>Obtendo:81 http://http.us.debian.org etch/main xserver-xorg-video-sis 1:0.9.1-4 [279kB]</p>
+<p>Obtendo:82 http://http.us.debian.org etch/main xserver-xorg-video-sisusb 1:0.8.1-3 [42,1kB]</p>
+<p>Obtendo:83 http://http.us.debian.org etch/main xserver-xorg-video-tdfx 1:1.3.0-1 [37,2kB]</p>
+<p>Obtendo:84 http://http.us.debian.org etch/main xserver-xorg-video-tga 1:1.1.0-3 [26,7kB]</p>
+<p>Obtendo:85 http://http.us.debian.org etch/main xserver-xorg-video-trident 1:1.2.3-1 [72,6kB]</p>
+<p>Obtendo:86 http://http.us.debian.org etch/main xserver-xorg-video-tseng 1:1.1.0-3 [26,2kB]</p>
+<p>Obtendo:87 http://http.us.debian.org etch/main xserver-xorg-video-vesa 1:1.3.0-1 [15,8kB]</p>
+<p>Obtendo:88 http://http.us.debian.org etch/main xserver-xorg-video-vga 1:4.1.0-3 [13,9kB]</p>
+<p>Obtendo:89 http://http.us.debian.org etch/main xserver-xorg-video-via 1:0.2.1-6 [137kB]</p>
+<p>Obtendo:90 http://http.us.debian.org etch/main xserver-xorg-video-voodoo 1:1.1.0-4 [17,3kB]</p>
+<p>Obtendo:91 http://http.us.debian.org etch/main xserver-xorg-video-vmware 1:10.13.0-3 [22,1kB]</p>
+<p>Obtendo:92 http://http.us.debian.org etch/main xserver-xorg-video-v4l 0.1.1-3 [20,7kB]</p>
+<p>Obtendo:93 http://http.us.debian.org etch/main xserver-xorg-video-all 1:7.1.0-19 [18,7kB]</p>
+<p>Obtendo:94 http://http.us.debian.org etch/main xserver-xorg-input-evdev 1:1.1.2-6 [26,0kB]</p>
+<p>Obtendo:95 http://http.us.debian.org etch/main xserver-xorg-input-kbd 1:1.1.0-4 [13,1kB]</p>
+<p>Obtendo:96 http://http.us.debian.org etch/main xserver-xorg-input-mouse 1:1.1.1-3 [37,1kB]</p>
+<p>Obtendo:97 http://security.debian.org etch/updates/main xserver-xorg-core 2:1.1.1-21etch1 [3654kB]</p>
+<p>Obtendo:98 http://http.us.debian.org etch/main xserver-xorg-input-synaptics 0.14.6-1 [62,9kB]</p>
+<p>Obtendo:99 http://http.us.debian.org etch/main xserver-xorg-input-wacom 0.7.4.1-5 [38,6kB]</p>
+<p>Obtendo:100 http://http.us.debian.org etch/main xserver-xorg-input-all 1:7.1.0-19 [18,6kB]</p>
+<p>Obtendo:101 http://http.us.debian.org etch/main xkb-data 0.9-4 [383kB]</p>
+<p>Obtendo:102 http://http.us.debian.org etch/main xserver-xorg 1:7.1.0-19 [461kB]</p>
+<p>Obtendo:103 http://http.us.debian.org etch/main xfonts-encodings 1:1.0.0-6 [585kB]</p>
+<p>Obtendo:104 http://http.us.debian.org etch/main xfonts-utils 1:1.0.1-1 [64,8kB]</p>
+<p>Obtendo:105 http://http.us.debian.org etch/main cpp-4.1 4.1.1-21 [2331kB]</p>
+<p>Obtendo:106 http://security.debian.org etch/updates/main libkrb53 1.4.4-7etch4 [408kB]</p>
+<p>Obtendo:107 http://http.us.debian.org etch/main cpp 4:4.1.1-15 [11,6kB]</p>
+<p>Obtendo:108 http://http.us.debian.org etch/main xutils-dev 1:7.1.ds-6 [300kB]</p>
+<p>Obtendo:109 http://http.us.debian.org etch/main xutils 1:7.1.ds.3-1 [67,1kB]</p>
+<p>Obtendo:110 http://http.us.debian.org etch/main nbd-client 1:2.8.7-4 [32,1kB]</p>
+<p>Obtendo:111 http://http.us.debian.org etch/main libklibc 1.4.34-1 [43,0kB]</p>
+<p>Obtendo:112 http://http.us.debian.org etch/main klibc-utils 1.4.34-1 [144kB]</p>
+<p>Obtendo:113 http://http.us.debian.org etch/main busybox 1:1.1.3-4 [286kB]</p>
+<p>Obtendo:114 http://http.us.debian.org etch/main initramfs-tools 0.85h [62,7kB]</p>
+<p>Obtendo:115 http://http.us.debian.org etch/main syslinux 1:3.31-4 [325kB]</p>
+<p>Obtendo:116 http://http.us.debian.org etch/main mknbi 1.4.4-1 [75,2kB]</p>
+<p>Obtendo:117 http://http.us.debian.org etch/main python2.4-minimal 2.4.4-3 [901kB]</p>
+<p>Obtendo:118 http://http.us.debian.org etch/main mime-support 3.39-1 [30,9kB]</p>
+<p>Obtendo:119 http://http.us.debian.org etch/main python2.4 2.4.4-3 [2849kB]</p>
+<p>Obtendo:120 http://http.us.debian.org etch/main python-minimal 2.4.4-2 [12,2kB]</p>
+<p>Obtendo:121 http://http.us.debian.org etch/main python 2.4.4-2 [141kB]</p>
+<p>Obtendo:122 http://http.us.debian.org etch/main lsb-release 3.1-23.2etch1 [16,2kB]</p>
+<p>Obtendo:123 http://http.us.debian.org etch/main discover1-data 2.2007.02.02 [156kB]</p>
+<p>Obtendo:124 http://http.us.debian.org etch/main libdiscover1 1.7.19 [100kB]</p>
+<p>Obtendo:125 http://http.us.debian.org etch/main discover1 1.7.19 [69,0kB]</p>
+<p>Obtendo:126 http://http.us.debian.org etch/main xresprobe 0.4.23debian1 [17,8kB]</p>
+<p>Obtendo:127 http://http.us.debian.org etch/main tftp-hpa 0.43-1.1 [22,1kB]</p>
+<p>Obtendo:128 http://http.us.debian.org etch/main console-terminus 4.20-5.1 [319kB]</p>
+<p>Obtendo:129 http://http.us.debian.org etch/main console-setup 1.13 [426kB]</p>
+<p>Obtendo:130 http://http.us.debian.org etch/main lsof 4.77.dfsg.1-3 [205kB]</p>
+<p>Obtendo:131 http://http.us.debian.org etch/main libedit2 2.9.cvs.20050518-2.2 [55,4kB]</p>
+<p>Obtendo:132 http://http.us.debian.org etch/main openssh-client 1:4.3p2-9 [616kB]</p>
+<p>Obtendo:133 http://http.us.debian.org etch/main patch 2.5.9-4 [99,5kB]</p>
+<p>Obtendo:134 http://http.us.debian.org etch/main libpci2 2:2.1.11-3 [27,9kB]</p>
+<p>Obtendo:135 http://http.us.debian.org etch/main pciutils 1:2.2.4~pre4-1 [206kB]</p>
+<p>Obtendo:136 http://http.us.debian.org etch/main libasound2 1.0.13-2 [346kB]</p>
+<p>Obtendo:137 http://http.us.debian.org etch/main linux-sound-base 1.0.13-5 [28,3kB]</p>
+<p>Obtendo:138 http://http.us.debian.org etch/main alsa-utils 1.0.13-2 [1077kB]</p>
+<p>Obtendo:139 http://http.us.debian.org etch/main binutils 2.17-3 [2605kB]</p>
+<p>Obtendo:140 http://http.us.debian.org etch/main dmsetup 2:1.02.08-1 [27,2kB]</p>
+<p>Obtendo:141 http://http.us.debian.org etch/main cryptsetup 2:1.0.4+svn26-1 [273kB]</p>
+<p>Obtendo:142 http://http.us.debian.org etch/main make 3.81-2 [382kB]</p>
+<p>Obtendo:143 http://http.us.debian.org etch/main dpkg-dev 1.13.25 [166kB]</p>
+<p>Obtendo:144 http://http.us.debian.org etch/main fontconfig 2.4.2-1.2 [135kB]</p>
+<p>Obtendo:145 http://http.us.debian.org etch/main libglib2.0-0 2.12.4-2 [504kB]</p>
+<p>Obtendo:146 http://http.us.debian.org etch/main libatk1.0-0 1.12.4-3 [76,0kB]</p>
+<p>Obtendo:147 http://http.us.debian.org etch/main libcairo2 1.2.4-4 [385kB]</p>
+<p>Obtendo:148 http://http.us.debian.org etch/main libgtk2.0-common 2.8.20-7 [3755kB]</p>
+<p>Obtendo:149 http://http.us.debian.org etch/main libjpeg62 6b-13 [87,2kB]</p>
+<p>Obtendo:150 http://http.us.debian.org etch/main libpango1.0-common 1.14.8-5 [6614B]</p>
+<p>Obtendo:151 http://http.us.debian.org etch/main libpango1.0-0 1.14.8-5 [315kB]</p>
+<p>Obtendo:152 http://http.us.debian.org etch/main libtiff4 3.8.2-7 [483kB]</p>
+<p>Obtendo:153 http://http.us.debian.org etch/main libxinerama1 1:1.0.1-4.1 [6046B]</p>
+<p>Obtendo:154 http://http.us.debian.org etch/main libgtk2.0-0 2.8.20-7 [1620kB]</p>
+<p>Obtendo:155 http://http.us.debian.org etch/main gtk2-engines 1:2.8.2-1 [351kB]</p>
+<p>Obtendo:156 http://http.us.debian.org etch/main gtk2-engines-clearlooks 1:2.8.2-1 [76,0kB]</p>
+<p>Obtendo:157 http://http.us.debian.org etch/main libjack0.100.0-0 0.101.1-2 [74,8kB]</p>
+<p>Obtendo:158 http://http.us.debian.org etch/main libasyncns0 0.1-1 [8618B]</p>
+<p>Obtendo:159 http://http.us.debian.org etch/main libpulse0 0.9.5-5 [97,9kB]</p>
+<p>Obtendo:160 http://http.us.debian.org etch/main libsamplerate0 0.1.2-2 [108kB]</p>
+<p>Obtendo:161 http://http.us.debian.org etch/main libasound2-plugins 1.0.13-3 [68,2kB]</p>
+<p>Obtendo:162 http://http.us.debian.org etch/main libflac7 1.1.2-6 [124kB]</p>
+<p>Obtendo:163 http://http.us.debian.org etch/main libglu1-mesa 6.5.1-0.6 [232kB]</p>
+<p>Obtendo:164 http://http.us.debian.org etch/main libltdl3 1.5.22-4 [169kB]</p>
+<p>Obtendo:165 http://http.us.debian.org etch/main liboil0.3 0.3.10-1.1 [144kB]</p>
+<p>Obtendo:166 http://http.us.debian.org etch/main libsndfile1 1.0.16-1 [199kB]</p>
+<p>Obtendo:167 http://http.us.debian.org etch/main mdetect 0.5.2.1 [16,5kB]</p>
+<p>Obtendo:168 http://http.us.debian.org etch/main pulseaudio 0.9.5-5 [298kB]</p>
+<p>Obtendo:169 http://http.us.debian.org etch/main pulseaudio-esound-compat 0.9.5-5 [24,3kB]</p>
+<p>Obtendo:170 http://http.us.debian.org etch/main type-handling 0.2.19 [5800B]</p>
+<p>Obtendo:171 http://http.us.debian.org etch/main xfonts-100dpi 1:1.0.0-3 [3907kB]</p>
+<p>Obtendo:172 http://http.us.debian.org etch/main xfonts-75dpi 1:1.0.0-3 [3471kB]</p>
+<p>Obtendo:173 http://http.us.debian.org etch/main xfonts-base 1:1.0.0-4 [6131kB]</p>
+<p>Obtendo:174 http://http.us.debian.org etch/main xfonts-scalable 1:1.0.0-6 [342kB]</p>
+<p>Obtendo:175 http://http.us.debian.org etch/main libgl1-mesa-dri 6.5.1-0.6 [12,2MB]</p>
+<p>Obtendo:176 http://http.us.debian.org etch/main xterm 222-1etch2 [405kB]</p>
+<p>Obtendo:177 http://http.us.debian.org etch/main xorg 1:7.1.0-19 [18,7kB]</p>
+<p>Baixados 76,0MB em 1h17m1s (16,5kB/s)</p>
+<p>debconf: adiando configuração de pacotes, já que o apt-utils não está instalado</p>
+<p>(Lendo banco de dados ... 6978 arquivos e diretórios atualmente instalados.)</p>
+<p>Preparando para substituir perl-base 5.8.8-7 (usando .../perl-base_5.8.8-7etch1_i386.deb) ...</p>
+<p>Descompactando substituto perl-base ...</p>
+<p>Instalando perl-base (5.8.8-7etch1) ...</p>
+<p>Selecionando pacote previamente não selecionado console-data.</p>
+<p>(Lendo banco de dados ... 6978 arquivos e diretórios atualmente instalados.)</p>
+<p>Descompactando console-data (de .../console-data_2%3a1.01-7_all.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado kbd.</p>
+<p>Descompactando kbd (de .../archives/kbd_1.12-17_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado console-common.</p>
+<p>Descompactando console-common (de .../console-common_0.7.69_all.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado x11-common.</p>
+<p>Descompactando x11-common (de .../x11-common_1%3a7.1.0-19_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libxau6.</p>
+<p>Descompactando libxau6 (de .../libxau6_1%3a1.0.1-2_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libxdmcp6.</p>
+<p>Descompactando libxdmcp6 (de .../libxdmcp6_1%3a1.0.1-2_i386.deb) ...</p>
+<p>Instalando x11-common (7.1.0-19) ...</p>
+<p>Selecionando pacote previamente não selecionado libx11-data.</p>
+<p>(Lendo banco de dados ... 7846 arquivos e diretórios atualmente instalados.)</p>
+<p>Descompactando libx11-data (de .../libx11-data_2%3a1.0.3-7_all.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libx11-6.</p>
+<p>Descompactando libx11-6 (de .../libx11-6_2%3a1.0.3-7_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libxfixes3.</p>
+<p>Descompactando libxfixes3 (de .../libxfixes3_1%3a4.0.1-5_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libexpat1.</p>
+<p>Descompactando libexpat1 (de .../libexpat1_1.95.8-3.4_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libfreetype6.</p>
+<p>Descompactando libfreetype6 (de .../libfreetype6_2.2.1-5+etch1_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado ucf.</p>
+<p>Descompactando ucf (de .../archives/ucf_2.0020_all.deb) ...</p>
+<p>Moving old data out of the way</p>
+<p>Selecionando pacote previamente não selecionado whiptail.</p>
+<p>Descompactando whiptail (de .../whiptail_0.52.2-10_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libmagic1.</p>
+<p>Descompactando libmagic1 (de .../libmagic1_4.17-5etch3_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado file.</p>
+<p>Descompactando file (de .../file_4.17-5etch3_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado perl-modules.</p>
+<p>Descompactando perl-modules (de .../perl-modules_5.8.8-7etch1_all.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libgdbm3.</p>
+<p>Descompactando libgdbm3 (de .../libgdbm3_1.8.3-3_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado perl.</p>
+<p>Descompactando perl (de .../perl_5.8.8-7etch1_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado defoma.</p>
+<p>Descompactando defoma (de .../defoma_0.11.10-0.1_all.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado ttf-dejavu.</p>
+<p>Descompactando ttf-dejavu (de .../ttf-dejavu_2.15-1_all.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado fontconfig-config.</p>
+<p>Descompactando fontconfig-config (de .../fontconfig-config_2.4.2-1.2_all.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libfontconfig1.</p>
+<p>Descompactando libfontconfig1 (de .../libfontconfig1_2.4.2-1.2_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libxrender1.</p>
+<p>Descompactando libxrender1 (de .../libxrender1_1%3a0.9.1-3_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libxft2.</p>
+<p>Descompactando libxft2 (de .../libxft2_2.1.8.2-8_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libice6.</p>
+<p>Descompactando libice6 (de .../libice6_1%3a1.0.1-2_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libsm6.</p>
+<p>Descompactando libsm6 (de .../libsm6_1%3a1.0.1-3_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libxt6.</p>
+<p>Descompactando libxt6 (de .../libxt6_1%3a1.0.2-2_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libvolume-id0.</p>
+<p>Descompactando libvolume-id0 (de .../libvolume-id0_0.105-4_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado udev.</p>
+<p>Descompactando udev (de .../archives/udev_0.105-4_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libfs6.</p>
+<p>Descompactando libfs6 (de .../libfs6_2%3a1.0.0-4_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libdrm2.</p>
+<p>Descompactando libdrm2 (de .../libdrm2_2.0.2-0.1_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libxext6.</p>
+<p>Descompactando libxext6 (de .../libxext6_1%3a1.0.1-2_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libxxf86vm1.</p>
+<p>Descompactando libxxf86vm1 (de .../libxxf86vm1_1%3a1.0.1-2_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libgl1-mesa-glx.</p>
+<p>Descompactando libgl1-mesa-glx (de .../libgl1-mesa-glx_6.5.1-0.6_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libpng12-0.</p>
+<p>Descompactando libpng12-0 (de .../libpng12-0_1.2.15~beta5-1_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libxmu6.</p>
+<p>Descompactando libxmu6 (de .../libxmu6_1%3a1.0.2-2_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libxpm4.</p>
+<p>Descompactando libxpm4 (de .../libxpm4_1%3a3.5.5-2_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libxaw7.</p>
+<p>Descompactando libxaw7 (de .../libxaw7_1%3a1.0.2-4_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libxcursor1.</p>
+<p>Descompactando libxcursor1 (de .../libxcursor1_1.1.7-4_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libxi6.</p>
+<p>Descompactando libxi6 (de .../libxi6_1%3a1.0.1-4_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libxkbfile1.</p>
+<p>Descompactando libxkbfile1 (de .../libxkbfile1_1%3a1.0.3-2_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libxmuu1.</p>
+<p>Descompactando libxmuu1 (de .../libxmuu1_1%3a1.0.2-2_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libxrandr2.</p>
+<p>Descompactando libxrandr2 (de .../libxrandr2_2%3a1.1.0.2-5_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libxss1.</p>
+<p>Descompactando libxss1 (de .../libxss1_1%3a1.1.0-1_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libxtrap6.</p>
+<p>Descompactando libxtrap6 (de .../libxtrap6_1%3a1.0.0-4_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libxtst6.</p>
+<p>Descompactando libxtst6 (de .../libxtst6_1%3a1.0.1-5_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libxv1.</p>
+<p>Descompactando libxv1 (de .../libxv1_1%3a1.0.2-1_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libxxf86dga1.</p>
+<p>Descompactando libxxf86dga1 (de .../libxxf86dga1_2%3a1.0.1-2_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xbase-clients.</p>
+<p>Descompactando xbase-clients (de .../xbase-clients_1%3a7.1.ds1-2_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xbitmaps.</p>
+<p>Descompactando xbitmaps (de .../xbitmaps_1.0.1-2_all.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libfontenc1.</p>
+<p>Descompactando libfontenc1 (de .../libfontenc1_1%3a1.0.2-2_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libxfont1.</p>
+<p>Descompactando libxfont1 (de .../libxfont1_1%3a1.2.2-2_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xserver-xorg-core.</p>
+<p>Descompactando xserver-xorg-core (de .../xserver-xorg-core_2%3a1.1.1-21etch1_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xserver-xorg-video-apm.</p>
+<p>Descompactando xserver-xorg-video-apm (de .../xserver-xorg-video-apm_1%3a1.1.1-3_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xserver-xorg-video-ark.</p>
+<p>Descompactando xserver-xorg-video-ark (de .../xserver-xorg-video-ark_1%3a0.6.0-3_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xserver-xorg-video-ati.</p>
+<p>Descompactando xserver-xorg-video-ati (de .../xserver-xorg-video-ati_1%3a6.6.3-2_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xserver-xorg-video-chips.</p>
+<p>Descompactando xserver-xorg-video-chips (de .../xserver-xorg-video-chips_1%3a1.1.1-4_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xserver-xorg-video-cirrus.</p>
+<p>Descompactando xserver-xorg-video-cirrus (de .../xserver-xorg-video-cirrus_1%3a1.1.0-3_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xserver-xorg-video-cyrix.</p>
+<p>Descompactando xserver-xorg-video-cyrix (de .../xserver-xorg-video-cyrix_1%3a1.1.0-4_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xserver-xorg-video-dummy.</p>
+<p>Descompactando xserver-xorg-video-dummy (de .../xserver-xorg-video-dummy_1%3a0.2.0-3_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xserver-xorg-video-fbdev.</p>
+<p>Descompactando xserver-xorg-video-fbdev (de .../xserver-xorg-video-fbdev_1%3a0.3.1-1_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xserver-xorg-video-glint.</p>
+<p>Descompactando xserver-xorg-video-glint (de .../xserver-xorg-video-glint_1%3a1.1.1-3_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xserver-xorg-video-i128.</p>
+<p>Descompactando xserver-xorg-video-i128 (de .../xserver-xorg-video-i128_1%3a1.2.0-3_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xserver-xorg-video-i740.</p>
+<p>Descompactando xserver-xorg-video-i740 (de .../xserver-xorg-video-i740_1%3a1.1.0-3_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xserver-xorg-video-i810.</p>
+<p>Descompactando xserver-xorg-video-i810 (de .../xserver-xorg-video-i810_2%3a1.7.2-4_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xserver-xorg-video-imstt.</p>
+<p>Descompactando xserver-xorg-video-imstt (de .../xserver-xorg-video-imstt_1%3a1.1.0-3_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xserver-xorg-video-mga.</p>
+<p>Descompactando xserver-xorg-video-mga (de .../xserver-xorg-video-mga_1%3a1.4.4.dfsg.1-2_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xserver-xorg-video-neomagic.</p>
+<p>Descompactando xserver-xorg-video-neomagic (de .../xserver-xorg-video-neomagic_1%3a1.1.1-5_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xserver-xorg-video-newport.</p>
+<p>Descompactando xserver-xorg-video-newport (de .../xserver-xorg-video-newport_1%3a0.2.0-3_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xserver-xorg-video-nsc.</p>
+<p>Descompactando xserver-xorg-video-nsc (de .../xserver-xorg-video-nsc_1%3a2.8.1-3_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xserver-xorg-video-nv.</p>
+<p>Descompactando xserver-xorg-video-nv (de .../xserver-xorg-video-nv_1%3a1.2.0-3_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xserver-xorg-video-rendition.</p>
+<p>Descompactando xserver-xorg-video-rendition (de .../xserver-xorg-video-rendition_1%3a4.1.0.dfsg.1-4_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xserver-xorg-video-s3.</p>
+<p>Descompactando xserver-xorg-video-s3 (de .../xserver-xorg-video-s3_1%3a0.4.1-5_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xserver-xorg-video-s3virge.</p>
+<p>Descompactando xserver-xorg-video-s3virge (de .../xserver-xorg-video-s3virge_1%3a1.9.1-3_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xserver-xorg-video-savage.</p>
+<p>Descompactando xserver-xorg-video-savage (de .../xserver-xorg-video-savage_1%3a2.1.2-3_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xserver-xorg-video-siliconmotion.</p>
+<p>Descompactando xserver-xorg-video-siliconmotion (de .../xserver-xorg-video-siliconmotion_1%3a1.4.1-4_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xserver-xorg-video-sis.</p>
+<p>Descompactando xserver-xorg-video-sis (de .../xserver-xorg-video-sis_1%3a0.9.1-4_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xserver-xorg-video-sisusb.</p>
+<p>Descompactando xserver-xorg-video-sisusb (de .../xserver-xorg-video-sisusb_1%3a0.8.1-3_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xserver-xorg-video-tdfx.</p>
+<p>Descompactando xserver-xorg-video-tdfx (de .../xserver-xorg-video-tdfx_1%3a1.3.0-1_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xserver-xorg-video-tga.</p>
+<p>Descompactando xserver-xorg-video-tga (de .../xserver-xorg-video-tga_1%3a1.1.0-3_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xserver-xorg-video-trident.</p>
+<p>Descompactando xserver-xorg-video-trident (de .../xserver-xorg-video-trident_1%3a1.2.3-1_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xserver-xorg-video-tseng.</p>
+<p>Descompactando xserver-xorg-video-tseng (de .../xserver-xorg-video-tseng_1%3a1.1.0-3_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xserver-xorg-video-vesa.</p>
+<p>Descompactando xserver-xorg-video-vesa (de .../xserver-xorg-video-vesa_1%3a1.3.0-1_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xserver-xorg-video-vga.</p>
+<p>Descompactando xserver-xorg-video-vga (de .../xserver-xorg-video-vga_1%3a4.1.0-3_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xserver-xorg-video-via.</p>
+<p>Descompactando xserver-xorg-video-via (de .../xserver-xorg-video-via_1%3a0.2.1-6_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xserver-xorg-video-voodoo.</p>
+<p>Descompactando xserver-xorg-video-voodoo (de .../xserver-xorg-video-voodoo_1%3a1.1.0-4_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xserver-xorg-video-vmware.</p>
+<p>Descompactando xserver-xorg-video-vmware (de .../xserver-xorg-video-vmware_1%3a10.13.0-3_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xserver-xorg-video-v4l.</p>
+<p>Descompactando xserver-xorg-video-v4l (de .../xserver-xorg-video-v4l_0.1.1-3_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xserver-xorg-video-all.</p>
+<p>Descompactando xserver-xorg-video-all (de .../xserver-xorg-video-all_1%3a7.1.0-19_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xserver-xorg-input-evdev.</p>
+<p>Descompactando xserver-xorg-input-evdev (de .../xserver-xorg-input-evdev_1%3a1.1.2-6_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xserver-xorg-input-kbd.</p>
+<p>Descompactando xserver-xorg-input-kbd (de .../xserver-xorg-input-kbd_1%3a1.1.0-4_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xserver-xorg-input-mouse.</p>
+<p>Descompactando xserver-xorg-input-mouse (de .../xserver-xorg-input-mouse_1%3a1.1.1-3_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xserver-xorg-input-synaptics.</p>
+<p>Descompactando xserver-xorg-input-synaptics (de .../xserver-xorg-input-synaptics_0.14.6-1_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xserver-xorg-input-wacom.</p>
+<p>Descompactando xserver-xorg-input-wacom (de .../xserver-xorg-input-wacom_0.7.4.1-5_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xserver-xorg-input-all.</p>
+<p>Descompactando xserver-xorg-input-all (de .../xserver-xorg-input-all_1%3a7.1.0-19_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xkb-data.</p>
+<p>Descompactando xkb-data (de .../xkb-data_0.9-4_all.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xserver-xorg.</p>
+<p>Descompactando xserver-xorg (de .../xserver-xorg_1%3a7.1.0-19_all.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xfonts-encodings.</p>
+<p>Descompactando xfonts-encodings (de .../xfonts-encodings_1%3a1.0.0-6_all.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xfonts-utils.</p>
+<p>Descompactando xfonts-utils (de .../xfonts-utils_1%3a1.0.1-1_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado cpp-4.1.</p>
+<p>Descompactando cpp-4.1 (de .../cpp-4.1_4.1.1-21_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado cpp.</p>
+<p>Descompactando cpp (de .../cpp_4%3a4.1.1-15_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xutils-dev.</p>
+<p>Descompactando xutils-dev (de .../xutils-dev_1%3a7.1.ds-6_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xutils.</p>
+<p>Descompactando xutils (de .../xutils_1%3a7.1.ds.3-1_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado nbd-client.</p>
+<p>Descompactando nbd-client (de .../nbd-client_1%3a2.8.7-4_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libklibc.</p>
+<p>Descompactando libklibc (de .../libklibc_1.4.34-1_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado klibc-utils.</p>
+<p>Descompactando klibc-utils (de .../klibc-utils_1.4.34-1_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado busybox.</p>
+<p>Descompactando busybox (de .../busybox_1%3a1.1.3-4_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado initramfs-tools.</p>
+<p>Descompactando initramfs-tools (de .../initramfs-tools_0.85h_all.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado syslinux.</p>
+<p>Descompactando syslinux (de .../syslinux_1%3a3.31-4_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado mknbi.</p>
+<p>Descompactando mknbi (de .../mknbi_1.4.4-1_i386.deb) ...</p>
+<p>Adicionado `diversion of /usr/bin/mknbi-linux to /usr/bin/mknbi-linux.netboot by mknbi'</p>
+<p>Adicionado `diversion of /usr/bin/mknbi-dos to /usr/bin/mknbi-dos.netboot by mknbi'</p>
+<p>Adicionado `diversion of /usr/bin/mknbi-mgl to /usr/bin/mknbi-mgl.netboot by mknbi'</p>
+<p>Selecionando pacote previamente não selecionado python2.4-minimal.</p>
+<p>Descompactando python2.4-minimal (de .../python2.4-minimal_2.4.4-3_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado mime-support.</p>
+<p>Descompactando mime-support (de .../mime-support_3.39-1_all.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado python2.4.</p>
+<p>Descompactando python2.4 (de .../python2.4_2.4.4-3_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado python-minimal.</p>
+<p>Descompactando python-minimal (de .../python-minimal_2.4.4-2_all.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado python.</p>
+<p>Descompactando python (de .../python_2.4.4-2_all.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado lsb-release.</p>
+<p>Descompactando lsb-release (de .../lsb-release_3.1-23.2etch1_all.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado discover1-data.</p>
+<p>Descompactando discover1-data (de .../discover1-data_2.2007.02.02_all.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libdiscover1.</p>
+<p>Descompactando libdiscover1 (de .../libdiscover1_1.7.19_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado discover1.</p>
+<p>Descompactando discover1 (de .../discover1_1.7.19_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xresprobe.</p>
+<p>Descompactando xresprobe (de .../xresprobe_0.4.23debian1_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado tftp-hpa.</p>
+<p>Descompactando tftp-hpa (de .../tftp-hpa_0.43-1.1_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado console-terminus.</p>
+<p>Descompactando console-terminus (de .../console-terminus_4.20-5.1_all.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado console-setup.</p>
+<p>Descompactando console-setup (de .../console-setup_1.13_all.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado ltsp-client-core.</p>
+<p>Descompactando ltsp-client-core (de .../ltsp-client-core_5.0.31debian2~0.etch.1_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libkrb53.</p>
+<p>Descompactando libkrb53 (de .../libkrb53_1.4.4-7etch4_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado lsof.</p>
+<p>Descompactando lsof (de .../lsof_4.77.dfsg.1-3_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libedit2.</p>
+<p>Descompactando libedit2 (de .../libedit2_2.9.cvs.20050518-2.2_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado openssh-client.</p>
+<p>Descompactando openssh-client (de .../openssh-client_1%3a4.3p2-9_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado patch.</p>
+<p>Descompactando patch (de .../patch_2.5.9-4_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libpci2.</p>
+<p>Descompactando libpci2 (de .../libpci2_2%3a2.1.11-3_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado pciutils.</p>
+<p>Descompactando pciutils (de .../pciutils_1%3a2.2.4~pre4-1_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libasound2.</p>
+<p>Descompactando libasound2 (de .../libasound2_1.0.13-2_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado linux-sound-base.</p>
+<p>Descompactando linux-sound-base (de .../linux-sound-base_1.0.13-5_all.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado alsa-utils.</p>
+<p>Descompactando alsa-utils (de .../alsa-utils_1.0.13-2_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado binutils.</p>
+<p>Descompactando binutils (de .../binutils_2.17-3_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado dmsetup.</p>
+<p>Descompactando dmsetup (de .../dmsetup_2%3a1.02.08-1_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado cryptsetup.</p>
+<p>Descompactando cryptsetup (de .../cryptsetup_2%3a1.0.4+svn26-1_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado make.</p>
+<p>Descompactando make (de .../archives/make_3.81-2_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado dpkg-dev.</p>
+<p>Descompactando dpkg-dev (de .../dpkg-dev_1.13.25_all.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado fontconfig.</p>
+<p>Descompactando fontconfig (de .../fontconfig_2.4.2-1.2_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libglib2.0-0.</p>
+<p>Descompactando libglib2.0-0 (de .../libglib2.0-0_2.12.4-2_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libatk1.0-0.</p>
+<p>Descompactando libatk1.0-0 (de .../libatk1.0-0_1.12.4-3_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libcairo2.</p>
+<p>Descompactando libcairo2 (de .../libcairo2_1.2.4-4_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libgtk2.0-common.</p>
+<p>Descompactando libgtk2.0-common (de .../libgtk2.0-common_2.8.20-7_all.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libjpeg62.</p>
+<p>Descompactando libjpeg62 (de .../libjpeg62_6b-13_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libpango1.0-common.</p>
+<p>Descompactando libpango1.0-common (de .../libpango1.0-common_1.14.8-5_all.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libpango1.0-0.</p>
+<p>Descompactando libpango1.0-0 (de .../libpango1.0-0_1.14.8-5_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libtiff4.</p>
+<p>Descompactando libtiff4 (de .../libtiff4_3.8.2-7_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libxinerama1.</p>
+<p>Descompactando libxinerama1 (de .../libxinerama1_1%3a1.0.1-4.1_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libgtk2.0-0.</p>
+<p>Descompactando libgtk2.0-0 (de .../libgtk2.0-0_2.8.20-7_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado gtk2-engines.</p>
+<p>Descompactando gtk2-engines (de .../gtk2-engines_1%3a2.8.2-1_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado gtk2-engines-clearlooks.</p>
+<p>Descompactando gtk2-engines-clearlooks (de .../gtk2-engines-clearlooks_1%3a2.8.2-1_all.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libjack0.100.0-0.</p>
+<p>Descompactando libjack0.100.0-0 (de .../libjack0.100.0-0_0.101.1-2_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libasyncns0.</p>
+<p>Descompactando libasyncns0 (de .../libasyncns0_0.1-1_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libpulse0.</p>
+<p>Descompactando libpulse0 (de .../libpulse0_0.9.5-5_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libsamplerate0.</p>
+<p>Descompactando libsamplerate0 (de .../libsamplerate0_0.1.2-2_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libasound2-plugins.</p>
+<p>Descompactando libasound2-plugins (de .../libasound2-plugins_1.0.13-3_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libflac7.</p>
+<p>Descompactando libflac7 (de .../libflac7_1.1.2-6_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libglu1-mesa.</p>
+<p>Descompactando libglu1-mesa (de .../libglu1-mesa_6.5.1-0.6_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libltdl3.</p>
+<p>Descompactando libltdl3 (de .../libltdl3_1.5.22-4_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado liboil0.3.</p>
+<p>Descompactando liboil0.3 (de .../liboil0.3_0.3.10-1.1_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libsndfile1.</p>
+<p>Descompactando libsndfile1 (de .../libsndfile1_1.0.16-1_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado ltspfsd.</p>
+<p>Descompactando ltspfsd (de .../ltspfsd_0.5+debian1~0.fg.1_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado mdetect.</p>
+<p>Descompactando mdetect (de .../mdetect_0.5.2.1_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado pulseaudio.</p>
+<p>Descompactando pulseaudio (de .../pulseaudio_0.9.5-5_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado pulseaudio-esound-compat.</p>
+<p>Descompactando pulseaudio-esound-compat (de .../pulseaudio-esound-compat_0.9.5-5_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado type-handling.</p>
+<p>Descompactando type-handling (de .../type-handling_0.2.19_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xfonts-100dpi.</p>
+<p>Descompactando xfonts-100dpi (de .../xfonts-100dpi_1%3a1.0.0-3_all.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xfonts-75dpi.</p>
+<p>Descompactando xfonts-75dpi (de .../xfonts-75dpi_1%3a1.0.0-3_all.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xfonts-base.</p>
+<p>Descompactando xfonts-base (de .../xfonts-base_1%3a1.0.0-4_all.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xfonts-scalable.</p>
+<p>Descompactando xfonts-scalable (de .../xfonts-scalable_1%3a1.0.0-6_all.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado libgl1-mesa-dri.</p>
+<p>Descompactando libgl1-mesa-dri (de .../libgl1-mesa-dri_6.5.1-0.6_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xterm.</p>
+<p>Descompactando xterm (de .../xterm_222-1etch2_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado xorg.</p>
+<p>Descompactando xorg (de .../xorg_1%3a7.1.0-19_all.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado ldm.</p>
+<p>Descompactando ldm (de .../ldm_5.0.31debian2~0.etch.1_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado ltsp-client.</p>
+<p>Descompactando ltsp-client (de .../ltsp-client_5.0.31debian2~0.etch.1_all.deb) ...</p>
+<p>Instalando console-data (1.01-7) ...</p>
+<p>Looking for keymap to install:</p>
+<p>NONE</p>
+<p>Instalando libxau6 (1.0.1-2) ...</p>
+<p>Instalando libxdmcp6 (1.0.1-2) ...</p>
+<p>Instalando libx11-data (1.0.3-7) ...</p>
+<p>Instalando libx11-6 (1.0.3-7) ...</p>
+<p>Instalando libxfixes3 (4.0.1-5) ...</p>
+<p>Instalando libexpat1 (1.95.8-3.4) ...</p>
+<p>Instalando libfreetype6 (2.2.1-5+etch1) ...</p>
+<p>Instalando ucf (2.0020) ...</p>
+<p>Instalando whiptail (0.52.2-10) ...</p>
+<p>Instalando libmagic1 (4.17-5etch3) ...</p>
+<p>Instalando file (4.17-5etch3) ...</p>
+<p>Instalando libgdbm3 (1.8.3-3) ...</p>
+<p>Instalando libxrender1 (0.9.1-3) ...</p>
+<p>Instalando libice6 (1.0.1-2) ...</p>
+<p>Instalando libsm6 (1.0.1-3) ...</p>
+<p>Instalando libxt6 (1.0.2-2) ...</p>
+<p>Instalando libvolume-id0 (0.105-4) ...</p>
+<p>Instalando udev (0.105-4) ...</p>
+<p>/sys/class/net/ is not available, persistent interface names not saved.</p>
+<p>A chroot environment has been detected, udev not started.</p>
+<p>Instalando libfs6 (1.0.0-4) ...</p>
+<p>Instalando libdrm2 (2.0.2-0.1) ...</p>
+<p>Instalando libxext6 (1.0.1-2) ...</p>
+<p>Instalando libxxf86vm1 (1.0.1-2) ...</p>
+<p>Instalando libgl1-mesa-glx (6.5.1-0.6) ...</p>
+<p>Instalando libpng12-0 (1.2.15~beta5-1) ...</p>
+<p>Instalando libxmu6 (1.0.2-2) ...</p>
+<p>Instalando libxpm4 (3.5.5-2) ...</p>
+<p>Instalando libxaw7 (1.0.2-4) ...</p>
+<p>Instalando libxcursor1 (1.1.7-4) ...</p>
+<p>Instalando libxi6 (1.0.1-4) ...</p>
+<p>Instalando libxkbfile1 (1.0.3-2) ...</p>
+<p>Instalando libxmuu1 (1.0.2-2) ...</p>
+<p>Instalando libxrandr2 (1.1.0.2-5) ...</p>
+<p>Instalando libxss1 (1.1.0-1) ...</p>
+<p>Instalando libxtrap6 (1.0.0-4) ...</p>
+<p>Instalando libxtst6 (1.0.1-5) ...</p>
+<p>Instalando libxv1 (1.0.2-1) ...</p>
+<p>Instalando libxxf86dga1 (1.0.1-2) ...</p>
+<p>Instalando xbitmaps (1.0.1-2) ...</p>
+<p>Instalando libfontenc1 (1.0.2-2) ...</p>
+<p>Instalando libxfont1 (1.2.2-2) ...</p>
+<p>Instalando xserver-xorg-input-wacom (0.7.4.1-5) ...</p>
+<p>Instalando xkb-data (0.9-4) ...</p>
+<p>Instalando xfonts-encodings (1.0.0-6) ...</p>
+<p>Instalando xfonts-utils (1.0.1-1) ...</p>
+<p>Instalando cpp-4.1 (4.1.1-21) ...</p>
+<p>Instalando cpp (4.1.1-15) ...</p>
+<p>Instalando xutils-dev (7.1.ds-6) ...</p>
+<p>Instalando xutils (7.1.ds.3-1) ...</p>
+<p>Instalando nbd-client (2.8.7-4) ...</p>
+<p>Instalando libklibc (1.4.34-1) ...</p>
+<p>Instalando klibc-utils (1.4.34-1) ...</p>
+<p>Instalando busybox (1.1.3-4) ...</p>
+<p>Instalando initramfs-tools (0.85h) ...</p>
+<p>Instalando syslinux (3.31-4) ...</p>
+<p>Instalando python2.4-minimal (2.4.4-3) ...</p>
+<p>Instalando mime-support (3.39-1) ...</p>
+<p>Instalando python2.4 (2.4.4-3) ...</p>
+<p>Instalando python-minimal (2.4.4-2) ...</p>
+<p>Instalando python (2.4.4-2) ...</p>
+<p>Instalando lsb-release (3.1-23.2etch1) ...</p>
+<p>Instalando discover1-data (2.2007.02.02) ...</p>
+<p>Instalando libdiscover1 (1.7.19) ...</p>
+<p>Instalando discover1 (1.7.19) ...</p>
+<p>Instalando xresprobe (0.4.23debian1) ...</p>
+<p>Instalando tftp-hpa (0.43-1.1) ...</p>
+<p>Instalando libkrb53 (1.4.4-7etch4) ...</p>
+<p>Instalando lsof (4.77.dfsg.1-3) ...</p>
+<p>Instalando libedit2 (2.9.cvs.20050518-2.2) ...</p>
+<p>Instalando openssh-client (4.3p2-9) ...</p>
+<p>Instalando patch (2.5.9-4) ...</p>
+<p>Instalando libpci2 (2.1.11-3) ...</p>
+<p>Instalando pciutils (2.2.4~pre4-1) ...</p>
+<p>Instalando libasound2 (1.0.13-2) ...</p>
+<p>Instalando linux-sound-base (1.0.13-5) ...</p>
+<p>Instalando alsa-utils (1.0.13-2) ...</p>
+<p>Instalando binutils (2.17-3) ...</p>
+<p>Instalando dmsetup (1.02.08-1) ...</p>
+<p>Instalando cryptsetup (1.0.4+svn26-1) ...</p>
+<p>Instalando make (3.81-2) ...</p>
+<p>Instalando libglib2.0-0 (2.12.4-2) ...</p>
+<p>Instalando libatk1.0-0 (1.12.4-3) ...</p>
+<p>Instalando libgtk2.0-common (2.8.20-7) ...</p>
+<p>Instalando libjpeg62 (6b-13) ...</p>
+<p>Instalando libtiff4 (3.8.2-7) ...</p>
+<p>Instalando libxinerama1 (1.0.1-4.1) ...</p>
+<p>Instalando libjack0.100.0-0 (0.101.1-2) ...</p>
+<p>Instalando libasyncns0 (0.1-1) ...</p>
+<p>Instalando libpulse0 (0.9.5-5) ...</p>
+<p>Instalando libsamplerate0 (0.1.2-2) ...</p>
+<p>Instalando libasound2-plugins (1.0.13-3) ...</p>
+<p>Instalando libflac7 (1.1.2-6) ...</p>
+<p>Instalando libglu1-mesa (6.5.1-0.6) ...</p>
+<p>Instalando libltdl3 (1.5.22-4) ...</p>
+<p>Instalando liboil0.3 (0.3.10-1.1) ...</p>
+<p>Instalando libsndfile1 (1.0.16-1) ...</p>
+<p>Instalando ltspfsd (0.5+debian1~0.fg.1) ...</p>
+<p>Instalando mdetect (0.5.2.1) ...</p>
+<p>Instalando pulseaudio (0.9.5-5) ...</p>
+<p>Instalando pulseaudio-esound-compat (0.9.5-5) ...</p>
+<p>Instalando xfonts-100dpi (1.0.0-3) ...</p>
+<p>warning: /usr/lib/X11/fonts/100dpi does not exist or is not a directory</p>
+<p>warning: /usr/lib/X11/fonts/100dpi does not exist or is not a directory</p>
+<p>Instalando xfonts-75dpi (1.0.0-3) ...</p>
+<p>warning: /usr/lib/X11/fonts/75dpi does not exist or is not a directory</p>
+<p>warning: /usr/lib/X11/fonts/75dpi does not exist or is not a directory</p>
+<p>Instalando xfonts-base (1.0.0-4) ...</p>
+<p>warning: /usr/lib/X11/fonts/misc does not exist or is not a directory</p>
+<p>warning: /usr/lib/X11/fonts/misc does not exist or is not a directory</p>
+<p>Instalando xfonts-scalable (1.0.0-6) ...</p>
+<p>warning: /usr/lib/X11/fonts/Type1 does not exist or is not a directory</p>
+<p>warning: /usr/lib/X11/fonts/Type1 does not exist or is not a directory</p>
+<p>Updating font configuration of fontconfig...</p>
+<p>Cleaning up category cid..</p>
+<p>Cleaning up category truetype..</p>
+<p>Cleaning up category type1..</p>
+<p>Updating category type1..</p>
+<p>Updating category truetype..</p>
+<p>Updating category cid..</p>
+<p>warning: /etc/X11/fonts/X11R7/Type1 does not exist or is not a directory</p>
+<p>warning: /usr/lib/X11/fonts/Type1 does not exist or is not a directory</p>
+<p>warning: /etc/X11/fonts/X11R7/Type1 does not exist or is not a directory</p>
+<p>warning: /usr/lib/X11/fonts/Type1 does not exist or is not a directory</p>
+<p>Instalando libgl1-mesa-dri (6.5.1-0.6) ...</p>
+<p>Instalando console-common (0.7.69) ...</p>
+<p>Looking for keymap to install:</p>
+<p>NONE</p>
+<p>Instalando kbd (1.12-17) ...</p>
+<p>Instalando perl-modules (5.8.8-7etch1) ...</p>
+<p>Instalando xserver-xorg-core (1.1.1-21etch1) ...</p>
+<p>Instalando console-terminus (4.20-5.1) ...</p>
+<p>Instalando console-setup (1.13) ...</p>
+<p>Instalando perl (5.8.8-7etch1) ...</p>
+<p>Instalando defoma (0.11.10-0.1) ...</p>
+<p>Instalando ttf-dejavu (2.15-1) ...</p>
+<p>Fontconfig error: Cannot load default config file</p>
+<p>Instalando fontconfig-config (2.4.2-1.2) ...</p>
+<p>Instalando libfontconfig1 (2.4.2-1.2) ...</p>
+<p>Instalando libxft2 (2.1.8.2-8) ...</p>
+<p>Instalando xbase-clients (7.1.ds1-2) ...</p>
+<p>Instalando xserver-xorg-video-apm (1.1.1-3) ...</p>
+<p>Instalando xserver-xorg-video-ark (0.6.0-3) ...</p>
+<p>Instalando xserver-xorg-video-ati (6.6.3-2) ...</p>
+<p>Instalando xserver-xorg-video-chips (1.1.1-4) ...</p>
+<p>Instalando xserver-xorg-video-cirrus (1.1.0-3) ...</p>
+<p>Instalando xserver-xorg-video-cyrix (1.1.0-4) ...</p>
+<p>Instalando xserver-xorg-video-dummy (0.2.0-3) ...</p>
+<p>Instalando xserver-xorg-video-fbdev (0.3.1-1) ...</p>
+<p>Instalando xserver-xorg-video-glint (1.1.1-3) ...</p>
+<p>Instalando xserver-xorg-video-i128 (1.2.0-3) ...</p>
+<p>Instalando xserver-xorg-video-i740 (1.1.0-3) ...</p>
+<p>Instalando xserver-xorg-video-i810 (1.7.2-4) ...</p>
+<p>Instalando xserver-xorg-video-imstt (1.1.0-3) ...</p>
+<p>Instalando xserver-xorg-video-mga (1.4.4.dfsg.1-2) ...</p>
+<p>Instalando xserver-xorg-video-neomagic (1.1.1-5) ...</p>
+<p>Instalando xserver-xorg-video-newport (0.2.0-3) ...</p>
+<p>Instalando xserver-xorg-video-nsc (2.8.1-3) ...</p>
+<p>Instalando xserver-xorg-video-nv (1.2.0-3) ...</p>
+<p>Instalando xserver-xorg-video-rendition (4.1.0.dfsg.1-4) ...</p>
+<p>Instalando xserver-xorg-video-s3 (0.4.1-5) ...</p>
+<p>Instalando xserver-xorg-video-s3virge (1.9.1-3) ...</p>
+<p>Instalando xserver-xorg-video-savage (2.1.2-3) ...</p>
+<p>Instalando xserver-xorg-video-siliconmotion (1.4.1-4) ...</p>
+<p>Instalando xserver-xorg-video-sis (0.9.1-4) ...</p>
+<p>Instalando xserver-xorg-video-sisusb (0.8.1-3) ...</p>
+<p>Instalando xserver-xorg-video-tdfx (1.3.0-1) ...</p>
+<p>Instalando xserver-xorg-video-tga (1.1.0-3) ...</p>
+<p>Instalando xserver-xorg-video-trident (1.2.3-1) ...</p>
+<p>Instalando xserver-xorg-video-tseng (1.1.0-3) ...</p>
+<p>Instalando xserver-xorg-video-vesa (1.3.0-1) ...</p>
+<p>Instalando xserver-xorg-video-vga (4.1.0-3) ...</p>
+<p>Instalando xserver-xorg-video-via (0.2.1-6) ...</p>
+<p>Instalando xserver-xorg-video-voodoo (1.1.0-4) ...</p>
+<p>Instalando xserver-xorg-video-vmware (10.13.0-3) ...</p>
+<p>Instalando xserver-xorg-video-v4l (0.1.1-3) ...</p>
+<p>Instalando xserver-xorg-video-all (7.1.0-19) ...</p>
+<p>Instalando xserver-xorg-input-evdev (1.1.2-6) ...</p>
+<p>Instalando xserver-xorg-input-kbd (1.1.0-4) ...</p>
+<p>Instalando xserver-xorg-input-mouse (1.1.1-3) ...</p>
+<p>Instalando xserver-xorg-input-synaptics (0.14.6-1) ...</p>
+<p>Instalando xserver-xorg-input-all (7.1.0-19) ...</p>
+<p>Instalando xserver-xorg (7.1.0-19) ...</p>
+<p>Instalando mknbi (1.4.4-1) ...</p>
+<p>Instalando ltsp-client-core (5.0.31debian2~0.etch.1) ...</p>
+<p>Instalando dpkg-dev (1.13.25) ...</p>
+<p>Instalando fontconfig (2.4.2-1.2) ...</p>
+<p>Updating font configuration of fontconfig...</p>
+<p>Cleaning up category cid..</p>
+<p>Cleaning up category truetype..</p>
+<p>Cleaning up category type1..</p>
+<p>Updating category type1..</p>
+<p>Updating category truetype..</p>
+<p>Updating category cid..</p>
+<p>Cleaning up old fontconfig caches... done.</p>
+<p>Regenerating fonts cache... done.</p>
+<p>Instalando libcairo2 (1.2.4-4) ...</p>
+<p>Instalando libpango1.0-common (1.14.8-5) ...</p>
+<p>I: Purging /etc/pango/pango.modules</p>
+<p>Cleaning up font configuration of pango...</p>
+<p>Updating font configuration of pango...</p>
+<p>Cleaning up category xfont..</p>
+<p>Updating category xfont..</p>
+<ul>
+<li>You don't have any defomized font packages.</li>
+<li>So we are trying to force to generate pangox.aliases...</li>
+</ul>
+<p>Instalando libpango1.0-0 (1.14.8-5) ...</p>
+<p>Instalando libgtk2.0-0 (2.8.20-7) ...</p>
+<p>Updating the IM modules list for GTK+-2.4.0...done.</p>
+<p>Creating /etc/gtk-2.0...done.</p>
+<p>Updating the gdk-pixbuf loaders list for GTK+-2.4.0...done.</p>
+<p>Instalando gtk2-engines (2.8.2-1) ...</p>
+<p>Instalando gtk2-engines-clearlooks (2.8.2-1) ...</p>
+<p>Instalando type-handling (0.2.19) ...</p>
+<p>Instalando xterm (222-1etch2) ...</p>
+<p>Instalando xorg (7.1.0-19) ...</p>
+<p>Instalando ldm (5.0.31debian2~0.etch.1) ...</p>
+<p>Instalando ltsp-client (5.0.31debian2~0.etch.1) ...</p>
+<p>Senha modificada.</p>
+<p>Cleaning up startup links in rcS.d ...</p>
+<p>Cleaning up startup links in init levels: 2 3 4 5 ...</p>
+<p>Lendo lista de pacotes... Pronto</p>
+<p>Construindo árvore de dependências... Pronto</p>
+<p>Os pacotes extra a seguir serão instalados:</p>
+<p>linux-image-2.6-486 linux-image-2.6.18-5-486</p>
+<p>Pacotes sugeridos:</p>
+<p>linux-doc-2.6.18 grub lilo</p>
+<p>Os NOVOS pacotes a seguir serão instalados:</p>
+<p>linux-image-2.6-486 linux-image-2.6.18-5-486 linux-image-486</p>
+<p>0 pacotes atualizados, 3 pacotes novos instalados, 0 a serem removidos e 3 não atualizados.</p>
+<p>É preciso fazer o download de 16,2MB de arquivos.</p>
+<p>Depois de desempacotar, 48,4MB adicionais de espaço em disco serão usados.</p>
+<p>Obtendo:1 http://security.debian.org etch/updates/main linux-image-2.6.18-5-486 2.6.18.dfsg.1-13etch4 [16,2MB]</p>
+<p>Obtendo:3 http://security.debian.org etch/updates/main linux-image-486 2.6.18+6etch2 [2220B]</p>
+<p>Baixados 16,2MB em 21m36s (12,5kB/s)</p>
+<p>debconf: adiando configuração de pacotes, já que o apt-utils não está instalado</p>
+<p>Selecionando pacote previamente não selecionado linux-image-2.6.18-5-486.</p>
+<p>(Lendo banco de dados ... 15836 arquivos e diretórios atualmente instalados.)</p>
+<p>Descompactando linux-image-2.6.18-5-486 (de .../linux-image-2.6.18-5-486_2.6.18.dfsg.1-13etch4_i386.deb) ...</p>
+<p>Done.</p>
+<p>Selecionando pacote previamente não selecionado linux-image-2.6-486.</p>
+<p>Descompactando linux-image-2.6-486 (de .../linux-image-2.6-486_2.6.18+6etch2_i386.deb) ...</p>
+<p>Selecionando pacote previamente não selecionado linux-image-486.</p>
+<p>Descompactando linux-image-486 (de .../linux-image-486_2.6.18+6etch2_i386.deb) ...</p>
+<p>Instalando linux-image-2.6.18-5-486 (2.6.18.dfsg.1-13etch4) ...</p>
+<p>Hmm. The package shipped with a symbolic link /lib/modules/2.6.18-5-486/source</p>
+<p>However, I can not read the target: Arquivo ou diretório não encontrado</p>
+<p>Therefore, I am deleting /lib/modules/2.6.18-5-486/source</p>
+<p>Running depmod.</p>
+<p>Finding valid ramdisk creators.</p>
+<p>Using mkinitramfs-kpkg to build the ramdisk.</p>
+<p>cryptsetup: WARNING: could not determine root device from /etc/fstab</p>
+<p>Examining /etc/kernel/postinst.d.</p>
+<p>run-parts: executing /etc/kernel/postinst.d/ltsp-update-kernels</p>
+<p>Instalando linux-image-2.6-486 (2.6.18+6etch2) ...</p>
+<p>Instalando linux-image-486 (2.6.18+6etch2) ...</p>
+<p>Updating /var/lib/tftpboot directories for chroot: /opt/ltsp/i386</p>
+<p>WARNING: no entry for /opt/ltsp in /etc/exports,</p>
+<p>you may want to add the following line to /etc/exports:</p>
+<p>/opt/ltsp       *(ro,no_root_squash,async)</p>
+<p>and then run the command:</p>
+<p>invoke-rc.d nfs-kernel-server reload</p>
+<p>info: instalação do cliente LTSP finalizada com sucesso@]</p>
+</div></div></div></div>
+<script src="/js/bootstrap.bundle.min.js"></script>
+</body></html>

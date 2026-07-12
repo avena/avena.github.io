@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Xmodmap — LTSP</title>
+<link rel="stylesheet" href="/css/bootstrap.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+body{background:#f5f5f5;font-family:'Poppins',sans-serif;}
+.ltsp-header{background:#1a237e;color:#fff;padding:20px 0;}
+.ltsp-header h1{margin:0;font-size:1.5rem;}
+.ltsp-sidebar{background:#fff;border-right:1px solid #e0e0e0;padding:20px;min-height:calc(100vh - 120px);font-size:0.9rem;}
+.ltsp-sidebar ul{list-style:none;padding:0;margin:0;}
+.ltsp-sidebar li{margin-bottom:6px;}
+.ltsp-sidebar a{color:#333;text-decoration:none;}
+.ltsp-sidebar a:hover{color:#1a237e;text-decoration:underline;}
+.ltsp-sidebar .sidehead{font-weight:700;margin-top:16px;margin-bottom:8px;font-size:0.85rem;text-transform:uppercase;color:#1a237e;}
+.ltsp-content{background:#fff;padding:30px;min-height:calc(100vh - 120px);}
+.ltsp-content h2{color:#1a237e;margin-top:24px;margin-bottom:12px;font-size:1.4rem;}
+.ltsp-content h3{color:#333;margin-top:20px;margin-bottom:10px;font-size:1.2rem;}
+.ltsp-content p{margin-bottom:12px;line-height:1.6;}
+.ltsp-content pre{background:#f5f5f5;border:1px solid #e0e0e0;padding:12px;overflow-x:auto;font-size:0.85rem;border-radius:4px;}
+.ltsp-content code{background:#f5f5f5;padding:2px 6px;font-size:0.85rem;border-radius:3px;}
+.ltsp-content ul{margin-bottom:12px;padding-left:20px;}
+.ltsp-content li{margin-bottom:4px;}
+.ltsp-breadcrumb{font-size:0.85rem;color:#666;margin-bottom:16px;}
+.ltsp-breadcrumb a{color:#1a237e;}
+.ltsp-content hr{margin:24px 0;border:0;border-top:1px solid #e0e0e0;}
+</style>
+</head>
+<body>
+<div class="ltsp-header">
+<div class="container">
+<div class="row align-items-center">
+<div class="col"><a href="/ltsp/" style="color:#fff;text-decoration:none"><h1>LTSP · Documentação em português</h1></a></div>
+<div class="col-auto"><a href="/" class="text-white-50 text-decoration-none">← Voltar ao currículo</a></div>
+</div></div></div>
+<div class="container"><div class="row">
+<div class="col-md-3"><div class="ltsp-sidebar"><ul><li><a href="/ltsp/">Página Inicial</a></li></ul></ul><div class="sidehead"><strong>Debian</strong></div><ul><li><a href="http://www.ltsp.org" target="_blank" rel="noopener">LTSP</a></li></ul><ul><li><a href="http://debian.org" target="_blank" rel="noopener">Debian</a></li></ul><ul><li><a href="https://www.ubuntu.com" target="_blank" rel="noopener">Ubuntu</a></li></ul></div></div>
+<div class="col-md-9"><div class="ltsp-content">
+<div class="ltsp-breadcrumb"><a href="/ltsp/">LTSP</a> &raquo; Main</div>
+<p>Adiciona na pasta do usuário</p>
+<p>'''[@#nano /home/usuario/.xmodmap</p>
+<p>keycode 94 = backslash bar</p>
+<p>keycode 51 = bracketright braceright@]'''</p>
+<p>Ao fazer login com novo usuário ou no usuário já existente vai aparecer o arquivo disponível</p>
+<p>http://idsorocaba.batemacumba.net/anexo/Main/carregando_o_arquivo_modmap_foto1.png</p>
+<p>Carregue o arquivo disponível .xmodmap  e pronto.</p>
+<p>http://idsorocaba.batemacumba.net/anexo/Main/carregando_o_arquivo_modmap_foto2.png</p>
+<hr>
+<p>Teclado ABNT2\\</p>
+<p>http://listas.cipsga.org.br/pipermail/ltsp-br-discuss/2007-May/000352.html\\</p>
+<p>http://listas.cipsga.org.br/pipermail/ltsp-br-discuss/2007-May/000325.html</p>
+<hr>
+<p>Bate Papo no IRC freenode #ltsp-br</p>
+<p>[@(11:29:14) SLot: ## configuracoes para teclados abnt2 - teclas "}]" e "\|"</p>
+<p>(11:29:14) SLot: xmodmap -e "keycode 94 = backslash bar"</p>
+<p>(11:29:14) SLot: xmodmap -e "keycode 51 = bracketright braceright"</p>
+<p>(11:29:19) SLot: vou testar essa coisa</p>
+<p>(11:33:54) SLot: geotux, funcionou com a gambiarra</p>
+<p>(11:34:19) SLot: servltsp:/home/teste/.kde/Autostart# cat ~teste/.kde/Autostart/teclado_abnt2</p>
+<p>(11:34:19) SLot: #!/bin/bash</p>
+<p>(11:34:19) SLot: ## configuracoes para teclados abnt2 - teclas "}]" e "\|"</p>
+<p>(11:34:19) SLot: xmodmap -e "keycode 94 = backslash bar"</p>
+<p>(11:34:19) SLot: xmodmap -e "keycode 51 = bracketright braceright"@]</p>
+<hr>
+<p>Devido a isso, é mais simples desativar os layouts de teclado do KDE e definir a configuração do teclado diretamente no arquivo lts.conf.\\</p>
+<p>Para um teclado <strong>ABNT2</strong>, inclua as linhas abaixo, dentro da sessão "Default", ou dentro da configuração de cada estação:\\</p>
+<p>[@XkbModel = ABNT2</p>
+<p>XkbLayout = br@]\\</p>
+<p>Dependendo da versão do X usada no servidor, você pode encontrar um problema estranho, onde as teclas "\|" e "]}" nas estações ficam trocadas por "<>" e "\|". A solução, nesse caso, é abrir o arquivo "<strong>.xmodmap</strong>" dentro do diretório "/etc/skel" e dentro do home de cada usuário, adicionando as linhas:</p>
+<p>[@keycode 94 = backslash bar</p>
+<p>keycode 51 = bracketright braceright@]\\</p>
+<p>Você pode também usar o script abaixo para adicionar as duas linhas nos arquivos .xmodmap dentro dos homes de todos os usuários do sistema automaticamente (útil se você já tiver um servidor com vários usuários configurado):\\</p>
+<p>'''[@cd /home</p>
+<p>for i in *; do echo '</p>
+<p>keycode 94 = backslash bar</p>
+<p>keycode 51 = bracketright braceright</p>
+<p>' >> $i/.xmodmap; done@]'''</p>
+<p>http://www.guiadohardware.net/guias/17/index4.php</p>
+<hr>
+<p><strong>9.4.11 Mapas de teclado e funções de botões do apontador no X</strong>\\</p>
+<p>O programa xmodmap é usado para editar e exibir o mapa modificador do teclado e a tabela de mapa do teclado que são usados pelas aplicações clientes para converter códigos de tecla de eventos em símbolos de tecla no X.</p>
+<p>[@$ xmodmap -pm</p>
+<p>... exibe o mapa modificador atual</p>
+<p>$ xmodmap -pk | pager</p>
+<p>... exibe a tabela do mapa atual</p>
+<p>$ xmodmap -e "pointer = 3 2 1" # define mouse para a mão esquerda</p>
+<p>$ xmodmap ~/.xmodmaprc # configura o teclado como em ~/.xmodmaprc@]</p>
+<p>Ele geralmente é executado a partir do script de inicialização de sessão do usuário, ~/.xsession.</p>
+<p>Para obter o código de tecla (keycode), execute xev no X e pressione teclas.\\</p>
+<p>Para obter o significado do símbolo de tecla (keysym), procure na definição MACRO no arquivo /usr/include/X11/keysymdef.h.\\</p>
+<p>Todas as expressões #define nesse arquivo são nomeadas como XK_ antecedendo os nomes de símbolo de tecla.\\</p>
+<p>Veja xmodmap(1x).\\</p>
+<p>http://www.debian.org/doc/manuals/reference/ch-tune.pt-br.html</p>
+</div></div></div></div>
+<script src="/js/bootstrap.bundle.min.js"></script>
+</body></html>
