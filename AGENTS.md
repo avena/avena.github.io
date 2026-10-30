@@ -16,9 +16,11 @@ Estrutura derivada de `felipegazolla.dev` com conteúdo real do LinkedIn.
 
 ## Publicação (GitHub + Netlify)
 
-- Repositório: `github.com/avena/avena.github.io` (confirmar remote com `git remote -v`).
-- Hospedagem: Netlify, conectando o repositório. Site estático puro (HTML), sem build step obrigatório; se quiser compilar SASS no deploy, build command = `npm run sass:build` e publish directory = raiz (`.`).
-- Plano detalhado: `.planning/PLANO-GITHUB-NETLIFY-CURRICULO.md`.
+- Repositório: https://github.com/avena/avena.github.io (branch `paleta-agro`).
+- GitHub Pages: https://avena.github.io/ (habilitado — source `paleta-agro`, path `/`).
+- Netlify: **pendente** — conectar o repositório no painel (issue aberta #1). Build command vazio (HTML estático) ou `npm run sass:build`; publish directory `.` (raiz).
+- Issues: https://github.com/avena/avena.github.io/issues
+- Plano arquivado: `.planning/archive/PLANO-GITHUB-NETLIFY-CURRICULO.md`.
 
 ## Projeto clima_litoralsul (currículo)
 
