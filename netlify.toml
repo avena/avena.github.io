@@ -1,0 +1,9 @@
+# Site estático na raiz. Compila o SASS e publica tudo.
+[build]
+  command = "npm run sass:build"
+  publish = "."
+
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
