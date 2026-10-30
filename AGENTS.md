@@ -17,7 +17,7 @@ Estrutura derivada de `felipegazolla.dev` com conteúdo real do LinkedIn.
 ## Publicação (GitHub + Netlify)
 
 - Repositório: https://github.com/avena/avena.github.io (branch `paleta-agro`).
-- GitHub Pages: https://avena.github.io/ (habilitado — source `paleta-agro`, path `/`).
+- GitHub Pages: https://avena.github.io/ — deploy via Actions (`.github/workflows/pages.yml`), `build_type: workflow`. No ar.
 - Netlify: **pendente** — conectar o repositório no painel (issue aberta #1). Build command vazio (HTML estático) ou `npm run sass:build`; publish directory `.` (raiz).
 - Issues: https://github.com/avena/avena.github.io/issues
 - Plano arquivado: `.planning/archive/PLANO-GITHUB-NETLIFY-CURRICULO.md`.
