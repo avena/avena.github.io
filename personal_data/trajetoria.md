@@ -1,36 +1,33 @@
 # Trajetória
 
-## 2018 — presente | Engenheiro Agrônomo Autônomo e Especialista em Informática
+## 08/2025 — presente | Engenheiro Agrônomo — Responsável Técnico de ATER
+**SA Consultoria Agropecuária** · Vale do Ribeira – SP
+- Assistência técnica e extensão rural contínua a 60 famílias de agricultores familiares em Registro, Juquiá, Pariquera-Açu, Cananéia, Jacupiranga e Barra do Turvo (Lote 13 Vale do Ribeira).
+- Acompanhamento e orientação fitotécnica em culturas de banana, mandioca, café, cacau e olerícolas (alface, couve, repolho e rúcula em solo e hidroponia).
+- Interpretação de laudos de solo, prescrição de calagem, gessagem e programas de adubação de fundação e cobertura, com fomento à adubação verde e manejo biológico de pragas e doenças.
+- Diagnóstico para preservação e regeneração de APPs, suporte em saneamento rural e estímulo ao cooperativismo para compras conjuntas e troca de sementes.
+- Georreferenciamento de propriedades com GPS, relatórios técnicos (ATVs), registros fotográficos e inserção de dados no SGA/ANATER.
+
+## 01/2018 — presente | Engenheiro Agrônomo Autônomo e Especialista em Informática
 **Autônomo** · Sorocaba, SP
-- Assessoria técnica para otimização de cultivo, programação de manejos e acompanhamento de rendimentos produtivos em culturas hortícolas (frutíferas e olerícolas)
-- Implementação de melhorias nos processos agrícolas para garantir eficiência e sustentabilidade — foco em agricultura familiar
-- Montagem e manutenção de componentes de informática, hardware, software e SO
-- Experiência em atendimento ao cliente, com ênfase em vendas online de soluções em hardware e software
-- Suporte remoto em ambientes de servidores Linux e máquinas Windows
-- Treinamento desde básico de sistemas operacionais até avançado de redes, produção audiovisual, montagem de computadores e manutenção
+- Consultoria técnica agronômica em horticultura e agricultura familiar, foco em nutrição vegetal e otimização produtiva.
+- Desenvolvimento de sistema digital integrado, aplicativo de gestão e recomendação de adubação.
+- Criação de fluxos de automação e prototipagem ágil com ferramentas Low-Code / No-Code.
+- Aplicação prática de Inteligência Artificial generativa no fluxo de código via editores/agentes CLI no terminal (OpenCode, Antigravity CLI) com integração múltiplos modelos (OpenRouter, Gemini, OpenAI, Anthropic).
+- Suporte técnico especializado, redes, montagem e manutenção em ambientes operacionais Windows e servidores Linux.
 
-## 2025 — fev a set | Auditor agrícola
-**Bureau Veritas Group / RHD Agro** · Tempo integral · No local
-- Bureau Veritas — Campos Novos | Curitibanos, SC: Acompanhamento dos testes de transgênicos em cargas de Soja em diversas PDR's (silos, armazéns, cooperativas), com responsabilidade pelo envio das cargas declaradas e resultados dos testes para o sistema de monitoramento da safra 24/25 de soja
-- RHD Agro — Balsas, MA: Monitoramento da colheita e entrega do programa Garantias da produção de Milho, coletando dados em campo com aplicativos para relatórios e acompanhamento de talhões
+## 11/2025 — 06/2026 | Entrevistador de Campo
+**Fundepag / IEA – Projeto Brotar (SABESP)** · Região de Sorocaba – SP
+- Realização de visitas domiciliares em áreas rurais e urbanas para coleta cadastral, socioeconômica e diagnóstico de saneamento básico e ambiental.
+- Levantamento de infraestrutura hídrica, esgotamento sanitário e condições habitacionais.
+- Coleta de coordenadas geográficas via GPS móvel, registros fotográficos padronizados e validação diária de dados em sistemas digitais.
 
-## 2017 — jan a jun | Estágio Supervisionado na Área de Dados
-**BASF** · Estágio · Santo Antônio de Posse, SP
-- Inserção de resultados provenientes de pesquisas realizadas na América Latina na base de dados global da empresa
-- Análise e sumarização de dados provenientes de pesquisas de campo
-- Desenvolvimento de um aplicativo mobile/web usando Power Apps para ajudar na coleta digital de dados de pesquisa de campo
+## 02/2025 — 08/2025 | Auditor Agrícola
+**Bureau Veritas / RHD Agro** · SC e MA
+- Auditoria e monitoramento de safras de soja e milho com coleta de dados em campo via aplicativos integrados.
+- Acompanhamento de colheita, recebimento de cargas, realização de testes de transgenia e conformidade em programas de crédito rural (CPR).
 
-## 2011 — jul a ago 2012 | Instrutor técnico em Produção Audiovisual com Software Livre
-**Prêmio Tuxaua Cultura Viva 2010 - Ministério da Cultura** · Tempo integral · Sorocaba, SP
-- Realização do cronograma de atividades previstas enviadas para o Prêmio Tuxaua Cultura Viva 2010
-- Suporte presencial e remoto, manutenção de sistemas de TI em projetos culturais nas mesorregiões de SP-Capital, Metropolitana de São Paulo, Campinas, Litoral Sul Paulista, Rio Grande do Sul, Rio de Janeiro e Bahia
-- Orientação na compra de equipamentos de informática, vídeo e áudio, instalação de GNU/Linux com software livre para web, blogs, sites, editores gráficos, edição de vídeo e áudio
-- Instalação e treinamento de redes locais de dados, configuração de rede sem fio e cabeada, configuração de acesso à internet em regiões rurais e urbanas
-- Cursos de uso de equipamentos para produção de sites, conteúdo de revistas, produção de vídeo e áudio com software livre
-
-## 2009 — jan a fev 2010 | Instrutor técnico
-**Teia Casa de Criação - Projeto Pontão Nós Digitais** · Tempo integral · São Paulo, SP
-- Realização e organização de encontros, visitas, suporte e manutenção de sistemas de TI em projetos culturais nas mesorregiões de SP-Capital, Metropolitana de São Paulo, São Carlos, Campinas e Litoral Sul Paulista
-- Orientação na compra de equipamentos, instalação de GNU/Linux com software livre para web, blogs, sites, editores gráficos, edição de vídeo e áudio
-- Cursos de produção digital com software livre, suporte local e remoto
-- Apoio na documentação técnica Diskless e dados do projeto em wiki: http://wiki.nosdigitais.teia.org.br/
+## 01/2017 — 06/2017 | Estagiário de Agronomia / Agricultura Digital
+**BASF S.A.** · São Paulo – SP
+- Inserção, organização e análise de dados agronômicos de pesquisa regional na base de dados global corporativa.
+- Prototipação de aplicativo mobile/web em Power Apps para padronização e otimização da coleta de dados de ensaios de campo.

@@ -9,6 +9,11 @@ Tags: AgroTech, SaaS, GIS
 Documentação completa do Linux Terminal Server Project em português.
 Tags: Software Livre, GNU/Linux, Documentação
 
+### Clima Litoral Sul — série climática
+Painel web com a série climática dos 17 municípios do Litoral Sul Paulista e fichas em PDF por estação. Feito no programa ATER.
+Tags: AgroTech, Clima, Python, React, Dados Abertos
+Links: https://climalitoralsul.netlify.app/ · https://github.com/avena/clima_litoralsul
+
 ## Demos
 ### SaaS Imobiliário
 Imóveis, aluguéis, agentes e finanças em um lugar. (Jan 2026)

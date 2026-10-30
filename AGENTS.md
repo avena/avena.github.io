@@ -14,6 +14,21 @@ Estrutura derivada de `felipegazolla.dev` com conteúdo real do LinkedIn.
 | `npm start` | BrowserSync na porta 3000 com livereload |
 | `npm run watch` | Sass watch + BrowserSync simultâneo |
 
+## Publicação (GitHub + Netlify)
+
+- Repositório: `github.com/avena/avena.github.io` (confirmar remote com `git remote -v`).
+- Hospedagem: Netlify, conectando o repositório. Site estático puro (HTML), sem build step obrigatório; se quiser compilar SASS no deploy, build command = `npm run sass:build` e publish directory = raiz (`.`).
+- Plano detalhado: `.planning/PLANO-GITHUB-NETLIFY-CURRICULO.md`.
+
+## Projeto clima_litoralsul (currículo)
+
+- Repositório: `https://github.com/avena/clima_litoralsul` (em `~/clima_litoralsul`).
+- Produção: `https://climalitoralsul.netlify.app/`.
+- Scripts locais: `./start.sh` (serve a página localmente, `--dev` para hot reload) e `./deploy.sh` (push = deploy na Netlify).
+- `netlify.toml`: `base = "site"`, `command = "npm run build"`, `publish = "dist"`.
+- Deve ser adicionado como projeto no currículo (pt/en/es) com link para o app e o repo.
+
+
 ## Estrutura
 
 - `/index.html` — raiz (português), `/en/index.html` — inglês, `/es/index.html` — espanhol
