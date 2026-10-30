@@ -55,6 +55,10 @@ Estrutura derivada de `felipegazolla.dev` com conteúdo real do LinkedIn.
 - Language switcher mostra apenas os outros idiomas (sem self-link)
 - Footer com navegação + ícones sociais (GitHub, LinkedIn, email)
 - Todos os 3 HTMLs (`index.html`, `en/index.html`, `es/index.html`) espelham as mesmas seções
+- **Ordem das Seções:** Hero → Sobre → Carreira/Jornada → Habilidades (Skills) → Serviços → Projetos → Como Trabalho → Contato.
+- **Grid de Habilidades (Skills):** 8 cards (`col-md-6 col-lg-4`). Em telas `lg` (3 colunas), a última linha tem 2 cards; o 7º card ("Produto & Domínio") usa `offset-lg-2` para centralizar a dupla no grid (offset 2 + 4 + 4 = 10 colunas, centralizado).
+- **Grid de Projetos:** 4 cards com `col-md-6` (2 por linha em `md` e `lg`). Ordem padronizada nos 3 idiomas: 1. LTSP, 2. Clima Litoral Sul, 3. Sistema de Gestão Agrícola, 4. Coleta BASF (Power Apps). Botão "Ver todos os projetos" com `d-none`.
+- **Contraste em fundos escuros:** O `$primary` da paleta agro (`#1E3F20`) é verde escuro. Em fundos escuros (hero, navbar, contact-section, footer), **nunca** usar texto na cor primária. Usar `$secondary` (`#D99B26`, dourado queimado) para títulos `text-primary`, hover de navbar e botões CTA de destaque, garantindo legibilidade e conformidade WCAG.
 
 ## Multi-idioma
 
